@@ -19,7 +19,7 @@ use strict;no strict "refs";
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.15 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.16 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.1 (build $REVISION)";
 
 use vars qw/
@@ -330,7 +330,7 @@ while (<>) {
 		$mail{$id}{'time'}=$time;
 		$mail{$id}{'to'}=&trim($to);
 		$mail{$id}{'from'}=&trim($from);
-		$mail{$id}{'size'}='?';
+		if (! defined($mail{$id}{'size'})) { $mail{$id}{'size'}='?'; }
 		debug("For id=$id, found a sendmail outgoing message: to=$mail{$id}{'to'} from=$mail{$id}{'from'} size=$mail{$id}{'size'} relay_s=$mail{$id}{'relay_s'}");
  	}
 
