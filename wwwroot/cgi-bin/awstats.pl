@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.634 $ - $Author: eldy $ - $Date: 2003-11-07 23:48:21 $
+# $Revision: 1.635 $ - $Author: eldy $ - $Date: 2003-11-07 23:49:46 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.634 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.635 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -558,7 +558,7 @@ EOF
 				eval("$function");
 			}
 	
-			if ($UseXMLForOutput) { print ($ENV{'HTTP_USER_AGENT'}=~/Firebird/?"//-->\n":"]]>\n"); }
+			if ($UseXMLForOutput) { print ($ENV{'HTTP_USER_AGENT'}=~/Firebird/i?"//-->\n":"]]>\n"); }
 			else { print "//-->\n"; }
 			print "</style>\n";
 
