@@ -4,14 +4,19 @@
 # so AWStats is immedialty working.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2002-10-14 19:01:23 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-10-14 19:23:37 $
 
 
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.1 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.2 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
+
+# Default value of DIRCONFIG and AWSTATSSCRIPT
+my $DIRCONFIG = "/etc/opt/awstats";
+my $AWSTATSSCRIPT = "/opt/awstats/wwwroot/cgi-bin/awstats.pl";
+
 
 
 
