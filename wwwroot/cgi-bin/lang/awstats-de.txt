@@ -1,5 +1,5 @@
 # German message file
-# $Revision: 1.10 $ - $Date: 2002-09-07 23:14:59 $
+# $Revision: 1.11 $ - $Date: 2002-09-09 14:04:23 $
 message0=Unbekannt
 message1=Unbekannte (IP konnte nicht aufgel&ouml;st werden )
 message2=Sonstige
@@ -111,3 +111,22 @@ message107=Links aus einer News Gruppe
 message108=KB
 message109=MB
 message110=GB
+message111=Grabber
+message112=Ja
+message113=Nein
+message114=Whois Informationen
+message115=OK
+message116=Exit Seiten
+message117=Aufenthaltsdauer
+message118=Fenster schliessen
+message119=Bytes
+message120=Suchausdr&uuml;cke
+message121=Suchbegriffe
+message122=Suchmaschinen
+message123=Websites
+message124=Andere Suchbegriffe
+message125=Unbekannte Benutzer
+message126=Suchmaschinen
+message127=Websites
+message128=Zusammenfassung
+message129=Der genaue Wert ist nicht in der 'Year'-Ansicht verf&uuml;gbar
