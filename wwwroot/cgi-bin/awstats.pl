@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.772 $ - $Author: eldy $ - $Date: 2004-07-31 22:17:36 $
+# $Revision: 1.773 $ - $Author: eldy $ - $Date: 2004-08-01 15:17:52 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.772 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.773 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -59,7 +59,7 @@ $TotalSearchEnginesPages $TotalSearchEnginesHits $TotalRefererPages $TotalRefere
 $FrameName $Center $FileConfig $FileSuffix $Host $DayRequired $MonthRequired $YearRequired
 $QueryString $SiteConfig $StaticLinks $PageCode $PageDir $PerlParsingFormat $UserAgent
 $pos_vh $pos_host $pos_logname $pos_date $pos_tz $pos_method $pos_url $pos_code $pos_size
-$pos_referer $pos_agent $pos_query $pos_gzipin $pos_gzipout $pos_compratio
+$pos_referer $pos_agent $pos_query $pos_gzipin $pos_gzipout $pos_compratio $pos_timetaken
 $pos_cluster $pos_emails $pos_emailr $pos_hostr @pos_extra
 /;
 $DIR=$PROG=$Extension='';
@@ -5877,6 +5877,9 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 	my $regreferer=qr/^(\w+):\/\/([^\/:]+)(:\d+|)/;
 	my $regreferernoquery=qr/^([^$URLQuerySeparators]+)/;
 	my $reglocal=qr/^(www\.|)$sitewithoutwww/i;
+	my $regget=qr/get/i;
+	my $regsent=qr/sent/i;
+	my $regput=qr/put/i;
     
 	# Define value of $PerlParsingFormat and @fieldlib
 	&DefinePerlParsingFormat();
@@ -6026,10 +6029,10 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		elsif ($LogType eq 'M' && $field[$pos_method] eq 'SMTP') {
 			# Mail request ('SMTP' for mail log with maillogconvert.pl preprocessor)
 		}
-		elsif ($LogType eq 'F' && ($field[$pos_method] eq 'RETR' || $field[$pos_method] eq 'o' || $field[$pos_method] =~ /get/i)) {
+		elsif ($LogType eq 'F' && ($field[$pos_method] eq 'RETR' || $field[$pos_method] eq 'o' || $field[$pos_method] =~ /$regget/o)) {
 			# FTP GET request
 		}
-		elsif ($LogType eq 'F' && ($field[$pos_method] eq 'STOR' || $field[$pos_method] eq 'i' || $field[$pos_method] =~ /sent/i)) {
+		elsif ($LogType eq 'F' && ($field[$pos_method] eq 'STOR' || $field[$pos_method] eq 'i' || $field[$pos_method] =~ /$regsent/o || $field[$pos_method] =~ /$regput/o)) {
 			# FTP SENT request
 		}
 		else {
