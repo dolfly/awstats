@@ -7,7 +7,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2003-06-29 20:49:57 $
+# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2003-06-29 21:05:21 $
 
 # use strict is commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -19,7 +19,7 @@ use strict;no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.18 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.19 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -206,7 +206,7 @@ for my $output (@OutputList) {
 # Build pdf file
 if ($QueryString =~ /(^|-|&)buildpdf/i) {
 #	my $pdffile=$pages[0]; $pdffile=~s/\.\w+$/\.pdf/;
-	my $command="\"$HtmlDoc\" -t pdf --quiet --webpage --no-title --textfont helvetica  --left 16 --bottom 8 --top 8 --browserwidth 800 --fontsize 7.0 @pages > awstats.$OutputSuffix.pdf\n";
+	my $command="\"$HtmlDoc\" -t pdf --quiet --webpage --no-title --textfont helvetica  --left 16 --bottom 8 --top 8 --browserwidth 800 --headfootsize 7.0 --fontsize 7.0 @pages > awstats.$OutputSuffix.pdf\n";
 	print "Build PDF file : $command\n";
 	$retour=`$command  2>&1`;
 	my $res=$?>>8;
