@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.576 $ - $Author: eldy $ - $Date: 2003-09-06 18:33:10 $
+# $Revision: 1.577 $ - $Author: eldy $ - $Date: 2003-09-06 19:25:27 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.576 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.577 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -1700,7 +1700,7 @@ sub Read_Plugins {
 	# Other possible directories :        		"./plugins"
 	my @PossiblePluginsDir=("${DIR}plugins","./plugins","/usr/local/awstats/wwwroot/cgi-bin/plugins","/usr/share/awstats/plugins");
 
-	if ($Debug) { debug("Call to Read_Plugins with list: @PluginsToLoad"); }
+	if ($Debug) { debug("Call to Read_Plugins with list: ".join(',',@PluginsToLoad)); }
 	foreach my $plugininfo (@PluginsToLoad) {
 		if ($NoLoadPlugin{$plugininfo}) {
 			if ($Debug) { debug(" Plugin load for '$plugininfo' has been disabled from command line"); }
@@ -1714,7 +1714,7 @@ sub Read_Plugins {
 		if ($pluginname) {
 			if (! $PluginsLoaded{'init'}{"$pluginname"}) {		# Plugin not already loaded
 				my %pluginisfor=('tooltips'=>'o','ipv6'=>'u','hashfiles'=>'u','geoip'=>'u',
-				'geoipfree'=>'u','hostinfo'=>'o','userinfo'=>'o','urlalias'=>'o','timehires'=>'u','timezone'=>'o');
+				'geoipfree'=>'u','hostinfo'=>'o','userinfo'=>'o','urlalias'=>'o','timehires'=>'u','timezone'=>'ou');
 				if ($pluginisfor{$pluginname}) {
 					# Do not load "update plugins" if output only
 					if (! $UpdateStats && scalar keys %HTMLOutput && $pluginisfor{$pluginname} !~ /o/) { $PluginsLoaded{'init'}{"$pluginname"}=1; next; }
