@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IPfree (version 0.2+)
 #-----------------------------------------------------------------------------
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-07-27 18:20:04 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-09-14 14:49:53 $
 
 
 # <-----
@@ -102,6 +102,6 @@ sub GetCountryCodeByAddr_geoipfree {
 
 
 # Internal IP address:
-# 10.0.x.x
-# 192.168.0.x
+# 10.x.x.x
+# 192.168.x.x
 
