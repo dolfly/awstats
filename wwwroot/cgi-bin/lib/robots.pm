@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.32 $ - $Author: eldy $ - $Date: 2004-04-18 18:15:18 $
+# $Revision: 1.33 $ - $Author: eldy $ - $Date: 2004-05-14 21:34:22 $
 
 
 #package AWSROB;
@@ -33,7 +33,7 @@
 # Common robots (In robot file)
 'appie',
 'architext',
-'askjeeves',
+'jeeves',
 'bjaaland',
 'ferret',
 'googlebot',
@@ -383,7 +383,7 @@
 # Common robots (In robot file)
 'appie','Walhello appie',
 'architext','ArchitextSpider',
-'askjeeves','AskJeeves',
+'jeeves','AskJeeves',
 'bjaaland','Bjaaland',
 'ferret','Wild Ferret Web Hopper #1, #2, #3',
 'googlebot','Googlebot',
