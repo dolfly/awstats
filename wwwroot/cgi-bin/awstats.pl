@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.647 $ - $Author: eldy $ - $Date: 2003-11-16 19:45:50 $
+# $Revision: 1.648 $ - $Author: eldy $ - $Date: 2003-11-17 20:56:43 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.647 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.648 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -8350,7 +8350,9 @@ if (scalar keys %HTMLOutput) {
 					$daycursor =~ /^(\d\d\d\d)(\d\d)(\d\d)/;
 					my $year=$1; my $month=$2; my $day=$3;
 					if (! DateIsValid($day,$month,$year)) { next; }			# If not an existing day, go to next
-					push @blocklabel,"$day§$MonthNumLib{$month}";
+					my $bold=($day==$nowday && $month==$nowmonth && $year==$nowyear?':':'');
+					my $weekend=(DayOfWeek($day,$month,$year)=~/[06]/?'!':'');
+					push @blocklabel,"$day§$MonthNumLib{$month}$weekend$bold";
 				}
 				my @vallabel=("$Message[10]","$Message[56]","$Message[57]","$Message[75]");
 				my @valcolor=("$color_v","$color_p","$color_h","$color_k");
@@ -8517,11 +8519,14 @@ if (scalar keys %HTMLOutput) {
 			# Show bars for days of week
 			if ($PluginsLoaded{'ShowGraph'}{'graphapplet'}) {
 				my @blocklabel=();
-				for (@DOWIndex) { push @blocklabel,$Message[$_+84]; }
+				for (@DOWIndex) { push @blocklabel,($Message[$_+84].($_=~/[06]/?"!":"")); }
 				my @vallabel=("$Message[56]","$Message[57]","$Message[75]");
 				my @valcolor=("$color_p","$color_h","$color_k");
 				my @valmax=(int($max_h),int($max_h),int($max_k));
 				my @valtotal=($total_p,$total_h,$total_k);
+				$average_p=sprintf("%.2f",$average_p);
+				$average_h=sprintf("%.2f",$average_h);
+				$average_k=(int($average_k)?Format_Bytes(sprintf("%.2f",$average_k)):"0.00");
 				my @valaverage=($average_p,$average_h,$average_k);
 				my @valdata=();
 				my $xx=0;

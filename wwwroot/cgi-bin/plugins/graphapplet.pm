@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-11-12 04:18:41 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-11-17 20:56:43 $
 
 
 # <-----
@@ -22,7 +22,7 @@ use strict;no strict "refs";
 # <-----
 # ENTER HERE THE MINIMUM AWSTATS VERSION REQUIRED BY YOUR PLUGIN
 # AND THE NAME OF ALL FUNCTIONS THE PLUGIN MANAGE.
-my $PluginNeedAWStatsVersion="5.91";
+my $PluginNeedAWStatsVersion="6.0";
 my $PluginHooksFunctions="ShowGraph";
 # ----->
 
