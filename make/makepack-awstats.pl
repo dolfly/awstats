@@ -25,7 +25,7 @@ $FILENAMERPM="$PROJECT-$MAJOR.$MINOR-$RPMSUBVERSION";
 $FILENAMEDEB="$PROJECT-$MAJOR.$MINOR";
 $FILENAMEEXE="$PROJECT-$MAJOR.$MINOR";
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.2 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.3 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -36,8 +36,8 @@ $VERSION="1.0 (build $REVISION)";
 ($DIR=$0) =~ s/([^\/\\]+)$//; ($PROG=$1) =~ s/\.([^\.]*)$//; $Extension=$1;
 $DIR||='.'; $DIR =~ s/([^\/\\])[\\\/]+$/$1/;
 
-$SOURCE="C:/Mes developpements/$PROJECT";
-$DESTI="C:/Mes sites/Web/$PROJECT/wwwroot/files";
+$SOURCE="$DIR/../../awstats";
+$DESTI="$SOURCE/make";
 
 # Detect OS type
 # --------------
@@ -292,7 +292,7 @@ foreach $target (keys %CHOOSEDTARGET) {
     if ($CHOOSEDTARGET{$target} < 0) {
         print "Package $target not built (bad requirement).\n";
     } else {
-        print "Package $target built succeessfully in $SOURCE/build/\n";
+        print "Package $target built succeessfully in $DESTI\n";
     }
 }
 
