@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.221 $ - $Author: eldy $ - $Date: 2002-05-04 19:17:48 $
+# $Revision: 1.222 $ - $Author: eldy $ - $Date: 2002-05-04 19:53:12 $
 
 # use strict and use vars are commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -27,7 +27,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is not supported by all T
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.221 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.222 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -768,7 +768,7 @@ sub Read_Config_File {
 sub Read_Ref_Data {
 	my %FilePath=();
 	foreach my $file ("browsers.pl","domains.pl","operating_systems.pl","robots.pl","search_engines.pl") {
-		foreach my $dir ("${DIR}db","./db") {
+		foreach my $dir ("${DIR}lib","./lib") {
 			my $searchdir=$dir;
 			if ($searchdir && (!($searchdir =~ /\/$/)) && (!($searchdir =~ /\\$/)) ) { $searchdir .= "/"; }
 			if (! $FilePath{$file}) {
@@ -781,7 +781,7 @@ sub Read_Ref_Data {
 		}
 		if (! $FilePath{$file}) {
 			my $filetext=$file; $filetext =~ s/\.pl$//; $filetext =~ s/_/ /g;
-			&warning("Warning: Can't read file \"$file\" ($filetext detection will not work correctly).\nCheck if file is in ${DIR}db directory and is readable.");
+			&warning("Warning: Can't read file \"$file\" ($filetext detection will not work correctly).\nCheck if file is in ${DIR}lib directory and is readable.");
 		}
 	}
 	# Sanity check.
