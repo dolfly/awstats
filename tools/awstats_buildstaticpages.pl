@@ -7,7 +7,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2002-05-30 07:22:21 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2002-09-04 16:09:22 $
 
 # use strict is commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -19,7 +19,7 @@ use strict;no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.6 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.7 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.1 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -99,11 +99,11 @@ if ($OutputDir) { if ($OutputDir !~ /[\\\/]$/) { $OutputDir.="/"; } }
 
 if (! $Config) {
 	print "----- $PROG $VERSION (c) Laurent Destailleur -----\n";
-	print "$PROG allows you to launch AWStats with -staticlinks option to\n";
-	print "build all possible pages allowed by AWStats -output option.\n";
+	print "$PROG allows you to launch AWStats with -staticlinks option\n";
+	print "to build all possible pages allowed by AWStats -output option.\n";
 	print "\n";
 	print "Usage:\n";
-	print "  $PROG.$Extension (awstats_options) [awstatsbuildstaticpages_options]\n";
+	print "$PROG.$Extension (awstats_options) [awstatsbuildstaticpages_options]\n";
 	print "\n";
 	print "  where awstats_options are any option known by AWStats\n";
 	print "   -config=configvalue is value for -config parameter (REQUIRED)\n";
