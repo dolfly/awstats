@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.222 $ - $Author: eldy $ - $Date: 2002-05-04 19:53:12 $
+# $Revision: 1.223 $ - $Author: eldy $ - $Date: 2002-05-05 02:42:42 $
 
 # use strict and use vars are commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -27,7 +27,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is not supported by all T
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.222 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.223 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1887,7 +1887,7 @@ sub Save_History_File {
 			}
 		}
 		else {
-			print HISTORYTMP "$key $page $_hostmachine_h{$key} $bytes\n";
+			print HISTORYTMP "$key $page $_hostmachine_h{$key} $bytes $_hostmachine_l{$key}\n";
 		}
 	}
 	foreach my $key (keys %_hostmachine_h) {
@@ -1909,7 +1909,7 @@ sub Save_History_File {
 			}
 		}
 		else {
-			print HISTORYTMP "$key $page $_hostmachine_h{$key} $bytes\n";
+			print HISTORYTMP "$key $page $_hostmachine_h{$key} $bytes $_hostmachine_l{$key}\n";
 		}
 	}
 	print HISTORYTMP "END_VISITOR\n";
@@ -4579,7 +4579,7 @@ EOF
 			$count++;
 		}
 		if ($TotalVisits > $total_s) {
-			print "<tr><td CLASS=AWL><font color=blue>$Message[0]</font></td><td>".($TotalVisits-$total_s)."</td></tr>\n";
+			print "<tr><td CLASS=AWL>$Message[0]</td><td>".($TotalVisits-$total_s)."</td></tr>\n";
 		}
 		&tab_end;
 	}
