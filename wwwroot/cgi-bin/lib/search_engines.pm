@@ -4,7 +4,7 @@
 # you must add an entry in SearchEnginesSearchIDOrder and in SearchEnginesHashIDLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #-------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2002-05-18 19:10:26 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-08-20 19:09:30 $
 
 
 #package AWSSE;
@@ -154,7 +154,7 @@
 "voila\.","kw=",
 "lycos\.","query=",
 "search\.terra\.","query=",
-"google\.","q=",
+"google\.","(p|q)=",
 "alltheweb\.com","q(|uery)=",
 "netscape\.","search=",
 "northernlight\.","qr=",
