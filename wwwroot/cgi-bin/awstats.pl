@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.364 $ - $Author: eldy $ - $Date: 2002-10-16 19:00:34 $
+# $Revision: 1.365 $ - $Author: eldy $ - $Date: 2002-10-16 19:01:52 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.364 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.365 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3306,9 +3306,6 @@ sub Save_History {
 			print HISTORYTMP "\n";
 			print HISTORYTMP "# Extra sections...\n";
 	 		print HISTORYTMP "BEGIN_EXTRA_$extranum\n";
-	 		foreach my $key (keys %{'_section_' . $extranum . '_h'} ) { 
-	 			print "$key xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-	 		}
 	 		&BuildKeyList($MaxNbOfExtra[$extranum],$MinHitExtra[$extranum],\%{'_section_' . $extranum . '_h'},\%{'_section_' . $extranum . '_p'});
 	 		%keysinkeylist=();
 	 		foreach my $key (@keylist) {
