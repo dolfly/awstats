@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.148 $ - $Author: eldy $ - $Date: 2003-09-15 13:49:44 $ 
+$Revision: 1.149 $ - $Author: eldy $ - $Date: 2003-09-15 15:50:01 $
 
 
 5.8
@@ -21,6 +21,7 @@ Fixes:
 - Fixed missing propagated configdir parameter when changing month/year.
 - Error when loading database pm file with some cygwin perl version.
 - Fixed not working file type detection for default pages.
+- Fixed not working awstats_updateall.pl on Windows platforms.
 
 New features/improvements:
 - Added a Webmin module.
