@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.123 $ - $Author: eldy $ - $Date: 2003-09-12 14:23:18 $ -->
+<!-- $Revision: 1.124 $ - $Author: eldy $ - $Date: 2003-09-15 13:43:05 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -323,8 +323,8 @@ when reading it), follow the example:<br>
 <br>#   %email_r          EMail receiver (for mail log)
 <br>#   %syslog           Syslog-specific time and host stamp with format: Mon dd hh:mm:ss hostname
 <br>#   %virtualname      Web sever virtual hostname. Use this tag when same log
-<br>#                     file contains data of several virtual web servers. The
-<br>#                     SiteDomain will be used to filter the one you want.
+<br>#                     contains data of several virtual web servers. AWStats
+<br>#                     will discard records not in SiteDomain nor HostAliases
 <br>#   If your log format has some fields not included in this list, use
 <br>#   %other            Means another field
 <br>#
