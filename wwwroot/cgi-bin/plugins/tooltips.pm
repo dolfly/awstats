@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2004-05-21 21:22:52 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2004-07-11 11:23:20 $
 
 
 # <-----
@@ -160,10 +160,10 @@ EOF
 #------------------------------------------------------------------------------
 sub _ReadAndOutputTooltipFile {
 	# Check lang files in common possible directories :
-	# Windows :                           		"${DIR}lang" (lang in same dir than awstats.pl)
+	# Windows and standard package:         	"$DIR/lang" (lang in same dir than awstats.pl)
 	# Debian package :                    		"/usr/share/awstats/lang"
 	# Other possible directories :        		"./lang"
-	my @PossibleLangDir=("$DirLang","${DIR}lang","/usr/share/awstats/lang","./lang");
+	my @PossibleLangDir=("$DirLang","${DIR}/lang","/usr/share/awstats/lang","./lang");
 
 	my $FileLang='';
 	my $logtype=lc($LogType ne 'S'?$LogType:'W');
