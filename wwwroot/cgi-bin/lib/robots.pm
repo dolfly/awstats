@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-08-02 23:26:54 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-09-09 00:35:08 $
 
 
 #package AWSROB;
@@ -50,7 +50,7 @@
 "myweb",
 "netcraft",
 "nomad",
-"peternews",
+"petersnews",
 "scooter",
 "slurp",
 #"tcl",
@@ -615,7 +615,7 @@
 "linkbot","LinkBot",
 "mercator", "Mercator",
 "perman", "Perman surfer",
-"peternews", "Peternews",
+"petersnews", "Petersnews",
 "psbot","psBot",
 "redalert", "Red Alert",
 "shoutcast","Shoutcast Directory Service",
