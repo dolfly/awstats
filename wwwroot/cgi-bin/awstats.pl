@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.787 $ - $Author: eldy $ - $Date: 2004-11-12 19:15:41 $
+# $Revision: 1.788 $ - $Author: eldy $ - $Date: 2004-11-13 00:09:10 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.787 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.788 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.3 (build $REVISION)";
 
 # ----- Constants -----
@@ -838,7 +838,7 @@ sub error {
 				print "Example: If your config file is awstats.mysite.conf, use -config=mysite\n";
 			}
 			print "- ${tagbold}Did you create your config file 'awstats.$SiteConfig.conf' ?${tagunbold}${tagbr}\n";
-			print "If not, you can run \"$dir/tools/configure.pl\"\nfrom command line, or create it manually.${tagbr}\n";
+			print "If not, you can run \"$dir/tools/awstats_configure.pl\"\nfrom command line, or create it manually.${tagbr}\n";
 			print "${tagbr}\n";
 		}
 		else { print "${tagbr}${tagbold}Setup (".($FileConfig?"'".$FileConfig."'":"Config")." file, web server or permissions) may be wrong.${tagunbold}${tagbr}\n"; }
@@ -4285,7 +4285,7 @@ sub UnCompileRegex {
 #------------------------------------------------------------------------------
 sub CleanPluginName {
 	my $stringtoclean=shift;
-	$stringtoclean =~ s/[^\w_].*$//g;
+	$stringtoclean =~ s/[^\w_]//g;
 	return $stringtoclean;
 }
 
