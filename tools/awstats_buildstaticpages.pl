@@ -1,13 +1,9 @@
 #!/usr/bin/perl
-# With some other Unix Os, first line may be
-#!/usr/local/bin/perl
-# With Apache for Windows and ActiverPerl, first line may be
-#!C:/Program Files/ActiveState/bin/perl
-#-Description-------------------------------------------
+#------------------------------------------------------------------------------
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
-#-------------------------------------------------------
-# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2003-09-20 07:36:56 $
+#------------------------------------------------------------------------------
+# $Revision: 1.25 $ - $Author: eldy $ - $Date: 2003-11-26 20:22:47 $
 
 # use strict is commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -16,10 +12,10 @@ use strict;no strict "refs";
 #use Thread;
 
 
-#-------------------------------------------------------
+#------------------------------------------------------------------------------
 # Defines
-#-------------------------------------------------------
-my $REVISION='$Revision: 1.24 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+#------------------------------------------------------------------------------
+my $REVISION='$Revision: 1.25 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -55,9 +51,9 @@ $ShowKeywordsStats $ShowMiscStats $ShowHTTPErrorsStats $ShowSMTPErrorsStats
 /;
 
 
-#-------------------------------------------------------
+#------------------------------------------------------------------------------
 # Functions
-#-------------------------------------------------------
+#------------------------------------------------------------------------------
 
 #------------------------------------------------------------------------------
 # Function:		Write error message and exit
@@ -218,9 +214,9 @@ sub Parse_Config {
 
 
 
-#-------------------------------------------------------
+#------------------------------------------------------------------------------
 # MAIN
-#-------------------------------------------------------
+#------------------------------------------------------------------------------
 ($DIR=$0) =~ s/([^\/\\]*)$//; ($PROG=$1) =~ s/\.([^\.]*)$//; $Extension=$1;
 
 my $QueryString=''; for (0..@ARGV-1) { $QueryString .= "$ARGV[$_]&"; }
