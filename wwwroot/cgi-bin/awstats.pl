@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.765 $ - $Author: eldy $ - $Date: 2004-07-11 10:35:52 $
+# $Revision: 1.766 $ - $Author: eldy $ - $Date: 2004-07-11 11:15:46 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.765 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.766 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -712,8 +712,8 @@ sub tab_head {
 	}
 	print "<td class=\"aws_blank\">&nbsp;</td></tr>\n";
 	print "<tr><td colspan=\"2\">\n";
-	if ($width == 70 && $QueryString =~ /buildpdf/i) { print "<table class=\"aws_data\" border=\"2\" bordercolor=\"#$color_TableBorder\" cellpadding=\"2\" cellspacing=\"0\" width=\"796\">\n"; }
-	else { print "<table class=\"aws_data\" border=\"2\" bordercolor=\"#$color_TableBorder\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">\n"; }
+	if ($width == 70 && $QueryString =~ /buildpdf/i) { print "<table class=\"aws_data\" border=\"1\" bordercolor=\"#$color_TableBorder\" cellpadding=\"2\" cellspacing=\"0\" width=\"796\">\n"; }
+	else { print "<table class=\"aws_data\" border=\"1\" bordercolor=\"#$color_TableBorder\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">\n"; }
 }
 
 #------------------------------------------------------------------------------
@@ -8493,7 +8493,7 @@ if (scalar keys %HTMLOutput) {
 				my @blocklabel=();
 				for (my $ix=1; $ix<=12; $ix++) {
 					my $monthix=sprintf("%02s",$ix);
-					push @blocklabel,"$MonthNumLib{$monthix}§$YearRequired";
+					push @blocklabel,"$MonthNumLib{$monthix}\§$YearRequired";
 				}
 				my @vallabel=("$Message[11]","$Message[10]","$Message[56]","$Message[57]","$Message[75]");
 				my @valcolor=("$color_u","$color_v","$color_p","$color_h","$color_k");
