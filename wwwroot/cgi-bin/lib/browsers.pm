@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.30 $ - $Author: eldy $ - $Date: 2003-11-21 00:55:09 $
+# $Revision: 1.31 $ - $Author: eldy $ - $Date: 2003-11-30 21:10:37 $
 
 
 #package AWSUA;
@@ -262,6 +262,7 @@
 'opera','opera',
 # Other standard web browsers
 'amaya','amaya',
+'amigavoyager','amigavoyager',
 'aweb','aweb',
 'chimera','chimera',
 'dreamcast','dreamcast',
