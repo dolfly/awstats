@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.378 $ - $Author: eldy $ - $Date: 2002-10-20 02:42:41 $
+# $Revision: 1.379 $ - $Author: eldy $ - $Date: 2002-10-20 16:28:12 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.378 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.379 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3648,9 +3648,9 @@ sub Utf8_To_Ascii
 sub EncodeString
 {
 	my $string = shift;
-	use bytes;
+#	use bytes;
 	$string =~ s/([\x2B\x80-\xFF])/sprintf ("%%%2x", ord($1))/eg;
-	no bytes;
+#	no bytes;
 	$string =~ tr/ /+/s;
 	return $string;
 }
