@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.736 $ - $Author: eldy $ - $Date: 2004-03-27 19:26:45 $
+# $Revision: 1.737 $ - $Author: eldy $ - $Date: 2004-03-27 20:16:12 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.736 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.737 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -96,9 +96,9 @@ $StartSeconds $StartMicroseconds
 $StartSeconds=$StartMicroseconds=0;
 # ----- Variables for config file reading -----
 use vars qw/
-$FoundNotPageList $FoundValidHTTPCodes $FoundValidSMTPCodes
+$FoundNotPageList
 /;
-$FoundNotPageList=$FoundValidHTTPCodes=$FoundValidSMTPCodes=0;
+$FoundNotPageList=0;
 # ----- Config file variables -----
 use vars qw/
 $StaticExt
@@ -1082,14 +1082,10 @@ sub Read_Config {
 	if (! $FoundNotPageList) {
 		$NotPageList{'gif'}=$NotPageList{'jpg'}=$NotPageList{'jpeg'}=$NotPageList{'png'}=$NotPageList{'bmp'}=1;
 	}
-	# If parameter ValidHTTPCodes not found, init for backward compatibility
-	if (! $FoundValidHTTPCodes) {
-		$ValidHTTPCodes{"200"}=$ValidHTTPCodes{"304"}=1;
-	}
-	# If parameter ValidSMTPCodes not found, init for backward compatibility
-	if (! $FoundValidSMTPCodes) {
-		$ValidSMTPCodes{"1"}=$ValidSMTPCodes{"250"}=1;
-	}
+	# If parameter ValidHTTPCodes empty, init for backward compatibility
+	if (! scalar keys %ValidHTTPCodes) { $ValidHTTPCodes{"200"}=$ValidHTTPCodes{"304"}=1; }
+	# If parameter ValidSMTPCodes empty, init for backward compatibility
+	if (! scalar keys %ValidSMTPCodes) { $ValidSMTPCodes{"1"}=$ValidSMTPCodes{"250"}=1; }
 }
 
 #------------------------------------------------------------------------------
@@ -1270,12 +1266,10 @@ sub Parse_Config {
 			}
 		if ($param =~ /^ValidHTTPCodes/) {
 			foreach (split(/\s+/,$value))	{ $ValidHTTPCodes{$_}=1; }
-			$FoundValidHTTPCodes=1;
 			next;
 			}
 		if ($param =~ /^ValidSMTPCodes/) {
 			foreach (split(/\s+/,$value))	{ $ValidSMTPCodes{$_}=1; }
-			$FoundValidSMTPCodes=1;
 			next;
 			}
 		if ($param =~ /^URLWithQueryWithOnlyFollowingParameters$/)	{
