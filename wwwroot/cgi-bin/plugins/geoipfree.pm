@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IPfree (version 0.2+)
 #-----------------------------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-07-26 16:33:42 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-07-27 18:20:04 $
 
 
 # <-----
@@ -51,7 +51,7 @@ sub Init_geoipfree {
 	debug(" InitParams=$InitParams",1);
 	%TmpDomainLookup=();
 	$gi = Geo::IPfree::new();
-	$gi->Faster; 	# Enable the faster option.
+#	$gi->Faster; 	# Do not enable Faster as the Memoize module is rarely available
 	# ----->
 
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
