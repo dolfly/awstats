@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-08-03 15:25:26 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-08-03 15:31:48 $
 
 
 # <-----
@@ -60,8 +60,8 @@ sub Init_rawlog {
 #-----------------------------------------------------------------------------
 sub AddHTMLBodyHeader_rawlog {
 	# <-----
-	# Show form
-	&_ShowForm('');
+	# Show form only if option -staticlinks not used
+	if (! $StaticLinks) { &_ShowForm(''); }
 	return 1;
 	# ----->
 }
