@@ -4,7 +4,7 @@
 # you must add an entry in SearchEnginesSearchIDOrder and in SearchEnginesHashIDLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #-------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-01-04 17:10:25 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-01-10 19:21:45 $
 
 
 #package AWSSE;
@@ -44,7 +44,7 @@
 "looksmart\.",
 "spray\.",
 "nbci\.com/search",
-"askjeeves\.",
+"(^|\.)ask\.com",
 "atomz\.",
 "overture\.com",		# Replace "goto\.com","Goto.com",
 "teoma\.",
@@ -63,7 +63,7 @@
 # Minor dutch search engines
 "ilse\.","vindex\.",
 # Minor english search engines
-"splut\.","ukplus\.","mirago\.","ukindex\.co\.uk","ukdirectory\.",
+"(^|\.)ask\.co\.uk","bbc\.co\.uk/cgi-bin/search","ifind\.freeserve","looksmart\.co\.uk","mirago\.","splut\.","spotjockey\.","ukdirectory\.","ukindex\.co\.uk","ukplus\.",
 # Minor finnish search engines
 "haku\.www\.fi",
 # Minor french search engines
@@ -115,7 +115,7 @@
 "yahoo\.","p=",
 # Minor internationnal search engines
 "(^|\.)go\.com","qt=",
-"askjeeves\.","ask=",
+"(^|\.)ask\.com","ask=",
 "atomz\.","sp-q=",
 "euroseek\.","query=",
 "excite\.","search=",
@@ -145,7 +145,7 @@
 # Minor dutch search engines
 "ilse\.","search_for=", "vindex\.","in=",
 # Minor english search engines
-"splut\.","pattern=", "ukplus\.", "search=", "mirago\.", "txtsearch=",
+"(^|\.)ask\.co\.uk","ask=", "bbc\.co\.uk/cgi-bin/search","q=", "ifind\.freeserve","q=", "looksmart\.co\.uk","key=", "mirago\.","txtsearch=", "splut\.","pattern=", "spotjockey\.","Search_Keyword=", "ukindex\.co\.uk", "stext=", "ukdirectory\.","k=", "ukplus\.","search=", 
 # Minor english search engines
 "ukindex\.co\.uk", "stext=", "ukdirectory\.","k=",
 # Minor finnish search engines
@@ -203,7 +203,7 @@
 "yahoo\.","Yahoo",
 # Minor internationnal search engines
 "(^|\.)go\.com","Go.com",
-"askjeeves\.","Ask Jeeves",
+"(^|\.)ask\.com","Ask Jeeves",
 "atomz\.","Atomz",
 "dejanews\.","DejaNews",
 "euroseek\.","Euroseek",
@@ -233,7 +233,7 @@
 # Minor dutch search engines
 "ilse\.","Ilse","vindex\.","Vindex\.nl",						
 # Minor english search engines
-"splut\.","Splut", "ukplus\.", "UKPlus", "mirago\.", "Mirago", "ukindex\.co\.uk", "UKIndex", "ukdirectory\.","UK Directory",
+"(^|\.)ask\.co\.uk","Ask Jeeves UK", "bbc\.co\.uk/cgi-bin/search","BBC", "ifind\.freeserve","Freeserve", "looksmart\.co\.uk","Looksmart UK", "mirago\.","Mirago", "splut\.","Splut", "spotjockey\.","Spotjockey", "ukdirectory\.","UK Directory", "ukindex\.co\.uk","UKIndex", "ukplus\.","UK Plus",
 # Minor finnish search engines
 "haku\.www\.fi","Ihmemaa",										
 # Minor french search engines
