@@ -7,7 +7,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.20 $ - $Author: eldy $ - $Date: 2003-07-12 14:44:11 $
+# $Revision: 1.21 $ - $Author: eldy $ - $Date: 2003-07-27 17:50:41 $
 
 # use strict is commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -19,7 +19,7 @@ use strict;no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.20 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.21 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -135,8 +135,8 @@ if (! $Config) {
 	print "   -date                        Used to add build date in built pages file name\n";
 	print "   -staticlinksext=xxx          For pages with .xxx extension instead of .html\n";
 	print "   -buildpdf[=pathtohtmldoc]    Build a PDF file after building HTML pages.\n";
-	print "                                 Output directory must contains icons directory\n";
-	print "                                 when this option is used.\n";
+	print "                                 Output directory must contains icon directory\n";
+	print "                                 when this option is used (need 'htmldoc').\n";
 	print "\n";
 	print "New versions and FAQ at http://awstats.sourceforge.net\n";
 	exit 0;
