@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-11-16 03:14:44 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-01-29 22:51:18 $
 
 
 #package AWSDOM;
@@ -72,7 +72,7 @@
 "sd","Sudan","se","Sweden","sg","Singapore","sh","Saint Helena","si","Slovenia",
 "sj","Svalbard and Jan Mayen Islands","sk","Slovak Republic","sl","Sierra Leone",
 "sm","San Marino","sn","Senegal","so","Somalia","sr","Suriname",
-"st","Saint Tome and Principe","su","Former USSR","sv","El Salvador","sy","Syria","sz","Swaziland",
+"st","Sao Tome and Principe","su","Former USSR","sv","El Salvador","sy","Syria","sz","Swaziland",
 "tc","Turks and Caicos Islands","td","Chad","tf","French Southern Territories","tg","Togo",
 "th","Thailand","tj","Tadjikistan","tk","Tokelau","tm","Turkmenistan","tn","Tunisia",
 "to","Tonga","tp","East Timor","tr","Turkey","tt","Trinidad and Tobago","tv","Tuvalu",
