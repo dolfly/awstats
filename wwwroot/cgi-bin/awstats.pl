@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.449 $ - $Author: eldy $ - $Date: 2003-01-26 22:07:39 $
+# $Revision: 1.450 $ - $Author: eldy $ - $Date: 2003-01-27 11:35:22 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.449 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.450 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5683,15 +5683,16 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		# Analyze: EMail
 		#---------------
 		if ($pos_emails>=0 && $field[$pos_emails]) {
-			if ($field[$pos_emails] !~ /\@/) { $field[$pos_emails].="\@$SiteDomain"; }
+			if ($field[$pos_emails] eq '<>') { $field[$pos_emails]='Unknown'; }
+			elsif ($field[$pos_emails] !~ /\@/) { $field[$pos_emails].="\@$SiteDomain"; }
 			$_emails_h{lc($field[$pos_emails])}++;									#Count accesses for sender email (hit)
-			$_emails_k{lc($field[$pos_emails])}+=int($field[$pos_size]);					#Count accesses for sender email (kb)
+			$_emails_k{lc($field[$pos_emails])}+=int($field[$pos_size]);			#Count accesses for sender email (kb)
 			$_emails_l{lc($field[$pos_emails])}=$timerecord;
 		}
 		if ($pos_emailr>=0 && $field[$pos_emailr]) {
 			if ($field[$pos_emailr] !~ /\@/) { $field[$pos_emailr].="\@$SiteDomain"; }
 			$_emailr_h{lc($field[$pos_emailr])}++;									#Count accesses for receiver email (hit)
-			$_emailr_k{lc($field[$pos_emailr])}+=int($field[$pos_size]);					#Count accesses for receiver email (kb)
+			$_emailr_k{lc($field[$pos_emailr])}+=int($field[$pos_size]);			#Count accesses for receiver email (kb)
 			$_emailr_l{lc($field[$pos_emailr])}=$timerecord;
 		}
 
