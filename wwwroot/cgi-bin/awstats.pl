@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.348 $ - $Author: eldy $ - $Date: 2002-10-03 16:02:30 $
+# $Revision: 1.349 $ - $Author: eldy $ - $Date: 2002-10-03 16:29:50 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.348 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.349 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5541,7 +5541,7 @@ EOF
 			my $year=$1; my $month=$2; my $day=$3;
 			if (! DateIsValid($day,$month,$year)) { next; }			# If not an existing day, go to next
 			my $dayofweekcursor=DayOfWeek($day,$month,$year);
-			print "<TD valign=middle".($dayofweekcursor==0||$dayofweekcursor==6?" bgcolor=\"#$color_weekend\"":"").">";
+			print "<TD valign=middle".($dayofweekcursor=~/[06]/?" bgcolor=\"#$color_weekend\"":"").">";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"<b>":"");
 			print "$day<br><font style=\"font-size: ".($FrameName ne "mainright"?"10":"9")."px;\">".$MonthLib{$month}."</font>";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"</b>":"");
@@ -5564,12 +5564,13 @@ EOF
 			$daycursor =~ /^(\d\d\d\d)(\d\d)(\d\d)/;
 			my $year=$1; my $month=$2; my $day=$3;
 			if (! DateIsValid($day,$month,$year)) { next; }			# If not an existing day, go to next
+			my $dayofweekcursor=DayOfWeek($day,$month,$year);
 			print "<TR>";
-			print "<TD>",Format_Date("$year$month$day"."000000",2),"</TD>";
-			print "<TD>",$DayVisits{$year.$month.$day}?$DayVisits{$year.$month.$day}:"0","</TD>";
-			print "<TD>",$DayPages{$year.$month.$day}?$DayPages{$year.$month.$day}:"0","</TD>";
-			print "<TD>",$DayHits{$year.$month.$day}?$DayHits{$year.$month.$day}:"0","</TD>";
-			print "<TD>",Format_Bytes(int($DayBytes{$year.$month.$day})),"</TD>";
+			print "<TD".($dayofweekcursor=~/[06]/?" bgcolor=\"#$color_weekend\"":"").">",Format_Date("$year$month$day"."000000",2),"</TD>";
+			print "<TD".($dayofweekcursor=~/[06]/?" bgcolor=\"#$color_weekend\"":"").">",$DayVisits{$year.$month.$day}?$DayVisits{$year.$month.$day}:"0","</TD>";
+			print "<TD".($dayofweekcursor=~/[06]/?" bgcolor=\"#$color_weekend\"":"").">",$DayPages{$year.$month.$day}?$DayPages{$year.$month.$day}:"0","</TD>";
+			print "<TD".($dayofweekcursor=~/[06]/?" bgcolor=\"#$color_weekend\"":"").">",$DayHits{$year.$month.$day}?$DayHits{$year.$month.$day}:"0","</TD>";
+			print "<TD".($dayofweekcursor=~/[06]/?" bgcolor=\"#$color_weekend\"":"").">",Format_Bytes(int($DayBytes{$year.$month.$day})),"</TD>";
 			print "</TR>\n";
 		}
 		print "</TABLE>\n<br>";
@@ -6315,7 +6316,7 @@ EOF
 			my $year=$1; my $month=$2; my $day=$3;
 			if (! DateIsValid($day,$month,$year)) { next; }			# If not an existing day, go to next
 			my $dayofweekcursor=DayOfWeek($day,$month,$year);
-			print "<TD valign=middle".($dayofweekcursor==0||$dayofweekcursor==6?" bgcolor=\"#$color_weekend\"":"").">";
+			print "<TD valign=middle".($dayofweekcursor=~/[06]/?" bgcolor=\"#$color_weekend\"":"").">";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"<b>":"");
 			print "$day<br><font style=\"font-size: ".($FrameName ne "mainright"?"10":"9")."px;\">".$MonthLib{$month}."</font>";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"</b>":"");
