@@ -25,7 +25,7 @@ $FILENAMERPM="$PROJECT-$MAJOR.$MINOR-$RPMSUBVERSION";
 $FILENAMEDEB="$PROJECT-$MAJOR.$MINOR";
 $FILENAMEEXE="$PROJECT-$MAJOR.$MINOR";
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.1 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.2 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -72,7 +72,6 @@ if (! $TEMP || ! -d $TEMP) {
     exit 2;
 } 
 $BUILDROOT="$TEMP/buildroot";
-$BUILDROOT="c:/temp/buildroot";
 
 
 
