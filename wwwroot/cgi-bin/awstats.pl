@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.601 $ - $Author: eldy $ - $Date: 2003-09-20 00:13:57 $
+# $Revision: 1.602 $ - $Author: eldy $ - $Date: 2003-09-20 02:41:55 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.601 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.602 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.9 (build $REVISION)";
 
 # ----- Constants -----
@@ -6796,7 +6796,7 @@ if (scalar keys %HTMLOutput) {
 				print "<select class=\"aws_formfield\" name=\"month\">\n";
 				foreach my $ix (1..12) { my $monthix=sprintf("%02s",$ix); print "<option".($MonthRequired eq "$monthix"?" selected":"")." value=\"$monthix\">$MonthNumLib{$monthix}</option>\n"; }
 				if ($AllowFullYearView >= 2) {
-					print "<option".($MonthRequired eq 'all'?" selected":"")." value='all'>- Year -</option>\n";
+					print "<option".($MonthRequired eq 'all'?" selected":"")." value='all'>- $Message[6] -</option>\n";
 				}
 				print "</select>\n";
 				print "<select class=\"aws_formfield\" name=\"year\">\n";
