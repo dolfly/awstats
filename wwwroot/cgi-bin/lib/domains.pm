@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-11-01 15:40:19 $
+# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2004-06-25 20:01:39 $
 
 
 #package AWSDOM;
@@ -84,7 +84,7 @@
 'uy','Uruguay','uz','Uzbekistan','va','Vatican City State',
 'vc','Saint Vincent &amp; Grenadines','ve','Venezuela','vg','Virgin Islands (British)',
 'vi','Virgin Islands (USA)','vn','Vietnam','vu','Vanuatu','wf','Wallis and Futuna Islands',
-'ws','Web sites','ye','Yemen','yt','Mayotte','yu','Yugoslavia','za','South Africa',
+'ws','Samoa Islands','ye','Yemen','yt','Mayotte','yu','Yugoslavia','za','South Africa',
 'zm','Zambia','zr','Zaire','zw','Zimbabwe'
 );
 
