@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.7 $
+# \version      $Revision: 1.8 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ if (-d "/usr/src/RPM") {
     $RPMDIR="/usr/src/RPM";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.7 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.8 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -77,7 +77,8 @@ if ($OS =~ /macos/) {
     $TEMP=$ENV{"TEMP"}||$ENV{"TMP"}||"/tmp";
 }
 if ($OS =~ /windows/) {
-    $TEMP=$ENV{"TEMP"}||$ENV{"TMP"}||"c:/temp";
+    #$TEMP=$ENV{"TEMP"}||$ENV{"TMP"}||"c:/temp";
+    $TEMP="c:/temp";
     $PROGPATH=$ENV{"ProgramFiles"};
 }
 if (! $TEMP || ! -d $TEMP) {
@@ -87,7 +88,7 @@ if (! $TEMP || ! -d $TEMP) {
     sleep 2;
     exit 2;
 } 
-$BUILDROOT="$TEMP/$PROJET-buildroot";
+$BUILDROOT="$TEMP/${PROJECT}-buildroot";
 
 
 my $copyalreadydone=0;
