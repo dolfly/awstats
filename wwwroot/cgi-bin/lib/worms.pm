@@ -3,7 +3,7 @@
 # If you want to add worms to extend AWStats database detection capabilities,
 # you must add an entry in WormsSearchIDOrder, WormsHashID and WormsHashLib.
 #-------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-06-05 19:09:25 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-11-01 15:40:19 $
 
 
 #package AWSWORMS;
@@ -16,10 +16,10 @@
 # to web server.
 #-------------------------------------------------------
 @WormsSearchIDOrder = (
-"/default.ida?",
-"exe?/c+dir",
-#"root.exe?/c",
-#"cmd.exe?/c",
+'/default.ida?',
+'exe?/c+dir',
+#'root.exe?/c',
+#'cmd.exe?/c',
 );
 
 
@@ -27,20 +27,20 @@
 # Each Worms search ID is associated to a string that is unique name of worm.
 #--------------------------------------------------------------------------
 %WormsHashID	= (
-"/default.ida?","code_red",
-"exe?/c+dir","nimba"
-#"root.exe?/c","nimba",
-#"cmd.exe?/c","nimba"
+'/default.ida?','code_red',
+'exe?/c+dir','nimba'
+#'root.exe?/c','nimba',
+#'cmd.exe?/c','nimba'
 );
 
 
 # WormsHashLib
-# Worms name list ("worm unique id in lower case","worm clear text")
+# Worms name list ('worm unique id in lower case','worm clear text')
 # Each unique ID string is associated to a label
 #-------------------------------------------------------
 %WormsHashLib   = (
-"code_red","Code Red family worm",
-"nimba","Nimba family worm"
+'code_red','Code Red family worm',
+'nimba','Nimba family worm'
 );
 
 
