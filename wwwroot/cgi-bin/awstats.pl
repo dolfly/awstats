@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.571 $ - $Author: eldy $ - $Date: 2003-08-27 10:48:33 $
+# $Revision: 1.572 $ - $Author: eldy $ - $Date: 2003-08-28 14:38:13 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.571 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.572 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -8199,8 +8199,10 @@ if (scalar keys %HTMLOutput) {
 			# Show clock icon
 			print "<TR".($TOOLTIPON?" onmouseover=\"ShowTip(17);\" onmouseout=\"HideTip(17);\"":"").">\n";
 			for (my $ix=0; $ix<=23; $ix++) {
-				my $hr=($ix+1); if ($hr>12) { $hr=$hr-12; }
-				print "<TD><IMG SRC=\"$DirIcons\/clock\/hr$hr.png\" width=10 alt=\"$hr:00\"></TD>\n";
+				my $hrs=($ix>=12?$ix-12:$ix);
+				my $hre=($ix>=12?$ix-11:$ix+1);
+				my $apm=($ix>=12?"pm":"am");
+				print "<TD><IMG SRC=\"$DirIcons\/clock\/hr$hre.png\" width=10 alt=\"$hrs:00 - $hre:00 $apm\"></TD>\n";
 			}
 			print "</TR>\n";
 	
