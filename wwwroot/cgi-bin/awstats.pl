@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.701 $ - $Author: eldy $ - $Date: 2004-01-10 10:51:02 $
+# $Revision: 1.702 $ - $Author: eldy $ - $Date: 2004-01-20 23:44:44 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.701 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.702 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -4021,7 +4021,7 @@ sub Init_HashArray {
 # Return:		decodedstring
 #------------------------------------------------------------------------------
 sub ChangeWordSeparatorsIntoSpace {
-	$_[0] =~ s/%1[03]/ /g;				# LF,CR
+	$_[0] =~ s/%0[ad]/ /ig;				# LF,CR
 	$_[0] =~ s/%2[02789abc]/ /ig;		# 
 	$_[0] =~ s/%3a/ /ig;				# :
 	$_[0] =~ tr/\+\'\(\)\"\*,:/        /s;		# "&" and "=" must not be in this list
@@ -5618,7 +5618,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 	my $regnotnetscape=qr/gecko|compatible|opera|galeon|safari/i;
 	my $regreferer=qr/^(\w+):\/\/([^\/:]+)(:\d+|)/;
 	my $regreferernoquery=qr/^([^$URLQuerySeparators]+)/;
-	
+
 	# Define value of $PerlParsingFormat and @fieldlib
 	&DefinePerlParsingFormat();
 
