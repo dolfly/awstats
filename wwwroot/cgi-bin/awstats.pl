@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.580 $ - $Author: eldy $ - $Date: 2003-09-10 12:22:19 $
+# $Revision: 1.581 $ - $Author: eldy $ - $Date: 2003-09-11 17:04:46 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.580 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.581 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -4911,6 +4911,9 @@ my @AllowedCLIArgs=('migrate','config',
 'pluginmode','filterrawlog');
 
 $QueryString='';
+# AWStats use GATEWAY_INTERFACE to known if ran as CLI or CGI. AWSTATS_DEL_GATEWAY_INTERFACE can
+# be set to force AWStats to be ran as CLI even from a web page
+if ($ENV{'AWSTATS_DEL_GATEWAY_INTERFACE'}) { $ENV{'GATEWAY_INTERFACE'}=''; }
 if ($ENV{'GATEWAY_INTERFACE'}) {	# Run from a browser as CGI
 	print "Content-type: text/html\n";
 	# Expires must be GMT ANSI asctime and must be after Content-type to avoid pb with some servers (SAMBAR)
@@ -5018,7 +5021,7 @@ if ($QueryString =~ /(^|&)output(=[^&]*|)(&|$)/i) {
 			if ($outputparam) { $HTMLOutput{lc($outputparam)}="$1"||1; }
 		}
 	}
-	# If output with no update, on command line
+	# If on command line and no update
 	if (! $ENV{'GATEWAY_INTERFACE'} && $QueryString !~ /update/i) { $UpdateStats=0; }
 	# If no output defined, used default value
 	if (! scalar keys %HTMLOutput) { $HTMLOutput{'main'}=1; }
