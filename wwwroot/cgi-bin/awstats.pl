@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.418 $ - $Author: eldy $ - $Date: 2002-12-10 21:11:20 $
+# $Revision: 1.419 $ - $Author: eldy $ - $Date: 2002-12-10 22:31:29 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.418 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.419 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.3 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -959,7 +959,7 @@ sub Read_Config {
 	$FileConfig=$FileSuffix='';
 	foreach my $dir (@PossibleConfigDir) {
 		my $searchdir=$dir;
-		if ($searchdir && (!($searchdir =~ /\/$/)) && (!($searchdir =~ /\\$/)) ) { $searchdir .= "/"; }
+		if ($searchdir && $searchdir !~ /[\\\/]$/) { $searchdir .= "/"; }
 		if (open(CONFIG,"$searchdir$PROG.$SiteConfig.conf")) 	{ $FileConfig="$searchdir$PROG.$SiteConfig.conf"; $FileSuffix=".$SiteConfig"; last; }
 		if (open(CONFIG,"$searchdir$PROG.conf"))  				{ $FileConfig="$searchdir$PROG.conf"; $FileSuffix=''; last; }
 	}
@@ -1018,11 +1018,9 @@ sub Parse_Config {
 		if ($_ =~ /^#include "([^\"]+)"/) {
 		    my $includeFile = $1;
 			if ($Debug) { debug("Found an include : $includeFile",2); }
-		    # Correct relative include files
-		    if ( $includeFile !~ m|^[\\/]| ) {
-				my $configDir = $FileConfig;
-				if ($configDir =~ s|[\\/][^\\/]*$|/|) {   $includeFile = "$configDir$includeFile"; }
-				else { $includeFile = "$includeFile"; }
+		    if ( $includeFile !~ /^[\\\/]/ ) {
+			    # Correct relative include files
+				if ($FileConfig =~ /^(.*[\\\/])[^\\\/]*$/) { $includeFile = "$1$includeFile"; }
 			}
 		    if ( open( CONFIG_INCLUDE, $includeFile ) ) {
 				&Parse_Config( *CONFIG_INCLUDE , $level+1, $includeFile);
