@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.131 $ - $Author: eldy $ - $Date: 2003-08-10 13:42:45 $ 
+$Revision: 1.132 $ - $Author: eldy $ - $Date: 2003-08-10 14:18:59 $ 
 
 
 5.7
@@ -41,6 +41,8 @@ New features/improvements:
 - Minor bug fixes.
 - The HostAliases list parameter is used to check if a log that contains
   %virutalhost field should be qualified.
+- Added %MO tag for LogFile parameter to be replaced by the three first
+  letter of month.
 
 Other/Documentation:
 - The "Popup WhoIs link" code is now handled by new 'hostinfo' plugin.
