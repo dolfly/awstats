@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2003-11-16 05:33:44 $
+# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2003-11-16 05:57:01 $
 
 
 #package AWSUA;
@@ -55,6 +55,7 @@
 'multizilla',
 'ncsa_mosaic',
 'netcaptor',
+'netnewswire',
 'netpositive',
 'nutscrape',
 'msfrontpageexpress',
@@ -162,6 +163,7 @@
 'multizilla','MultiZilla',
 'ncsa_mosaic','NCSA Mosaic',
 'netcaptor','NetCaptor',
+'netnewswire','NetNewsWire',
 'netpositive','NetPositive',
 'nutscrape', 'Nutscrape',
 'msfrontpageexpress','MS FrontPage Express',
