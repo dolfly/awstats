@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2004-02-07 16:16:17 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2004-02-07 17:01:01 $
 
 
 # <-----
@@ -146,7 +146,7 @@ sub _ReadAndOutputTooltipFile {
 	my @PossibleLangDir=("$DirLang","${DIR}lang","/usr/share/awstats/lang","./lang");
 
 	my $FileLang='';
-	my $logtype=lc($LogType);
+	my $logtype=lc($LogType ne 'S'?$LogType:'W');
 	foreach my $dir (@PossibleLangDir) {
 		my $searchdir=$dir;
 		if ($searchdir && (!($searchdir =~ /\/$/)) && (!($searchdir =~ /\\$/)) ) { $searchdir .= "/"; }
