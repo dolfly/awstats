@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.208 $ - $Author: eldy $ - $Date: 2004-03-17 11:26:41 $
+$Revision: 1.209 $ - $Author: eldy $ - $Date: 2004-03-17 11:34:57 $
 
 
 6.1
@@ -15,6 +15,7 @@ Fixes:
   %gzip_ratio tag.
 - Fixed old bug showing string "SCALAR(0x8badae4)" inside html reports
   when using mod_perl.
+- Fixed the not allowed GET method when LogType=S.
 - maillogconvert.pl: Better management of error records with sendmail
   and postfix (some "reject" records were discarded).
 - maillogconvert.pl: Fixed important bug where records were discarded
