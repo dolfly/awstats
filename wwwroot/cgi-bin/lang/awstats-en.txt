@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.49 $ - $Date: 2003-02-23 05:14:07 $
+# $Revision: 1.50 $ - $Date: 2003-04-22 02:36:40 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -138,3 +138,4 @@ message134=Extra/Marketing
 message135=Screen sizes
 message136=Worm/Virus attacks
 message137=Add to favourites
+message138=Days of month

@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.93 $ - $Author: eldy $ - $Date: 2003-04-06 16:55:29 $ 
+$Revision: 1.94 $ - $Author: eldy $ - $Date: 2003-04-22 02:36:17 $ 
 
 
 5.5
@@ -26,6 +26,9 @@ New features/improvments:
 - Optimized code size.
 - Optimized HTML output report size.
 - Better support for IPv6 in logresolvemerge.pl.
+- Split month summary chart and days of month chart in two different
+  charts in main page. This also means that ShowDaysOfMonthStats and
+  AddDataArrayShowDaysOfMonthStats parameters were added.
 
 Other/Documentation:
 - Added Isle of Man, Monserat, and Palestinian flag icon.
