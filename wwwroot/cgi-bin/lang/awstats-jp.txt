@@ -1,5 +1,5 @@
-# Japanese message file (info@kchosting.jp)
-# $Revision: 1.6 $ - $Date: 2003-07-25 23:56:29 $
+﻿# Japanese message file (info@kchosting.jp)
+# $Revision: 1.7 $ - $Date: 2003-08-16 21:57:17 $
 PageCode=UTF-8
 message0=不明
 message1=不明(ipが解りません)
@@ -149,3 +149,9 @@ message144=Quicktime Audio 対応ブラウザー
 message145=Windows Media 対応ブラウザー
 message146=PDF 対応ブラウザー
 message147=SMTP エラーコード
+message148=国
+message149=メール
+message150=サイズ
+message151=最初
+message152=最後
+message153=除外フィルター
