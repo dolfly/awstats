@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.777 $ - $Author: eldy $ - $Date: 2004-08-14 17:29:06 $
+# $Revision: 1.778 $ - $Author: eldy $ - $Date: 2004-08-16 20:06:17 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.777 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.778 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -257,7 +257,7 @@ use vars qw/
 'el'=>'gr','hu'=>'hu','is'=>'is','in'=>'id','it'=>'it',
 'ja'=>'jp','ko'=>'kr','lv'=>'lv','nl'=>'nl','no'=>'nb','nb'=>'nb','nn'=>'nn',
 'pl'=>'pl','pt'=>'pt','pt-br'=>'br','ro'=>'ro','ru'=>'ru','sr'=>'sr','sk'=>'sk',
-'sv'=>'se','tr'=>'tr','uk'=>'ua','cy'=>'cy','wlk'=>'cy'
+'sv'=>'se','th'=>'th','tr'=>'tr','uk'=>'ua','cy'=>'cy','wlk'=>'cy'
 );
 %LangAWStatsToFlagAwstats=(  # If flag (country ISO-3166 two letters) is not same than AWStats Lang code
 'ca'=>'es_cat','et'=>'ee','eu','es_eu',
