@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.95 $ - $Author: eldy $ - $Date: 2003-04-22 02:36:18 $ -->
+<!-- $Revision: 1.96 $ - $Author: eldy $ - $Date: 2003-05-04 00:39:36 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -814,8 +814,9 @@ when reading it), follow the example:<br>
 <a name="ValidSMTPCodes"><b>ValidSMTPCodes</b></a><br>
 <b>Version : </b>5.0 +<br>
 <br># By default, AWStats considers that records found in mail log file are
-<br># successful mail transfers if code saved in log file is a valid code (1 for
-<br># sendmail, 0 for postfix).
+<br># successful mail transfers if field that represent return code in analyzed
+<br># log file match values defined by this parameter.
+<br># Change : Effective for new updates only
 <br># Example: "1"
 <br># Example: "0"
 <br># Default: "1"
