@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: XWhois
 #-----------------------------------------------------------------------------
-# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2004-05-21 21:16:54 $
+# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2004-08-14 14:50:15 $
 
 
 # <-----
@@ -112,7 +112,7 @@ sub ShowInfoHost_hostinfo {
 			$linkforwhois=2;
 		}
 		else {	# Hostname
-			$param =~ /([-\w]+\.[-\w]+\.(au|uk|jp|nz))$/ or $param =~ /([-\w]+\.[-\w]+)$/;
+			$param =~ /([-\w]+\.[-\w]+\.(?:au|uk|jp|nz))$/ or $param =~ /([-\w]+\.[-\w]+)$/;
 			$keyforwhois=$1;
 			$linkforwhois=1;
 		}
