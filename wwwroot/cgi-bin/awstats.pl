@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.574 $ - $Author: eldy $ - $Date: 2003-08-29 14:48:03 $
+# $Revision: 1.575 $ - $Author: eldy $ - $Date: 2003-09-06 02:21:21 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.574 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.575 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -371,7 +371,8 @@ use vars qw/ %ftpcodelib /;
 # SMTP codes
 use vars qw/ %smtpcodelib /;
 %smtpcodelib = (
-'450'=>'User unknown',
+'450'=>'Sender or domain address not qualified',
+'550'=>'Relaying denied or Unkown recipient user',
 '554'=>'Relay denied'
 );
 
