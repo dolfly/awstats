@@ -1,6 +1,6 @@
 # Dutch message file (door Amedee Van Gasse - amedee.be)
 # Addon by Marcel Huijkman - marcel.huijkman@raketnet.nl
-# $Revision: 1.14 $ - $Date: 2004-06-04 21:41:46 $
+# $Revision: 1.15 $ - $Date: 2004-09-19 10:56:12 $
 message0=Onbekend
 message1=Onbekend (Onbekend ip)
 message2=Andere
@@ -61,18 +61,18 @@ message56=Pagina's
 message57=Hits
 message58=Versies
 message59=OS
-message60=Januari
-message61=Februari
-message62=Maart
-message63=April
+message60=Jan
+message61=Feb
+message62=Mrt
+message63=Apr
 message64=Mei
-message65=Juni
-message66=Juli
-message67=Augustus
-message68=September
-message69=Oktober
-message70=November
-message71=December
+message65=Jun
+message66=Jul
+message67=Aug
+message68=Sep
+message69=Okt
+message70=Nov
+message71=Dec
 message72=Navigatie
 message73=Bestandstypen
 message74=Nu verversen
