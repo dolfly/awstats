@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2004-01-13 13:14:41 $
+# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2004-01-25 17:08:18 $
 use strict;
 
 #-------------------------------------------------------
@@ -43,7 +43,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.23 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.24 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -272,10 +272,10 @@ if ($nowsec < 10) { $nowsec = "0$nowsec"; }
 print "\n";
 print "----- AWStats $PROG $VERSION (c) Laurent Destailleur -----\n";
 print "This tool will help you to configure AWStats to analyze statistics for\n";
-print "one web server. If you need to analyze load balanced servers, downloaded\n";
-print "log files without web server, to analyze mail or ftp log files, or need\n";
-print "to manage rotated logs, you will have to complete the config file manually\n";
-print "according to your needs.\n";
+print "one web server. If you need to analyze load balanced servers log files, to\n";
+print "analyze downloaded log files without web server, to analyze mail or ftp log\n";
+print "files, or need to manage rotated logs, you will have to complete the config\n";
+print "file manually according to your needs.\n";
 print "Read the AWStats documentation (docs/index.html).\n";
 
 # Detect OS type
