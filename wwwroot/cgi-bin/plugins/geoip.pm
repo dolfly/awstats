@@ -8,7 +8,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2005-02-19 13:40:42 $
+# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2005-03-27 15:17:16 $
 
 
 # <-----
@@ -166,7 +166,7 @@ sub ShowInfoHost_geoip {
 		    print "<span style=\"color: #$color_other\">$Message[0]</span>";
 		}
 		if (! $key) {
-        	my $res=lc($gi->country_code_by_addr($param)) if $gi;
+        	my $res=lc($gi->country_code_by_name($param)) if $gi;
         	if ($Debug) { debug("  Plugin geoip: GetCountryByHostname for $param: [$res]",5); }
 		    if ($res) { print $DomainsHashIDLib{$res}; }
 		    else { print "<span style=\"color: #$color_other\">$Message[0]</span>"; }
