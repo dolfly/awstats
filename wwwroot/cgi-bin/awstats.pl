@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.789 $ - $Author: eldy $ - $Date: 2004-11-27 14:41:05 $
+# $Revision: 1.790 $ - $Author: eldy $ - $Date: 2004-12-10 22:45:17 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.789 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.790 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.3 (build $REVISION)";
 
 # ----- Constants -----
@@ -7288,7 +7288,11 @@ if (scalar keys %HTMLOutput) {
 
 		if ($FrameName ne 'mainright') {
 			# Print Statistics Of
-			if ($FrameName eq 'mainleft') { print "<tr><td class=\"awsm\"><b>$Message[7]:</b></td></tr><tr><td class=\"aws\"><span style=\"font-size: 12px;\">$SiteDomain</span></td>"; }
+			if ($FrameName eq 'mainleft') {
+			    my $shortSiteDomain=$SiteDomain;
+			    if (length($SiteDomain) > 30) { $shortSiteDomain=substr($SiteDomain,0,20)."...".substr($SiteDomain,length($SiteDomain)-5,5); }
+			    print "<tr><td class=\"awsm\"><b>$Message[7]:</b></td></tr><tr><td class=\"aws\"><span style=\"font-size: 12px;\">$shortSiteDomain</span></td>";
+			}
 			else { print "<tr><td class=\"aws\" valign=\"middle\"><b>$Message[7]:</b>&nbsp;</td><td class=\"aws\" valign=\"middle\"><span style=\"font-size: 14px;\">$SiteDomain</span></td>"; }
 
 			# Logo and flags
