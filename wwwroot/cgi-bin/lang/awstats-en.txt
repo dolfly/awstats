@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.42 $ - $Date: 2002-09-08 14:32:15 $
+# $Revision: 1.43 $ - $Date: 2002-09-09 14:03:20 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -125,7 +125,7 @@ message121=Search&nbsp;Keywords
 message122=different refering search engines
 message123=different refering sites
 message124=Other phrases
-message125=Anonymous users
+message125=Other logins (and/or anonymous users)
 message126=Refering search engines
 message127=Refering sites
 message128=Summary
