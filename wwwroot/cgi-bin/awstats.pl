@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.304 $ - $Author: eldy $ - $Date: 2002-09-09 14:02:35 $
+# $Revision: 1.305 $ - $Author: eldy $ - $Date: 2002-09-09 14:12:40 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.304 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.305 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5189,8 +5189,7 @@ EOF
 	if ($HTMLOutput eq "alllogins") {
 		print "$Center<a name=\"LOGINSLIST\">&nbsp;</a><BR>\n";
 		&tab_head($Message[80],19);
-		if ($MonthRequired ne "year") { print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>$Message[81] : $TotalHostsKnown $Message[82], $TotalHostsUnknown $Message[1] - $TotalUnique $Message[11]</TH>"; }
-		else { print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>$Message[94] : ".(scalar keys %_login_h)."</TH>"; }
+		print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>$Message[94] : ".(scalar keys %_login_h)."</TH>";
 		print "<TH bgcolor=\"#$color_p\" width=80>$Message[56]</TH><TH bgcolor=\"#$color_h\" width=80>$Message[57]</TH><TH bgcolor=\"#$color_k\" width=80>$Message[75]</TH><TH width=120>$Message[9]</TH></TR>\n";
 		$total_p=$total_h=$total_k=0;
 		my $count=0;
@@ -5221,8 +5220,7 @@ EOF
 	if ($HTMLOutput eq "lastlogins") {
 		print "$Center<a name=\"LOGINSLIST\">&nbsp;</a><BR>\n";
 		&tab_head($Message[9],19);
-		if ($MonthRequired ne "year") { print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>$Message[81] : $TotalHostsKnown $Message[82], $TotalHostsUnknown $Message[1] - $TotalUnique $Message[11]</TH>"; }
-		else { print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>$Message[94] : ".(scalar keys %_login_h)."</TH>"; }
+		print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>$Message[94] : ".(scalar keys %_login_h)."</TH>";
 		print "<TH bgcolor=\"#$color_p\" width=80>$Message[56]</TH><TH bgcolor=\"#$color_h\" width=80>$Message[57]</TH><TH bgcolor=\"#$color_k\" width=80>$Message[75]</TH><TH width=120>$Message[9]</TH></TR>\n";
 		$total_p=$total_h=$total_k=0;
 		my $count=0;
