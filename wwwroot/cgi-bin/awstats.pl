@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.676 $ - $Author: eldy $ - $Date: 2003-12-06 18:49:59 $
+# $Revision: 1.677 $ - $Author: eldy $ - $Date: 2003-12-06 19:05:57 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.676 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.677 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -1787,9 +1787,9 @@ sub Read_Plugins {
 							push @INC, "$dir";
 							$DirAddedInINC{"$dir"}=1;
 						}
-						#my $loadret=require "$pluginpath";
+						#my $loadret=require "$pluginpath";	# Can fix pb with mod_perl2. Give other pb ?
+						#my $loadret=do "${pluginfile}.pm";	# Can fix pb with mod_perl2 but might slow since module is recompiled each time.
 						my $loadret=require "${pluginfile}.pm";
-						#my $loadret=(require "$pluginpath"||require "${pluginfile}.pm");
 
 						if (! $loadret || $loadret =~ /^error/i) {
 							# Load failed, we stop here
