@@ -1,5 +1,5 @@
 <!-- French tooltips message file (eldy@users.sourceforge.net) -->
-<!-- $Revision: 1.1 $ - $Date: 2004-02-07 16:14:10 $ -->
+<!-- $Revision: 1.2 $ - $Date: 2004-03-04 13:05:51 $ -->
 <div class="CTooltip" id="tt1">
 On considère une nouvelle visite pour <b>chaque arrivée</b> d'un visiteur consultant une page et ne s'étant pas connecté dans les dernières <b>#VisitTimeOut# mn</b>.
 </div>
@@ -48,6 +48,14 @@ Ici les données rapportées sont des: <b>sommes cumulées</b> (calculées à partir 
 Certaines <b>Durée de visites</b> sont 'inconnues' car elles ne peuvent pas toujours etre calculées. En voici les raisons principales:<br />
 - La visite n'étaient pas terminée lorsque la mise à jour eut lieu (Sera comptée à la prochaine mise à jour).<br />
 - La visite a commencé la derniere heure (après 23:00) du dernier jour du mois (Un raison technique empêche #PROG# de calculer la durée des visites de telles sessions).
+</div>
+<div class="CTooltip" id="tt21">
+Les Vers (Worms) sont des <b>visiteurs automatiques</b> qui sont en fait des serveurs externes infectés par un virus,
+réalisant des hits particuliers sur votre serveur afin de l'infecter à son tour. Dans la plupart des cas, de telles
+attacks exploitent des bugs des serveurs commerciaux et non à jour.
+Si votre system n'est pas celui indiqué comme <b>cible sensible</b> du vers, vous pouvez ignorer de tel hits.<br />
+Il existe très peu de 'vers serveur' mais il sont très actifs à certaines période.
+#PROG# reconnait <b>#WormsArray#</b> signatures de vers connus (nimda,code red,...).
 </div>
 
 <div class="CTooltip" id="tt201">Contenu partiel renvoyé.</div>

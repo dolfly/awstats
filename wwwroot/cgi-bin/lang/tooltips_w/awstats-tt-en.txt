@@ -1,5 +1,5 @@
 <!-- English tooltips message file (eldy@users.sourceforge.net) -->
-<!-- $Revision: 1.1 $ - $Date: 2004-02-07 16:14:10 $ -->
+<!-- $Revision: 1.2 $ - $Date: 2004-03-04 13:05:51 $ -->
 <div class="CTooltip" id="tt1">
 A new visits is defined as each new <b>incoming visitor</b> (viewing or browsing a page) who was not connected to your site during last <b>#VisitTimeOut# mn</b>.
 </div>
@@ -48,6 +48,13 @@ Here, reported data are: <b>cumulative sums</b> (calculated from all data betwee
 Some <b>Visits durations</b> are 'unknown' because they can't always be calculated. This is the major reason for this:<br />
 - Visit was not finished when 'update' occured.<br />
 - Visit started the last hour (after 23:00) of the last day of a month (A technical reason prevents #PROG# from calculating duration of such sessions)
+</div>
+<div class="CTooltip" id="tt21">
+Worms are <b>automatic computer visitors</b> that are in fact external servers, infected by a virus, that try
+to make particular hits on your server to infect it. In most cases, such worms exploit some bugs of not up to date
+or commercial servers. If your system is not the <b>sensitive target</b> of the worm, you can simply ignore those hits.<br />
+There is very few 'server worms' in the world but they are very active at some times.
+#PROG# is able to recognize <b>#WormsArray#</b> known worm's signatures (nimda,code red,...).
 </div>
 
 <div class="CTooltip" id="tt201">No description for this error.</div>
