@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Put here list of all required plugins
 #-----------------------------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-02-11 16:00:51 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2003-04-26 18:43:10 $
 
 
 # <-----
@@ -100,12 +100,24 @@ sub ShowPagesAddField_example {
 }
 
 #-----------------------------------------------------------------------------
-# PLUGIN FUNCTION: ReplaceURL_pluginname
+# PLUGIN FUNCTION: ShowURLInfo_pluginname
 # UNIQUE: NO (Several plugins using this function can be loaded)
 # Function called to add additionnal information for URLs in URLs' report.
 # Parameters: URL
 #-----------------------------------------------------------------------------
-sub ReplaceURL_urlalias {
+sub ShowURLInfo_example {
+	# <-----
+	# PERL CODE HERE
+	# ----->
+}
+
+#-----------------------------------------------------------------------------
+# PLUGIN FUNCTION: ShowUserInfo_pluginname
+# UNIQUE: NO (Several plugins using this function can be loaded)
+# Function called to add additionnal information for Users in users' report.
+# Parameters: User
+#-----------------------------------------------------------------------------
+sub ShowUserInfo_example {
 	# <-----
 	# PERL CODE HERE
 	# ----->
