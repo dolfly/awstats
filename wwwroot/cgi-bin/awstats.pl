@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.266 $ - $Author: eldy $ - $Date: 2002-07-20 12:53:45 $
+# $Revision: 1.267 $ - $Author: eldy $ - $Date: 2002-07-20 13:26:31 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -18,7 +18,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.266 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.267 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.2 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -2713,6 +2713,7 @@ sub ShowWhoIsCell {
 	else { $keyurl =~ /(\w+\.\w+)$/; $keyforwhois=$1; }
 	print "<td>";
 	if ($keyforwhois) { print "<a href=\"$LinksToWhoIs$keyforwhois\" target=awstatswhois>?</a>"; }
+	else { print "&nbsp;" }
 	print "</td>";
 }
 
@@ -5158,7 +5159,9 @@ EOF
 		$rest_h=$TotalHits-$total_h;
 		$rest_k=$TotalBytes-$total_k;
 		if ($rest_p > 0 || $rest_h > 0 || $rest_k > 0) {	# All other visitors (known or not)
-			print "<TR><TD CLASS=AWL><font color=blue>$Message[2]</font></TD><TD>$rest_p</TD><TD>$rest_h</TD><TD>".Format_Bytes($rest_k)."</TD><TD>&nbsp;</TD></TR>\n";
+			print "<TR><TD CLASS=AWL><font color=blue>$Message[2]</font></TD>";
+			if ($ShowLinksToWhoIs && $LinksToWhoIs) { print "<TD>&nbsp;</TD>"; }
+			print "<TD>$rest_p</TD><TD>$rest_h</TD><TD>".Format_Bytes($rest_k)."</TD><TD>&nbsp;</TD></TR>\n";
 		}
 		&tab_end;
 	}
