@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2004-03-10 21:46:46 $
+# $Revision: 1.29 $ - $Author: eldy $ - $Date: 2004-03-12 21:32:57 $
 use strict;
 
 #-------------------------------------------------------
@@ -43,7 +43,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.28 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.29 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -65,11 +65,13 @@ use vars qw/
 use vars qw/
 $WebServerChanged $UseAlias $Step
 %LogFormat %ConfToChange
+%OSLib
 /;
 $WebServerChanged=0;
 $UseAlias=0;
 %LogFormat=();
 %ConfToChange=();
+%OSLib=('linux'=>'Linux or Unix','macosx'=>'Mac OS','windows'=>'Windows');
 $Step=0;
 
 
@@ -284,7 +286,7 @@ if (-d "/etc" && -d "/home") { $OS='linux'; $CR=''; }
 elsif (-d "/etc" && -d "/Users") { $OS='macosx'; $CR=''; }
 else { $OS='windows'; $CR="\r"; }
 #print "Running OS detected: $OS (Perl $^[)\n";
-print "\n-----> Running OS detected: $OS\n";
+print "\n-----> Running OS detected: $OSLib{$OS}\n";
 
 if ($OS eq 'linux') {
 	$AWSTATS_PATH=`pwd`; $AWSTATS_PATH =~ s/[\r\n]//;
