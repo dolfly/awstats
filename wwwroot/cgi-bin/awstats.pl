@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.245 $ - $Author: eldy $ - $Date: 2002-05-30 07:23:34 $
+# $Revision: 1.246 $ - $Author: eldy $ - $Date: 2002-05-31 05:54:55 $
 
 use strict;no strict "refs";
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -30,7 +30,7 @@ use vars qw/ $UseHiRes $UseCompress /;
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.245 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.246 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1307,6 +1307,7 @@ sub Check_Config {
 	if (! $Message[122]) { $Message[122]="different refering search engines"; }
 	if (! $Message[123]) { $Message[123]="different refering sites"; }
 	if (! $Message[124]) { $Message[124]="Other phrases"; }
+	if (! $Message[125]) { $Message[125]="Anonymous users"; }
 
 	# Refuse LogFile if contains a pipe and PurgeLogFile || ArchiveLogRecords set on
 	if (($PurgeLogFile || $ArchiveLogRecords) && $LogFile =~ /\|\s*$/) {
@@ -4978,7 +4979,7 @@ EOF
 		$rest_h=$TotalHits-$total_h;
 		$rest_k=$TotalBytes-$total_k;
 		if ($rest_p > 0 || $rest_h > 0 || $rest_k > 0) {	# All other login
-			print "<TR><TD CLASS=AWL><font color=blue>$Message[2]</font></TD><TD>$rest_p</TD><TD>$rest_h</TD><TD>".Format_Bytes($rest_k)."</TD><TD>&nbsp;</TD></TR>\n";
+			print "<TR><TD CLASS=AWL><font color=blue>$Message[125]</font></TD><TD>$rest_p</TD><TD>$rest_h</TD><TD>".Format_Bytes($rest_k)."</TD><TD>&nbsp;</TD></TR>\n";
 		}
 		&tab_end;
 	}
