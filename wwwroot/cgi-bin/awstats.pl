@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.599 $ - $Author: eldy $ - $Date: 2003-09-19 16:46:37 $
+# $Revision: 1.600 $ - $Author: eldy $ - $Date: 2003-09-19 22:07:32 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.599 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.600 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.9 (build $REVISION)";
 
 # ----- Constants -----
@@ -6794,8 +6794,10 @@ if (scalar keys %HTMLOutput) {
 			print "<td class=\"aws\" valign=\"middle\">";
 			if ($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks) {
 				print "<select class=\"aws_formfield\" name=\"month\">\n";
-				foreach my $ix (1..12) { my $monthix=sprintf("%02s",$ix); print "<option".($MonthRequired eq "$monthix"?" selected":"")." value=\"$monthix\">$MonthNumLib{$monthix}\n"; }
-				print "<option".($MonthRequired eq 'all'?" selected":"")." value='all'>---\n";
+				foreach my $ix (1..12) { my $monthix=sprintf("%02s",$ix); print "<option".($MonthRequired eq "$monthix"?" selected":"")." value=\"$monthix\">$MonthNumLib{$monthix}</option>\n"; }
+				if ($AllowFullYearView >= 2) {
+					print "<option".($MonthRequired eq 'all'?" selected":"")." value='all'>- Year -</option>\n";
+				}
 				print "</select>\n";
 				print "<select class=\"aws_formfield\" name=\"year\">\n";
 				# Add YearRequired in list if not in ListOfYears
