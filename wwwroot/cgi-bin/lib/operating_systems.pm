@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-09-16 14:23:56 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-11-25 22:38:26 $
 
 
 #package AWSOS;
@@ -41,6 +41,7 @@
 "bsdi",
 "freebsd",
 "openbsd",
+"gnu",
 "unix",
 # Other famous OS
 "beos",
@@ -83,6 +84,7 @@
 "bsdi","bsdi",
 "freebsd","freebsd",
 "openbsd","openbsd",
+"gnu","gnu",
 "unix","unix",
 # Other famous OS
 "beos","beos",
@@ -123,6 +125,7 @@
 "bsdi","BSDi",
 "freebsd","FreeBSD",
 "openbsd","OpenBSD",
+"gnu","GNU/Linux",
 "unix","Unknown Unix system",
 # Other famous OS
 "beos","BeOS",
