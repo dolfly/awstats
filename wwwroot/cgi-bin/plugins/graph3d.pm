@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-02-09 19:08:58 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-09-16 17:00:50 $
 
 
 # <-----
@@ -62,9 +62,9 @@ sub ShowMonthGraph_graph3d() {
 		return 1;
 	}
 
-	print "<APPLET>\n";
+	print "<applet>\n";
 	
-	print "</APPLET>\n";	
+	print "</applet>\n";	
 
 	return 0;
 }

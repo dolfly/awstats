@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-09-09 11:09:37 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-09-16 17:00:51 $
 
 
 # <-----
@@ -91,7 +91,7 @@ sub ShowInfoHost_hostinfo {
 	# <-----
 	my $hostinfotoshow="$_[0]";
 	if ($hostinfotoshow eq '__title__') {
-		print "<TD width=80>$Message[114]</TD>";	
+		print "<td width=80>$Message[114]</td>";	
 	}
 	elsif ($hostinfotoshow) {
 		my $keyforwhois;
@@ -109,13 +109,13 @@ sub ShowInfoHost_hostinfo {
 			$keyforwhois=$1;
 			$linkforwhois=1;
 		}
-		print "<TD>";
+		print "<td>";
 		if ($keyforwhois && $linkforwhois) { print "<a href=\"javascript:neww('$keyforwhois',$linkforwhois)\">?</a>"; }
 		else { print "&nbsp;" }
-		print "</TD>";
+		print "</td>";
 	}
 	else {
-		print "<TD>&nbsp;</TD>";
+		print "<td>&nbsp;</td>";
 	}
 	return 1;
 	# ----->

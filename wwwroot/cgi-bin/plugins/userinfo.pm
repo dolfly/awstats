@@ -10,7 +10,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-06-22 21:26:23 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-09-16 17:00:53 $
 
 
 # <-----
@@ -81,10 +81,10 @@ sub ShowInfoUser_userinfo {
 		$userinfoloaded=1;
 	}
 	if ($userinfotoshow) {
-		if ($UserInfo{$userinfotoshow}) { print "<TD>$UserInfo{$userinfotoshow}</TD>"; }
-		else { print "<TD>&nbsp;</TD>"; }	# Undefined user info
+		if ($UserInfo{$userinfotoshow}) { print "<td>$UserInfo{$userinfotoshow}</td>"; }
+		else { print "<td>&nbsp;</td>"; }	# Undefined user info
 	}
-	else { print "<TD>&nbsp;</TD>"; }	# User info title
+	else { print "<td>&nbsp;</td>"; }	# User info title
 	return 1;
 	# ----->
 }
