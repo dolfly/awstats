@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-07-26 15:32:31 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2004-03-28 17:01:21 $
 
 
 # <-----
@@ -79,16 +79,17 @@ sub Init_geoip {
 # GetCountryCodeByName is called to translate a host name into a country name.
 #-----------------------------------------------------------------------------
 sub GetCountryCodeByName_geoip {
+    my $param="$_[0]";
 	# <-----
-	my $res=$TmpDomainLookup{$_[0]}||'';
+	my $res=$TmpDomainLookup{$param}||'';
 	if (! $res) {
-		$res=lc($gi->country_code_by_name($_[0]));
-		$TmpDomainLookup{$_[0]}=$res;
-		if ($Debug) { debug("  GetCountryCodeByName for $_[0]: [$res]",5); }
+		$res=lc($gi->country_code_by_name($param));
+		$TmpDomainLookup{$param}=$res;
+		if ($Debug) { debug("  GetCountryCodeByName for $param: [$res]",5); }
 	}
-	elsif ($Debug) { debug("  GetCountryCodeByName for $_[0]: Already resolved to $res",5); }
-	return $res;
+	elsif ($Debug) { debug("  GetCountryCodeByName for $param: Already resolved to $res",5); }
 	# ----->
+	return $res;
 }
 
 #-----------------------------------------------------------------------------
@@ -97,16 +98,17 @@ sub GetCountryCodeByName_geoip {
 # GetCountryCodeByAddr is called to translate an ip into a country name.
 #-----------------------------------------------------------------------------
 sub GetCountryCodeByAddr_geoip {
+    my $param="$_[0]";
 	# <-----
-	my $res=$TmpDomainLookup{$_[0]}||'';
+	my $res=$TmpDomainLookup{$param}||'';
 	if (! $res) {
-		$res=lc($gi->country_code_by_addr($_[0]));
-		$TmpDomainLookup{$_[0]}=$res;
-		if ($Debug) { debug("  GetCountryCodeByAddr for $_[0]: $res",5); }
+		$res=lc($gi->country_code_by_addr($param));
+		$TmpDomainLookup{$param}=$res;
+		if ($Debug) { debug("  GetCountryCodeByAddr for $param: $res",5); }
 	}
-	elsif ($Debug) { debug("  GetCountryCodeByAddr for $_[0]: Already resolved to $res",5); }
-	return $res;
+	elsif ($Debug) { debug("  GetCountryCodeByAddr for $param: Already resolved to $res",5); }
 	# ----->
+	return $res;
 }
 
 

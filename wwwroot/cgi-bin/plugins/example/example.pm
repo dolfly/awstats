@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Put here list of all required plugins
 #-----------------------------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2004-03-27 18:09:03 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2004-03-28 17:02:23 $
 
 
 # <-----
@@ -78,10 +78,58 @@ sub AddHTMLStyles_example {
 #-----------------------------------------------------------------------------
 # PLUGIN FUNCTION: AddHTMLBodyHeader_pluginname
 # UNIQUE: NO (Several plugins using this function can be loaded)
-# Function called to Add HTML code at beginning of BODY section.
+# Function called to Add HTML code at beginning of BODY section (top of page).
 # Parameters: None
 #-----------------------------------------------------------------------------
 sub AddHTMLBodyHeader_example {
+	# <-----
+	# PERL CODE HERE
+	# ----->
+}
+
+#-----------------------------------------------------------------------------
+# PLUGIN FUNCTION: AddHTMLBodyFooter_pluginname
+# UNIQUE: NO (Several plugins using this function can be loaded)
+# Function called to Add HTML code at end of BODY section (bottom of page).
+# Parameters: None
+#-----------------------------------------------------------------------------
+sub AddHTMLBodyFooter_example {
+	# <-----
+	# PERL CODE HERE
+	# ----->
+}
+
+#-----------------------------------------------------------------------------
+# PLUGIN FUNCTION: AddHTMLMenuHeader_pluginname
+# UNIQUE: NO (Several plugins using this function can be loaded)
+# Function called to Add HTML code just before the menu section
+# Parameters: None
+#-----------------------------------------------------------------------------
+sub AddHTMLMenuHeader_example {
+	# <-----
+	# PERL CODE HERE
+	# ----->
+}
+
+#-----------------------------------------------------------------------------
+# PLUGIN FUNCTION: AddHTMLMenuFooter_pluginname
+# UNIQUE: NO (Several plugins using this function can be loaded)
+# Function called to Add HTML code just after the menu section
+# Parameters: None
+#-----------------------------------------------------------------------------
+sub AddHTMLMenuFooter_example {
+	# <-----
+	# PERL CODE HERE
+	# ----->
+}
+
+#-----------------------------------------------------------------------------
+# PLUGIN FUNCTION: AddHTMLContentHeader_pluginname
+# UNIQUE: NO (Several plugins using this function can be loaded)
+# Function called to Add HTML code just before the first report
+# Parameters: None
+#-----------------------------------------------------------------------------
+sub AddHTMLContentHeader_example {
 	# <-----
 	# PERL CODE HERE
 	# ----->
