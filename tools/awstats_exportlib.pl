@@ -3,7 +3,7 @@
 # Export lib data values to a text files to allow to use AWStats robots,
 # os, browsers, search_engines database with other log analyzers
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-03-04 22:42:40 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-03-08 20:12:22 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -15,7 +15,7 @@ use strict;no strict "refs";
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.2 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.3 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -233,6 +233,11 @@ if ($LibToExport =~ /browsers/) {
 }
 
 if ($LibToExport =~ /mime/) {
+	if ($ExportFormat eq 'analog') {
+		foreach my $key (sort keys %MimeHashFamily) {
+			if ($MimeHashFamily{$key} =~ /(text|page|script|document)/) { print "PAGEINCLUDE *.$key\n"; }
+		}
+	}
 	foreach my $key (sort keys %MimeHashFamily) {
 		if ($ExportFormat eq 'text') {
 			print "$key\t$MimeHashLib{$MimeHashFamily{$key}}\n";
