@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.209 $ - $Author: eldy $ - $Date: 2004-03-17 11:34:57 $
+$Revision: 1.210 $ - $Author: eldy $ - $Date: 2004-03-21 19:57:40 $
 
 
 6.1
@@ -29,6 +29,7 @@ Fixes:
 - Number of shown lines were one more than required (rawlog plugin).
 
 New features/improvements:
+- Added %time4 flag for LogFormat to support unix timestamp date format.
 - The BuildHistoryFormat can accept xml now to build the AWStats 
   database in xml.
 - Added Firefox to browser database.
