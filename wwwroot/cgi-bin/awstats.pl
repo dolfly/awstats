@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.721 $ - $Author: eldy $ - $Date: 2004-03-06 18:23:27 $
+# $Revision: 1.722 $ - $Author: eldy $ - $Date: 2004-03-08 21:15:22 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.721 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.722 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -6748,6 +6748,10 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
  				elsif ($conditiontype eq 'HOST') {
 					if ($Debug) { debug("  Check condition '$conditiontype' must contain '$conditiontypeval' in $field[$pos_host]",5); }
  					if ($HostResolved =~ /$conditiontypeval/) { $conditionok=1; last; }
+ 				}
+ 				elsif ($conditiontype eq 'CODE') {
+					if ($Debug) { debug("  Check condition '$conditiontype' must be '$conditiontypeval' in $field[$pos_code]",5); }
+ 					if ($field[$pos_code] eq "$conditiontypeval") { $conditionok=1; last; }
  				}
  				else { error("Wrong value of parameter ExtraSectionCondition$extranum"); }
  			}
