@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.473 $ - $Author: eldy $ - $Date: 2003-02-24 05:57:14 $
+# $Revision: 1.474 $ - $Author: eldy $ - $Date: 2003-02-24 13:39:43 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.473 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.474 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4985,8 +4985,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		if (! (@field=map(/^$PerlParsingFormat/,$_))) {
 			$NbOfLinesCorrupted++;
 			if ($ShowCorrupted) {
-				if ($_ =~ /^#/ || $_ =~ /^!/) { print "Corrupted record (comment line) : $_\n"; }
-				elsif ($_ =~ /^\s*$/) { print "Corrupted record (blank line)\n"; }
+				if ($_ =~ /^#/ || $_ =~ /^!/) { print "Corrupted record line $NbOfLinesRead (comment line): $_\n"; }
+				elsif ($_ =~ /^\s*$/) { print "Corrupted record line $NbOfLinesRead (blank line)\n"; }
 				else { print "Corrupted record line $NbOfLinesRead (record format does not match LogFormat parameter): $_\n"; }
 			}
 			if ($NbOfLinesRead >= $NbOfLinesForCorruptedLog && $NbOfLinesCorrupted == $NbOfLinesRead) { error("Format error",$_,$LogFile); }	# Exit with format error
@@ -4997,7 +4997,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		if ($Debug) {
 			my $string='';
 			foreach my $key (0..@field-1) {	$string.="$fieldlib[$key]=$field[$key] "; }
-			debug(" Correct format line $NbOfLinesRead : $string",4);
+			debug(" Correct format line $NbOfLinesRead: $string",4);
 		}
 
 		# Check virtual host name
