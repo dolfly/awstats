@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.686 $ - $Author: eldy $ - $Date: 2003-12-22 19:52:29 $
+# $Revision: 1.687 $ - $Author: eldy $ - $Date: 2003-12-25 21:41:01 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.686 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.687 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -769,16 +769,17 @@ sub error {
 			my $dir=$DIR;
 			if ($dir =~ /^\./) { $dir.='/../..'; }
 			else { $dir =~ s/[\\\/]?wwwroot[\/\\]cgi-bin[\\\/]?//; }
+			print "${tagbr}\n";
 			if ($ENV{'GATEWAY_INTERFACE'}) {
-				print "- ${tagbr}${tagbold}Did you use the correct URL ?${tagunbold}${tagbr}\n";
+				print "- ${tagbold}Did you use the correct URL ?${tagunbold}${tagbr}\n";
 				print "Example: http://localhost/awstats/awstats.pl?config=mysite${tagbr}\n";
 				print "Example: http://127.0.0.1/cgi-bin/awstats.pl?config=mysite${tagbr}\n";
 			} else {
-				print "- ${tagbr}${tagbold}Did you use correct config parameter ?${tagunbold}${tagbr}\n";
+				print "- ${tagbold}Did you use correct config parameter ?${tagunbold}${tagbr}\n";
 				print "Example: If your config file is awstats.mysite.conf, you must use -config=mysite\n";
 			}
-			print "- ${tagbr}${tagbold}Did you create your config file 'awstats.$SiteConfig.conf' ?${tagunbold}${tagbr}\n";
-			print "If not, you can run \"$dir/tools/configure.pl${tagbr}${tagbr}\"\n";
+			print "- ${tagbold}Did you create your config file 'awstats.$SiteConfig.conf' ?${tagunbold}${tagbr}\n";
+			print "If not, you can run \"$dir/tools/configure.pl\"${tagbr}${tagbr}\n";
 		}
 		else { print "${tagbr}${tagbold}Setup (".($FileConfig?"'".$FileConfig."'":"Config")." file, web server or permissions) may be wrong.${tagunbold}${tagbr}\n"; }
 		print "See AWStats documentation in 'docs' directory for informations on how to setup $PROG.\n";
