@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.157 $ - $Author: eldy $ - $Date: 2004-01-07 07:12:05 $ -->
+<!-- $Revision: 1.158 $ - $Author: eldy $ - $Date: 2004-02-07 21:10:03 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -1712,7 +1712,9 @@ color_u,color_v,color_p,color_h,color_k,color_s<br>
 <br># This is particularly usefull for users who have a lot of virtual servers, so
 <br># a lot of config files and want to maintain common values in only one file.
 <br># Note that when a variable is defined both in a config file and in an
-<br># included file, AWStats will use the last value read.
+<br># included file, AWStats will use the last value read for parameters that
+<br># contains one value and AWStats will concat all values from both files for
+<br># parameters that are lists of value.
 <br>#
 <br>Include ""
 
@@ -1722,7 +1724,7 @@ color_u,color_v,color_p,color_h,color_k,color_s<br>
 <br><br><hr>
 
 <script language=javascript>
-	var date='$Date: 2004-01-07 07:12:05 $';
+	var date='$Date: 2004-02-07 21:10:03 $';
 	document.writeln("Last revision: "+date);
 </script>
 
