@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.811 $ - $Author: eldy $ - $Date: 2005-02-18 19:13:08 $
+# $Revision: 1.812 $ - $Author: eldy $ - $Date: 2005-02-19 13:51:25 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.811 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.812 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.4 (build $REVISION)";
 
 # ----- Constants -----
@@ -1841,8 +1841,10 @@ sub Read_Plugins {
 		}
 		if ($pluginname) {
 			if (! $PluginsLoaded{'init'}{"$pluginname"}) {		# Plugin not already loaded
-				my %pluginisfor=('timehires'=>'u','ipv6'=>'u','hashfiles'=>'u','geoip'=>'u','geoipfree'=>'u',
-				                 'geoip_region_maxmind'=>'mou','timezone'=>'ou',
+				my %pluginisfor=('timehires'=>'u','ipv6'=>'u','hashfiles'=>'u',
+				                 'geoipfree'=>'u',
+				                 'geoip'=>'ou','geoip_region_maxmind'=>'mou','geoip_city_maxmind'=>'mou','geoip_isp_maxmind'=>'mou','geoip_org_maxmind'=>'mou',
+				                 'timezone'=>'ou',
 								 'decodeutfkeys'=>'o','hostinfo'=>'o','rawlog'=>'o','userinfo'=>'o','urlalias'=>'o','tooltips'=>'o');
 				if ($pluginisfor{$pluginname}) {    # If it's a known plugin, may be we don't need to load it
             		# Do not load "menu handler plugins" if output only and mainleft frame

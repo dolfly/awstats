@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: XWhois
 #-----------------------------------------------------------------------------
-# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2005-02-19 13:40:46 $
+# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2005-02-19 13:50:06 $
 
 
 # <-----
@@ -73,7 +73,7 @@ sub AddHTMLBodyHeader_hostinfo {
 function neww(a,b) {
 var wfeatures="directories=0,menubar=1,status=0,resizable=1,scrollbars=1,toolbar=0,width=$WIDTHINFO,height=$HEIGHTINFO,left=" + eval("(screen.width - $WIDTHINFO)/2") + ",top=" + eval("(screen.height - $HEIGHTINFO)/2");
 EOF
-	print "fen=window.open('".XMLEncode("$AWScript?$urlparam&host")."='+a+'&key='+b,'whois',wfeatures);\n";
+	print "fen=window.open('".XMLEncode("$AWScript?$urlparam&host")."='+a+'".XMLEncode("&key")."='+b,'whois',wfeatures);\n";
 print <<EOF;
 }
 </script>
