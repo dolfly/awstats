@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.497 $ - $Author: eldy $ - $Date: 2003-05-04 03:58:20 $
+# $Revision: 1.498 $ - $Author: eldy $ - $Date: 2003-05-08 12:07:45 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.497 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.498 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5321,8 +5321,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			}
  			# Remove params that are marked to be ignored in URLWithQueryWithoutFollowingParameters
 			if ($foundparam && @URLWithQueryWithoutFollowingParameters) {
-				if ($URLNotCaseSensitive) { map {$field[$pos_url] =~ s/$_=[^&]*//i;} @URLWithQueryWithoutFollowingParameters; }
-				else { map {$field[$pos_url] =~ s/$_=[^&]*//;} @URLWithQueryWithoutFollowingParameters; }
+				if ($URLNotCaseSensitive) { map {$field[$pos_url] =~ s/([$tokenquery&])$_=[^&]*/$1/gi;} @URLWithQueryWithoutFollowingParameters; }
+				else { map {$field[$pos_url] =~ s/([$tokenquery&])$_=[^&]*/$1/g;} @URLWithQueryWithoutFollowingParameters; }
  				# Cut starting or trailing ? or &
  				$field[$pos_url] =~ tr/&/&/s;
  				$field[$pos_url] =~ s/[$tokenquery]&/$tokenquery/;
