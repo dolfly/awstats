@@ -1,6 +1,21 @@
 AWStats-Webmin module Changelog
 -------------------------------
-$Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-09-14 16:27:11 $ 
+$Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-09-16 15:56:59 $ 
+
+
+1.1
+
+Fixes:
+- Modify of old config files add the new parameters if not found.
+- Fixed wrong value saved for LogSeparator parameter.
+
+New features/improvements:
+- Added javascript test in edit config pages.
+
+Other/Documentation:
+- Added french translation.
+- Removed unused language message files.
+
 
 
 1.0
