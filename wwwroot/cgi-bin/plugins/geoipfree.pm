@@ -7,10 +7,11 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IPfree (version 0.2+)
 #-----------------------------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-05-31 14:06:04 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-06-27 19:33:10 $
 
 
 # <-----
+push @INC, "${DIR}/plugins";
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
 if (!eval ('require "Geo/IPfree.pm";')) { return "Error: Need Perl module Geo::IPfree"; }
 # ----->
@@ -50,7 +51,7 @@ sub Init_geoipfree {
 	debug(" InitParams=$InitParams",1);
 	%TmpDomainLookup=();
 	$gi = Geo::IPfree::new();
-	$gi->Faster ; 	# Enable the faster option.
+	$gi->Faster; 	# Enable the faster option.
 	# ----->
 
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
