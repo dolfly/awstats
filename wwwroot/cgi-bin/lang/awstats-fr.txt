@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.65 $ - $Date: 2003-08-03 12:49:58 $
+# $Revision: 1.66 $ - $Date: 2003-09-12 17:30:51 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -32,7 +32,7 @@ message28=pages différentes
 message29=Pages vues
 message30=Autres mots
 message31=Pages non trouvées
-message32=Codes Erreurs HTTP
+message32=Codes Status HTTP
 message33=Versions de Netscape
 message34=Versions de MS Internet Explorer
 message35=Dernière mise à jour
