@@ -10,7 +10,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-04-26 19:26:38 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-06-22 21:26:23 $
 
 
 # <-----
@@ -67,7 +67,8 @@ sub Init_userinfo {
 #-----------------------------------------------------------------------------
 sub ShowInfoUser_userinfo {
 	# <-----
-	if (! $userinfoloaded) {
+	my $userinfotoshow="$_[0]";
+	if ($userinfotoshow && ! $userinfoloaded) {
 		# Load userinfo file
 		my $filetoload='';
 		if ($SiteConfig && open(USERINFOFILE,"$PluginDir/userinfo.$SiteConfig.txt"))	{ $filetoload="$PluginDir/userinfo.$SiteConfig.txt"; }
@@ -79,9 +80,11 @@ sub ShowInfoUser_userinfo {
 		debug("UserInfo file loaded: ".(scalar keys %UserInfo)." entries found.");
 		$userinfoloaded=1;
 	}
-	my $userinfotoreplace="$_[0]";
-	if ($UserInfo{$userinfotoreplace}) { print "<TD>$UserInfo{$userinfotoreplace}</TD>"; }
-	else { print "<TD>&nbsp;</TD>"; }
+	if ($userinfotoshow) {
+		if ($UserInfo{$userinfotoshow}) { print "<TD>$UserInfo{$userinfotoshow}</TD>"; }
+		else { print "<TD>&nbsp;</TD>"; }	# Undefined user info
+	}
+	else { print "<TD>&nbsp;</TD>"; }	# User info title
 	return 1;
 	# ----->
 }
