@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.172 $ - $Author: eldy $ - $Date: 2003-11-16 19:45:48 $
+$Revision: 1.173 $ - $Author: eldy $ - $Date: 2003-11-20 22:16:52 $
 
 6.0
 
@@ -57,6 +57,7 @@ Other/Documentation:
 - asmx and aspx added in mime.pm file.
 - Microsoft URL Control added in robot list.
 - Debian icon added.
+- Added Hebrew and Galician language.
 
 
 5.9
