@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2003-09-25 14:52:50 $
+# $Revision: 1.20 $ - $Author: eldy $ - $Date: 2003-09-30 11:17:10 $
 
 
 #package AWSROB;
@@ -60,7 +60,6 @@
 "webbase",
 "weblayers",
 #"webs",
-"wget",
 "wisenutbot"
 );
 @RobotsSearchIDOrder_list2 = (
@@ -612,7 +611,6 @@
 "webwalk","webwalk",
 "webwalker","WebWalker",
 "webwatch","WebWatch",
-"wget","Wget",
 "whatuseek","whatUseek Winona",
 "whowhere","WhoWhere Robot",
 "wired-digital","Wired Digital",
