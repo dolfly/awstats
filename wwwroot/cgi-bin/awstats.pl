@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.381 $ - $Author: eldy $ - $Date: 2002-10-21 12:37:37 $
+# $Revision: 1.382 $ - $Author: eldy $ - $Date: 2002-10-21 12:58:29 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.381 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.382 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3620,7 +3620,8 @@ sub Init_HashArray {
 }
 
 #------------------------------------------------------------------------------
-# Function:     Change word separators into space and remove bad coded chars
+# Function:     Change word separators of a keyphrase string into space and
+#               remove bad coded chars
 # Parameters:	stringtodecode
 # Input:        None
 # Output:       None
@@ -3628,7 +3629,7 @@ sub Init_HashArray {
 #------------------------------------------------------------------------------
 sub ChangeWordSeparatorsIntoSpace {
 	$_[0] =~ s/%1[03]/ /g;
-	$_[0] =~ s/%2[02789ac]/ /ig;
+	$_[0] =~ s/%2[02789abc]/ /ig;
 	$_[0] =~ s/%3a/ /ig;
 	$_[0] =~ tr/\+\'\(\)\"\*,:/        /s;								# "&" and "=" must not be in this list
 }

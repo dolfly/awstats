@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.57 $ - $Author: eldy $ - $Date: 2002-10-21 12:37:33 $ -->
+<!-- $Revision: 1.58 $ - $Author: eldy $ - $Date: 2002-10-21 12:58:26 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -302,8 +302,8 @@ when reading it), follow the example:<br>
 <br># With DNSLookup to 0, all hosts will be reported by their IP addresses and
 <br># not by the full hostname of visitors. Domain/Country chart will also report
 <br># all visitors from a domain/country "Unknown".
-<br># If you need to set DNSLookup to 1, don't forget that reverse DNS lookup
-<br># increase dramatically AWStats update process. Do not use on large web sites.
+<br># If you need to set DNSLookup to 1, don't forget that this will reduce
+<br># dramatically AWStats update process speed. Do not use on large web sites.
 <br># Possible values:
 <br>#  0 No DNS Lookup
 <br>#  1 DNS Lookup is fully enabled
