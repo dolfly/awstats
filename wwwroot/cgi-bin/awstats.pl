@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.614 $ - $Author: eldy $ - $Date: 2003-09-27 19:26:23 $
+# $Revision: 1.615 $ - $Author: eldy $ - $Date: 2003-09-28 02:05:47 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.614 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.615 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -8747,8 +8747,8 @@ if (scalar keys %HTMLOutput) {
 					print "<tr><td".($count?"":" width=\"$WIDTHCOLICON\"")."><img src=\"$DirIcons\/mime\/$nameicon.png\"".AltTitle("")." /></td><td class=\"aws\">$key</td>";
 					print "<td class=\"aws\">$nametype</td>";
 				}
-				if ($ShowFileTypesStats =~ /H/i) { print "<td>$_filetypes_h{$key}</td><td>$p_h %</td>"; }
-				if ($ShowFileTypesStats =~ /B/i) { print "<td>".Format_Bytes($_filetypes_k{$key})."</td><td>$p_k %</td>"; }
+				if ($ShowFileTypesStats =~ /H/i) { print "<td>$_filetypes_h{$key}</td><td>$p_h</td>"; }
+				if ($ShowFileTypesStats =~ /B/i) { print "<td>".Format_Bytes($_filetypes_k{$key})."</td><td>$p_k</td>"; }
 				if ($ShowFileTypesStats =~ /C/i) {
 					if ($_filetypes_gz_in{$key}) {
 						my $percent=int(100*(1-$_filetypes_gz_out{$key}/$_filetypes_gz_in{$key}));
