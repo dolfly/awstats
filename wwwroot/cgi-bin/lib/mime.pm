@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-08-23 11:07:56 $
+# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-08-23 11:11:31 $
 
 
 #package AWSMIME;
@@ -83,6 +83,7 @@
 'rar','archive',
 'tar','archive',
 'tgz','archive',
+'z','archive',
 'zip','archive',
 # Audio
 'mp3','audio',
@@ -158,6 +159,7 @@
 'rar','archive',
 'tar','archive',
 'tgz','archive',
+'z','archive',
 'zip','archive',
 # Audio
 'mp3','audio',
