@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2003-09-22 15:01:53 $
+# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2003-09-25 14:52:50 $
 
 
 #package AWSROB;
@@ -325,6 +325,7 @@
 "linkchecker",
 "msiecrawler",
 "msnbot",
+"nagios",
 "nederland.zoek",
 "perman",
 "pompos",
@@ -494,6 +495,7 @@
 "muscatferret","Muscat Ferret",
 "mwdsearch","Mwd.Search",
 "myweb","Internet Shinchakubin",
+"nagios","Nagios monitoring checker",
 "netcarta","NetCarta WebMap Engine",
 "netcraft","Netcraft Web Server Survey",
 "netmechanic","NetMechanic",
