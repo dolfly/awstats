@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.62 $ - $Date: 2003-07-28 00:37:51 $
+# $Revision: 1.63 $ - $Date: 2003-08-02 11:56:28 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -150,3 +150,4 @@ message146=Navigateurs avec support PDF
 message147=Codes Erreurs SMTP
 message148=Pays
 message149=Mails
+message150=Taille
