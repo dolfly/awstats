@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.30 $ - $Author: eldy $ - $Date: 2004-04-10 14:51:14 $
+# $Revision: 1.31 $ - $Author: eldy $ - $Date: 2004-04-10 14:55:00 $
 require 5.005;
 
 use strict;
@@ -46,7 +46,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.30 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.31 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -293,7 +293,8 @@ if ("$^O" =~ /linux/i || (-d "/etc" && -d "/var" && "$^O" !~ /cygwin/i)) { $OS='
 elsif (-d "/etc" && -d "/Users") { $OS='macosx'; $CR=''; }
 elsif ("$^O" =~ /cygwin/i || "$^O" =~ /win32/i) { $OS='windows'; $CR="\r"; }
 if (! $OS) {
-    print "configure.pl was not able to detect your OS.\n";
+    print "configure.pl was not able to detect your OS. You must configure AWStats\n";
+	print "manually following the setup documentation (docs/index.html).\n";
 	print "configure.pl aborted.\n";
 	exit 1;
 }
