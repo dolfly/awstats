@@ -7,7 +7,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.22 $ - $Author: eldy $ - $Date: 2003-08-02 12:13:00 $
+# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2003-08-23 09:45:21 $
 
 # use strict is commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -19,7 +19,7 @@ use strict;no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.22 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.23 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -315,8 +315,8 @@ if ($ShowSessionsStats) { push @OutputList,'session'; }
 if ($ShowPagesStats) { push @OutputList,'urldetail'; push @OutputList,'urlentry'; push @OutputList,'urlexit'; }
 if ($ShowFileTypesStats) { push @OutputList,'filetypes'; }
 #if ($ShowFileSizesStats) { push @OutputList,'filesize'; }
-if ($ShowOSStats) { push @OutputList,'osdetail'; push @OutputList,'unkownos'; }
-if ($ShowBrowsersStats) { push @OutputList,'browserdetail'; push @OutputList,'unkownbrowser'; }
+if ($ShowOSStats) { push @OutputList,'osdetail'; push @OutputList,'unknownos'; }
+if ($ShowBrowsersStats) { push @OutputList,'browserdetail'; push @OutputList,'unknownbrowser'; }
 if ($ShowScreenSizeStats) { push @OutputList,'screensize'; }
 if ($ShowOriginStats) { push @OutputList,'refererse'; push @OutputList,'refererpages'; }
 if ($ShowKeyphrasesStats) { push @OutputList,'keyphrases'; }
