@@ -16,9 +16,8 @@ use strict; no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-# Last change made by $Author: eldy $ on $Date: 2002-04-06 17:21:17 $
-my $REVISION='$Revision: 1.7 $';
-$REVISION =~ /\s(.*)\s/; $REVISION=$1;
+# Last change made by $Author: eldy $ on $Date: 2002-04-06 17:22:59 $
+my $REVISION='$Revision: 1.8 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.1 (build $REVISION)";
 
 # ---------- Init variables --------
