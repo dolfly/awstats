@@ -4,7 +4,7 @@
 # you must add an entry in SearchEnginesSearchIDOrder and in SearchEnginesHashIDLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #-------------------------------------------------------
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2002-11-12 23:31:16 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2002-11-15 21:07:55 $
 
 
 #package AWSSE;
@@ -57,7 +57,7 @@
 # Minor brazilian search engines
 "engine\.exe", "miner\.bol\.com\.br",
 # Minor danish search-engines 
-"opasia\.dk", "danielsen\.com",
+"opasia\.dk", "danielsen\.com", "sol\.dk", "jubii\.dk", "find\.dk", "edderkoppen\.dk", "netstjernen\.dk", "orbis\.dk", "tyfon\.dk", "1klik\.dk", "ofir\.dk",
 # Minor dutch search engines
 "ilse\.","vindex\.",
 # Minor english search engines
@@ -137,7 +137,7 @@
 # Minor brazilian search engines
 "engine\.exe","p1=", "miner\.bol\.com\.br","q=",
 # Minor danish search engines
-"opasia\.dk","q=", "danielsen\.com","q=",
+"opasia\.dk","q=", "danielsen\.com","q=", "sol\.dk","q=", "jubii\.dk","soegeord=", "find\.dk","words=", "edderkoppen\.dk","query=", "orbis\.dk","search_field=", "1klik\.dk","query=", "ofir\.dk","querytext=",
 # Minor dutch search engines
 "ilse\.","search_for=", "vindex\.","in=",
 # Minor english search engines
@@ -223,7 +223,7 @@
 # Minor brazilian search engines
 "engine\.exe","Cade", "miner\.bol\.com\.br","Meta Miner",
 # Minor danish search-engines
-"opasia\.dk","Opasia", "danielsen\.com","Thor (danielsen.com)",	
+"opasia\.dk","Opasia", "danielsen\.com","Thor (danielsen.com)", "sol\.dk","SOL", "jubii\.dk","Jubii", "find\.dk","Find", "edderkoppen\.dk","Edderkoppen", "netstjernen\.dk","Netstjernen", "orbis\.dk","Orbis", "tyfon\.dk","Tyfon", "1klik\.dk","1Klik", "ofir\.dk","Ofir",
 # Minor dutch search engines
 "ilse\.","Ilse","vindex\.","Vindex\.nl",						
 # Minor english search engines
