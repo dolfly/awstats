@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-06-14 15:17:15 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-07-17 22:42:33 $
 
 
 #package AWSUA;
@@ -226,7 +226,7 @@
 "encompass","notavailable",
 "friendlyspider","notavailable",
 "fresco","notavailable",
-"galeon","notavailable",
+"galeon","galeon",
 "getright","getright",
 "headdump","notavailable",
 "hotjava","notavailable",
@@ -236,7 +236,7 @@
 "lotus-notes","notavailable",
 "macweb","notavailable",
 "ncsa_mosaic","notavailable",
-"netpositive","notavailable",
+"netpositive","netpositive",
 "nutscrape","notavailable",
 "msfrontpageexpress","notavailable",
 "tzgeturl","notavailable",
