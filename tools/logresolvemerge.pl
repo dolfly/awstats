@@ -1,12 +1,12 @@
 #!/usr/bin/perl
 #-----------------------------------------------------------------------------
-# Merge several log files into one and replace all IP addresses
-# with resolved DNS host name.
+# Allows you to get one unique output log file, sorted on date,
+# built from particular sources.
 # This tool is part of AWStats log analyzer but can be use
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.26 $ - $Author: eldy $ - $Date: 2003-12-16 19:25:14 $
+# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2003-12-27 17:52:40 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -34,7 +34,7 @@ my %TmpDNSLookup = ();
 
 # ---------- Init variables --------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.26 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.27 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw/ $NBOFLINESFORBENCHMARK /;
@@ -266,6 +266,12 @@ if ($Debug) {
 # Disallow MaxNbOfThread and Perl < 5.8
 if ($] < 5.008 && $MaxNbOfThread) {
 	error("Multi-threaded DNS lookup is only supported with Perl 5.8 or higher (not $]). Use -dnslookup option instead");
+}
+
+# Warning, there is a memory hole in ActiveState perl version (in delete functions)
+if ($^X =~ /activestate/i || $^X =~ /activeperl/i) {
+	# TODO Add a warning
+
 }
 
 if (scalar @ParamFile == 0) {
