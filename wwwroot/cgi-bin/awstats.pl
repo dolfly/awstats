@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.342 $ - $Author: eldy $ - $Date: 2002-09-27 13:05:38 $
+# $Revision: 1.343 $ - $Author: eldy $ - $Date: 2002-09-28 18:25:56 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.342 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.343 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1419,6 +1419,7 @@ sub Check_Config {
 	if (! $Message[127]) { $Message[127]="Refering sites"; }
 	if (! $Message[128]) { $Message[128]="Summary"; }
 	if (! $Message[129]) { $Message[129]="Exact value not available in 'Year' view"; }
+	if (! $Message[130]) { $Message[130]="Data value arrays"; }
 
 	# Correct ShowFlagLinks
 	if ($ShowFlagLinks eq "0") { $ShowFlagLinks = ""; }					# For backward compatibility
