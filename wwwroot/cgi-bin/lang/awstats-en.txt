@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.74 $ - $Date: 2004-01-21 23:38:22 $
+# $Revision: 1.75 $ - $Date: 2004-02-07 16:13:26 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -165,3 +165,5 @@ message161=Not viewed traffic
 message162=Monthly history
 message163=Worms
 message164=different worms
+message165=Mails successully sent
+message166=Mails failed/refused
