@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.149 $ - $Author: eldy $ - $Date: 2003-09-15 15:50:01 $
+$Revision: 1.150 $ - $Author: eldy $ - $Date: 2003-09-15 23:47:01 $
 
 
 5.8
@@ -33,9 +33,12 @@ New features/improvements:
 - Selection of virtualhost records in a log is no more case sensitive on
   SiteDomain nor HostAliases.
 - Added awredir.pl tool.
+- Added a Cluster Report for load balancing systems. Added %cluster tag in
+  LogFormat.
 
 Other/Documentation:
 - Deprecated %time1b tag (%time1 can be used).
+- Minor look change.
 - Updated documentation.
 
 
