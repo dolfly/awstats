@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.382 $ - $Author: eldy $ - $Date: 2002-10-21 12:58:29 $
+# $Revision: 1.383 $ - $Author: eldy $ - $Date: 2002-10-21 13:38:31 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.382 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.383 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4437,7 +4437,10 @@ if ($Debug) {
 if ($Debug) { debug("UpdateStats is $UpdateStats",2); }
 if ($UpdateStats && $FrameName ne "index" && $FrameName ne "mainleft") {	# Update only on index page or when not framed to avoid update twice
 
-	print "Update for config '$FileConfig'\nWith data in log file '$LogFile'...\n";
+	if (! $HTMLOutput) {
+		print "Update for config '$FileConfig'\n";
+		print "With data in log file '$LogFile'...\n";
+	}
 
 	my $lastprocessedyear=$lastyearbeforeupdate;
 	my $lastprocessedmonth=$ListOfYears{$lastyearbeforeupdate}||0;
