@@ -5,13 +5,13 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Net::IP and Net::DNS
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-04-26 19:14:22 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-07-26 15:32:31 $
 
 
 # <-----
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
-if (!eval ('require "Net/IP.pm";')) 	{ return "Error: Need Perl module Net::IP"; }
-if (!eval ('require "Net/DNS.pm";')) 	{ return "Error: Need Perl module Net::DNS"; }
+if (!eval ('require "Net/IP.pm";'))		{ return $@?"Error: $@":"Error: Need Perl module Net::IP"; }
+if (!eval ('require "Net/DNS.pm";')) 	{ return $@?"Error: $@":"Error: Need Perl module Net::DNS"; }
 # ----->
 use strict;no strict "refs";
 

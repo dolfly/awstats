@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-07-15 22:59:44 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-07-26 15:32:31 $
 
 
 # <-----
@@ -16,7 +16,7 @@ use vars qw/ $type /;
 $type='geoip';
 if (!eval ('require "Geo/IP.pm";')) 	{
 	$type='geoippureperl';
-	if (!eval ('require "Geo/IP/PurePerl.pm";')) 	{ return "Error: Need Perl module Geo::IP or Geo::IP::PurePerl"; }
+	if (!eval ('require "Geo/IP/PurePerl.pm";')) { return $@?"Error: $@":"Error: Need Perl module Geo::IP or Geo::IP::PurePerl"; }
 }
 # ----->
 use strict;no strict "refs";

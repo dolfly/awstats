@@ -6,12 +6,12 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Storable
 #-----------------------------------------------------------------------------
-# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-02-09 19:08:58 $
+# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-07-26 15:32:31 $
 
 
 # <-----
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
-if (!eval ('require "Storable.pm";')) 	{ return "Error: Need Perl module Storable"; }
+if (!eval ('require "Storable.pm";')) { return $@?"Error: $@":"Error: Need Perl module Storable"; }
 # ----->
 use strict;no strict "refs";
 

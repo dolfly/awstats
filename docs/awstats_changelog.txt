@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.120 $ - $Author: eldy $ - $Date: 2003-07-20 13:07:35 $ 
+$Revision: 1.121 $ - $Author: eldy $ - $Date: 2003-07-26 15:33:22 $ 
 
 
 5.7
@@ -27,6 +27,7 @@ New features/improvements:
 - Added maillogconvert.p for analyzing mail log files (support better
   sendmail, postfix and qmail log files).
 - Added -addfilenum option in logresolvemerge.pl
+- Better management of plugin load failure.
 
 Other/Documentation:
 - Added mp4 mime type.

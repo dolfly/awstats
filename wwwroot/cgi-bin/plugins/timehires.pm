@@ -5,12 +5,12 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Time::HiRes
 #-----------------------------------------------------------------------------
-# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-02-09 19:08:58 $
+# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-07-26 15:32:31 $
 
 
 # <-----
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
-if (!eval ('require "Time/HiRes.pm"')) 	{ return "Error: Need Perl module Time::HiRes"; }
+if (!eval ('require "Time/HiRes.pm"')) { return $@?"Error: $@":"Error: Need Perl module Time::HiRes"; }
 # ----->
 use strict;no strict "refs";
 
