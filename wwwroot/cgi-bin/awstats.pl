@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.263 $ - $Author: eldy $ - $Date: 2002-07-17 21:13:22 $
+# $Revision: 1.264 $ - $Author: eldy $ - $Date: 2002-07-17 22:23:29 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -18,7 +18,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.263 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.264 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.2 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3284,7 +3284,7 @@ if ($UpdateStats) {
 
 	my @field=();
 	my $counter=0;
-	my $PreviousHost="";
+#	my $PreviousHost="";
 	# Reset counter for benchmark (first call to GetDelaySinceStart)
 	GetDelaySinceStart(1);
 	if ($ShowSteps) { print "Phase 1 : First bypass old records\n"; }
@@ -3511,7 +3511,7 @@ if ($UpdateStats) {
 			$extension="Unknown";
 		}
 		$_filetypes_h{$extension}++;
-		$_filetypes_k{$extension}+=$field[$pos_size];
+		$_filetypes_k{$extension}+=int($field[$pos_size]);
 		# Compression
 		if ($pos_gzipin && $field[$pos_gzipin]) {	# If in and out in log
 			my ($notused,$in)=split(/:/,$field[$pos_gzipin]);
@@ -3622,10 +3622,10 @@ if ($UpdateStats) {
 				$_url_e{$field[$pos_url]}++; 		# Increase 'entry' page
 				$_host_s{$_}=$timerecord;	# Save start of first visit
 			}
+			$_host_p{$_}++;
 			if ($timerecord < $timehostl) {
 				# Record is before last record of visit
 				# This occurs when log file is not correctly sorted but just 'nearly' sorted
-				$_host_p{$_}++;
 				if ($timerecord < $_host_s{$_}) {	# This should not happens because first page of visits rarely logged after another page of same visit
 					# Record is before record used for start of visit
 					$_host_s{$_}=$timerecord;
@@ -3634,16 +3634,15 @@ if ($UpdateStats) {
 			}
 			else {
 				# This is a new visit or record is after last record of visit
-				$_host_p{$_}++;
 				$_host_l{$_}=$timerecord;
 				$_host_u{$_}=$field[$pos_url];
 			}
 		}
-		if ($_ ne ${PreviousHost} && ! $_host_h{$_}) { $MonthHostsUnknown{$yearmonthtoprocess}++; }
-#		if (! $_host_h{$_}) { $MonthHostsUnknown{$yearmonthtoprocess}++; }
-		$_host_h{$_}++;
+#		if ($_ ne ${PreviousHost} && ! $_host_h{$_}) { $MonthHostsUnknown{$yearmonthtoprocess}++; }
+		if (! $_host_h{$_}++) { $MonthHostsUnknown{$yearmonthtoprocess}++; }
+#		$_host_h{$_}++;
 		$_host_k{$_}+=$field[$pos_size];
-		$PreviousHost=$_;
+#		$PreviousHost=$_;
 
 		# Count top-level domain
 		if ($PageBool) { $_domener_p{$Domain}++; }
@@ -3700,6 +3699,8 @@ if ($UpdateStats) {
 					}
 				}
 				else {
+					# TODO Do not parse version (do it in output only). This will increase features and reduce speed.
+
 					if ($TmpBrowser{$UserAgent} =~ /^msie_(\d)/) { $_browser_h{"msie"}++; $_msiever_h[$1]++; }
 					elsif ($TmpBrowser{$UserAgent} =~ /^netscape_(\d)/) { $_browser_h{"netscape"}++; $_nsver_h[$1]++; }
 					else { $_browser_h{$TmpBrowser{$UserAgent}}++; }
