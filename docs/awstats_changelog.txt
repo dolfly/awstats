@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.69 $ - $Author: eldy $ - $Date: 2003-01-06 20:54:53 $ 
+$Revision: 1.70 $ - $Author: eldy $ - $Date: 2003-01-08 07:09:42 $ 
 
 
 5.4
@@ -12,6 +12,7 @@ Fixes:
   of 2: First week should be "00" instead of "0").
 - Tooltips now works correctly with Netscape (>= 5.0).
 - Better parsing of parameters (Solved bug 635962).
+- Users did not appear in Authenticated users list if hits on pages were 0.
 
 New features/improvments:
 - Added urlaliasbuilder.pl tool.
@@ -23,6 +24,7 @@ New features/improvments:
 
 Other/Documentation:
 - Replaced -month=year option by -month=all.
+- With Logformat=6 (Lotus Notes/Domino), usernames with " are allowed.
 - Added an error message if a -migrate is done on an history file with
   wrong file name.
 - GeoIP memory cache code is now stored inside plugin code.
