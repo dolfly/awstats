@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-09-25 03:03:51 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-11-22 02:17:22 $
 
 
 # <-----
@@ -91,7 +91,7 @@ sub ShowInfoHost_hostinfo {
 	# <-----
 	my $hostinfotoshow="$_[0]";
 	if ($hostinfotoshow eq '__title__') {
-		print "<td width=\"80\">$Message[114]</td>";	
+		print "<th width=\"80\">$Message[114]</th>";	
 	}
 	elsif ($hostinfotoshow) {
 		my $keyforwhois;
