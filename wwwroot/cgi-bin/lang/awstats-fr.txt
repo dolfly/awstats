@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.69 $ - $Date: 2003-09-27 14:25:54 $
+# $Revision: 1.70 $ - $Date: 2003-11-08 22:17:24 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -24,7 +24,7 @@ message20=Heures
 message21=Navigateurs
 message22=
 message23=Origine/Referer
-message24=Jamais mis à jour
+message24=Jamais mis à jour (Voir 'Build/Update', page awstats_setup.html)
 message25=Domaines/pays visiteurs
 message26=des hôtes
 message27=des pages
