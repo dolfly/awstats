@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.740 $ - $Author: eldy $ - $Date: 2004-04-09 20:00:21 $
+# $Revision: 1.741 $ - $Author: eldy $ - $Date: 2004-04-10 20:17:30 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.740 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.741 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -8249,7 +8249,7 @@ if (scalar keys %HTMLOutput) {
 		print "</tr>\n";
 		$total_s=0;
 		my $count=0;
-		&BuildKeyList($MaxRowsInHTMLOutput,$MinHit{'Refer'},\%_se_referrals_h,\%_se_referrals_p);
+		&BuildKeyList($MaxRowsInHTMLOutput,$MinHit{'Refer'},\%_se_referrals_h,((scalar keys %_se_referrals_p)?\%_se_referrals_p:\%_se_referrals_h));	# before 5.4 only hits were recorded
 		foreach my $key (@keylist) {
 			my $newreferer=CleanFromCSSA($SearchEnginesHashLib{$key}||$key);
 			my $p_p; my $p_h;
@@ -8307,7 +8307,7 @@ if (scalar keys %HTMLOutput) {
 		print "</tr>\n";
 		$total_s=0;
 		my $count=0;
-		&BuildKeyList($MaxRowsInHTMLOutput,$MinHit{'Refer'},\%_pagesrefs_h,\%_pagesrefs_p);
+		&BuildKeyList($MaxRowsInHTMLOutput,$MinHit{'Refer'},\%_pagesrefs_h,((scalar keys %_pagesrefs_p)?\%_pagesrefs_p:\%_pagesrefs_h));
 		foreach my $key (@keylist) {
 			my $nompage=CleanFromCSSA($key);
 			if (length($nompage)>$MaxLengthOfShownURL) { $nompage=substr($nompage,0,$MaxLengthOfShownURL)."..."; }
@@ -9768,7 +9768,7 @@ if (scalar keys %HTMLOutput) {
 				print "<table>\n";
 				$total_p=0; $total_h=0;
 				my $count=0;
-				&BuildKeyList($MaxNbOf{'RefererShown'},$MinHit{'Refer'},\%_se_referrals_h,\%_se_referrals_p);
+				&BuildKeyList($MaxNbOf{'RefererShown'},$MinHit{'Refer'},\%_se_referrals_h,((scalar keys %_se_referrals_p)?\%_se_referrals_p:\%_se_referrals_h));
 				foreach my $key (@keylist) {
 					my $newreferer=CleanFromCSSA($SearchEnginesHashLib{$key}||$key);
 					print "<tr><td class=\"aws\">- $newreferer</td>";
@@ -9800,7 +9800,7 @@ if (scalar keys %HTMLOutput) {
 				print "<table>\n";
 				$total_p=0; $total_h=0;
 				my $count=0;
-				&BuildKeyList($MaxNbOf{'RefererShown'},$MinHit{'Refer'},\%_pagesrefs_h,\%_pagesrefs_p);
+				&BuildKeyList($MaxNbOf{'RefererShown'},$MinHit{'Refer'},\%_pagesrefs_h,((scalar keys %_pagesrefs_p)?\%_pagesrefs_p:\%_pagesrefs_h));
 				foreach my $key (@keylist) {
 					print "<tr><td class=\"aws\">- ";
 					&ShowURLInfo($key);
