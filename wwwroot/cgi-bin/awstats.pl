@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.370 $ - $Author: eldy $ - $Date: 2002-10-17 14:42:32 $
+# $Revision: 1.371 $ - $Author: eldy $ - $Date: 2002-10-17 22:29:34 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.370 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.371 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1578,8 +1578,8 @@ sub Check_Config {
 	if (($PurgeLogFile || $ArchiveLogRecords) && $LogFile =~ /\|\s*$/) {
 		error("Error: A pipe in log file name is not allowed if PurgeLogFile and ArchiveLogRecords are not set to 0");
 	}
-	# Check if DirData is OK
-	if (! -d $DirData) {
+	# If not a migrate, check if DirData is OK
+	if (! $MigrateStats && ! -d $DirData) {
 		if ($CreateDirDataIfNotExists) {
 			if ($Debug) { debug(" Make directory $DirData",2); }
 			my $mkdirok=mkdir "$DirData", 0766;
@@ -3997,7 +3997,7 @@ else {								# Run from command line
 			$MigrateStats=$ARGV[$_];
 			$MigrateStats =~ /^(.*)$PROG(\d{0,2})(\d\d)(\d\d\d\d)(.*)\.txt$/;
 			$SiteConfig=$5?$5:"xxx"; $SiteConfig =~ s/^\.//;	# SiteConfig is not required for migrate
-			last;
+			next;
 		}
 		# TODO Check if ARGV is an AllowedArg
 		if ($_ > 0) { $QueryString .= "&"; }
