@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - FAQs">
 <title>AWStats Documentation - FAQs</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.60 $ - $Author: eldy $ - $Date: 2002-10-17 14:58:06 $ -->
+<!-- $Revision: 1.61 $ - $Author: eldy $ - $Date: 2002-10-25 16:38:13 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -396,7 +396,7 @@ Setup SMA to convert your mail log into a format readable by AWStats:</u><br>
 Copy sma (or sma.exe) file and sma.conf into same directory than awstats.pl file.<br>
 Edit sma.conf to change the CLogFormat and ClogSentOnly parameter to :
 <i>
-<br>CLogFormat "%y-%m-%d %h:%n:%s %f %t %F %T SMTP - %z %S"
+<br>CLogFormat "CLogFormat "%y-%m-%d %h:%n:%s %f %t %F %T SMTP - %S %z"
 <br>ClogSentOnly no
 </i>
 <br>
