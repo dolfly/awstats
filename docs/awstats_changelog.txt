@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.65 $ - $Author: eldy $ - $Date: 2003-01-03 17:47:52 $ 
+$Revision: 1.66 $ - $Author: eldy $ - $Date: 2003-01-03 18:58:39 $ 
 
 
 5.4
@@ -17,6 +17,7 @@ New features/improvments:
 - Added URL in possible values for ExtraSection first column.
 
 Other/Documentation:
+- GeoIP memory cache code is now stored inside plugin code.
 - Added list of loaded plugins in AWStats copyright string.
 - Updated documentation.
 
