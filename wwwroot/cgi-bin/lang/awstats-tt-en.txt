@@ -1,11 +1,11 @@
 <!-- English tooltips message file (eldy@users.sourceforge.net) -->
-<!-- $Revision: 1.13 $ - $Date: 2002-07-14 15:11:50 $ -->
+<!-- $Revision: 1.14 $ - $Date: 2002-11-27 21:21:50 $ -->
 <DIV CLASS="CTooltip" ID="tt1">
 A new visits is defined as each new <b>incoming visitor</b> (viewing or browsing a page) who was not connected to your site during last <b>#VisitTimeOut# mn</b>.
 </DIV>
 <DIV CLASS="CTooltip" ID="tt2">
 Number of client hosts (<b>IP address</b>) who came to visit the site (and who viewed at least one <b>page</b>).<br>
-This data refers to the number of <b>different physical persons</b> who had reached the site in any one day.
+This data refers to the number of <b>different physical persons</b> who had reached the site.
 </DIV>
 <DIV CLASS="CTooltip" ID="tt3">
 Number of times a <b>page</b> of the site is <b>viewed</b> (Sum for all visitors for all visits).<br>
