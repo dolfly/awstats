@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.538 $ - $Author: eldy $ - $Date: 2003-07-05 12:12:01 $
+# $Revision: 1.539 $ - $Author: eldy $ - $Date: 2003-07-05 12:19:01 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.538 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.539 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -5310,7 +5310,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 				if ($param =~ /FLA=(\w+)/) 			{ $foundparam++; if ($1 eq "Y")    { $_misc_h{"FlashSupport"}++; } next; }
 				if ($param =~ /RP=(\w+)/) 			{ $foundparam++; if ($1 eq "Y")    { $_misc_h{"RealPlayerSupport"}++; } next; }
 				if ($param =~ /MOV=(\w+)/) 			{ $foundparam++; if ($1 eq "Y")    { $_misc_h{"QuickTimeSupport"}++; } next; }
-				if ($param =~ /WMA=(\w+)/) 			{ $foundparam++; if ($1 eq "Y")    { $_misc_h{"MediaPlayerSupport"}++; } next; }
+				if ($param =~ /WMA=(\w+)/) 			{ $foundparam++; if ($1 eq "Y")    { $_misc_h{"WindowsMediaPlayerSupport"}++; } next; }
 				if ($param =~ /PDF=(\w+)/) 			{ $foundparam++; if ($1 eq "Y")    { $_misc_h{"PDFSupport"}++; } next; }
 			}
 			if ($foundparam) { $_misc_h{"TotalMisc"}++; }
