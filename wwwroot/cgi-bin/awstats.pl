@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.214 $ - $Author: eldy $ - $Date: 2002-04-28 01:24:04 $
+# $Revision: 1.215 $ - $Author: eldy $ - $Date: 2002-04-28 15:08:16 $
 use strict;no strict "refs";
 use vars qw(%DomainsHashIDLib @RobotsSearchIDOrder_list1 @RobotsSearchIDOrder_list2 @RobotsSearchIDOrder_list3 @BrowsersSearchIDOrder @OSSearchIDOrder @WordsToCleanSearchUrl %BrowsersHereAreGrabbers %BrowsersHashIcon %BrowsersHashIDLib %OSHashID %OSHashLib %RobotsHashIDLib %SearchEnginesHashIDLib %SearchEnginesKnownUrl %DomainsHashIDLib);
 #use diagnostics;
@@ -22,7 +22,7 @@ use vars qw(%DomainsHashIDLib @RobotsSearchIDOrder_list1 @RobotsSearchIDOrder_li
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.214 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.215 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -2767,10 +2767,16 @@ if ($UpdateStats) {
 	my @field=();
 	# Reset counter for benchmark (first call to GetDelaySinceStart)
 	GetDelaySinceStart(1);
+	if ($ShowSteps) { print "Phase 1 : First bypass old records\n"; }
 	while (<LOG>)
 	{
 		$NbOfLinesRead++;
 		chomp $_; s/\r$//;
+
+		if ($ShowSteps && ($NbOfLinesRead % $NbOfLinesForBenchmark == 0)) {
+			my $delay=GetDelaySinceStart(0);
+			print "$NbOfLinesRead lines processed ($delay ms, ".int(1000*$NbOfLinesRead/($delay>0?$delay:1))." lines/seconds)\n";
+		}
 
 		# Parse line record to get all required fields
 		if (! /^$PerlParsingFormat/) {	# !!!!!!!!!
@@ -2829,14 +2835,11 @@ if ($UpdateStats) {
 		else {
 			if ($timerecord <= $LastLine{$yearmonth}) {
 				$NbOfOldLines++;
-				if ($ShowSteps && ($NbOfLinesRead % $NbOfLinesForBenchmark == 0)) {
-					my $delay=GetDelaySinceStart(0); if ($delay < 1) { $delay=1000; }
-					print "$NbOfLinesRead lines read already processed ($delay ms, ".int(1000*$NbOfLinesRead/$delay)." lines/seconds)\n";
-				}
 				next;
 			}	# Already processed
 			# We found a new line. This will stop comparison "<=" between timerecord and LastLine (we should have only new lines now)
 			$NowNewLinePhase=1;
+			if ($ShowSteps) { print "Phase 2 : Now process new records\n"; }
 			#GetDelaySinceStart(1);
 		}
 
@@ -2859,10 +2862,6 @@ if ($UpdateStats) {
 		# Record is approved
 		#-------------------
 		$NbOfNewLines++;
-		if ($ShowSteps && ($NbOfNewLines % $NbOfLinesForBenchmark == 0)) {
-			my $delay=GetDelaySinceStart(0);
-			print "$NbOfNewLines lines processed ($delay ms, ".int(1000*$NbOfNewLines/($delay>0?$delay:1))." lines/seconds)\n";
-		}
 
 		# Is it in a new month section ?
 		#-------------------------------
