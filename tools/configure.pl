@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2003-11-15 18:57:39 $
+# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2003-11-21 19:39:10 $
 use strict;
 
 #-------------------------------------------------------
@@ -43,7 +43,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.13 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.14 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -276,7 +276,6 @@ print "log files without web server, to analyze mail or ftp log files, or need\n
 print "to manage rotated logs, you will have to complete the config file manually\n";
 print "according to your needs.\n";
 print "Read the AWStats documentation (docs/index.html).\n";
-print "\n";
 
 # Detect web server path
 # ----------------------
@@ -457,6 +456,7 @@ if ($bidon =~ /^y/i) {
 	print "What is the name of your web site or profile analysis ?\n";
 	print "Example: www.mysite.com\n";
 	print "Example: demo\n";
+	ASKCONFIG:
 	my $bidon='';
 	while (! $bidon) {
 		print "Your web site, virtual server or profile name: ";
@@ -470,6 +470,11 @@ if ($bidon =~ /^y/i) {
 	my $configfile='';
 	if ($OS eq 'linux') 	{ $configfile="/etc/awstats/awstats.$site.conf"; }
 	if ($OS eq 'windows') 	{ $configfile="$AWSTATS_PATH\\wwwroot\\cgi-bin\\awstats.$site.conf"; }
+
+	if (-s "$configfile") {
+		print "Warning: A config file for this name already exists. Choose another one.\n";
+		goto ASKCONFIG;	
+	}
 	
 	# Create awstats.conf file
 	# ------------------------
