@@ -1,6 +1,16 @@
 AWStats Changelog
 -----------------
-$Revision: 1.230 $ - $Author: eldy $ - $Date: 2005-01-28 22:10:48 $
+$Revision: 1.231 $ - $Author: eldy $ - $Date: 2005-02-05 19:59:33 $
+
+
+***** 6.4 *****
+
+New features/improvements:
+- None
+
+Fixes:
+- Minor fixes
+
 
 
 ***** 6.3 *****
@@ -15,8 +25,7 @@ New features/improvements:
   keywords from search engines like a9.com
 
 Fixes:
-- Removed an unknown security hole.
-- Removed an other unknown major security hole (found by iDEFENSE).
+- Removed two security holes.
 - The geoip_city_maxmind plugin was sometimes bind and towns with
   space in names are reported correctly.
 - Restart of apache on debian failed in awstats_configure.pl
