@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.806 $ - $Author: eldy $ - $Date: 2005-02-05 16:24:15 $
+# $Revision: 1.807 $ - $Author: eldy $ - $Date: 2005-02-05 16:28:31 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.806 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.807 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.3 (build $REVISION)";
 
 # ----- Constants -----
@@ -259,7 +259,7 @@ use vars qw/
 'sv'=>'se','th'=>'th','tr'=>'tr','uk'=>'ua','cy'=>'cy','wlk'=>'cy'
 );
 %LangAWStatsToFlagAwstats=(  # If flag (country ISO-3166 two letters) is not same than AWStats Lang code
-'ca'=>'es_cat','et'=>'ee','eu','es_eu',
+'ca'=>'es_cat','et'=>'ee','eu'=>'es_eu',
 'cy'=>'wlk',
 'gl'=>'glg',
 'he'=>'il',
