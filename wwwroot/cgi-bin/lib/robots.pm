@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-09-09 00:35:08 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-09-09 13:51:21 $
 
 
 #package AWSROB;
@@ -305,6 +305,7 @@
 "wz101",
 "xget",
 # Other robots reported by users
+"awbot",
 "boris",
 "cscrawler",
 "daviesbot",
@@ -600,6 +601,7 @@
 "nederland.zoek","Nederland.zoek",
 # Other robots reported by users
 "antibot", "Antibot",
+"awbot", "AWBot",
 "boris", "Boris",
 "cscrawler","CsCrawler",
 "daviesbot", "DaviesBot",
