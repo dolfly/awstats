@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.771 $ - $Author: eldy $ - $Date: 2004-07-20 21:19:47 $
+# $Revision: 1.772 $ - $Author: eldy $ - $Date: 2004-07-31 22:17:36 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.771 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.772 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -5040,6 +5040,10 @@ sub DefinePerlParsingFormat {
 				$pos_cluster = $i; $i++; push @fieldlib, 'clusternb';
 				$PerlParsingFormat .= "([^$LogSeparatorWithoutStar]+)";
 			}
+			elsif ($f =~ /%timetaken$/) {
+				$pos_timetaken = $i; $i++; push @fieldlib, 'timetaken';
+				$PerlParsingFormat .= "([^$LogSeparatorWithoutStar]+)";
+			}
 			# Special for protocolmms, used for method if method not already found (for MMS)
 			elsif ($f =~ /%protocolmms$/) {
 				if ($pos_method < 0) {
@@ -6419,17 +6423,16 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			$FirstTime{$lastprocessedyearmonth}||=$timerecord;
 			$LastTime{$lastprocessedyearmonth}=$timerecord;
 			$DayPages{$yearmonthdayrecord}++;
-#			$MonthPages{$lastprocessedyearmonth}++;
 			$_url_p{$field[$pos_url]}++; 										#Count accesses for page (page)
 			$_url_k{$field[$pos_url]}+=int($field[$pos_size]);
 			$_time_p[$hourrecord]++;											#Count accesses for hour (page)
+            # TODO Use an id for hash key of url
+            # $_url_t{$_url_id}
 		}
 		$_time_h[$hourrecord]++;
 		$_time_k[$hourrecord]+=int($field[$pos_size]);
  		$DayHits{$yearmonthdayrecord}++;						#Count accesses for hour (hit)
  		$DayBytes{$yearmonthdayrecord}+=int($field[$pos_size]);	#Count accesses for hour (kb)
-#		$MonthHits{$lastprocessedyearmonth}++;
-#		$MonthBytes{$lastprocessedyearmonth}+=int($field[$pos_size]);
  
 		# Analyze: Login
 		#---------------
@@ -6565,8 +6568,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		$_domener_h{$Domain}++;
 		$_domener_k{$Domain}+=int($field[$pos_size]);
 
-		# Analyze: Host, URL and Session
-		#-------------------------------
+		# Analyze: Host, URL entry+exit and Session
+		#------------------------------------------
 		if ($PageBool) {
 			my $timehostl=$_host_l{$HostResolved};
 			if ($timehostl) {
