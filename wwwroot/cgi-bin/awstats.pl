@@ -20,8 +20,8 @@ use vars qw(%DomainsHashIDLib @RobotsSearchIDOrder_list1 @RobotsSearchIDOrder_li
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-# Last change $Revision: 1.210 $ - $Author: eldy $ - $Date: 2002-04-13 15:32:09 $
-my $REVISION='$Revision: 1.210 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+# Last change $Revision: 1.211 $ - $Author: eldy $ - $Date: 2002-04-13 17:06:23 $
+my $REVISION='$Revision: 1.211 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3771,7 +3771,7 @@ EOF
 			if ($_url_k{$key}/($_url_p{$key}||1) > $max_k) { $max_k = $_url_k{$key}/($_url_p{$key}||1); }
 		}
 		foreach my $key (@keylist) {
-			my $nompage=CleanFromCSSA($Aliases{$key}?$Aliases{$key}:$key);
+			my $nompage=$Aliases{$key}?$Aliases{$key}:CleanFromCSSA($key);
 			print "<TR><TD CLASS=AWL>";
 			if (length($nompage)>$MaxLengthOfURL) { $nompage=substr($nompage,0,$MaxLengthOfURL)."..."; }
 			if ($ShowLinksOnUrl) { print "<A HREF=\"http://$SiteToAnalyze$key\">$nompage</A>"; }
@@ -4373,7 +4373,7 @@ EOF
 			if ($_url_k{$key}/($_url_p{$key}||1) > $max_k) { $max_k = $_url_k{$key}/($_url_p{$key}||1); }
 		}
 		foreach my $key (@keylist) {
-			my $nompage=CleanFromCSSA($Aliases{$key}?$Aliases{$key}:$key);
+			my $nompage=$Aliases{$key}?$Aliases{$key}:CleanFromCSSA($key);
 			print "<TR><TD CLASS=AWL>";
 			if (length($nompage)>$MaxLengthOfURL) { $nompage=substr($nompage,0,$MaxLengthOfURL)."..."; }
 			if ($ShowLinksOnUrl) {
