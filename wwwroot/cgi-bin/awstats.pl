@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.625 $ - $Author: eldy $ - $Date: 2003-10-30 14:00:13 $
+# $Revision: 1.626 $ - $Author: eldy $ - $Date: 2003-10-30 18:07:22 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.625 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.626 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -7993,7 +7993,7 @@ if (scalar keys %HTMLOutput) {
 			if ($TotalUnique > 0) { $RatioVisits=int($TotalVisits/$TotalUnique*100)/100; }
 			if ($TotalVisits > 0) { $RatioPages=int($TotalPages/$TotalVisits*100)/100; }
 			if ($TotalVisits > 0) { $RatioHits=int($TotalHits/$TotalVisits*100)/100; }
-			if ($TotalVisits > 0) { $RatioBytes=int(($TotalBytes/1024)*100/$TotalVisits)/100; }
+			if ($TotalVisits > 0) { $RatioBytes=int(($TotalBytes/1024)*100/($LogType eq 'M'?$TotalHits:$TotalVisits))/100; }
 	
 			print "<tr bgcolor=\"#$color_TableBGRowTitle\"><td><b>$Message[8]</b></td>\n";
 			print "<td colspan=\"3\">$Message[128]</td>";
@@ -8017,8 +8017,8 @@ if (scalar keys %HTMLOutput) {
 			if ($ShowMonthStats =~ /U/i) { print "<td>".($MonthRequired eq 'all'?"<b><= $TotalUnique</b><br />$Message[129]":"<b>$TotalUnique</b><br />&nbsp;")."</td>"; } else { print "<td>&nbsp;</td>"; }
 			if ($ShowMonthStats =~ /V/i) { print "<td><b>$TotalVisits</b><br />($RatioVisits&nbsp;$Message[52])</td>"; } else { print "<td>&nbsp;</td>"; }
 			if ($ShowMonthStats =~ /P/i) { print "<td><b>$TotalPages</b><br />($RatioPages&nbsp;".lc($Message[56]."/".$Message[12]).")</td>"; } else { print "<td>&nbsp;</td>"; }
-			if ($ShowMonthStats =~ /H/i) { print "<td><b>$TotalHits</b><br />($RatioHits&nbsp;".lc($Message[57]."/".$Message[12]).")</td>"; } else { print "<td>&nbsp;</td>"; }
-			if ($ShowMonthStats =~ /B/i) { print "<td><b>".Format_Bytes(int($TotalBytes))."</b><br />($RatioBytes&nbsp;$Message[108]/".lc($Message[12]).")</td>"; } else { print "<td>&nbsp;</td>"; }
+			if ($ShowMonthStats =~ /H/i) { print "<td><b>$TotalHits</b>".($LogType eq 'M'?"":"<br />($RatioHits&nbsp;".lc($Message[57]."/".$Message[12]).")</td>"); } else { print "<td>&nbsp;</td>"; }
+			if ($ShowMonthStats =~ /B/i) { print "<td><b>".Format_Bytes(int($TotalBytes))."</b><br />($RatioBytes&nbsp;$Message[108]/".lc($Message[($LogType eq 'M'?149:12)]).")</td>"; } else { print "<td>&nbsp;</td>"; }
 			print "</tr>\n";
 	
 			my $colspan=5;
