@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2004-02-14 19:51:54 $
+# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2004-03-10 21:46:46 $
 use strict;
 
 #-------------------------------------------------------
@@ -43,7 +43,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.27 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.28 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -666,7 +666,7 @@ print "\n-----> Add update process inside a scheduler\n";
 if ($OS eq 'linux' || $OS eq "macosx") {
 	print "Sorry, configure.pl does not support automatic add to cron yet.\n";
 	print "You can do it manually by adding the following command to your cron:\n";
-	print "$AWSTATS_CGI_PATH/awstats -update -config=".($site?$site:"myvirtualserver")."\n";
+	print "$AWSTATS_CGI_PATH/awstats.pl -update -config=".($site?$site:"myvirtualserver")."\n";
 	print "Or if you have several config files and prefer having only one command:\n";
 	print "$AWSTATS_PATH/tools/awstats_updateall.pl now\n";
 	print "Press ENTER to continue... ";
