@@ -6,11 +6,11 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-01-29 15:39:53 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-12-06 21:29:14 $
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-# !!!!! This plugin reduces AWStats speed by 30% !!!!!
+# !!!!! This plugin reduces AWStats speed by 40% !!!!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 # <-----
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
