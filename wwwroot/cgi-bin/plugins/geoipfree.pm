@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IPfree (version 0.2+)
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-06-27 19:33:10 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-07-15 22:59:44 $
 
 
 # <-----
@@ -69,9 +69,9 @@ sub GetCountryCodeByName_geoipfree {
 	if (! $res) {
 		($res,undef)=$gi->LookUp($_[0]); if ($res !~ /\w\w/) { $res='ip'; }
 		$TmpDomainLookup{$_[0]}=$res;
-		if ($Debug) { debug(" GetCountryCodeByName for $_[0]: $res",5); }
+		if ($Debug) { debug("  GetCountryCodeByName for $_[0]: $res",5); }
 	}
-	elsif ($Debug) { debug(" GetCountryCodeByName for $_[0]: Already resolved to $res",5); }
+	elsif ($Debug) { debug("  GetCountryCodeByName for $_[0]: Already resolved to $res",5); }
 	return $res;
 	# ----->
 }
@@ -87,9 +87,9 @@ sub GetCountryCodeByAddr_geoipfree {
 	if (! $res) {
 		($res,undef)=$gi->LookUp($_[0]); if ($res !~ /\w\w/) { $res='ip'; }
 		$TmpDomainLookup{$_[0]}=$res;
-		if ($Debug) { debug(" GetCountryCodeByAddr for $_[0]: $res",5); }
+		if ($Debug) { debug("  GetCountryCodeByAddr for $_[0]: $res",5); }
 	}
-	elsif ($Debug) { debug(" GetCountryCodeByAddr for $_[0]: Already resolved to $res",5); }
+	elsif ($Debug) { debug("  GetCountryCodeByAddr for $_[0]: Already resolved to $res",5); }
 	return $res;
 	# ----->
 }
