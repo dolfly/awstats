@@ -1,5 +1,5 @@
 # Norwegian Nynorsk message file (by Karl Ove Hufthammer <karl@huftis.org>)
-# $Revision: 1.18 $ - $Date: 2002-12-16 15:32:58 $
+# $Revision: 1.19 $ - $Date: 2003-02-15 13:47:49 $
 PageCode=iso-8859-1
 message0=Ukjent
 message1=ukjente (fann ikkje vertsnamn)
@@ -135,3 +135,4 @@ message130=Verditabellar
 message131=E-post (avsendar)
 message132=E-post (mottakar)
 message133=Rapportperiode
+message133=Ekstra
