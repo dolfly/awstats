@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.743 $ - $Author: eldy $ - $Date: 2004-04-18 19:44:00 $
+# $Revision: 1.744 $ - $Author: eldy $ - $Date: 2004-04-23 21:05:31 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.743 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.744 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -576,7 +576,7 @@ sub html_head {
 print "body { font: 11px verdana, arial, helvetica, sans-serif; background-color: #$color_Background; margin-top: 0; margin-bottom: 0; }\n";
 print ".aws_bodyl  { }\n";
 print ".aws_border { background-color: #$color_TableBG; padding: 1px 1px ".($BuildReportFormat eq 'xhtml' || $BuildReportFormat eq 'xml'?"2px":"1px")." 1px; margin-top: 0; margin-bottom: 0; }\n";
-print ".aws_title  { font: 13px verdana, arial, helvetica, sans-serif; font-weight: bold; background-color: #$color_TableBGTitle; text-align: center; margin-top: 0; margin-bottom: 0; padding: 1px 1px 1px 1px; }\n";
+print ".aws_title  { font: 13px verdana, arial, helvetica, sans-serif; font-weight: bold; background-color: #$color_TableBGTitle; text-align: center; margin-top: 0; margin-bottom: 0; padding: 1px 1px 1px 1px; color: #$color_TableTitle; }\n";
 print ".aws_blank  { font: 13px verdana, arial, helvetica, sans-serif; background-color: #".($ENV{'HTTP_USER_AGENT'} && $ENV{'HTTP_USER_AGENT'}=~/MSIE/i?$color_Background:$color_TableBG)."; text-align: center; margin-bottom: 0; padding: 1px 1px 1px 1px; }\n";
 print <<EOF;
 .aws_data {
