@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.698 $ - $Author: eldy $ - $Date: 2004-01-07 07:09:03 $
+# $Revision: 1.699 $ - $Author: eldy $ - $Date: 2004-01-07 21:54:23 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.698 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.699 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -6521,7 +6521,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 							$_from_h[2]++;
 							$_se_referrals_h{$TmpRefererServer{$refererserver}}++;
 							$found=1;
-							if ($LevelForKeywordsDetection) {
+							if ($PageBool && $LevelForKeywordsDetection) {
+								# we will complete %_keyphrases hash array
 								my @refurl=split(/\?/,$field[$pos_referer],2);	# TODO Use \? or [$URLQuerySeparators] ?
 								if ($refurl[1]) {
 									# Extract params of referer query string (q=cache:mmm:www/zzz+aaa+bbb q=aaa+bbb/ccc key=ddd%20eee lang_en ie=UTF-8 ...)
@@ -6531,8 +6532,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 											if ($param =~ s/^$SearchEnginesKnownUrl{$TmpRefererServer{$refererserver}}//) {
 												# We found good parameter
 												# Now param is keyphrase: "cache:mmm:www/zzz+aaa+bbb/ccc+ddd%20eee'fff,ggg"
-												$param =~ s/^(cache|related):[^\+]+//;
-												&ChangeWordSeparatorsIntoSpace($param);		# Change [ aaa+bbb/ccc+ddd%20eee'fff,ggg ] into [ aaa bbb/ccc ddd eee fff ggg]
+												$param =~ s/^(cache|related):[^\+]+//;	# Should ne useless since this is for hit on 'not pages'
+												&ChangeWordSeparatorsIntoSpace($param);	# Change [ aaa+bbb/ccc+ddd%20eee'fff,ggg ] into [ aaa bbb/ccc ddd eee fff ggg]
 												$param =~ s/^ +//; $param =~ s/ +$//; $param =~ tr/ /\+/s;
 												if ((length $param) > 0) { $_keyphrases{$param}++; }
 												last;
@@ -6550,8 +6551,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 											# We found good parameter
 											$param =~ s/.*=//;
 											# Now param is keyphrase: "aaa+bbb/ccc+ddd%20eee'fff,ggg"
-											$param =~ s/^(cache|related):[^\+]+//;
-											&ChangeWordSeparatorsIntoSpace($param);			# Change [ aaa+bbb/ccc+ddd%20eee'fff,ggg ] into [ aaa bbb/ccc ddd eee fff ggg ]
+											$param =~ s/^(cache|related):[^\+]+//;		# Should ne useless since this is for hit on 'not pages'
+											&ChangeWordSeparatorsIntoSpace($param);		# Change [ aaa+bbb/ccc+ddd%20eee'fff,ggg ] into [ aaa bbb/ccc ddd eee fff ggg ]
 											$param =~ s/^ +//; $param =~ s/ +$//; $param =~ tr/ /\+/s;
 											if ((length $param) > 2) { $_keyphrases{$param}++; last; }
 										}
