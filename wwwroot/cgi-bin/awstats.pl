@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.288 $ - $Author: eldy $ - $Date: 2002-08-05 06:17:45 $
+# $Revision: 1.289 $ - $Author: eldy $ - $Date: 2002-08-05 06:48:54 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -18,7 +18,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.288 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.289 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1503,7 +1503,7 @@ sub Read_History_With_Update {
 			chomp $_; s/\r//; $countlines++;
 	
 			# Analyze config line
-			if ($_ =~ /^AWSTATS DATA FILE (\d+).(\d+)/i) {
+			if (! $versionnum && $_ =~ /^AWSTATS DATA FILE (\d+).(\d+)/i) {
 				$versionnum=($1*1000)+$2;
 				if ($Debug) { debug(" Data file version is $versionnum",1); }
 				next;
@@ -1542,7 +1542,7 @@ sub Read_History_With_Update {
 				delete $SectionsToLoad{"general"};
 				if ($SectionsToSave{"general"}) { Save_History("general",$year,$month); delete $SectionsToSave{"general"}; }
 				if (! scalar %SectionsToLoad) { debug(" Stop reading history file. Got all we need."); last; }
-				next;
+				if ($versionnum >= 5000) { next; }
 			}
 
 			# BEGIN_ORIGIN
@@ -5573,7 +5573,7 @@ EOF
 			my $dayofweekcursor=DayOfWeek($day,$month,$year);
 			print "<TD valign=middle".($dayofweekcursor==0||$dayofweekcursor==6?" bgcolor=\"#$color_weekend\"":"").">";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"<b>":"");
-			print "$day<br><font style=\"font: 10px;\">".$monthlib{$month}."</font>";
+			print "$day<br><font style=\"font: ".($FrameName ne "mainright"?"10":"9")."px;\">".$monthlib{$month}."</font>";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"</b>":"");
 			print "</TD>\n";
 		}
