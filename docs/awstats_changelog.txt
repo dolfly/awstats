@@ -1,8 +1,8 @@
 AWStats Changelog
 -----------------
-$Revision: 1.162 $ - $Author: eldy $ - $Date: 2003-11-08 18:22:43 $
+$Revision: 1.163 $ - $Author: eldy $ - $Date: 2003-11-08 20:57:34 $
 
-5.91
+6.0
 
 Fixes:
 - Fixed bug 816267: onedigit dayofmonth breaks syslog regex
