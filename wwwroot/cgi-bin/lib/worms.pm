@@ -3,7 +3,7 @@
 # If you want to add worms to extend AWStats database detection capabilities,
 # you must add an entry in WormsSearchIDOrder, WormsHashID and WormsHashLib.
 #-----------------------------------------------------------------------------
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2004-01-17 02:19:42 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2004-03-04 12:45:10 $
 
 
 #package AWSWORMS;
@@ -56,6 +56,18 @@
 'nimda','Nimda family worm',
 'sumthin','Sumthin worm',
 'unknown','Unknown worm'
+);
+
+# WormsHashTarget
+# Worms target list ('worm unique id in lower case','worm target clear text')
+# Each unique ID string is associated to a target
+#-----------------------------------------------------------------------------
+%WormsHashTarget = (
+'code_red','IIS',
+'mpex','IIS',
+'nimda','IIS',
+'sumthin','?',
+'unknown','MS products',
 );
 
 1;
