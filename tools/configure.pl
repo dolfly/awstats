@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.20 $ - $Author: eldy $ - $Date: 2004-01-13 12:59:01 $
+# $Revision: 1.21 $ - $Author: eldy $ - $Date: 2004-01-13 13:08:24 $
 use strict;
 
 #-------------------------------------------------------
@@ -43,7 +43,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.20 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.21 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -580,7 +580,7 @@ if ($bidon =~ /^y/i) {
 if ($WebServerChanged) {
 	if ($OS eq 'linux') 	{
 		print "\n-----> Restart Apache with '/usr/bin/service httpd restart'\n";
-	 	my $ret=`/usr/bin/service httpd restart`;
+	 	my $ret=`/sbin/service httpd restart`;
 	}
 	elsif ($OS eq 'windows')	{
 		foreach my $key (keys %ApachePath) {
