@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.21 $ - $Author: eldy $ - $Date: 2003-10-31 23:11:19 $
+# $Revision: 1.22 $ - $Author: eldy $ - $Date: 2003-11-01 15:33:14 $
 
 
 #package AWSSE;
@@ -204,7 +204,7 @@
 'francite\.','francite',
 '\.lbb\.org','lbb',
 'rechercher\.libertysurf\.fr','libertysurf',
-'search\\w+\.free\.fr','free',
+'search\w+\.free\.fr','free',
 'recherche\.club-internet\.fr','clubinternet',
 # Minor german search engines
 'fireball\.de','fireball',
