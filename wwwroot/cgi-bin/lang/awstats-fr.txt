@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.44 $ - $Date: 2002-09-07 16:45:45 $
+# $Revision: 1.45 $ - $Date: 2002-09-09 12:26:19 $
 message0=Inconnu
 message1=Inconnu (IP non résolue)
 message2=Autres
@@ -104,7 +104,7 @@ message100=Compression sur
 message101=Résultat compression
 message102=Total
 message103=phrases clé différentes
-message104=Pages d'entrée
+message104=Entrée
 message105=Code
 message106=Taille moyenne
 message107=Lien depuis un NewsGroup
@@ -116,7 +116,7 @@ message112=Oui
 message113=Non
 message114=WhoIs info
 message115=OK
-message116=Pages de sortie
+message116=Sortie
 message117=Durée des visites
 message118=Fermer
 message119=Octets
