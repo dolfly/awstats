@@ -3,13 +3,13 @@
 # Launch update process for all config files found in a particular directory.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-06-07 20:18:26 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-07-12 17:16:06 $
 
 
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.4 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.5 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG and AWSTATSSCRIPT
@@ -28,7 +28,8 @@ my $helpfound=0;my $nowfound=0;
 for (0..@ARGV-1) {
 	if ($ARGV[$_] =~ /^-*h/i)     		  	 { $helpfound=1; last; }
 	if ($ARGV[$_] =~ /^-*awstatsprog=(.*)/i) { $AWSTATSSCRIPT="$1"; next; }
-	if ($ARGV[$_] =~ /^-*confdir=(.*)/i)     { $DIRCONFIG="$1"; next; }
+	if ($ARGV[$_] =~ /^-*configdir=(.*)/i)   { $DIRCONFIG="$1"; next; }
+	if ($ARGV[$_] =~ /^-*confdir=(.*)/i)     { $DIRCONFIG="$1"; next; }	# For backward compatibility
 	if ($ARGV[$_] =~ /^now/i)     		  	 { $nowfound=1; next; }
 }
 
@@ -45,7 +46,7 @@ if (!$nowfound || $helpfound || ! @ARGV) {
 	print "\n";
 	print "Where options are:\n";
 	print "  -awstatsprog=pathtoawstatspl\n";
-	print "  -confdir=directorytoscan\n";
+	print "  -configdir=directorytoscan\n";
 	print "\n";
 	exit 0;
 }
