@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.211 $ - $Author: eldy $ - $Date: 2004-04-03 11:54:33 $
+$Revision: 1.212 $ - $Author: eldy $ - $Date: 2004-04-03 12:15:47 $
 
 
 6.1
@@ -48,6 +48,8 @@ New features/improvements:
 - Added failed mails number in the summary.
 - AllowAccessFromWebToFollowingAuthenticatedUsers is no more case
   sensitive.
+- Added new functions for plugins: AddHTMLMenuHeader, AddHTMLMenuFooter,
+  AddHTMLContentHeader, AddHTMLContentFooter
 
 Other/Documentation:
 - BuildReportOutput=xml renamed into BuildReportOutput=xhtml
