@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-07-26 22:05:28 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2002-08-02 23:16:00 $
 
 
 #package AWSUA;
@@ -30,6 +30,7 @@
 "aol\\-iweng",
 "amaya",
 "amigavoyager",
+"aweb",
 "bpftp",
 "cyberdog",
 "dreamcast",
@@ -116,6 +117,7 @@
 "aol\\-iweng","AOL-Iweng",
 "amaya","Amaya",
 "amigavoyager","AmigaVoyager",
+"aweb","AWeb",
 "bpftp","BPFTP",
 "cyberdog","Cyberdog",
 "dreamcast","Dreamcast",
@@ -217,6 +219,7 @@
 "aol\\-iweng","notavailable",
 "amaya","amaya",
 "amigavoyager","notavailable",
+"aweb","notavailable",
 "bpftp","notavailable",
 "cyberdog","notavailable",
 "dreamcast","dreamcast",
