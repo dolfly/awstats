@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Setup page">
 <title>AWStats Documentation - Setup page</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.59 $ - $Author: eldy $ - $Date: 2003-12-31 06:47:13 $ -->
+<!-- $Revision: 1.60 $ - $Author: eldy $ - $Date: 2004-01-03 00:21:34 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -303,6 +303,7 @@ like this (jump to second solution if you have ONLY CGI access):<br>
 <br>
 You can use all other output options (each of them give you another report).
 This is how to use all other possible output options(1) :<br>
+<i><b>perl awstats.pl -config=myvirtualhostname -output=alldomains -staticlinks > awstats.myvirtualhostname.allhosts.html</b></i><br>
 <i><b>perl awstats.pl -config=myvirtualhostname -output=allhosts -staticlinks > awstats.myvirtualhostname.allhosts.html</b></i><br>
 <i><b>perl awstats.pl -config=myvirtualhostname -output=lasthosts -staticlinks > awstats.myvirtualhostname.lasthosts.html</b></i><br>
 <i><b>perl awstats.pl -config=myvirtualhostname -output=unknownip -staticlinks > awstats.myvirtualhostname.unknownip.html</b></i><br>
@@ -351,7 +352,7 @@ you will also be able to run the update process from your browser. Just click on
 <hr>
 
 <script language=javascript>
-	var date='$Date: 2003-12-31 06:47:13 $';
+	var date='$Date: 2004-01-03 00:21:34 $';
 	document.writeln("Last revision: "+date);
 </script>
 
