@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-02-09 19:00:49 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-02-11 16:00:11 $
 
 
 # <-----
@@ -58,7 +58,7 @@ sub Init_tooltips {
 #-----------------------------------------------------------------------------
 # PLUGIN FUNCTION: AddHTMLStyles_pluginname
 # UNIQUE: NO (Several plugins using this function can be loaded)
-# AddHTMLStyles is called to Add HTML styles at beginning of BODY section.
+# Function called to Add HTML styles at beginning of BODY section.
 #-----------------------------------------------------------------------------
 sub AddHTMLStyles_tooltips {
 	# <-----
@@ -72,7 +72,7 @@ sub AddHTMLStyles_tooltips {
 #-----------------------------------------------------------------------------
 # PLUGIN FUNTION: AddHTMLBodyHeader_pluginname
 # UNIQUE: NO (Several plugins using this function can be loaded)
-# AddHTMLBodyHeader is called to Add HTML code at beginning of BODY section.
+# Function called to Add HTML code at beginning of BODY section.
 #-----------------------------------------------------------------------------
 sub AddHTMLBodyHeader_tooltips {
 	# <-----
