@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.298 $ - $Author: eldy $ - $Date: 2002-09-07 16:47:53 $
+# $Revision: 1.299 $ - $Author: eldy $ - $Date: 2002-09-07 17:50:17 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -18,7 +18,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.298 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.299 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -6034,7 +6034,7 @@ EOF
 				}
 			else {
 				my $newos=$OSHashLib{$key}||$key;
-				my $nameicon=lc($newos); $nameicon =~ s/\s.*//;
+				my $nameicon=lc($key); $nameicon =~ s/[^\w]+//g;
 				print "<TR><TD width=100><IMG SRC=\"$DirIcons\/os\/$nameicon.png\"></TD><TD CLASS=AWL>$newos</TD><TD>$_os_h{$key}</TD>";
 				print "<TD>$p&nbsp;%</TD></TR>\n";
 			}
