@@ -1,5 +1,5 @@
 # German message file
-# $Revision: 1.11 $ - $Date: 2002-09-09 14:04:23 $
+# $Revision: 1.12 $ - $Date: 2003-02-14 20:27:12 $
 message0=Unbekannt
 message1=Unbekannte (IP konnte nicht aufgel&ouml;st werden )
 message2=Sonstige
@@ -130,3 +130,7 @@ message126=Suchmaschinen
 message127=Websites
 message128=Zusammenfassung
 message129=Der genaue Wert ist nicht in der 'Year'-Ansicht verf&uuml;gbar
+message130=Datenwert Arrays
+message131=EMail Sender
+message132=EMail Empf&auml;nger
+message133=Zeitraum 
