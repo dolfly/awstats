@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.735 $ - $Author: eldy $ - $Date: 2004-03-27 18:13:36 $
+# $Revision: 1.736 $ - $Author: eldy $ - $Date: 2004-03-27 19:26:45 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.735 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.736 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -5830,7 +5830,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 				else { print "Corrupted record line ".($lastlinenb+$NbOfLinesParsed)." (record format does not match LogFormat parameter): $line\n"; }
 			}
 			if ($NbOfLinesParsed >= $NbOfLinesForCorruptedLog && $NbOfLinesParsed == $NbOfLinesCorrupted) { error("Format error",$line,$LogFile); }	# Exit with format error
-			if ($line =~ /^__end_of_file__/) { last; }	# For test purpose only
+			if ($line =~ /^__end_of_file__/i) { last; }	# For test purpose only
 			next;
 		}
 
