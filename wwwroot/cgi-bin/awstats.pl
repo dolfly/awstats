@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.715 $ - $Author: eldy $ - $Date: 2004-03-03 21:08:16 $
+# $Revision: 1.716 $ - $Author: eldy $ - $Date: 2004-03-04 11:59:43 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.715 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.716 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -6074,7 +6074,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		elsif ($LogType eq 'M') {						# Mail record
 			if (! $ValidSMTPCodes{$field[$pos_code]}) {	# Code is not valid
 				$_errors_h{$field[$pos_code]}++;
-				#$_errors_k{$field[$pos_code]}+=int($field[$pos_size]);	# Useless since pos_size is often 0 or ? when error
+				$_errors_k{$field[$pos_code]}+=int($field[$pos_size]);	# Size is often 0 when error
 				if ($Debug) { debug(" Record stored in the status code chart (status code=$field[$pos_code])",2); }
 				$countedtraffic=1;
 				if ($PageBool) { $_time_nv_p[$hourrecord]++; }
