@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Put here list of all required plugins
 #-----------------------------------------------------------------------------
-# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-09-09 11:09:39 $
+# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-11-15 19:39:01 $
 
 
 # <-----
@@ -26,7 +26,7 @@ use strict;no strict "refs";
 # <-----
 # ENTER HERE THE MINIMUM AWSTATS VERSION REQUIRED BY YOUR PLUGIN
 # AND THE NAME OF ALL FUNCTIONS THE PLUGIN MANAGE.
-# EACH POSSIBLE FUNCTION AND GOAL ARE DESCRIBE LATER.
+# EACH POSSIBLE FUNCTION AND GOAL ARE DESCRIBED LATER.
 my $PluginNeedAWStatsVersion="5.6";
 my $PluginHooksFunctions="xxx";
 # ----->
