@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.421 $ - $Author: eldy $ - $Date: 2002-12-13 00:46:19 $
+# $Revision: 1.422 $ - $Author: eldy $ - $Date: 2002-12-13 00:49:19 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.421 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.422 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.3 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -988,9 +988,9 @@ sub Read_Config {
 #------------------------------------------------------------------------------
 # Function:     Parse content of a config file
 # Parameters:	File handle, level
-# Input:        None
+# Input:        -
 # Output:		Global variables
-# Return:		None
+# Return:		-
 #------------------------------------------------------------------------------
 sub Parse_Config {
     my ( $confighandle ) = $_[0];
