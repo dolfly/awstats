@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IPfree (version 0.2+)
 #-----------------------------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2003-07-26 15:32:31 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-07-26 16:33:42 $
 
 
 # <-----
@@ -67,7 +67,9 @@ sub GetCountryCodeByName_geoipfree {
 	# <-----
 	my $res=$TmpDomainLookup{$_[0]}||'';
 	if (! $res) {
-		($res,undef)=$gi->LookUp($_[0]); if ($res !~ /\w\w/) { $res='ip'; }
+		($res,undef)=$gi->LookUp($_[0]);
+		if ($res !~ /\w\w/) { $res='ip'; }
+		else { $res=lc($res); }
 		$TmpDomainLookup{$_[0]}=$res;
 		if ($Debug) { debug("  GetCountryCodeByName for $_[0]: $res",5); }
 	}
@@ -85,7 +87,9 @@ sub GetCountryCodeByAddr_geoipfree {
 	# <-----
 	my $res=$TmpDomainLookup{$_[0]}||'';
 	if (! $res) {
-		($res,undef)=$gi->LookUp($_[0]); if ($res !~ /\w\w/) { $res='ip'; }
+		($res,undef)=$gi->LookUp($_[0]);
+		if ($res !~ /\w\w/) { $res='ip'; }
+		else { $res=lc($res); }
 		$TmpDomainLookup{$_[0]}=$res;
 		if ($Debug) { debug("  GetCountryCodeByAddr for $_[0]: $res",5); }
 	}
