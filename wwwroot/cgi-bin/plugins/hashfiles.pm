@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Storable
 #-----------------------------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2002-10-05 17:01:18 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2002-12-08 14:37:37 $
 
 
 # <-----
@@ -20,11 +20,15 @@ use strict;no strict "refs";
 #-----------------------------------------------------------------------------
 # PLUGIN VARIABLES
 #-----------------------------------------------------------------------------
+# <-----
+# ENTER HERE THE MINIMUM AWSTATS VERSION REQUIRED BY YOUR PLUGIN
+# AND THE NAME OF ALL FUNCTIONS THE PLUGIN MANAGE.
 my $PluginNeedAWStatsVersion="5.1";
 my $PluginHooksFunctions="SearchFile LoadCache SaveHash";
+# ----->
 
 # <-----
-# IF YOUR PLUGIN NEED GLOBAL VARIABLES, THEY MUST BE DECLARED HERE
+# IF YOUR PLUGIN NEED GLOBAL VARIABLES, THEY MUST BE DECLARED HERE.
 use vars qw/
 $PluginHashfilesUpToDate
 /;

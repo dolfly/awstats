@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Put here list of all required plugins
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-11-16 03:16:18 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-12-08 14:37:52 $
 
 
 # <-----
@@ -27,18 +27,14 @@ use strict;no strict "refs";
 #-----------------------------------------------------------------------------
 # <-----
 # ENTER HERE THE MINIMUM AWSTATS VERSION REQUIRED BY YOUR PLUGIN
-# SHOULD BE AT LEAST 5.1
+# AND THE NAME OF ALL FUNCTIONS THE PLUGIN MANAGE.
+# EACH POSSIBLE FUNCTION AND GOAL ARE DESCRIBE LATER.
 my $PluginNeedAWStatsVersion="5.1";
-# ----->
-
-# <-----
-# THIS VARIABLE MUST CONTAINS THE NAME OF ALL FUNCTIONS THE PLUGIN HANDLE
-# EACH POSSIBLE FUNCTION AND GOAL ARE DESCRIBE LATER
 my $PluginHooksFunctions="xxx";
 # ----->
 
 # <-----
-# IF YOUR PLUGIN NEED GLOBAL VARIABLES, THEY MUST BE DECLARED HERE
+# IF YOUR PLUGIN NEED GLOBAL VARIABLES, THEY MUST BE DECLARED HERE.
 use vars qw/
 $PluginVariable1
 /;

@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-11-20 19:52:39 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-12-08 14:37:41 $
 
 
 # <-----
@@ -24,17 +24,13 @@ use strict;no strict "refs";
 #-----------------------------------------------------------------------------
 # <-----
 # ENTER HERE THE MINIMUM AWSTATS VERSION REQUIRED BY YOUR PLUGIN
-# SHOULD BE AT LEAST 5.1
+# AND THE NAME OF ALL FUNCTIONS THE PLUGIN MANAGE.
 my $PluginNeedAWStatsVersion="5.2";
-# ----->
-
-# <-----
-# THIS VARIABLE MUST CONTAINS THE NAME OF ALL FUNCTIONS THAT MANAGE THE PLUGIN
 my $PluginHooksFunctions="ReplaceURL";
 # ----->
 
 # <-----
-# IF YOUR PLUGIN NEED GLOBAL VARIABLES, THEY MUST BE DECLARED HERE
+# IF YOUR PLUGIN NEED GLOBAL VARIABLES, THEY MUST BE DECLARED HERE.
 use vars qw/
 $urlaliasloaded
 %UrlAliases
@@ -52,10 +48,11 @@ sub Init_urlalias {
 
 	# <-----
 	# YOU CAN ENTER HERE CODE TO INIT PLUGIN GLOBAL VARIABLES
-	debug("InitParams=$InitParams",1);
+	debug(" InitParams=$InitParams",1);
 	$urlaliasloaded=0;
 	%UrlAliases=();
 	# ----->
+
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
 }
 

@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Time::HiRes
 #-----------------------------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2002-10-05 17:01:18 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2002-12-08 14:37:39 $
 
 
 use Time::HiRes qw( gettimeofday );
@@ -16,8 +16,12 @@ use strict;no strict "refs";
 #-----------------------------------------------------------------------------
 # PLUGIN VARIABLES
 #-----------------------------------------------------------------------------
+# <-----
+# ENTER HERE THE MINIMUM AWSTATS VERSION REQUIRED BY YOUR PLUGIN
+# AND THE NAME OF ALL FUNCTIONS THE PLUGIN MANAGE.
 my $PluginNeedAWStatsVersion="5.1";
 my $PluginHooksFunctions="GetTime";
+# ----->
 
 
 
@@ -27,6 +31,11 @@ my $PluginHooksFunctions="GetTime";
 sub Init_timehires {
 	my $InitParams=shift;
 	my $checkversion=&Check_Plugin_Version($PluginNeedAWStatsVersion);
+
+	# <-----
+	# YOU CAN ENTER HERE CODE TO INIT PLUGIN GLOBAL VARIABLES
+	# ----->
+
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
 }
 
