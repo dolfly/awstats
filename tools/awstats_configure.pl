@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2004-10-24 17:42:38 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2005-01-15 22:42:58 $
 require 5.005;
 
 use strict;
@@ -46,7 +46,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.3 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.4 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -652,15 +652,21 @@ if ($bidon =~ /^y/i) {
 # ----------------------------------
 if ($WebServerChanged) {
 	if ($OS eq 'linux') 	{
-	 	my $command="/sbin/service";
-	 	if (-x $command) {
-    		print "\n-----> Restart Web server with '/sbin/service httpd restart'\n";
-	 	    my $ret=`/sbin/service httpd restart`;
+        if (-f "/etc/debian_version") {
+            # We are on debian
+       	 	my $command="/etc/init.d/apache restart";
+    		print "\n-----> Restart Web server with '$command'\n";
+	 	    my $ret=`$command`;
 	 	    print "$ret";
-	 	}
-	 	else {
-    		print "\n-----> Don't forget to restart manually your web server\n";
-	 	}
+        } elsif (-x "/sbin/service") {
+            # We are not on debian
+       	 	my $command="/sbin/service httpd restart";
+    		print "\n-----> Restart Web server with '$command'\n";
+	 	    my $ret=`$command`;
+	 	    print "$ret";
+   	 	} else {
+       		print "\n-----> Don't forget to restart manually your web server\n";
+        }
 	}
 	elsif ($OS eq 'macosx')	{
 		print "\n-----> Restart Web server with '/usr/sbin/apachectl restart'\n";
