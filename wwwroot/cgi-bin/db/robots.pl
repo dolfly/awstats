@@ -1,6 +1,6 @@
 # AWSTATS ROBOTS DATABASE
 #------------------------
-# Last update: 2002-02-25
+# Last change $Revision: 1.7 $ - $Author: eldy $ - $Date: 2002-04-06 18:01:00 $
 
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.

@@ -1,6 +1,6 @@
 # AWSTATS SEARCH ENGINES DATABASE
 #--------------------------------
-# Last update: 2002-03-06
+# Last change $Revision: 1.9 $ - $Author: eldy $ - $Date: 2002-04-06 18:01:00 $
 
 
 # Search engines names database
