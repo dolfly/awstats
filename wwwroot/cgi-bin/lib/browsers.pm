@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.20 $ - $Author: eldy $ - $Date: 2003-08-16 21:23:09 $
+# $Revision: 1.21 $ - $Author: eldy $ - $Date: 2003-09-29 15:12:36 $
 
 
 #package AWSUA;
@@ -55,6 +55,7 @@
 "macweb",
 "multizilla",
 "ncsa_mosaic",
+"netcaptor",
 "netpositive",
 "nutscrape",
 "msfrontpageexpress",
@@ -158,6 +159,7 @@
 "macweb","MacWeb",
 "multizilla","MultiZilla",
 "ncsa_mosaic","NCSA Mosaic",
+"netcaptor","NetCaptor",
 "netpositive","NetPositive",
 "nutscrape", "Nutscrape",
 "msfrontpageexpress","MS FrontPage Express",
@@ -243,51 +245,22 @@
 "icab","icab",
 "go!zilla","gozilla",
 "konqueror","konqueror",
-"links","notavailable",
 "lynx","lynx",
 "omniweb","omniweb",
 "opera","opera",
-"wget","notavailable",
-"22acidownload","notavailable",
-"aol\\-iweng","notavailable",
 "amaya","amaya",
-"amigavoyager","notavailable",
-"aweb","notavailable",
-"bpftp","notavailable",
 "chimera","chimera",
-"cyberdog","notavailable",
-"dillo","notavailable",
 "dreamcast","dreamcast",
-"downloadagent","notavailable",
-"ecatch","notavailable",
-"emailsiphon","notavailable",
-"encompass","notavailable",
 "firebird","phoenix",
-"friendlyspider","notavailable",
-"fresco","notavailable",
 "galeon","galeon",
 "getright","getright",
-"headdump","notavailable",
-"hotjava","notavailable",
 "ibrowse","ibrowse",
-"intergo","notavailable",
 "k-meleon","kmeleon",
-"linemodebrowser","notavailable",
 "lotus-notes","lotusnotes",
-"macweb","notavailable",
 "multizilla","multizilla",
-"ncsa_mosaic","notavailable",
 "netpositive","netpositive",
-"nutscrape","notavailable",
-"msfrontpageexpress","notavailable",
 "phoenix","phoenix",
 "safari","safari",
-"tzgeturl","notavailable",
-"viking","notavailable",
-"webfetcher","notavailable",
-"webexplorer","notavailable",
-"webmirror","notavailable",
-"webvcr","notavailable",
 # Site grabbers
 "teleport","teleport",
 "webcapture","adobe",
@@ -327,15 +300,9 @@
 # Others (TV)
 "webtv","webtv",
 # Other kind of browsers
-"csscheck","notavailable",
-"w3m","notavailable",
-"w3c_css_validator","notavailable",
-"w3c_validator","notavailable",
-"wdg_validator","notavailable",
 "webzip","webzip",
 "staroffice","staroffice",
-"mozilla","mozilla",
-"libwww","notavailable"
+"mozilla","mozilla"
 );
 
 
