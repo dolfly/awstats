@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-11-01 02:48:14 $
+# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-11-15 19:35:27 $
 
 
 # <-----
@@ -76,7 +76,10 @@ sub AddHTMLBodyHeader_rawlog {
 sub BuildFullHTMLOutput_rawlog {
 	# <-----
 	my $Filter='';
-	if ($QueryString =~ /filterrawlog=([^&]+)/i) { $Filter=&DecodeEncodedString("$1"); }
+	if ($QueryString =~ /filterrawlog=([^&]+)/i) {
+		my $filter=&DecodeEncodedString("$1");
+		$Filter=qr/$filter/i;
+	}
 
 	# Show form
 	&_ShowForm($Filter);
@@ -89,13 +92,9 @@ sub BuildFullHTMLOutput_rawlog {
 	my $i=0;
 	while (<LOG>) {
 		chomp $_; $_ =~ s/\r//;
-		
-		if ($Filter) {
-			if ($_ !~ m/$Filter/i) { next; }
-		}
+		if ($Filter && $_ !~ /$Filter/o) { next; }
 		print "$_<br />\n";
-		$i++;
-		if ($i > $MAXLINE) { last; }
+		if (++$i > $MAXLINE) { last; }
 	}
 	print "<b>$i lines.</b><br />";
 	return 1;
