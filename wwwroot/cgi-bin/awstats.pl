@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.763 $ - $Author: eldy $ - $Date: 2004-07-01 22:06:23 $
+# $Revision: 1.764 $ - $Author: eldy $ - $Date: 2004-07-11 10:17:20 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.763 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.764 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -3323,6 +3323,7 @@ sub Read_History_With_TmpUpdate {
 	# If update, rename tmp file bis into tmp file or set HistoryAlreadyFlushed
 	if ($withupdate) {
 		if ($HistoryAlreadyFlushed{"$year$month"}) {
+			debug("Rename tmp history file bis '$filetoread' to '$filetowrite'");
 			if (rename($filetowrite,$filetoread)==0) {
 				error("Failed to update tmp history file $filetoread");
 			}
@@ -3971,11 +3972,12 @@ sub Rename_All_Tmp_History {
 	my $pid=$$;
 	my $renameok=1;
 
-	if ($Debug) { debug("Call to Rename_All_Tmp_History"); }
+	if ($Debug) { debug("Call to Rename_All_Tmp_History (FileSuffix=$FileSuffix)"); }
 
 	opendir(DIR,"$DirData");
-	foreach (grep /^$PROG(\d\d\d\d\d\d)$FileSuffix\.tmp\.$pid$/, sort readdir DIR) {
-		/^$PROG(\d\d\d\d\d\d)$FileSuffix\.tmp\.$pid$/;
+	my $regfilesuffix=quotemeta($FileSuffix);
+	foreach (grep /^$PROG(\d\d\d\d\d\d)$regfilesuffix\.tmp\.$pid$/, sort readdir DIR) {
+		/^$PROG(\d\d\d\d\d\d)$regfilesuffix\.tmp\.$pid$/;
 		if ($renameok) {	# No rename error yet
 			if ($Debug) { debug(" Rename new tmp history file $PROG$1$FileSuffix.tmp.$$ into $PROG$1$FileSuffix.txt",1); }
 			if (-s "$DirData/$PROG$1$FileSuffix.tmp.$$") {		# Rename tmp files if size > 0
