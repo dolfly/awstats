@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2002-12-02 20:45:59 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2003-05-08 13:48:32 $
 
 
 #package AWSROB;
@@ -56,7 +56,7 @@
 #"tcl",
 "unlost_web_crawler",
 "voila",
-"voyager",
+"voyager\/",		# Add / to avoid to exclude voyager browser
 "webbase",
 "weblayers",
 #"webs",
@@ -576,7 +576,7 @@
 "valkyrie","Valkyrie",
 "victoria","Victoria",
 "visionsearch","vision-search",
-"voyager","Voyager",
+"voyager\/","Voyager",
 "vwbot","VWbot",
 "w3index","The NWI Robot",
 "w3m2","W3M2",
