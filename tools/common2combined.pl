@@ -16,8 +16,10 @@ use strict; no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-# Last change made by $Author: eldy $ on $Date: 2002-04-06 17:04:54 $
-my $VERSION="1.1 (build $Revision: 1.5 $)";
+# Last change made by $Author: eldy $ on $Date: 2002-04-06 17:19:25 $
+my $REVISION='$Revision: 1.6 $';
+$REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $VERSION="1.1 (build $REVISION)";
 
 # ---------- Init variables --------
 my $Debug=0;
