@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Encode and URI::Escape
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-12-22 20:06:45 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2004-01-07 05:28:41 $
 
 
 # <-----
@@ -68,7 +68,7 @@ sub DecodeKey_decodeutfkeys {
 		$string=Encode::encode($encoding, Encode::decode("utf-8", $string));
 	}
 	#$string=HTML::Entities::encode_entities($string);
-	$string =~ s/;+/ /g;
+	$string =~ s/[;+]/ /g;
 	return $string;
 }
 
