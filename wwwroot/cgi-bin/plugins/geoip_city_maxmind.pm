@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP (Geo::IP::PurePerl is not yet supported)
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2004-12-07 13:12:50 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2004-12-10 21:40:52 $
 
 
 # <-----
@@ -316,7 +316,13 @@ sub ShowInfoHost_geoip_city_maxmind {
 		    print "<span style=\"color: #$color_other\">$Message[0]</span>";
 		}
 		if (! $key) {
-		    print "<span style=\"color: #$color_other\">$Message[0]</span>";
+        	my $record=();
+        	$record=$geoip_city_maxmind->record_by_name($param) if $geoip_city_maxmind;
+        	if ($Debug) { debug("  Plugin geoip_city_maxmind: GetCityByHostname for $param: [$record]",5); }
+            my $city;
+            $city=$record->city if $record;
+		    if ($city) { print "$city"; }
+		    else { print "<span style=\"color: #$color_other\">$Message[0]</span>"; }
 		}
 		print "</td>";
 	}
