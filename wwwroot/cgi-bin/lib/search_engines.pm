@@ -4,7 +4,7 @@
 # you must add an entry in SearchEnginesSearchIDOrder and in SearchEnginesHashIDLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #-------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2003-03-27 20:39:21 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2003-08-16 12:03:45 $
 
 
 #package AWSSE;
@@ -57,7 +57,7 @@
 # Minor brazilian search engines
 "engine\.exe", "miner\.bol\.com\.br",
 # Minor chinese search engines
-"baidu\.com","sina\.com","sohu\.com",
+"baidu\.com","search\.sina\.com","search\.sohu\.com",
 # Minor czech search engines
 "atlas\.cz","seznam\.cz","quick\.cz","centrum\.cz","najdi\.to","redbox\.cz",
 # Minor danish search-engines 
@@ -141,7 +141,7 @@
 # Minor brazilian search engines
 "engine\.exe","p1=", "miner\.bol\.com\.br","q=",
 # Minor chinese search engines
-"baidu\.com","word=", "sina\.com", "word=", "sohu\.com","word=",
+"baidu\.com","word=", "search\.sina\.com", "word=", "search\.sohu\.com","word=",
 # Minor czech search engines
 "atlas\.cz","searchtext=", "seznam\.cz","w=", "ftxt\.quick\.cz","query=", "centrum\.cz","q=", "najdi\.to","dotaz=", "redbox.cz","srch=",
 # Minor danish search engines
@@ -231,7 +231,7 @@
 # Minor brazilian search engines
 "engine\.exe","Cade", "miner\.bol\.com\.br","Meta Miner",
 # Minor chinese search engines
-"baidu\.com","Baidu", "sina\.com","Sina", "sohu\.com","Sohu",
+"baidu\.com","Baidu", "search\.sina\.com","Sina", "search\.sohu\.com","Sohu",
 # Minor czech search engines
 "atlas\.cz","Atlas.cz",	"seznam\.cz","Seznam.cz", "quick\.cz","Quick.cz", "centrum\.cz","Centrum.cz","najdi\.to","Najdi.to","redbox\.cz","RedBox.cz",
 # Minor danish search-engines
