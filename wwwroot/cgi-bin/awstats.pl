@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.319 $ - $Author: eldy $ - $Date: 2002-09-15 17:42:35 $
+# $Revision: 1.320 $ - $Author: eldy $ - $Date: 2002-09-15 20:17:38 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.319 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.320 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4124,11 +4124,15 @@ if ($UpdateStats && $FrameName ne "index" && $FrameName ne "mainleft") {	# Updat
 			$protocol=1;
 		}
 		elsif ($field[$pos_method] eq 'SMTP') {
-			# Mail request.
+			# Mail request
 			$protocol=3;
 		}
-		elsif ($field[$pos_method] =~ /sent/i || $field[$pos_method] =~ /get/i) {
-			# FTP request.
+		elsif ($field[$pos_method] eq 'RETR' || $field[$pos_method] =~ /get/i) {
+			# FTP GET request
+			$protocol=2;
+		}
+		elsif ($field[$pos_method] eq 'STOR' || $field[$pos_method] =~ /sent/i) {
+			# FTP SENT request
 			$protocol=2;
 		}
 		else {
