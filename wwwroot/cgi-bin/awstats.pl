@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.368 $ - $Author: eldy $ - $Date: 2002-10-17 04:02:26 $
+# $Revision: 1.369 $ - $Author: eldy $ - $Date: 2002-10-17 04:19:14 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.368 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.369 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -502,7 +502,7 @@ use vars qw/ @Message /;
 "Data value arrays",
 "Sender EMail",
 "Receiver EMail",
-"Analyzed period"
+"Report period"
 );
 
 
@@ -3632,6 +3632,7 @@ sub Show_Flag_Links {
 	else {
 		$NewLinkParams=($SiteConfig?"config=$SiteConfig&":"")."year=$YearRequired&month=$MonthRequired&";
 	}
+	if ($FrameName eq 'mainleft') { $NewLinkParams.='framename=index&'; }
 
 	print "<br>\n";
 	foreach my $flag (split(/\s+/,$ShowFlagLinks)) {
