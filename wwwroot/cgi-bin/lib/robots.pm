@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.20 $ - $Author: eldy $ - $Date: 2003-09-30 11:17:10 $
+# $Revision: 1.21 $ - $Author: eldy $ - $Date: 2003-10-30 14:16:59 $
 
 
 #package AWSROB;
@@ -322,6 +322,7 @@
 "justview",
 "linkbot",
 "linkchecker",
+"microsoft_url_control",
 "msiecrawler",
 "msnbot",
 "nagios",
@@ -646,6 +647,7 @@
 "justview", "JustView",
 "linkbot","LinkBot",
 "linkchecker","LinkChecker",
+"microsoft_url_control","Microsoft URL Control",
 "mercator", "Mercator",
 "msiecrawler","MSIECrawler",
 "msnbot","MSNBot",
