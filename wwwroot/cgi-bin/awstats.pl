@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.488 $ - $Author: eldy $ - $Date: 2003-04-05 17:21:21 $
+# $Revision: 1.489 $ - $Author: eldy $ - $Date: 2003-04-05 17:36:25 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.488 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.489 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4781,11 +4781,13 @@ if ($AllowAccessFromWebToAuthenticatedUsersOnly && $ENV{'GATEWAY_INTERFACE'}) {
 	}
 	if (@AllowAccessFromWebToFollowingAuthenticatedUsers) {
 		my $userisinlist=0;
+		my $currentuser=$ENV{"REMOTE_USER"};
+		$currentuser =~ s/\s/%20/g;	# Allow authenticated user with space in name to be compared to allowed user list
 		foreach my $key (@AllowAccessFromWebToFollowingAuthenticatedUsers) {
-			if ($ENV{"REMOTE_USER"} eq $key) { $userisinlist=1; last; }
+			if ($currentuser eq $key) { $userisinlist=1; last; }
 		}
 		if (! $userisinlist) {
-			error("User '".$ENV{"REMOTE_USER"}."' is not allowed to access statistics of this domain/config.");
+			error("User '$currentuser' is not allowed to access statistics of this domain/config.");
 		}
 	}
 }

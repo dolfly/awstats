@@ -1,14 +1,16 @@
 AWStats Changelog
 -----------------
-$Revision: 1.90 $ - $Author: eldy $ - $Date: 2003-04-05 17:24:02 $ 
+$Revision: 1.91 $ - $Author: eldy $ - $Date: 2003-04-05 17:38:12 $ 
 
 
 5.5
 
 Fixes:
-- Summary robots list was limited to MaxNbOfLoginShown instead of
-  being limited to MaxNbOfRobotShown value.
+- Summary robots list was limited to MaxNbOfLoginShown instead of being
+  limited to MaxNbOfRobotShown value.
 - Fixed a bug when using HBL codes in ShowRobotsStats parameter.
+- AllowAccessFromWebToFollowingAuthenticatedUsers now works for users with
+  space in name.
 
 New features/improvments:
 - Added a 'Screen Size' report.
