@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.6 $
+# \version      $Revision: 1.7 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ if (-d "/usr/src/RPM") {
     $RPMDIR="/usr/src/RPM";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.6 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.7 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -87,7 +87,7 @@ if (! $TEMP || ! -d $TEMP) {
     sleep 2;
     exit 2;
 } 
-$BUILDROOT="$TEMP/buildroot";
+$BUILDROOT="$TEMP/$PROJET-buildroot";
 
 
 my $copyalreadydone=0;
@@ -193,9 +193,13 @@ if (! $copyalreadydone) {
 	print "Delete directory $BUILDROOT\n";
 	$ret=`rm -fr "$BUILDROOT"`;
 
+	print "Create directory $BUILDROOT\n";
 	mkdir "$BUILDROOT";
-	print "Recopie de $SOURCE dans $BUILDROOT/$PROJECT\n";
+
+	print "Create directory $BUILDROOT/$PROJECT\n";
 	mkdir "$BUILDROOT/$PROJECT";
+
+	print "Recopie de $SOURCE/README.TXT dans $BUILDROOT/$PROJECT\n";
 	$ret=`cp -p "$SOURCE/README.TXT" "$BUILDROOT/$PROJECT"`;
 
 	print "Recopie de $SOURCE/docs dans $BUILDROOT/$PROJECT/docs\n";
