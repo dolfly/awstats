@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.32 $ - $Author: eldy $ - $Date: 2003-12-05 23:42:53 $
+# $Revision: 1.33 $ - $Author: eldy $ - $Date: 2003-12-06 23:51:25 $
 
 
 #package AWSUA;
@@ -263,15 +263,26 @@
 # Other standard web browsers
 'amaya','amaya',
 'amigavoyager','amigavoyager',
+'avantbrowser','avant',
 'aweb','aweb',
+'bpftp','bpftp',
 'chimera','chimera',
+'cyberdog','cyberdog',
+'dillo','dillo',
 'dreamcast','dreamcast',
+'ecatch','ecatch',
+'encompass','encompass',
+'fresco','fresco',
 'galeon','galeon',
 'getright','getright',
+'hotjava','hotjava',
 'ibrowse','ibrowse',
 'k\-meleon','kmeleon',
 'lotus\-notes','lotusnotes',
+'macweb','macweb',
 'multizilla','multizilla',
+'msfrontpageexpress','fpexpress',
+'ncsa_mosaic','ncsa_mosaic',
 'netpositive','netpositive',
 'phoenix','phoenix',
 'safari','safari',
