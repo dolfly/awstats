@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2003-09-15 12:20:01 $
+# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2003-09-22 15:01:53 $
 
 
 #package AWSROB;
@@ -306,6 +306,7 @@
 "wz101",
 "xget",
 # Other robots reported by users
+"aport",
 "awbot",
 "baiduspider",
 "bobby",
@@ -328,11 +329,14 @@
 "perman",
 "pompos",
 "psbot",
+"rambler",
 "redalert",
 "shoutcast",
 "slysearch",
 "surveybot",
 "turnitinbot",
+"turtlescanner",		# Must be before turtle
+"turtle",
 "ultraseek",
 "webclipping\.com",
 "webcompass",
@@ -620,6 +624,7 @@
 "nederland.zoek","Nederland.zoek",
 # Other robots reported by users
 "antibot", "Antibot",
+"aport", "Aport",
 "awbot", "AWBot",
 "baiduspider","BaiDuSpider",
 "bobby", "Bobby", 
@@ -648,11 +653,14 @@
 "petersnews", "Petersnews",
 "pompos","Pompos",
 "psbot","psBot",
+"rambler", "StackRambler",
 "redalert", "Red Alert",
 "shoutcast","Shoutcast Directory Service",
 "slysearch","SlySearch",
 "surveybot","SurveyBot",
 "turnitinbot","Turn It In",
+"turtle", "Turtle",
+"turtlescanner", "Turtle",
 "ultraseek", "Ultraseek",
 "unlost_web_crawler", "Unlost Web Crawler",
 "voila", "Voila",
