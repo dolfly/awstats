@@ -5,13 +5,13 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: XWhois
 #-----------------------------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2003-12-05 21:44:08 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-12-06 00:04:37 $
 
 
 # <-----
 push @INC, "${DIR}/plugins";
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
-if (!eval ('require "Net/XWhoIs.pm";')) { return $@?"Error: $@":"Error: Need Perl module Net::XWhoIs"; }
+if (!eval ('require "Net/XWhois.pm";')) { return $@?"Error: $@":"Error: Need Perl module Net::XWhois"; }
 # ----->
 use strict;no strict "refs";
 
