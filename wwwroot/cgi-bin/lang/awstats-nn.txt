@@ -1,5 +1,5 @@
 # Norwegian Nynorsk message file (by Karl Ove Hufthammer <karl@huftis.org>)
-# $Revision: 1.20 $ - $Date: 2003-03-03 10:01:37 $
+# $Revision: 1.21 $ - $Date: 2003-03-03 10:02:43 $
 PageCode=iso-8859-1
 message0=Ukjent
 message1=ukjente (fann ikkje vertsnamn)
