@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.270 $ - $Author: eldy $ - $Date: 2002-07-20 22:07:15 $
+# $Revision: 1.271 $ - $Author: eldy $ - $Date: 2002-07-20 22:29:35 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -18,7 +18,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.270 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.271 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.2 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1478,7 +1478,7 @@ sub Read_History_File {
 		if ($UpdateStats || $HTMLOutput eq "main" || $HTMLOutput eq "unknownos")      { $SectionsToLoad{"unknownreferer"}=1; }
 		if ($UpdateStats || $HTMLOutput eq "main" || $HTMLOutput eq "unknownbrowser") { $SectionsToLoad{"unknownrefererbrowser"}=1; }
 		if ($UpdateStats || $HTMLOutput eq "main" || $HTMLOutput eq "robots") { $SectionsToLoad{"robot"}=1; }
-		if ($UpdateStats || $HTMLOutput eq "main" || $HTMLOutput eq "pages") { $SectionsToLoad{"sider"}=1; }
+		if ($UpdateStats || $HTMLOutput eq "main" || $HTMLOutput eq "urldetail") { $SectionsToLoad{"sider"}=1; }
 		if ($UpdateStats || $HTMLOutput eq "main" || $HTMLOutput eq "filetypes") { $SectionsToLoad{"filetypes"}=1; }
 		if ($UpdateStats || $HTMLOutput eq "main" || $HTMLOutput eq "refererse") { $SectionsToLoad{"sereferrals"}=1; }
 		if ($UpdateStats || $HTMLOutput eq "main" || $HTMLOutput eq "refererpages") { $SectionsToLoad{"pagerefs"}=1; }
