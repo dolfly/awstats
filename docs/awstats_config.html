@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.163 $ - $Author: eldy $ - $Date: 2004-03-21 19:59:55 $ -->
+<!-- $Revision: 1.164 $ - $Author: eldy $ - $Date: 2004-03-27 19:28:06 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -782,7 +782,8 @@ when reading it), follow the example:<br>
 <br># For example, to ignore /badpage.html, just add "/badpage.html". To ignore
 <br># all pages in a particular directory, add "REGEX[^\/directorytoexclude]".
 <br># The opposite parameter of "SkipFiles" is "OnlyFiles".
-<br># Note: Use space between each value. This parameter is not case sensitive.
+<br># Note: Use space between each value. This parameter is or not case sensitive
+<br># depending on URLNotCaseSensitive parameter.
 <br># Note: You can use regular expression values writing value with REGEX[value].
 <br># Change : Effective for new updates only
 <br># Example: "/badpage.html REGEX[^\/excludedirectory]"
@@ -835,7 +836,8 @@ when reading it), follow the example:<br>
 <br># match a particular string, like a particular directory, you can add this
 <br># directory name in this parameter.
 <br># The opposite parameter of "OnlyFiles" is "SkipFiles".
-<br># Note: Use space between each value. This parameter is not case sensitive.
+<br># Note: Use space between each value. This parameter is or not case sensitive
+<br># depending on URLNotCaseSensitive parameter.
 <br># Note: You can use regular expression values writing value with REGEX[value].
 <br># Change : Effective for new updates only
 <br># Example: "REGEX[marketing_directory] REGEX[office\/.*\.(csv|sxw)$]"
@@ -1739,7 +1741,7 @@ color_u,color_v,color_p,color_h,color_k,color_s<br>
 <br><br><hr>
 
 <script language=javascript>
-	var date='$Date: 2004-03-21 19:59:55 $';
+	var date='$Date: 2004-03-27 19:28:06 $';
 	document.writeln("Last revision: "+date);
 </script>
 
