@@ -5,10 +5,13 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Time::HiRes
 #-----------------------------------------------------------------------------
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-01-29 15:39:53 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2003-02-09 19:08:58 $
 
 
-use Time::HiRes qw( gettimeofday );
+# <-----
+# ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
+if (!eval ('require "Time/HiRes.pm"')) 	{ return "Error: Need Perl module Time::HiRes"; }
+# ----->
 use strict;no strict "refs";
 
 
@@ -45,7 +48,7 @@ sub Init_timehires {
 # UNIQUE: YES (Only one plugin using this function can be loaded)
 #-----------------------------------------------------------------------------
 sub GetTime_timehires {
-	my ($sec,$msec)=&gettimeofday();
+	my ($sec,$msec)=Time::HiRes::gettimeofday();
 	$_[0]=$sec;
 	$_[1]=$msec;
 }
