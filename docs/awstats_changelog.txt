@@ -1,11 +1,11 @@
 AWStats Changelog
 -----------------
-$Revision: 1.219 $ - $Author: eldy $ - $Date: 2004-05-30 12:51:51 $
+$Revision: 1.220 $ - $Author: eldy $ - $Date: 2004-06-07 12:31:42 $
 
 6.2
 
 New features/improvements:
-- None
+- New: awstats_updateall.pl: Added -excludeconf option
 
 Fixes:
 - Fix not recognized %time3 tag in LogFormat
