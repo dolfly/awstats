@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2004-07-30 22:15:21 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2004-10-24 17:42:38 $
 require 5.005;
 
 use strict;
@@ -46,7 +46,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.2 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.3 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -652,9 +652,15 @@ if ($bidon =~ /^y/i) {
 # ----------------------------------
 if ($WebServerChanged) {
 	if ($OS eq 'linux') 	{
-		print "\n-----> Restart Web server with '/sbin/service httpd restart'\n";
-	 	my $ret=`/sbin/service httpd restart`;
-	 	print "$ret";
+	 	my $command="/sbin/service";
+	 	if (-x $command) {
+    		print "\n-----> Restart Web server with '/sbin/service httpd restart'\n";
+	 	    my $ret=`/sbin/service httpd restart`;
+	 	    print "$ret";
+	 	}
+	 	else {
+    		print "\n-----> Don't forget to restart manually your web server\n";
+	 	}
 	}
 	elsif ($OS eq 'macosx')	{
 		print "\n-----> Restart Web server with '/usr/sbin/apachectl restart'\n";
