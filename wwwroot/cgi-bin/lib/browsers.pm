@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.22 $ - $Author: eldy $ - $Date: 2003-09-30 11:17:10 $
+# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2003-10-30 19:17:39 $
 
 
 #package AWSUA;
@@ -106,8 +106,9 @@
 "webtv",
 # Other kind of browsers
 "apt",
-"wget",
+"curl",
 "csscheck",
+"wget",
 "w3m",
 "w3c_css_validator",
 "w3c_validator",
@@ -211,8 +212,9 @@
 "webtv","WebTV browser",
 # Other kind of browsers
 "apt","Debian APT",
-"wget","Wget",
+"curl","Curl",
 "csscheck","WDG CSS Validator",
+"wget","Wget",
 "w3m","w3m",
 "w3c_css_validator","W3C CSS Validator",
 "w3c_validator","W3C HTML Validator",
@@ -232,7 +234,8 @@
 "teleport","1",
 "webcapture","1",
 "webcopier","1",
-"wget","1"
+"curl","1"
+"wget","1",
 );
 
 
