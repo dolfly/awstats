@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.147 $ - $Author: eldy $ - $Date: 2003-09-15 13:19:27 $ 
+$Revision: 1.148 $ - $Author: eldy $ - $Date: 2003-09-15 13:49:44 $ 
 
 
 5.8
@@ -29,6 +29,8 @@ New features/improvements:
   Also add a dedicated page in documentation.
 - Added %lognamequot tag for LogFormat parameter.
 - Added OnlyUserAgents parameter.
+- Selection of virtualhost records in a log is no more case sensitive on
+  SiteDomain nor HostAliases.
 - Added awredir.pl tool.
 
 Other/Documentation:
