@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-04-08 19:19:39 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-07-06 05:46:55 $
 
 
 #package AWSMIME;
@@ -92,6 +92,7 @@
 # Video
 'avi','video',
 'divx','video',
+'mp4','video',
 'mpeg','video',
 'mpg','video',
 'swf','video',
@@ -165,6 +166,7 @@
 # Video
 'avi','video',
 'divx','video',
+'mp4','video',
 'mpeg','video',
 'mpg','video',
 'swf','swf',
