@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Upgrade setup">
 <title>AWStats Documentation - Upgrade setup</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-11-24 03:11:56 $ -->
+<!-- $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-12-11 23:08:18 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -47,9 +47,14 @@ be in old config files, AWStats will use default values to work as it did when t
 did not exists, so there is no way to add them, only if you want to use differently the new
 feature.<br>
 <br>
-<u>Note:</u> When migrating to 6.x series, if you use the ExtraSections feature,
+<u>Note 1:</u> When migrating to 6.x series, if you use the ExtraSections feature,
 you must check that the parameter(s) ExtraSectionConditionX use a full REGEX syntax (with 5.x series, this
 parameter could contain simple string values). If not, feature will be broken.<br>
+<u>Note 2:</u> When migrating to 6.x series, if you use the Misc feature, you must check
+that your ShowMiscStats parameter is set to "ajdfrqwp", if you want to have all
+miscellanous info reported (you must also have added the awstats_misc_tracker.js script in
+your home page as described in MiscTrackerUrl parameter description). Otherwise the new
+default value "a" will be used (only the "Add to favourites" will be reported).<br>
 <br>
 * <b>Your old analyzed data should not be lost</b> since your 'history files' are saved in the
 directory defined in DirData parameter in your AWStats config file and 'history files' format is
@@ -64,7 +69,7 @@ and only if 'migrate' is necessary.<br>
 <hr>
 
 <script language=javascript>
-	var date='$Date: 2003-11-24 03:11:56 $';
+	var date='$Date: 2003-12-11 23:08:18 $';
 	document.writeln("Last revision: "+date);
 </script>
 
