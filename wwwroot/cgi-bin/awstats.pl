@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.340 $ - $Author: eldy $ - $Date: 2002-09-25 13:30:47 $
+# $Revision: 1.341 $ - $Author: eldy $ - $Date: 2002-09-25 14:20:06 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.340 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.341 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1639,8 +1639,8 @@ sub Read_History_With_TmpUpdate {
 				# Show migrate warning for backward compatibility
 				if ($versionnum < 5000 && ! $MigrateStats && ! $BadFormatWarning{$year.$month}) {
 					$BadFormatWarning{$year.$month}=1;
-					my $message="Warning: Data file '$filetoread' has an old history file format (version $versionnum).\nYou should upgrade it from the command line: $PROG.$Extension -migrate=\"$filetoread\"";
-					if ($ENV{"GATEWAY_INTERFACE"} && $AllowToUpdateStatsFromBrowser) { $message.="\nor from your browser launch URL: http://".$ENV{"SERVER_NAME"}.$ENV{"SCRIPT_NAME"}."?migrate=$filetoread"; }
+					my $message="Warning: Data file '$filetoread' has an old history file format (version $versionnum). You should upgrade it...\nFrom command line: $PROG.$Extension -migrate=\"$filetoread\"";
+					if ($ENV{"GATEWAY_INTERFACE"} && $AllowToUpdateStatsFromBrowser) { $message.="\nFrom your browser with URL: <a href=\"http://".$ENV{"SERVER_NAME"}.$ENV{"SCRIPT_NAME"}."?migrate=$filetoread\">http://".$ENV{"SERVER_NAME"}.$ENV{"SCRIPT_NAME"}."?migrate=$filetoread</a>"; }
 					warning("$message");
 				}
 				if (! ($versionnum < 5000) && $MigrateStats && ! $BadFormatWarning{$year.$month}) {
