@@ -1,5 +1,5 @@
 <!-- Brazilian Portuguese tooltips message file (urban@ite.net.br) -->
-<!-- $Revision: 1.1 $ - $Date: 2004-08-25 22:38:40 $ -->
+<!-- $Revision: 1.2 $ - $Date: 2004-12-30 18:19:06 $ -->
 <div class="CTooltip" id="tt1">
 Uma nova visita &eacute; definida como cada novo <b>visitante entrando</b>
 (vendo ou navegando por uma p&aacute;gina) que n&atilde;o estava conectado a
@@ -118,7 +118,7 @@ neste item pode significar que algu&eacute;m (como um hacker) est&aacute;
 tentando quebrar, ou entrar em seu site (esperando entrar em uma &aacute;rea
 segura tentando diferentes pares de usu&aacute;rios/senhas, por exemplo).</div>
 <div class="CTooltip" id="tt403">Tentou alcan&ccedil;ar uma <b>URL n&atilde;o
-configurada como acess&iacute;vel, mesmo com um par usu&ario/senha</b> (por
+configurada como acess&iacute;vel, mesmo com um par userio/senha</b> (por
 exemplo, uma URL com um diret&oacute;rio n&atilde;o definido como
 "naveg&aacute;vel".).</div>
 <div class="CTooltip" id="tt404">Tentou alcan&ccedil;ar uma <b>URL
