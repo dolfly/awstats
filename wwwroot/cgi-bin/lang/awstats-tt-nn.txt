@@ -1,5 +1,5 @@
 <!-- Norwegian Nynorsk tooltips message file (by Karl Ove Hufthammer <karl@huftis.org>) -->
-<!-- $Revision: 1.10 $ - $Date: 2003-03-03 10:02:42 $ -->
+<!-- $Revision: 1.11 $ - $Date: 2003-09-16 17:10:20 $ -->
 <div class="CTooltip" id="tt1">
 Eit nytt besøk er ein ny <b>gjest</b> som ikkje har vore tilkopla nettstaden siste <b>#VisitTimeOut# minutt</b>.
 </div>
@@ -34,7 +34,7 @@ Merk at talet på søkjeord kan vera høgare enn talet på søkjeuttrykk, for når to 
 Robotar blir brukt av mange søkjemotorar som besøkjer nettstaden din for å indeksera og rangera han, samla statistikk om nettstader, og/eller sjå om nettstaden framleis er tilgjengeleg.<br>
 #PROG# kjenner til <b>#RobotArray#</b> robotar.
 </div>
-<div class="CTooltip" ID="tt17">
+<div class="CTooltip" id="tt17">
 All tidsrelatert statistikk er basert på tenartida.<br>
 </div>
 <div class="CTooltip" id="tt18">
