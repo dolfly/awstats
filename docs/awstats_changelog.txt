@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.70 $ - $Author: eldy $ - $Date: 2003-01-08 07:09:42 $ 
+$Revision: 1.71 $ - $Author: eldy $ - $Date: 2003-01-10 20:08:20 $ 
 
 
 5.4
@@ -21,6 +21,7 @@ New features/improvments:
 - Export tooltip features in a plugin (plugin tooltips disabled by default).
 - Added average session length in Visit Duration report.
 - Added percentage in Visit Duration report.
+- logresolvemerge.pl can read .gz or .bz2 files.
 
 Other/Documentation:
 - Replaced -month=year option by -month=all.
