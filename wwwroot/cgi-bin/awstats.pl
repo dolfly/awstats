@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.546 $ - $Author: eldy $ - $Date: 2003-07-15 22:46:40 $
+# $Revision: 1.547 $ - $Author: eldy $ - $Date: 2003-07-26 16:22:10 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.546 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.547 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.7 (build $REVISION)";
 
 # ----- Constants -----
@@ -1676,6 +1676,15 @@ sub Read_Plugins {
 		my $pluginname=$1;
 		if ($pluginname) {
 			if (! $PluginsLoaded{'init'}{"$pluginname"}) {		# Plugin not already loaded
+				my %pluginisfor=('tooltips'=>'o','ipv6'=>'u','hashfiles'=>'u','geoip'=>'u',
+				'geoipfree'=>'u','userinfo'=>'o','urlalias'=>'o','timehires'=>'u','timezone'=>'o');
+				if ($pluginisfor{$pluginname}) {
+					# Do not load "update plugins" if output only
+					if (! $UpdateStats && scalar keys %HTMLOutput && $pluginisfor{$pluginname} !~ /o/) { $PluginsLoaded{'init'}{"$pluginname"}=1; next; }
+					# Do not load "output plugins" if update only
+					if ($UpdateStats && ! scalar keys %HTMLOutput && $pluginisfor{$pluginname} !~ /u/) { $PluginsLoaded{'init'}{"$pluginname"}=1; next; }
+				}
+				# Load plugin
 				foreach my $dir (@PossiblePluginsDir) {
 					my $searchdir=$dir;
 					if ($searchdir && (!($searchdir =~ /\/$/)) && (!($searchdir =~ /\\$/)) ) { $searchdir .= "/"; }
@@ -4844,6 +4853,10 @@ if ((! $ENV{'GATEWAY_INTERFACE'}) && (! $SiteConfig)) {
 	print "  Most viewed, entry and exit pages\n";
 	print "  Files type and Web compression\n";
 	print "  Personalized reports\n";
+	print "  Screen size\n";
+	print "  Number of times site is 'added to favourites bookmarks'\n";
+	print "  Ratio of Browsers with support of: Java, Flash, RealG2 reader,\n";
+	print "                        Quicktime reader, WMA reader, PDF reader\n";
 	print "  ".(scalar keys %DomainsHashIDLib)." domains/countries\n";
 	print "  ".(scalar keys %RobotsHashIDLib)." robots\n";
 	print "  ".(scalar keys %OSHashLib)." operating systems\n";
@@ -5145,7 +5158,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			}
 		}
 		else {
-			if (! scalar keys %HTMLOutput) { print "Direct access to last remembered record is out of file.\nSo searching if from beginning of log file...\n"; }
+			if (! scalar keys %HTMLOutput) { print "Direct access to last remembered record is out of file.\nSo searching it from beginning of log file...\n"; }
 			$lastlinenumber=0;
 			$lastlineoffset=0;
 			$lastlineoffsetnext=0;
