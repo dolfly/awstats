@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.333 $ - $Author: eldy $ - $Date: 2002-09-20 13:31:55 $
+# $Revision: 1.334 $ - $Author: eldy $ - $Date: 2002-09-21 01:01:41 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.333 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.334 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3498,15 +3498,16 @@ sub Lock_Update {
 
 #--------------------------------------------------------------------
 # Function:     Signal handler to call Lock_Update to remove lock file
-# Parameters:   None
+# Parameters:   Signal name
 # Input:        None
 # Output:       None
 # Return:       None
 #--------------------------------------------------------------------
 sub SigHandler {
-	#my $signame = shift;
+	my $signame = shift;
+	print ucfirst($PROG)." process (ID $$) interrupted by signal $signame.\n";
 	&Lock_Update(0);
-	sleep 10;
+	exit 1;
 }
 
 #--------------------------------------------------------------------
@@ -6661,7 +6662,7 @@ EOF
 			$new_browser_h{$key}+=$_browser_h{$key};
 		}
 		&tab_head("$Message[21]",19);
-		print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH colspan=2>Browser</TH><TH width=80>$Message[111]</TH><TH bgcolor=\"#$color_h\" width=80>$Message[57]</TH><TH bgcolor=\"#$color_h\" width=80>$Message[15]</TH></TR>\n";
+		print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH colspan=2>$Message[21]</TH><TH width=80>$Message[111]</TH><TH bgcolor=\"#$color_h\" width=80>$Message[57]</TH><TH bgcolor=\"#$color_h\" width=80>$Message[15]</TH></TR>\n";
 		my $count=0;
 		&BuildKeyList($MaxRowsInHTMLOutput,1,\%new_browser_h,\%new_browser_h);
 		foreach my $key (@keylist) {
