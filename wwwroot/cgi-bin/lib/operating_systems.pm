@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-06-14 15:17:35 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-07-01 20:25:11 $
 
 
 #package AWSOS;
@@ -31,10 +31,6 @@
 "macppc",
 "macweb",
 "macintosh",
-# Other famous OS
-"beos",
-"os/2",
-"amiga",
 # Unix like OS
 "linux",
 "aix",
@@ -47,6 +43,11 @@
 "freebsd",
 "openbsd",
 "unix",
+# Other famous OS
+"beos",
+"os/2",
+"amiga",
+"vms",
 # Miscellanous OS
 "cp/m",
 "crayos",
@@ -72,10 +73,6 @@
 "wince","wince","windows_ce","wince",
 # Macintosh OS family
 "mac_p","macintosh","mac_68","macintosh","macppc","macintosh","macweb","macintosh","macintosh","macintosh",
-# Other famous OS
-"beos","beos",
-"os/2","os/2",
-"amiga","amigaos",
 # Unix like OS
 "linux","linux",
 "aix","aix",
@@ -88,6 +85,11 @@
 "freebsd","freebsd",
 "openbsd","openbsd",
 "unix","unix",
+# Other famous OS
+"beos","beos",
+"os/2","os/2",
+"amiga","amigaos",
+"vms","vms",
 # Miscellanous OS
 "cp/m","cp/m",
 "crayos","crayos",
@@ -111,10 +113,6 @@
 "wince","Windows CE",
 # Macintosh OS
 "macintosh","Mac OS",
-# Other famous OS
-"beos","BeOS",
-"os/2","Warp OS/2",
-"amigaos","AmigaOS",
 # Unix like OS
 "linux","Linux",
 "aix","Aix",
@@ -127,6 +125,11 @@
 "freebsd","FreeBSD",
 "openbsd","OpenBSD",
 "unix","Unknown Unix system",
+# Other famous OS
+"beos","BeOS",
+"os/2","Warp OS/2",
+"amigaos","AmigaOS",
+"vms","VMS",
 # Miscellanous OS
 "cp/m","CPM",
 "crayos","CrayOS",
