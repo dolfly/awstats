@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.621 $ - $Author: eldy $ - $Date: 2003-10-29 20:47:51 $
+# $Revision: 1.622 $ - $Author: eldy $ - $Date: 2003-10-29 21:11:05 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.621 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.622 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -458,7 +458,7 @@ use vars qw/ @Message /;
 'Worm/Virus attacks',
 'Add to favorites (estimated)',
 'Days of month',
-'Miscellanous',
+'Miscellaneous',
 'Browsers with Java support',
 'Browsers with Macromedia Director Support',
 'Browsers with Flash Support',
@@ -4605,7 +4605,7 @@ sub DefinePerlParsingFormat {
 				$PerlParsingFormat .= "([^$LogSeparatorWithoutStar]+\\s[^$LogSeparatorWithoutStar]+)";	# Need \s for Exchange log files
 			}
 			elsif ($f =~ /%syslog$/) {	# TODO Add a tag time3 for date 'Mon 2 10:20:05'
-				$PerlParsingFormat .= "\\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d [^$LogSeparatorWithoutStar]+";
+				$PerlParsingFormat .= "\\w\\w\\w \\s??\\d+ \\d\\d:\\d\\d:\\d\\d [^$LogSeparatorWithoutStar]+";
 			}
 			# Special for methodurl and methodurlnoprot
 			elsif ($f =~ /%methodurl$/) {
@@ -7905,7 +7905,7 @@ if (scalar keys %HTMLOutput) {
 			my $mot = CleanFromCSSA(DecodeEncodedString($key));
 			my $p;
 			if ($TotalKeywords) { $p=int($_keywords{$key}/$TotalKeywords*1000)/10; }
-			print "<tr><td class=\"aws\">$mot</td><td>$_keywords{$key}</td><td>$p %</td></tr>\n";
+			print "<tr><td class=\"aws\">".XMLEncode($mot)."</td><td>$_keywords{$key}</td><td>$p %</td></tr>\n";
 			$total_s += $_keywords{$key};
 			$count++;
 		}
@@ -9386,7 +9386,7 @@ else {
 	print " Found $NbOfLinesDropped dropped records,\n";
 	print " Found $NbOfLinesCorrupted corrupted records,\n";
 	print " Found $NbOfOldLines old records,\n";
-	print " Found $NbOfNewLines new qualifed records.\n";
+	print " Found $NbOfNewLines new qualified records.\n";
 }
 
 #sleep 10;

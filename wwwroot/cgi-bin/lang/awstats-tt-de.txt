@@ -1,4 +1,4 @@
-<!-- $Revision: 1.6 $ - $Date: 2003-09-16 18:58:16 $ -->
+<!-- $Revision: 1.7 $ - $Date: 2003-10-29 21:13:28 $ -->
 <div class="CTooltip" id="tt1">
 Ein neuer Besucher wird definiert als jeder neue <b>Besucher</b>, der eine Seite abgerufen hat und der auf Ihre Web Site in den letzten <b>#VisitTimeOut# min.</b> nicht zugegriffen hat.
 </div>
@@ -12,7 +12,7 @@ Diese Zahl unterscheidet sich von den &quot;Zugriffen&quot;, da nur HTML Seiten 
 </div>
 <div class="CTooltip" id="tt4">
 Anzahl der insgesamt <b>angezeigten</b> oder <b>heruntergeladenen Seiten, Grafiken, Dateien</b> Ihrer Web Site.<br />
-Diese Zahl wird nur als Referenz angegeben, da meistens die Anzahl der angezeigten &quot;Seiten&quot; f&uuml; Marketingzwecke bevorzugt wird.
+Diese Zahl wird nur als Referenz angegeben, da meistens die Anzahl der angezeigten &quot;Seiten&quot; f&uuml;r Marketingzwecke bevorzugt wird.
 </div>
 <div class="CTooltip" id="tt5">
 Dieser Wert entspricht der Menge an Daten, die aufgrund aller <b>Seiten</b>, <b>Grafiken</b> und <b>Dateien</b> Ihrer Web Site &uuml;bertragen worden sind.<br />

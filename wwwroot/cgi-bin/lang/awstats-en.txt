@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.66 $ - $Date: 2003-09-27 14:25:54 $
+# $Revision: 1.67 $ - $Date: 2003-10-29 21:08:47 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -139,7 +139,7 @@ message135=Screen sizes
 message136=Worm/Virus attacks
 message137=Add to favorites (estimated)
 message138=Days of month
-message139=Miscellanous
+message139=Miscellaneous
 message140=Browsers with Java support
 message141=Browsers with Macromedia Director Support
 message142=Browsers with Flash Support
