@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Using the Extra Sections features">
 <title>AWStats Documentation - Using the Extra Sections features</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.16 $ - $Author: eldy $ - $Date: 2004-03-12 23:33:44 $ -->
+<!-- $Revision: 1.17 $ - $Author: eldy $ - $Date: 2004-04-10 14:00:28 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -91,6 +91,7 @@ Try to follow them to build your own reporting tools:</b></u><br>
 <li><a href="#bugzilla">Tracking Bugzilla most frequently viewed bugs</a><br>
 <li><a href="#awredir">Tracking Exit clicks</a><br>
 <li><a href="#level2dir">List of top level 2 path under a directory /mydir</a><br>
+<li><a href="#aborted">Tracking aborted download</a><br>
 
 
 <br>
@@ -194,6 +195,21 @@ So this is how you need to setup your ExtraSection to add a chart for a such tra
 <br><br>
 
 
+<br><a name="aborted"><H2 style="font: 22px arial,helvetica,sanserif color: #606060"><u>Tracking aborted download</u></H2></a>
+Aborted downloads are reported in a log file by a 206 error, so this is how you need to setup your ExtraSection to add a chart for a such tracking:<br>
+<i>
+<br>ExtraSectionName1="List of aborted download"
+<br>ExtraSectionCodeFilter1="206"
+<br>ExtraSectionCondition1=""
+<br>ExtraSectionFirstColumnTitle1="URL"
+<br>ExtraSectionFirstColumnValues1="URL,(.*)"
+<br>ExtraSectionStatTypes1=PHK
+<br>MaxNbOfExtra1=100
+<br>MinHitExtra1=1
+</i>
+<br><br>
+
+
 <br><br>
 There is a lot of other possible use for Extra Sections ...<br>
 <br>
@@ -203,7 +219,7 @@ There is a lot of other possible use for Extra Sections ...<br>
 <hr>
 
 <script language=javascript>
-	var date='$Date: 2004-03-12 23:33:44 $';
+	var date='$Date: 2004-04-10 14:00:28 $';
 	document.writeln("Last revision: "+date);
 </script>
 
