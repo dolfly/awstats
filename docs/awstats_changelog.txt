@@ -1,6 +1,19 @@
 AWStats Changelog
 -----------------
-$Revision: 1.150 $ - $Author: eldy $ - $Date: 2003-09-15 23:47:01 $
+$Revision: 1.151 $ - $Author: eldy $ - $Date: 2003-09-17 18:12:13 $
+
+
+5.9
+
+Fixes:
+- Several fixes in maillogconvert.pl
+  Fixed wrong parsing for qmail log files.
+  Support mail errors in qmail log files.
+  Return code for postfix log were all reported in error for mails sent to
+  several recipients when one recipient was in error.
+New features/improvements:
+- AWStats Webmin module updated to 1.1
+
 
 
 5.8
