@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.54 $ - $Date: 2003-04-22 02:36:40 $
+# $Revision: 1.55 $ - $Date: 2003-06-08 23:54:39 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -139,3 +139,4 @@ message135=Résolution écran
 message136=Attaques Worm/Virus
 message137=Ajout aux favoris
 message138=Jours du mois
+message139=Divers
