@@ -1,5 +1,5 @@
 # Brazilian Portuguese message file (urban@ite.net.br)
-# $Revision: 1.7 $ - $Date: 2004-08-25 22:38:36 $
+# $Revision: 1.8 $ - $Date: 2005-01-29 16:00:46 $
 message0=Desconhecido
 message1=Desconhecido (ip n&atilde;o resolvido)
 message2=Outros visitantes
@@ -76,7 +76,7 @@ message72=Navega&ccedil;&atilde;o
 message73=Tipos de Arquivos
 message74=Atualiza Agora
 message75=Bytes
-message76=Retorna &agrave p&aacute;gina inicial
+message76=Retorna &agrave; p&aacute;gina inicial
 message77=Primeiros
 message78=dd mmm yyyy - HH:MM
 message79=Filtro
