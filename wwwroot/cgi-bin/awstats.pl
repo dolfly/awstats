@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.412 $ - $Author: eldy $ - $Date: 2002-12-04 22:02:15 $
+# $Revision: 1.413 $ - $Author: eldy $ - $Date: 2002-12-07 03:37:27 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.412 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.413 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.2 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -912,7 +912,9 @@ sub DateIsValid {
 		if ($day > 30) { return 0; }
 	}
 	if ($month==2) {
-		if ($day > 28) { return 0; }
+		my $leapyear=($year%4==0?1:0);		# A leap year every 4 years
+		if ($year%100==0 && $year%400!=0) { $leapyear=0; }	# Except if year is 100x and not 400x
+		if ($day > (28+$leapyear)) { return 0; }
 	}
 	return 1;
 }
