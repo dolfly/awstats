@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-11-19 21:30:27 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2003-12-12 19:25:08 $
 
 
 # <-----
@@ -76,13 +76,13 @@ sub AddHTMLBodyHeader_rawlog {
 sub BuildFullHTMLOutput_rawlog {
 	# <-----
 	my $Filter='';
-	if ($QueryString =~ /filterrawlog=([^&]+)/i) {
-		my $filter=&DecodeEncodedString("$1");
-		$Filter=qr/$filter/i;
-	}
+	if ($QueryString =~ /filterrawlog=([^&]+)/i) { $Filter=&DecodeEncodedString("$1"); }
 
 	# Show form
 	&_ShowForm($Filter);
+
+	# Precompiled regex Filter to speed up scan
+	if ($Filter) { $Filter=qr/$Filter/i; }
 
 	print "<hr />\n";
 	
@@ -96,7 +96,7 @@ sub BuildFullHTMLOutput_rawlog {
 		print "$_<br />\n";
 		if (++$i > $MAXLINE) { last; }
 	}
-	print "<b>$i lines.</b><br />";
+	print "<br>\n<b>$i lines.</b><br />";
 	return 1;
 	# ----->
 }
