@@ -1,15 +1,17 @@
 AWStats Changelog
 -----------------
-$Revision: 1.227 $ - $Author: eldy $ - $Date: 2005-01-01 21:56:21 $
+$Revision: 1.228 $ - $Author: eldy $ - $Date: 2005-01-15 14:27:51 $
 
 
 ***** 6.3 *****
 
 New features/improvements:
 - Added the geoip_isp_maxmind and geoip_org_maxmind plugin.
+- Details firefox versions.
 
 Fixes:
-- The geoip_city_maxmind plugin was sometimes bind.
+- The geoip_city_maxmind plugin was sometimes bind and towns with
+  space in names are reported correctly.
 - Removed an unknown security hole.
 - Removed an other unknown security hole (found by iDEFENSE).
 
