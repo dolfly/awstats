@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.465 $ - $Author: eldy $ - $Date: 2003-02-17 18:28:28 $
+# $Revision: 1.466 $ - $Author: eldy $ - $Date: 2003-02-19 15:23:05 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.465 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.466 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5315,9 +5315,9 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 				$_filetypes_gz_out{$extension}+=$out;
 			}
 		}
-		elsif ($pos_gzipratio>=0 && ($field[$pos_gzipratio] =~ /(\d*)pct./)) {
-			$_filetypes_gz_in{$extension}+=int($field[$pos_size]);
-			$_filetypes_gz_out{$extension}+=int($field[$pos_size]*(1-$1/100));	# out size calculated from pct.
+		elsif ($pos_gzipratio>=0 && ($field[$pos_gzipratio] =~ /(\d+)pct./)) {
+			$_filetypes_gz_in{$extension}+=int($field[$pos_size]*100/((100-$1)||1));
+			$_filetypes_gz_out{$extension}+=int($field[$pos_size]);	# out size calculated from pct.
 		}
 
 		# Analyze: Date - Hour - Pages - Hits - Kilo
