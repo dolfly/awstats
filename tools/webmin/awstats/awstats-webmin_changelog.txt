@@ -1,6 +1,19 @@
 AWStats-Webmin module Changelog
 -------------------------------
-$Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-09-22 13:33:59 $ 
+$Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-10-30 09:47:52 $ 
+
+
+1.2
+
+Fixes:
+- None
+
+New features/improvements:
+- Added UseXMLForOutput parameter
+
+Other/Documentation:
+- None
+
 
 
 1.1
