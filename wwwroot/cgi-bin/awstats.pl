@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.560 $ - $Author: eldy $ - $Date: 2003-08-03 15:27:27 $
+# $Revision: 1.561 $ - $Author: eldy $ - $Date: 2003-08-03 17:22:07 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.560 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.561 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.7 (build $REVISION)";
 
 # ----- Constants -----
@@ -5239,9 +5239,15 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		# Check virtual host name
 		#----------------------------------------------------------------------
 		if ($pos_vh>=0 && $field[$pos_vh] ne $SiteDomain) {
-			$NbOfLinesDropped++;
-			if ($ShowDropped) { print "Dropped record (virtual hostname '$field[$pos_vh]' does not match SiteDomain='$SiteDomain' parameter): $_\n"; }
-			next;
+			my $skip=1;
+			foreach my $key (@HostAliases) {
+				if ($field[$pos_vh] =~ m/^$key$/) { $skip=0; next; }
+			}
+			if ($skip) {
+				$NbOfLinesDropped++;
+				if ($ShowDropped) { print "Dropped record (virtual hostname '$field[$pos_vh]' does not match SiteDomain='$SiteDomain' nor HostAliases parameters): $_\n"; }
+				next;
+			}
 		}
 
 		# Check protocol (Note: Use of TmpProtocol does not increase speed)
