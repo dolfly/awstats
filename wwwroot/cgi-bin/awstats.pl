@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.732 $ - $Author: eldy $ - $Date: 2004-03-21 20:01:23 $
+# $Revision: 1.733 $ - $Author: eldy $ - $Date: 2004-03-22 19:38:24 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.732 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.733 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -1179,9 +1179,17 @@ sub Parse_Config {
 			}
 		if ($param =~ /^HostAliases/) {
 			foreach my $elem (split(/\s+/,$value))	{
-				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
-				else { $elem='^'.quotemeta($elem).'$'; }
-				if ($elem) { push @HostAliases, qr/$elem/i; }
+			    if ($elem =~ s/^\@//) { # If list of hostaliases in a file
+			        open(DATAFILE,"<$elem") || error("Failed to open file '$elem'");
+			        my @val=map(/^(.*)$/i,<DATAFILE>);
+			        push @HostAliases, map{qr/^$_$/i} @val;
+			        close(DATAFILE);
+			    }
+				else {
+				    if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
+				    else { $elem='^'.quotemeta($elem).'$'; }
+				    if ($elem) { push @HostAliases, qr/$elem/i; }
+				}
 			}
 			next;
 			}
