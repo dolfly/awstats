@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.481 $ - $Author: eldy $ - $Date: 2003-03-09 18:22:25 $
+# $Revision: 1.482 $ - $Author: eldy $ - $Date: 2003-03-16 01:07:28 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.481 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.482 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3186,11 +3186,11 @@ sub Save_History {
 		my %keysinkeylist=();
 		foreach my $key (@keylist) {
 			$keysinkeylist{$key}=1;
-			print HISTORYTMP "$key ".int($_login_p{$key})." ".int($_login_h{$key})." ".int($_login_k{$key})." $_login_l{$key}\n";
+			print HISTORYTMP "$key ".int($_login_p{$key}||0)." ".int($_login_h{$key}||0)." ".int($_login_k{$key}||0)." ".($_login_l{$key}||'')."\n";
 		}
 		foreach my $key (keys %_login_h) {
 			if ($keysinkeylist{$key}) { next; }
-			print HISTORYTMP "$key ".int($_login_p{$key})." ".int($_login_h{$key})." ".int($_login_k{$key})." $_login_l{$key}\n";
+			print HISTORYTMP "$key ".int($_login_p{$key}||0)." ".int($_login_h{$key}||0)." ".int($_login_k{$key}||0)." ".($_login_l{$key}||'')."\n";
 		}
 		print HISTORYTMP "END_LOGIN\n";
 	}
