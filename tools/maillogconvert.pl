@@ -19,7 +19,7 @@ use strict;no strict "refs";
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.23 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.24 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.1 (build $REVISION)";
 
 use vars qw/
@@ -32,7 +32,7 @@ $NBOFENTRYFOFLUSH
 $MailType
 /;
 $Debug=0;
-$NBOFENTRYFOFLUSH=65536;	# Nb or records for flush of %entry (Must be a power of 2)
+$NBOFENTRYFOFLUSH=16384;	# Nb or records for flush of %entry (Must be a power of 2)
 $MailType='';				# Mail server family (postfix, sendmail, qmail)
 
 
