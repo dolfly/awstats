@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.464 $ - $Author: eldy $ - $Date: 2003-02-17 18:19:06 $
+# $Revision: 1.465 $ - $Author: eldy $ - $Date: 2003-02-17 18:28:28 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.464 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.465 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -597,7 +597,7 @@ EOF
 		if ($FrameName ne 'index') { print "<body>\n"; }
 		if ($FrameName ne 'index' && $FrameName ne 'mainleft' && $ShowLinksToWhoIs) {
 print <<EOF;
-<SCRIPT type="javascript">
+<SCRIPT language="JavaScript">
 function neww(a,b) {
 	var wfeatures="directories=0,menubar=1,status=0,resizable=1,scrollbars=1,toolbar=0,width=$WIDTHINFO,height=$HEIGHTINFO,left=" + eval("(screen.width - $WIDTHINFO)/2") + ",top=" + eval("(screen.height - $HEIGHTINFO)/2");
 	if (b==1) { fen=window.open('$LinksToWhoIs'+a,'whois',wfeatures); }
