@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.423 $ - $Author: eldy $ - $Date: 2002-12-13 00:50:54 $
+# $Revision: 1.424 $ - $Author: eldy $ - $Date: 2002-12-13 00:52:59 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.423 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.424 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.3 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -942,10 +942,10 @@ sub GetSessionRange {
 
 #------------------------------------------------------------------------------
 # Function:     Read config file
-# Parameters:	None
+# Parameters:	-
 # Input:        $DIR $PROG $SiteConfig
 # Output:		Global variables
-# Return:		None
+# Return:		-
 #------------------------------------------------------------------------------
 sub Read_Config {
 	# Check config file in common possible directories :
