@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.43 $ - $Author: eldy $ - $Date: 2002-09-24 14:15:16 $ -->
+<!-- $Revision: 1.44 $ - $Author: eldy $ - $Date: 2002-09-26 13:56:00 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -332,7 +332,12 @@ when reading it), follow the example:<br>
 
 <a name="DirIcons"><b>DirIcons</b></a><br>
 <b>Version : </b>1.0 +<br>
-<br># Relative or absolute web URL of all icons subdirectories.
+<br># If AWStats used as a CGI, enter relative or absolute web URL of all icons
+<br># subdirectories.
+<br># If you build static reports ("... -output > outputpath/output.html"), enter
+<br># path of icon directory relative to the directory outputpath.
+<br># Example: "/icon"
+<br># Example: "../icon"
 <br># Default: "/icon" (means you must copy icon directories in "/mywwwroot/icon")
 <br>#
 <br>DirIcons="/icon"
