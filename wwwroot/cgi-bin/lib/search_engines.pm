@@ -4,7 +4,7 @@
 # you must add an entry in SearchEnginesSearchIDOrder and in SearchEnginesHashIDLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-08-20 19:09:30 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-09-04 15:37:21 $
 
 
 #package AWSSE;
@@ -37,7 +37,7 @@
 "webcrawler\.",
 "metacrawler\.",
 "go2net\.com",
-"go\.com",
+"(^|\.)go\.com",
 "euroseek\.",
 "excite\.",
 "lokace\.",
@@ -103,7 +103,7 @@
 "webcrawler\.","WebCrawler",
 "metacrawler\.","MetaCrawler (Metamoteur)",
 "go2net\.com","Go2Net (Metamoteur)",
-"go\.com","Go.com",
+"(^|\.)go\.com","Go.com",
 "euroseek\.","Euroseek",
 "excite\.","Excite",
 "lokace\.", "Lokace",
@@ -167,7 +167,7 @@
 "hotbot\.","mt=",
 "metacrawler\.","general=",
 "go2net\.com","general=",
-"go\.com","qt=",
+"(^|\.)go\.com","qt=",
 "overture\.com","keywords=",
 "euroseek\.","query=",
 "excite\.","search=",
