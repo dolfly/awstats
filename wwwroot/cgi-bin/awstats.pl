@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.523 $ - $Author: eldy $ - $Date: 2003-06-21 15:34:57 $
+# $Revision: 1.524 $ - $Author: eldy $ - $Date: 2003-06-22 17:13:56 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.523 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.524 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -1329,9 +1329,9 @@ sub Check_Config {
 		debug(" DirData='$DirData'",2);
 		debug(" DirCgi='$DirCgi'",2);
 		debug(" DirIcons='$DirIcons'",2);
-		debug(" NotPageList ".(scalar keys %NotPageList),2);
-		debug(" ValidHTTPCodes ".(scalar keys %ValidHTTPCodes),2);
-		debug(" ValidSMTPCodes ".(scalar keys %ValidSMTPCodes),2);
+		debug(" NotPageList ".(join(',',keys %NotPageList)),2);
+		debug(" ValidHTTPCodes ".(join(',',keys %ValidHTTPCodes)),2);
+		debug(" ValidSMTPCodes ".(join(',',keys %ValidSMTPCodes)),2);
 		debug(" UseFramesWhenCGI=$UseFramesWhenCGI",2);
 	}
 
