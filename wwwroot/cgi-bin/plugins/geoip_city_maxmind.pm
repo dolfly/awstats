@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP (Geo::IP::PurePerl is not yet supported)
 #-----------------------------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2004-12-10 22:28:39 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2005-01-15 01:07:29 $
 
 
 # <-----
@@ -220,7 +220,8 @@ sub AddHTMLGraph_geoip_city_maxmind {
 #        print "</tr>\n";
     	foreach my $key (@keylist) {
             if ($key eq 'unknown') { next; }
-   		    my ($countrycode,$city)=split('_',$key);
+   		    my ($countrycode,$city)=split('_',$key,2);
+            $city=~tr/_/ /;
 #            if ($countrycode ne $country) { next; }
    			my $p_p; my $p_h;
    			if ($TotalPages) { $p_p=int($_city_p{$key}/$TotalPages*1000)/10; }
