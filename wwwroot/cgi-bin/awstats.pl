@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.375 $ - $Author: eldy $ - $Date: 2002-10-18 16:01:23 $
+# $Revision: 1.376 $ - $Author: eldy $ - $Date: 2002-10-19 16:55:53 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.375 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.376 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4404,6 +4404,8 @@ if ($Debug) {
 if ($Debug) { debug("UpdateStats is $UpdateStats",2); }
 if ($UpdateStats && $FrameName ne "index" && $FrameName ne "mainleft") {	# Update only on index page or when not framed to avoid update twice
 
+	print "Update for config '$FileConfig'\nWith data in log file '$LogFile'...\n";
+
 	my $lastprocessedyear=$lastyearbeforeupdate;
 	my $lastprocessedmonth=$ListOfYears{$lastyearbeforeupdate}||0;
 	my $lastprocessedyearmonth=sprintf("%04i%02i",$lastprocessedyear,$lastprocessedmonth);
@@ -4678,6 +4680,9 @@ if ($UpdateStats && $FrameName ne "index" && $FrameName ne "mainleft") {	# Updat
 	# Open log file
 	if ($Debug) { debug("Open log file \"$LogFile\""); }
 	open(LOG,"$LogFile") || error("Error: Couldn't open server log file \"$LogFile\" : $!");
+
+	# Avoid premature EOF due to log files corrupted with \cZ or bin chars
+	binmode LOG;
 
 	my @field=();
 	my $counter=0;
