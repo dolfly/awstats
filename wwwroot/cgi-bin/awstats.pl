@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.594 $ - $Author: eldy $ - $Date: 2003-09-15 23:42:45 $
+# $Revision: 1.595 $ - $Author: eldy $ - $Date: 2003-09-16 12:15:03 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.594 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.595 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -6056,7 +6056,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			elsif ($PluginsLoaded{'GetCountryCodeByAddr'}{'geoip'}) { $Domain=GetCountryCodeByAddr_geoip($HostResolved); }
 		}
 		else {
-			# $Host was already a host name ($HostResolved='', $ip=0) or has been resolved ($HostResolved defined, $ip>0)
+			# $Host was already a host name ($Host=name => $HostResolved='', $ip=0) or has been resolved ($Host=ip => $HostResolved defined, $ip>0)
 			$HostResolved = lc($HostResolved?$HostResolved:$Host);
 			# Resolve Domain
 			if ($ip) {
