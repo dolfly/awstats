@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.326 $ - $Author: eldy $ - $Date: 2002-09-18 11:14:32 $
+# $Revision: 1.327 $ - $Author: eldy $ - $Date: 2002-09-18 11:35:48 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.326 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.327 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1424,7 +1424,7 @@ sub Check_Config {
 	if (! -d $DirData) {
 		if ($CreateDirDataIfNotExists) {
 			if ($Debug) { debug(" Make directory $DirData",2); }
-			my $mkdirok=mkdir "$DirData", 0666;
+			my $mkdirok=mkdir "$DirData", 0766;
 			if (! $mkdirok) { error("Error: $PROG failed to create directory DirData (DirData=\"$DirData\", CreateDirDataIfNotExists=$CreateDirDataIfNotExists)."); }
 		}
 		else {
