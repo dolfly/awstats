@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP (Geo::IP::PurePerl is not yet supported)
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2004-10-27 20:56:49 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2004-12-07 13:11:55 $
 
 
 # <-----
@@ -352,6 +352,31 @@ sub SectionProcessIp_geoip_city_maxmind {
 	my $record=();
 	$record=$geoip_city_maxmind->record_by_addr($param) if $geoip_city_maxmind;
 	if ($Debug) { debug("  Plugin geoip_city_maxmind: GetCityByIp for $param: [$record]",5); }
+    my $city=$record->city;
+#	if ($PageBool) { $_city_p{$city}++; }
+    if ($city) {
+        my $countrycity=lc(($record->country_code)."_".$city);
+        $countrycity=~tr/ /_/;
+        $_city_h{$countrycity}++;
+    } else {
+        $_city_h{'unknown'}++;
+    }
+#	if ($timerecord > $_city_l{$city}) { $_city_l{$city}=$timerecord; }
+	# ----->
+	return;
+}
+
+
+#-----------------------------------------------------------------------------
+# PLUGIN FUNCTION: SectionProcessHostname_pluginname
+# UNIQUE: NO (Several plugins using this function can be loaded)
+#-----------------------------------------------------------------------------
+sub SectionProcessHostname_geoip_city_maxmind {
+    my $param="$_[0]";      # Param must be an IP
+	# <-----
+	my $record=();
+	$record=$geoip_city_maxmind->record_by_name($param) if $geoip_city_maxmind;
+	if ($Debug) { debug("  Plugin geoip_city_maxmind: GetCityByName for $param: [$record]",5); }
     my $city=$record->city;
 #	if ($PageBool) { $_city_p{$city}++; }
     if ($city) {
