@@ -1,11 +1,19 @@
 AWStats Changelog
 -----------------
-$Revision: 1.217 $ - $Author: eldy $ - $Date: 2004-05-15 13:22:38 $
+$Revision: 1.218 $ - $Author: eldy $ - $Date: 2004-05-30 12:44:10 $
 
 6.2
 
+New features/improvements:
+- None
+
+Fixes:
+- Fix not recognized %time3 tag in LogFormat
+
 Other/Documentation:
-- Minor change on documentation.
+- Some changes to allow plugins to add new charts.
+- Updated documentation.
+- Renamed configure.pl into awstats_configure.pl.
 
 
 6.1
