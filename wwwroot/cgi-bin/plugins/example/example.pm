@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Put here list of all required plugins
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2002-10-05 17:04:54 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-11-16 03:16:18 $
 
 
 # <-----
@@ -32,8 +32,8 @@ my $PluginNeedAWStatsVersion="5.1";
 # ----->
 
 # <-----
-# THIS VARIABLE MUST CONTAINS THE NAME OF ALL FUNCTIONS THAT MANAGE THE PLUGIN
-# EACH POSSIBLE FUNCTION AND GOAL ARE DESCRIBE
+# THIS VARIABLE MUST CONTAINS THE NAME OF ALL FUNCTIONS THE PLUGIN HANDLE
+# EACH POSSIBLE FUNCTION AND GOAL ARE DESCRIBE LATER
 my $PluginHooksFunctions="xxx";
 # ----->
 
