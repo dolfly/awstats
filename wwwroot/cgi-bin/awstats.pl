@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.705 $ - $Author: eldy $ - $Date: 2004-01-31 14:08:32 $
+# $Revision: 1.706 $ - $Author: eldy $ - $Date: 2004-02-05 10:47:02 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.705 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.706 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -5943,6 +5943,11 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			$urlwithnoquery=$field[$pos_url];
 			$tokenquery=$1||'';
 			$standalonequery=$2||'';
+			# For IIS setup, if pos_query is enabled we need to use it for query strings
+			if ($pos_query >=0 && $field[$pos_query] && $field[$pos_query] ne '-') {
+				$tokenquery='?';
+				$standalonequery=$field[$pos_query];
+			}
 		}
 		if ($URLWithAnchor && $anchor) { $field[$pos_url].="#$anchor"; }	# Restore anchor
 		# Here now urlwithnoquery is /mydir/mypage.ext, /mydir, /, /page#XXX
