@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.793 $ - $Author: eldy $ - $Date: 2004-12-30 17:55:51 $
+# $Revision: 1.794 $ - $Author: eldy $ - $Date: 2004-12-30 18:02:42 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.793 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.794 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.3 (build $REVISION)";
 
 # ----- Constants -----
@@ -1111,7 +1111,7 @@ sub Read_Config {
 	
 	# If parameter NotPageList not found, init for backward compatibility
 	if (! $FoundNotPageList) {
-		%NotPageList=('css'=>1,'js'=>1,'class'=>1,'gif'=>1,'jpg'=>1,'jpeg'=>1,'png'=>1,'bmp'=>1);
+		%NotPageList=('css'=>1,'js'=>1,'class'=>1,'gif'=>1,'jpg'=>1,'jpeg'=>1,'png'=>1,'bmp'=>1,'ico'=>1,'swf'=>1);
 	}
 	# If parameter ValidHTTPCodes empty, init for backward compatibility
 	if (! scalar keys %ValidHTTPCodes) { $ValidHTTPCodes{"200"}=$ValidHTTPCodes{"304"}=1; }
