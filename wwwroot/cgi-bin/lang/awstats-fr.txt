@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.64 $ - $Date: 2003-08-02 12:04:09 $
+# $Revision: 1.65 $ - $Date: 2003-08-03 12:49:58 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -153,3 +153,4 @@ message149=Mails
 message150=Taille
 message151=Premier
 message152=Dernier
+message153=Filtre exclusion
