@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.35 $ - $Author: eldy $ - $Date: 2004-02-20 18:49:37 $
+# $Revision: 1.36 $ - $Author: eldy $ - $Date: 2004-05-01 16:44:56 $
 
 
 #package AWSUA;
@@ -33,6 +33,7 @@
 'amigavoyager',
 'aweb',
 'bpftp',
+'camino',
 'chimera',
 'cyberdog',
 'dillo',
@@ -144,7 +145,8 @@
 'amigavoyager','AmigaVoyager',
 'aweb','AWeb',
 'bpftp','BPFTP',
-'chimera','Chimera',
+'camino','Camino',
+'chimera','Chimera (Old Camino)',
 'cyberdog','Cyberdog',
 'dillo','Dillo',
 'dreamcast','Dreamcast',
@@ -269,6 +271,7 @@
 'avantbrowser','avant',
 'aweb','aweb',
 'bpftp','bpftp',
+'camino','chimera',
 'chimera','chimera',
 'cyberdog','cyberdog',
 'dillo','dillo',
