@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2003-11-16 06:02:22 $
+# $Revision: 1.25 $ - $Author: eldy $ - $Date: 2003-11-19 15:52:10 $
 
 
 #package AWSROB;
@@ -676,7 +676,10 @@
 # Generic root ID
 'robot', 'Unknown robot (identified by \'robot\')',
 'crawl', 'Unknown robot (identified by \'crawl\')',
-'spider', 'Unknown robot (identified by \'spider\')'
+'spider', 'Unknown robot (identified by \'spider\')',
+
+# Unknown robots identified by hit on robots.txt
+'unknown', 'Unknown robot (identified by hit on \'robots.txt\')'
 );
 
 
