@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.123 $ - $Author: eldy $ - $Date: 2003-07-27 18:39:07 $ 
+$Revision: 1.124 $ - $Author: eldy $ - $Date: 2003-07-28 01:01:11 $ 
 
 
 5.7
@@ -30,6 +30,7 @@ New features/improvements:
 - Added -updatefor option to limit number of lines parsed in one update
   session.
 - Better management of plugin load failure.
+- Added LogType parameter.
 
 Other/Documentation:
 - The "Popup WhoIs link" code is now handled by new 'hostinfo' plugin.
