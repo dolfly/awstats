@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-03-23 03:39:45 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-08-23 10:56:01 $
 
 
 #package AWSDOM;
@@ -58,7 +58,7 @@
 "ky","Cayman Islands","kz","Kazakhstan","la","Laos","lb","Lebanon","lc","Saint Lucia",
 "li","Liechtenstein","lk","Sri Lanka","lr","Liberia","ls","Lesotho","lt","Lithuania",
 "lu","Luxembourg","lv","Latvia","ly","Libya","ma","Morocco","mc","Monaco",
-"md","Moldavia","mg","Madagascar","mh","Marshall Islands","mil","USA Military",
+"md","Moldova","mg","Madagascar","mh","Marshall Islands","mil","USA Military",
 "mk","Macedonia","ml","Mali","mm","Myanmar","mn","Mongolia","mo","Macau",
 "mp","Northern Mariana Islands","mq","Martinique (French)","mr","Mauritania",
 "ms","Montserrat","mt","Malta","mu","Mauritius","museum","Museum domains","mv","Maldives",
