@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.504 $ - $Author: eldy $ - $Date: 2003-05-29 22:59:13 $
+# $Revision: 1.505 $ - $Author: eldy $ - $Date: 2003-05-29 23:57:05 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.504 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.505 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5973,7 +5973,13 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		seek(LOG,$lastlineoffset,0);
 		$_=<LOG>;
  		chomp $_; s/\r$//;
-		&Read_History_With_TmpUpdate($lastprocessedyear,$lastprocessedmonth,1,1,"all",($lastlinenumber+$NbOfLinesParsed),$lastlineoffset,&CheckSum($_));
+		if (! $NbOfLinesParsed) {
+			# TODO If there was no lines parsed (log was empty), we only update LastUpdate line with YYYYMMDDHHMMSS 0 0 0 0 0
+			&Read_History_With_TmpUpdate($lastprocessedyear,$lastprocessedmonth,1,1,"all",($lastlinenumber+$NbOfLinesParsed),$lastlineoffset,&CheckSum($_));
+		}
+		else {
+			&Read_History_With_TmpUpdate($lastprocessedyear,$lastprocessedmonth,1,1,"all",($lastlinenumber+$NbOfLinesParsed),$lastlineoffset,&CheckSum($_));
+		}
 	}
 
 	if ($Debug) { debug("Close log file \"$LogFile\""); }

@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.104 $ - $Author: eldy $ - $Date: 2003-05-25 21:25:39 $ 
+$Revision: 1.105 $ - $Author: eldy $ - $Date: 2003-05-29 23:55:07 $ 
 
 
 5.6
@@ -10,6 +10,7 @@ Fixes:
 
 New features/improvments:
 - Report compression ratios with mod_deflate feature (Apache 2).
+- A better browser detection.
 
 Other/Documentation:
 - Updated documentation.
