@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.66 $ - $Date: 2003-09-12 17:30:51 $
+# $Revision: 1.67 $ - $Date: 2003-09-12 20:01:37 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -154,3 +154,4 @@ message150=Taille
 message151=Premier
 message152=Dernier
 message153=Filtre exclusion
+message154=* Les codes présentées ici sont à l'origine de hits ou de traffic "non vus" par les visiteurs, aussi sont ils isolés dans ce rapport.
