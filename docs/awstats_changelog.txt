@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.218 $ - $Author: eldy $ - $Date: 2004-05-30 12:44:10 $
+$Revision: 1.219 $ - $Author: eldy $ - $Date: 2004-05-30 12:51:51 $
 
 6.2
 
@@ -9,9 +9,13 @@ New features/improvements:
 
 Fixes:
 - Fix not recognized %time3 tag in LogFormat
+- Fix bad html generated with buildpdf option.
+- maillogconvert.pl: Added patch to work correctly with sendmail
+when recipient is redirected through a pipe.
 
 Other/Documentation:
 - Some changes to allow plugins to add new charts.
+- Better log message in plugins.
 - Updated documentation.
 - Renamed configure.pl into awstats_configure.pl.
 
