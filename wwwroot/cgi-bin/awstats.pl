@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.767 $ - $Author: eldy $ - $Date: 2004-07-11 14:50:45 $
+# $Revision: 1.768 $ - $Author: eldy $ - $Date: 2004-07-13 23:39:59 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.767 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.768 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -1688,7 +1688,7 @@ sub Check_Config {
 	# Convert extra sections data into @ExtraConditionType, @ExtraConditionTypeVal...
 	foreach my $extranum (1..@ExtraName-1) {
 		my $part=0;
-		foreach my $conditioncouple (split(/\s*\|\s*/, $ExtraCondition[$extranum])) {
+		foreach my $conditioncouple (split(/\s*\|\|\s*/, $ExtraCondition[$extranum])) {
 	 		my ($conditiontype, $conditiontypeval)=split(/[,:]/,$conditioncouple,2);
 	 		$ExtraConditionType[$extranum][$part]=$conditiontype;
 			if ($conditiontypeval =~ /^REGEX\[(.*)\]$/i) { $conditiontypeval=$1; }
@@ -1697,7 +1697,7 @@ sub Check_Config {
 			$part++;
 	 	}
 		$part=0;
-		foreach my $rowkeycouple (split(/\s*\|\s*/, $ExtraFirstColumnValues[$extranum])) {
+		foreach my $rowkeycouple (split(/\s*\|\|\s*/, $ExtraFirstColumnValues[$extranum])) {
 	 		my ($rowkeytype, $rowkeytypeval)=split(/[,:]/,$rowkeycouple,2);
 	 		$ExtraFirstColumnValuesType[$extranum][$part]=$rowkeytype;
 			if ($rowkeytypeval =~ /^REGEX\[(.*)\]$/i) { $rowkeytypeval=$1; }
