@@ -3,7 +3,7 @@
 # Export lib data values to a text files to allow to use AWStats robots,
 # os, browsers, search_engines database with other log analyzers
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2002-12-07 00:49:08 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-03-04 22:42:40 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -15,7 +15,7 @@ use strict;no strict "refs";
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.1 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.2 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -67,6 +67,7 @@ use vars qw/
 %OSHashID %OSHashLib
 %RobotsHashIDLib
 %SearchEnginesHashIDLib %SearchEnginesKnownUrl
+%MimeHashFamily %MimeHashLib
 /;
 
 
@@ -210,6 +211,8 @@ if (! $LibToExport || ! $ExportFormat) {
 &Read_Ref_Data($LibToExport);
 
 
+my $libisexportable=0;
+
 # Export data
 #------------
 
@@ -226,6 +229,23 @@ if ($LibToExport =~ /browsers/) {
 			last;
 		}	
 	}
+	$libisexportable=1;
+}
+
+if ($LibToExport =~ /mime/) {
+	foreach my $key (sort keys %MimeHashFamily) {
+		if ($ExportFormat eq 'text') {
+			print "$key\t$MimeHashLib{$MimeHashFamily{$key}}\n";
+		}
+		if ($ExportFormat eq 'webalizer') {
+			print "Webalizer does not support self-defined mime types.\nUse 'text' export format if you want an export list of AWStats Mime types.\n";
+			last;
+		}
+		if ($ExportFormat eq 'analog') {
+			print "TYPEALIAS .$key   \"$key [$MimeHashLib{$MimeHashFamily{$key}}]\"\n";
+		}	
+	}
+	$libisexportable=1;
 }
 
 if ($LibToExport =~ /operating_systems/) {
@@ -243,6 +263,7 @@ if ($LibToExport =~ /operating_systems/) {
 			last;
 		}
 	}
+	$libisexportable=1;
 }
 
 if ($LibToExport =~ /robots/) {
@@ -264,6 +285,7 @@ if ($LibToExport =~ /robots/) {
 			print 'ROBOTINCLUDE '.($robotlist{$key}==1?'':'REGEXPI:')."$key".($robotlist{$key}==1?'*':'')."\n";
 		}	
 	}
+	$libisexportable=1;
 }
 
 if ($LibToExport =~ /search_engines/) {
@@ -281,8 +303,12 @@ if ($LibToExport =~ /search_engines/) {
 			print "SEARCHENGINE http://*$key*/* $urlkeywordsyntax\n";
 		}
 	}
+	$libisexportable=1;
 }
 
+if (! $libisexportable) {
+	print "Export for AWStats lib '$LibToExport' is not supported in this tool version.\n";
+}
 
 
 0;	# Do not remove this line
