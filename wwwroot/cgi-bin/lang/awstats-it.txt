@@ -1,5 +1,5 @@
 # Italian message file
-# $Revision: 1.13 $ - $Date: 2004-01-18 01:27:44 $
+# $Revision: 1.14 $ - $Date: 2004-08-09 01:46:40 $
 # PaniC! - panic@freemail.it 
 # Francesco Potorti - pot@gnu.org
 # iDave - idave@idave.it
@@ -171,3 +171,7 @@ message161=Traffico non visualizzato
 message162=Riepilogo mensile
 message163=Worm
 message164=worm diversi
+message165=Mail inviate correttamente
+message166=Mail fallite/rifiutate
+message167=Obiettivi sensibili
+message168=Javascript disabilitato
