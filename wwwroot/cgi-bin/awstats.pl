@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.688 $ - $Author: eldy $ - $Date: 2003-12-27 17:16:21 $
+# $Revision: 1.689 $ - $Author: eldy $ - $Date: 2003-12-27 17:24:00 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.688 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.689 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -4703,8 +4703,9 @@ sub DefinePerlParsingFormat {
 				$pos_date = $i;	$i++; push @fieldlib, 'date';
 				$PerlParsingFormat .= "([^$LogSeparatorWithoutStar]+\\s[^$LogSeparatorWithoutStar]+)";	# Need \s for Exchange log files
 			}
-			elsif ($f =~ /%syslog$/) {	# TODO Add a tag time3 for date 'Mon 2 10:20:05'
-				$PerlParsingFormat .= "\\w\\w\\w \\s??\\d+ \\d\\d:\\d\\d:\\d\\d [^$LogSeparatorWithoutStar]+";
+			elsif ($f =~ /%time3$/) {	# mon d hh:mm:ss
+				$pos_date = $i;	$i++; push @fieldlib, 'date';
+				$PerlParsingFormat .= "(\\w\\w\\w \\s??\\d+ \\d\\d:\\d\\d:\\d\\d)";
 			}
 			# Special for methodurl and methodurlnoprot
 			elsif ($f =~ /%methodurl$/) {
