@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.192 $ - $Author: eldy $ - $Date: 2003-12-27 16:59:09 $
+$Revision: 1.193 $ - $Author: eldy $ - $Date: 2003-12-31 06:27:37 $
 
 6.0
 
@@ -92,6 +92,8 @@ Other/Documentation:
   Microsoft URL Control added in robot list.
 - Documentation seriously updated.
 - FAQ updated.
+
+Note 0: Perl 5.00503 or higher is a requirement to use AWStats 6.0 or higher.
 
 Note 1: When migrating to 6.x series, if you use the ExtraSections feature,
   you must check that the parameter(s) ExtraSectionConditionX use a full
