@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.794 $ - $Author: eldy $ - $Date: 2004-12-30 18:02:42 $
+# $Revision: 1.795 $ - $Author: eldy $ - $Date: 2004-12-30 18:23:46 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.794 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.795 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.3 (build $REVISION)";
 
 # ----- Constants -----
@@ -1427,7 +1427,8 @@ sub Read_Language_Data {
 			if ($_ =~ /$cregcode/o) { $PageCode = $1; }
 			if ($_ =~ /$cregdir/o)  { $PageDir = $1; }
 			if ($_ =~ s/$cregmessage//o) {
-				$_ =~ s/#.*//;								# Remove comments
+				$_ =~ s/^#.*//;								# Remove comments
+				$_ =~ s/\s+#.*//;							# Remove comments
 				$_ =~ tr/\t /  /s;							# Change all blanks into " "
 				$_ =~ s/^\s+//; $_ =~ s/\s+$//;
 				$_ =~ s/^\"//; $_ =~ s/\"$//;
