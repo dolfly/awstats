@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-12-08 14:37:41 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-12-11 20:36:00 $
 
 
 # <-----
@@ -66,9 +66,11 @@ sub Init_urlalias {
 sub ReplaceURL_urlalias {
 	# <-----
 	if (! $urlaliasloaded) {
-		my $filetoload="$PluginDir/urlalias.txt";
 		# Load urlalias file
-		open(URLALIASFILE,"$filetoload") or error("Error: Couldn't open UrlAlias file \"$filetoload\": $!");
+		my $filetoload='';
+		if ($SiteConfig && open(URLALIASFILE,"$PluginDir/urlalias.$SiteConfig.txt"))	{ $filetoload="$PluginDir/urlalias.$SiteConfig.txt"; }
+		elsif (open(URLALIASFILE,"$PluginDir/urlalias.txt"))  							{ $filetoload="$PluginDir/urlalias.txt"; }
+		else { error("Couldn't open UrlAlias file \"$PluginDir/urlalias.txt\": $!"); }
 		# This is the fastest way to load with regexp that I know
 		%UrlAliases = map(/^([^\t]+)\t+([^\t]+)$/o,<URLALIASFILE>);
 		close URLALIASFILE;
