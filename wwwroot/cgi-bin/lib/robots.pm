@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.30 $ - $Author: eldy $ - $Date: 2004-02-20 21:36:33 $
+# $Revision: 1.31 $ - $Author: eldy $ - $Date: 2004-03-27 21:40:16 $
 
 
 #package AWSROB;
@@ -344,6 +344,7 @@
 'ultraseek',
 'webclipping\.com',
 'webcompass',
+'yahoo\-verticalcrawler',
 'yandex',
 'zealbot',
 'zyborg'
@@ -674,6 +675,7 @@
 'webcompass', 'webcompass',
 'webclipping\.com', 'WebClipping.com',
 'wisenutbot','WISENutbot (Looksmart)',
+'yahoo\-verticalcrawler', 'Yahoo Vertical Crawler',
 'yandex', 'Yandex bot',
 'zealbot','ZealBot',
 'zyborg','Zyborg (Looksmart)',
