@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.327 $ - $Author: eldy $ - $Date: 2002-09-18 11:35:48 $
+# $Revision: 1.328 $ - $Author: eldy $ - $Date: 2002-09-18 12:25:39 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.327 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.328 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -155,13 +155,13 @@ $LevelForSearchEnginesDetection, $LevelForKeywordsDetection)=
 (2,1,1,1,1,1);
 use vars qw/
 $DirLock $DirCgi $DirData $DirIcons $DirLang $AWScript $ArchiveFileName
-$AllowAccessFromWebToFollowingIPAddresses $HTMLHeadSection $HTMLEndSection $LinksToWhoIs
+$AllowAccessFromWebToFollowingIPAddresses $HTMLHeadSection $HTMLEndSection $LinksToWhoIs $LinksToIPWhoIs
 $LogFile $LogFormat $LogSeparator $Logo $LogoLink $StyleSheet $WrapperScript $SiteDomain
 /;
 ($DirLock, $DirCgi, $DirData, $DirIcons, $DirLang, $AWScript, $ArchiveFileName,
-$AllowAccessFromWebToFollowingIPAddresses, $HTMLHeadSection, $HTMLEndSection, $LinksToWhoIs,
+$AllowAccessFromWebToFollowingIPAddresses, $HTMLHeadSection, $HTMLEndSection, $LinksToWhoIs, $LinksToIPWhoIs,
 $LogFile, $LogFormat, $LogSeparator, $Logo, $LogoLink, $StyleSheet, $WrapperScript, $SiteDomain)=
-("","","","","","","","","","","","","","","","","","","");
+("","","","","","","","","","","","","","","","","","","","");
 use vars qw/
 $color_Background $color_TableBG $color_TableBGRowTitle
 $color_TableBGTitle $color_TableBorder $color_TableRowTitle $color_TableTitle
@@ -924,6 +924,7 @@ sub Read_Config {
 		if ($param =~ /^MaxLengthOfURL/)        { $MaxLengthOfURL=$value; next; }
 		if ($param =~ /^ShowLinksToWhoIs/)      { $ShowLinksToWhoIs=$value; next; }
 		if ($param =~ /^LinksToWhoIs/)          { $LinksToWhoIs=$value; next; }
+		if ($param =~ /^LinksToIPWhoIs/)        { $LinksToIPWhoIs=$value; next; }
 		if ($param =~ /^HTMLHeadSection/)       { $HTMLHeadSection=$value; next; }
 		if ($param =~ /^HTMLEndSection/)        { $HTMLEndSection=$value; next; }
 		if ($param =~ /^BarWidth/)              { $BarWidth=$value; next; }
@@ -3219,20 +3220,26 @@ sub Format_Date {
 
 #--------------------------------------------------------------------
 # Function:     Write a HTML cell with a WhoIs link to parameter
-# Parameters:    Key to used as WhoIs target
-# Input:        $LinksToWhoIs
+# Parameters:   Key to used as WhoIs target
+# Input:        $LinksToWhoIs $LinksToIPWhoIs
 # Output:       None
-# Return:       String YYYYMMDDHHMMSS
+# Return:       None
 #--------------------------------------------------------------------
 sub ShowWhoIsCell {
 	my $keyurl=shift;
 	my $keyforwhois;
-	if ($keyurl =~ /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/) {
-		# $keyforwhois=$key;
+	my $linkforwhois;
+	if ($keyurl =~ /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/) {	# IP address
+		$keyforwhois=$keyurl;
+		$linkforwhois="$LinksToIPWhoIs";
 	}
-	else { $keyurl =~ /(\w+\.\w+)$/; $keyforwhois=$1; }
+	else {	# Hostname
+		$keyurl =~ /(\w+\.\w+)$/;
+		$keyforwhois=$1;
+		$linkforwhois="$LinksToWhoIs";
+	}
 	print "<td>";
-	if ($keyforwhois) { print "<a href=\"$LinksToWhoIs$keyforwhois\" target=awstatswhois>?</a>"; }
+	if ($keyforwhois && $linkforwhois) { print "<a href=\"$linkforwhois$keyforwhois\" target=awstatswhois>?</a>"; }
 	else { print "&nbsp;" }
 	print "</td>";
 }
