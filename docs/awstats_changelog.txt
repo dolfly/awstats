@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.143 $ - $Author: eldy $ - $Date: 2003-09-12 14:23:18 $ 
+$Revision: 1.144 $ - $Author: eldy $ - $Date: 2003-09-14 17:17:04 $ 
 
 
 5.8
@@ -21,6 +21,7 @@ Fixes:
 - Fixed not working file type detection for default pages.
 
 New features/improvements:
+- Added a Webmin module.
 - Enhance the 'Extra' feature with parameters ExtraSectionFirstColumnFormatX,
   ExtraSectionAddAverageRowX, ExtraSectionAddSumRowX.
   Also add a dedicated page in documentation.
