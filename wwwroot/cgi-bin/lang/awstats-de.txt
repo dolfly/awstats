@@ -1,5 +1,5 @@
 # German message file
-# $Revision: 1.12 $ - $Date: 2003-02-14 20:27:12 $
+# $Revision: 1.13 $ - $Date: 2003-03-02 01:50:13 $
 message0=Unbekannt
 message1=Unbekannte (IP konnte nicht aufgel&ouml;st werden )
 message2=Sonstige
@@ -77,7 +77,7 @@ message73=Datei-Typen
 message74=Jetzt aktualisieren
 message75=Bytes
 message76=Zur&uuml;ck zur Hauptseite
-message77=Nach oben
+message77=Top
 message78=dd.mm.yyyy - HH:MM
 message79=Filter
 message80=Gesamte Liste
