@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.536 $ - $Author: eldy $ - $Date: 2003-07-01 20:25:53 $
+# $Revision: 1.537 $ - $Author: eldy $ - $Date: 2003-07-02 00:20:30 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.536 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.537 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -223,8 +223,8 @@ use vars qw/
 @ExtraFirstColumnValuesType @ExtraFirstColumnValuesTypeVal
 @PluginsToLoad 
 /;
-@MiscListOrder=('AddToFavourites','JavaEnabled','DirectorSupport','FlashSupport','RealPlayerSupport','QuickTimeSupport','MediaPlayerSupport','PDFSupport');
-%MiscListCalc=('TotalMisc'=>'','AddToFavourites'=>'u','JavaEnabled'=>'hm','DirectorSupport'=>'hm','FlashSupport'=>'hm','RealPlayerSupport'=>'hm','QuickTimeSupport'=>'hm','MediaPlayerSupport'=>'hm','PDFSupport'=>'hm');
+@MiscListOrder=('AddToFavourites','JavaEnabled','DirectorSupport','FlashSupport','RealPlayerSupport','QuickTimeSupport','WindowsMediaPlayerSupport','PDFSupport');
+%MiscListCalc=('TotalMisc'=>'','AddToFavourites'=>'u','JavaEnabled'=>'hm','DirectorSupport'=>'hm','FlashSupport'=>'hm','RealPlayerSupport'=>'hm','QuickTimeSupport'=>'hm','WindowsMediaPlayerSupport'=>'hm','PDFSupport'=>'hm');
 @OSFamily=('win','mac');
 @BrowsersFamily=('msie','netscape');
 @SessionsRange=('0s-30s','30s-2mn','2mn-5mn','5mn-15mn','15mn-30mn','30mn-1h','1h+');
