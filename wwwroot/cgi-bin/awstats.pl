@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.469 $ - $Author: eldy $ - $Date: 2003-02-23 05:53:14 $
+# $Revision: 1.470 $ - $Author: eldy $ - $Date: 2003-02-23 06:11:06 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.469 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.470 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5260,7 +5260,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 
 		# Check screen size
 		#------------------
-		if ($field[$pos_url] =~ /$LogScreenSizeUrl#w=(\d+)&h=(\d+)/) { $_screensize_h{"$1x$2"}++; next; }
+		if ($field[$pos_url] =~ /$LogScreenSizeUrl\?w=(\d+)&h=(\d+)/) { $_screensize_h{"$1x$2"}++; next; }
 		
 		# Check return status code
 		#-------------------------
