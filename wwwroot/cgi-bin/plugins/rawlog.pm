@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-09-25 03:03:51 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-10-29 20:46:56 $
 
 
 # <-----
@@ -93,11 +93,11 @@ sub BuildFullHTMLOutput_rawlog {
 		if ($Filter) {
 			if ($_ !~ m/$Filter/i) { next; }
 		}
-		print "$_<br>\n";
+		print "$_<br />\n";
 		$i++;
 		if ($i > $MAXLINE) { last; }
 	}
-	print "<b>$i lines.</b><br>";
+	print "<b>$i lines.</b><br />";
 	return 1;
 	# ----->
 }
