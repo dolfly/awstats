@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.557 $ - $Author: eldy $ - $Date: 2003-08-02 12:13:00 $
+# $Revision: 1.558 $ - $Author: eldy $ - $Date: 2003-08-02 22:48:17 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.557 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.558 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.7 (build $REVISION)";
 
 # ----- Constants -----
@@ -5626,6 +5626,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 
 		# Analyze: Country (Top-level domain)
 		#------------------------------------
+		if ($Debug) { debug("  Search country (Host=$Host HostResolved=$HostResolved ip=$ip)",4); }
 		my $Domain='ip';
 		# Set $HostResolved to host and resolve domain
 		if ($HostResolved eq '*') {
@@ -5642,6 +5643,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			if ($ip) {
 				if ($PluginsLoaded{'GetCountryCodeByAddr'}{'geoipfree'}) { $Domain=GetCountryCodeByAddr_geoipfree($Host); }
 				elsif ($PluginsLoaded{'GetCountryCodeByAddr'}{'geoip'}) { $Domain=GetCountryCodeByAddr_geoip($Host); }
+				elsif ($HostResolved =~ /\.(\w+)$/) { $Domain=$1; }
 			}
 			else {
 				if ($PluginsLoaded{'GetCountryCodeByName'}{'geoipfree'}) { $Domain=GetCountryCodeByName_geoipfree($HostResolved); }
