@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-10-08 04:12:06 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-10-08 04:13:23 $
 
 
 #package AWSDOM;
@@ -11,6 +11,7 @@
 
 # DomainsHashIDLib
 # List of domain with their name ("domain id", "Domain name")
+# Official list can be found at http://www.iana.org/cctld/cctld-whois.htm
 #-------------------------------------------------------
 %DomainsHashIDLib = (
 "localhost","localhost",
