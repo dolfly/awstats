@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.26 $ - $Author: eldy $ - $Date: 2003-11-15 17:50:47 $
+# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2003-12-05 22:13:41 $
 
 
 #package AWSSE;
@@ -453,7 +453,7 @@
 # Minor Swiss search engines
 'searchch', 'search.ch', 'bluewin', 'search.bluewin.ch',								
 # Generic search engines
-'search','Other search engines'
+'search','Unknown search engines'
 );
 
 
