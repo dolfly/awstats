@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.702 $ - $Author: eldy $ - $Date: 2004-01-20 23:44:44 $
+# $Revision: 1.703 $ - $Author: eldy $ - $Date: 2004-01-21 23:38:16 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.702 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.703 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -337,7 +337,7 @@ use vars qw/ @Message /;
 'Day',
 'Month',
 'Year',
-'Statistics of',
+'Statistics for',
 'First visit',
 'Last visit',
 'Number of visits',
@@ -403,7 +403,7 @@ use vars qw/ @Message /;
 'Nov',
 'Dec',
 'Navigation',
-'Files type',
+'File type',
 'Update now',
 'Bandwidth',
 'Back to main page',

@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.73 $ - $Date: 2004-01-09 23:56:45 $
+# $Revision: 1.74 $ - $Date: 2004-01-21 23:38:22 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -7,7 +7,7 @@ message3=View details
 message4=Day
 message5=Month
 message6=Year
-message7=Statistics of
+message7=Statistics for
 message8=First visit
 message9=Last visit
 message10=Number of visits
@@ -73,7 +73,7 @@ message69=Oct
 message70=Nov
 message71=Dec
 message72=Navigation
-message73=Files type
+message73=File type
 message74=Update now
 message75=Bandwidth
 message76=Back to main page
