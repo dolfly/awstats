@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.704 $ - $Author: eldy $ - $Date: 2004-01-25 15:24:13 $
+# $Revision: 1.705 $ - $Author: eldy $ - $Date: 2004-01-31 14:08:32 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.704 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.705 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -5797,6 +5797,12 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 
 		# Check date
 		#-----------------------
+		if ($LogType eq 'M' && $timerecord > $tomorrowtime) {
+			# Postfix/Sendmail does not store year, so we assume that year is year-1 if record is in future
+			$yearrecord--;
+			$yearmonthdayrecord=sprintf("$yearrecord%02i%02i",$dateparts[1],$dateparts[0]);
+			$timerecord=((int("$yearmonthdayrecord")*100+$dateparts[3])*100+$dateparts[4])*100+$dateparts[5];
+		}
 		if ($timerecord < 10000000000000 || $timerecord > $tomorrowtime) {
 			$NbOfLinesCorrupted++;
 			if ($ShowCorrupted) { print "Corrupted record (invalid date, timerecord=$timerecord): $line\n"; }
