@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.782 $ - $Author: eldy $ - $Date: 2004-10-30 18:00:23 $
+# $Revision: 1.783 $ - $Author: eldy $ - $Date: 2004-10-30 18:02:24 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.782 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.783 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -9166,7 +9166,7 @@ if (scalar keys %HTMLOutput) {
 			&tab_head("$title",19,0,'visitors');
 			print "<tr bgcolor=\"#$color_TableBGRowTitle\">";
 			print "<th>";
-			if ($MonthRequired ne 'all') { print "$Message[81] : $TotalHostsKnown $Message[82], $TotalHostsUnknown $Message[1]<br>$TotalUnique $Message[11]</th>"; }
+			if ($MonthRequired ne 'all') { print "$Message[81] : $TotalHostsKnown $Message[82], $TotalHostsUnknown $Message[1]<br />$TotalUnique $Message[11]</th>"; }
 			else { print "$Message[81] : ".(scalar keys %_host_h)."</th>"; }
 			&ShowHostInfo('__title__');
 			if ($ShowHostsStats =~ /P/i) { print "<th bgcolor=\"#$color_p\" width=\"80\"".Tooltip(3).">$Message[56]</th>"; }
