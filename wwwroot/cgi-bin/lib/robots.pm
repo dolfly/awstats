@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2003-06-27 21:28:00 $
+# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2003-08-16 22:23:47 $
 
 
 #package AWSROB;
@@ -316,6 +316,7 @@
 "ezresult",
 "gigabot",
 "gnodspider",
+"henrythemiragorobot",
 "internetseer",
 "justview",
 "linkbot",
@@ -630,6 +631,7 @@
 "fast-webcrawler", "Fast-Webcrawler (AllTheWeb)",
 "gigabot","GigaBot",
 "gnodspider","GNOD Spider",
+"henrythemiragorobot", "Mirago",
 "ia_archiver", "Alexa (IA Archiver)",
 "internetseer", "InternetSeer",
 "jennybot", "JennyBot",
