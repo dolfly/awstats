@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.77 $ - $Author: eldy $ - $Date: 2003-01-16 14:13:25 $ -->
+<!-- $Revision: 1.78 $ - $Author: eldy $ - $Date: 2003-01-27 09:41:52 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -398,9 +398,11 @@ when reading it), follow the example:<br>
 <br># But for multi hosting a better solution is to have one log file for each
 <br># virtual web server. In this case, this parameter is only used to generate
 <br># full URL's links when ShowLinksOnUrl option is set to 1.
-<br># Example: "www.mysite.com"
-<br># Example: "user.mydomain.com"
+<br># If analysing mail log, enter here the domain name of mail server.
 <br># Example: "myintranetserver"
+<br># Example: "www.domain.com"
+<br># Example: "ftp.domain.com"
+<br># Example: "domain.com"
 <br>#
 <br>SiteDomain=""
 
