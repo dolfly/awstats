@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.766 $ - $Author: eldy $ - $Date: 2004-07-11 11:15:46 $
+# $Revision: 1.767 $ - $Author: eldy $ - $Date: 2004-07-11 14:50:45 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.766 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.767 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -5929,7 +5929,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 				$lastlinenb=$LastLineNumber;
 				$lastlineoffset=$LastLineOffset;
 				$lastlineoffsetnext=tell LOG;
-				#seek(LOG,$LastLineOffset,0);$lastlineoffsetnext=$LastLineOffset;	# Direct access succesful, we keep it.
+                $NewLinePhase=1;
 			}
 			else {
 				if (! scalar keys %HTMLOutput) { print "Direct access to last remembered record has fallen on another record.\nSo searching new records from beginning of log file...\n"; }
