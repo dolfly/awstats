@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.167 $ - $Author: eldy $ - $Date: 2003-11-12 20:50:56 $
+$Revision: 1.168 $ - $Author: eldy $ - $Date: 2003-11-13 18:41:00 $
 
 6.0
 
@@ -25,6 +25,7 @@ New features/improvements:
 - A new search engine database to allow several "match id" for same
   search engine. Example: All google ip referer id are recognised.
 - Support for right to left languages. Added 'he' language.
+- Added two level of detection for LevelForRobotsDetection.
 - Added LevelForFileTypesDetection parameter.
 - Added percent column for file types.
 - Added experimental graphapplet plugin (graph are built by applet).
