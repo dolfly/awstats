@@ -3,13 +3,13 @@
 # Launch update process for all config files found in a particular directory.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-05-08 15:08:22 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-06-07 20:18:26 $
 
 
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.3 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.4 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG and AWSTATSSCRIPT
@@ -37,9 +37,9 @@ my $DIR; my $PROG; my $Extension;
 ($DIR=$0) =~ s/([^\/\\]*)$//; ($PROG=$1) =~ s/\.([^\.]*)$//; $Extension=$1;
 if (!$nowfound || $helpfound || ! @ARGV) {
 	print "----- $PROG $VERSION (c) Laurent Destailleur -----\n";
-	print "awstats_updateall launches update process for all AWStats config files found in\n";
-	print "a particular directory, so you can easily setup a cron/scheduler job.\n";
-	print "This directory is by default $DIRCONFIG.\n";
+	print "awstats_updateall launches update process for all AWStats config files (except\n";
+	print "awstats.model.conf) found in a particular directory, so you can easily setup a\n";
+	print "cron/scheduler job. The scanned directory is by default $DIRCONFIG.\n";
 	print "\n";
 	print "Usage:  $PROG.$Extension now [options]\n";
 	print "\n";
@@ -60,6 +60,7 @@ if (@files) {
 	foreach (@files) {
 		if ($_ =~ /^awstats\.(.*)conf$/) {
 			my $domain = $1||"default"; $domain =~ s/\.$//;
+			if ($domain eq 'model') { next; }
 			print "Running $AWSTATSSCRIPT to update config $domain\n";
 			my $output = `"$AWSTATSSCRIPT" -config=$domain -update 2>&1`;
 			print "$output\n";
