@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: XWhois
 #-----------------------------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2004-03-27 18:09:00 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2004-05-21 21:16:54 $
 
 
 # <-----
@@ -44,7 +44,7 @@ sub Init_hostinfo {
 
 	# <-----
 	# ENTER HERE CODE TO DO INIT PLUGIN ACTIONS
-	debug(" InitParams=$InitParams",1);
+	debug(" Plugin hostinfo: InitParams=$InitParams",1);
 	# ----->
 
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
@@ -160,7 +160,7 @@ sub BuildFullHTMLOutput_hostinfo {
 #	}
 	if (! $ip) { $HostResolved=$Host; }
 
-	if ($Debug) { debug("  DirData=$DirData Host=$Host HostResolved=$HostResolved ",4); }
+	if ($Debug) { debug("  Plugin hostinfo: DirData=$DirData Host=$Host HostResolved=$HostResolved ",4); }
 	my $w = new Net::XWhois Verbose=>$Debug, Cache=>$DirData, NoCache=>0, Timeout=>10, Domain=>$HostResolved;
 
 	print "<br />\n";

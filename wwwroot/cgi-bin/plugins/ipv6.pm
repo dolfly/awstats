@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Net::IP and Net::DNS
 #-----------------------------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-10-29 21:20:39 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2004-05-21 21:18:11 $
 
 
 # <-----
@@ -44,7 +44,7 @@ sub Init_ipv6 {
 
 	# <-----
 	# ENTER HERE CODE TO DO INIT PLUGIN ACTIONS
-	debug(" InitParams=$InitParams",1);
+	debug(" Plugin ipv6: InitParams=$InitParams",1);
 	$resolver = Net::DNS::Resolver->new;
 	# ----->
 

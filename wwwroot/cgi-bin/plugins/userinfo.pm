@@ -10,7 +10,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2004-03-27 18:09:00 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2004-05-21 21:22:52 $
 
 
 # <-----
@@ -50,7 +50,7 @@ sub Init_userinfo {
 
 	# <-----
 	# ENTER HERE CODE TO DO INIT PLUGIN ACTIONS
-	debug(" InitParams=$InitParams",1);
+	debug(" Plugin userinfo: InitParams=$InitParams",1);
 	$userinfoloaded=0;
 	%UserInfo=();
 	# ----->
@@ -81,7 +81,7 @@ sub ShowInfoUser_userinfo {
 		# This is the fastest way to load with regexp that I know
 		%UserInfo = map(/^([^\t]+)\t+([^\t]+)/o,<USERINFOFILE>);
 		close USERINFOFILE;
-		debug("UserInfo file loaded: ".(scalar keys %UserInfo)." entries found.");
+		debug(" Plugin userinfo: UserInfo file loaded: ".(scalar keys %UserInfo)." entries found.");
 		$userinfoloaded=1;
 	}
 	if ($param eq '__title__') {

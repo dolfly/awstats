@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2004-03-13 12:34:10 $
+# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2004-05-21 21:20:18 $
 
 
 # <-----
@@ -44,7 +44,7 @@ sub Init_rawlog {
 
 	# <-----
 	# ENTER HERE CODE TO DO INIT PLUGIN ACTIONS
-	debug(" InitParams=$InitParams",1);
+	debug(" Plugin rawlog: InitParams=$InitParams",1);
 
 	if ($QueryString =~ /rawlog_maxlines=(\d+)/i) { $MAXLINE=&DecodeEncodedString("$1"); }
 	else { $MAXLINE=5000; }

@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2004-03-04 13:06:15 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2004-05-21 21:22:52 $
 
 
 # <-----
@@ -45,7 +45,7 @@ sub Init_tooltips {
 
 	# <-----
 	# ENTER HERE CODE TO DO INIT PLUGIN ACTIONS
-	debug(" InitParams=$InitParams",1);
+	debug(" Plugin tooltips: InitParams=$InitParams",1);
 	$TOOLTIPON=1;
 	$TOOLTIPWIDTH=380;					# Width of tooltips
 	# ----->
@@ -180,7 +180,7 @@ sub _ReadAndOutputTooltipFile {
 			if (open(LANG,"${searchdir}tooltips_${logtype}/awstats-tt-en.txt")) { $FileLang="${searchdir}tooltips_${logtype}/awstats-tt-en.txt"; last; }
 		}
 	}
-	if ($Debug) { debug("Call to Read_Language_Tooltip [FileLang=\"$FileLang\"]"); }
+	if ($Debug) { debug(" Plugin tooltips: Call to Read_Language_Tooltip [FileLang=\"$FileLang\"]"); }
 	if ($FileLang) {
 		my $aws_PROG=ucfirst($PROG);
 		my $aws_VisitTimeout = $VISITTIMEOUT/10000*60;

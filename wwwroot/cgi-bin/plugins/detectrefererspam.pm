@@ -4,7 +4,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-06-05 19:32:27 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2004-05-21 21:14:19 $
 
 # <-----
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
@@ -16,7 +16,7 @@ use strict;no strict "refs";
 #-----------------------------------------------------------------------------
 # PLUGIN VARIABLES
 #-----------------------------------------------------------------------------
-my $PluginNeedAWStatsVersion="5.6";
+my $PluginNeedAWStatsVersion="6.2";
 my $PluginHooksFunctions="ScanForRefererSpam";
 
 # <-----
@@ -51,7 +51,7 @@ sub Init_detectrefererspam {
 #--------------------------------------------------------------------
 sub ScanForRefererSpam_detectrefererspam
 {
-	debug("Call to ScanForRefererSpam",5);
+	debug(" Plugin detectrefererspam: Call to ScanForRefererSpam",5);
 
 }
 
