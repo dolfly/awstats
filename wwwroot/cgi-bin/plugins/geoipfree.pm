@@ -5,9 +5,9 @@
 # from a Geographical database (GeoIP internal database) instead of domain
 # hostname suffix.
 #-----------------------------------------------------------------------------
-# Perl Required Modules: Geo::IPfree
+# Perl Required Modules: Geo::IPfree (version 0.2+)
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-03-22 01:55:25 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-03-27 20:38:11 $
 
 
 # <-----
@@ -50,6 +50,7 @@ sub Init_geoipfree {
 	debug(" InitParams=$InitParams",1);
 	%TmpDomainLookup=();
 	$gi = Geo::IPfree::new();
+	$gi->Faster ; 	# Enable the faster option.
 	# ----->
 
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
