@@ -16,8 +16,8 @@ use strict; no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-# Last change made by $Author: eldy $ on $Date: 2002-04-06 17:19:25 $
-my $REVISION='$Revision: 1.6 $';
+# Last change made by $Author: eldy $ on $Date: 2002-04-06 17:21:17 $
+my $REVISION='$Revision: 1.7 $';
 $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.1 (build $REVISION)";
 
@@ -31,7 +31,7 @@ my $DNSLookup=0;
 my $DirCgi="";
 my $DirData="";
 my $NbOfLinesForBenchmark=5000;
-my $NewReferer="-";		#$NewReferer="http://www.referersite.com/refererpage.html";
+my $NewReferer="-";		# $NewReferer="http://www.referersite.com/refererpage.html";
 my $NewUserAgent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)";
 my $nowtime = my $nowweekofmonth = my $nowdaymod = my $nowsmallyear = 0; 
 my $nowsec = my $nowmin = my $nowhour = my $nowday = my $nowmonth = my $nowyear = my $nowwday = 0;
