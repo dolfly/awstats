@@ -1,5 +1,5 @@
 # Danish message file by Ole Stanstrup
-# $Revision: 1.12 $ - $Date: 2003-06-23 01:05:01 $
+# $Revision: 1.13 $ - $Date: 2003-06-23 02:06:01 $
 message0=Ukendt
 message1=Unavngivne (unresolved ip)
 message2=Andre
@@ -139,3 +139,11 @@ message135=Skærmopløsninger
 message136=Orme/Virus angreb
 message137=Tilføj til Foretrukne
 message138=Dage i måneden
+message139=Diverse
+message140=Browser med Java support
+message141=Browser med Macromedia Director Support
+message142=Browser med Flash Support
+message143=Browser med Real audio playing support
+message144=Browser med Quictime audio playing support
+message145=Browser med Windows Media audio playing support
+message146=Browser med PDF support
