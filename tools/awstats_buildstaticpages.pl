@@ -3,7 +3,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.25 $ - $Author: eldy $ - $Date: 2003-11-26 20:22:47 $
+# $Revision: 1.26 $ - $Author: eldy $ - $Date: 2003-12-05 21:44:08 $
 
 # use strict is commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -15,7 +15,7 @@ use strict;no strict "refs";
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.25 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.26 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -343,7 +343,9 @@ if ($Date) {
 
 
 my $cpt=0;
-my $smallcommand="\"$Awstats\" -config=$SiteConfig".($BuildPDF?" -buildpdf -noloadplugin=tooltips,rawlog,hostinfo":"")." -staticlinks".($OutputSuffix ne $SiteConfig?"=$OutputSuffix":"");
+my $NoLoadPlugin="";
+if ($BuildPDF) { $NoLoadPlugin.="tooltips,rawlog,hostinfo"; }
+my $smallcommand="\"$Awstats\" -config=$SiteConfig".($BuildPDF?" -buildpdf":"").($NoLoadPlugin?" -noloadplugin=$NoLoadPlugin":"")." -staticlinks".($OutputSuffix ne $SiteConfig?"=$OutputSuffix":"");
 if ($StaticExt && $StaticExt ne 'html')     { $smallcommand.=" -staticlinksext=$StaticExt"; }
 if ($DirIcons)      { $smallcommand.=" -diricons=$DirIcons"; }
 if ($Lang)          { $smallcommand.=" -lang=$Lang"; }
