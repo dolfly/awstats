@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.94 $ - $Author: eldy $ - $Date: 2003-04-22 02:36:17 $ 
+$Revision: 1.95 $ - $Author: eldy $ - $Date: 2003-04-24 19:35:07 $ 
 
 
 5.5
@@ -22,6 +22,8 @@ New features/improvments:
   URLReferrerWithQuery is set to 1. This make this report more useful.
 - Added 'geoipfree' plugin (same than 'geoip' plugin but using the free
   Perl module Geo::IPfree).
+- 'geoip' plugin can works with Perl module Geo::IP but also with Perl
+  module Geo::IP::PurePerl).
 - month parameter can accept format -month=D, not only -month=DD
 - Optimized code size.
 - Optimized HTML output report size.
