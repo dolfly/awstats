@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.727 $ - $Author: eldy $ - $Date: 2004-03-13 15:05:09 $
+# $Revision: 1.728 $ - $Author: eldy $ - $Date: 2004-03-15 19:47:53 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.727 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.728 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -6214,7 +6214,15 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			$_filetypes_h{$extension}++;
 			$_filetypes_k{$extension}+=int($field[$pos_size]);	# TODO can cause a warning
 			# Compression
-			if ($pos_compratio>=0 && ($field[$pos_compratio] =~ /(\d+)/)) { # Calculate in/out size from percentage
+			if ($pos_gzipin>=0 && $field[$pos_gzipin]) {						# If in and out in log
+				my ($notused,$in)=split(/:/,$field[$pos_gzipin]);
+				my ($notused1,$out,$notused2)=split(/:/,$field[$pos_gzipout]);
+				if ($out) {
+					$_filetypes_gz_in{$extension}+=$in;
+					$_filetypes_gz_out{$extension}+=$out;
+				}
+			}
+			elsif ($pos_compratio>=0 && ($field[$pos_compratio] =~ /(\d+)/)) { 	# Calculate in/out size from percentage
 				if ($fieldlib[$pos_compratio] eq 'gzipratio') {
 					# with mod_gzip:    % is size (before-after)/before (low for jpg) ??????????
 					$_filetypes_gz_in{$extension}+=int($field[$pos_size]*100/((100-$1)||1));
@@ -6223,14 +6231,6 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 					$_filetypes_gz_in{$extension}+=int($field[$pos_size]*100/($1||1));
 				}
 				$_filetypes_gz_out{$extension}+=int($field[$pos_size]);
-			}
-			elsif ($pos_gzipin>=0 && $field[$pos_gzipin]) {	# If in and out in log
-				my ($notused,$in)=split(/:/,$field[$pos_gzipin]);
-				my ($notused1,$out,$notused2)=split(/:/,$field[$pos_gzipout]);
-				if ($out) {
-					$_filetypes_gz_in{$extension}+=$in;
-					$_filetypes_gz_out{$extension}+=$out;
-				}
 			}
 		}
 
