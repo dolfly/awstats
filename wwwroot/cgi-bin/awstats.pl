@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.641 $ - $Author: eldy $ - $Date: 2003-11-10 20:31:41 $
+# $Revision: 1.642 $ - $Author: eldy $ - $Date: 2003-11-12 04:39:56 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.641 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.642 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -8284,6 +8284,10 @@ if (scalar keys %HTMLOutput) {
 				my @valcolor=("$color_v","$color_p","$color_h","$color_k");
 				my @valmax=($max_v,$max_h,$max_h,$max_k);
 				my @valtotal=($total_v,$total_p,$total_h,$total_k);
+				$average_v=sprintf("%.2f",$average_v);
+				$average_p=sprintf("%.2f",$average_p);
+				$average_h=sprintf("%.2f",$average_h);
+				$average_k=(int($average_k)?Format_Bytes(sprintf("%.2f",$average_k)):"0.00");
 				my @valaverage=($average_v,$average_p,$average_h,$average_k);
 				my @valdata=();
 				my $xx=0;
