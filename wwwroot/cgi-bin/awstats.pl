@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.535 $ - $Author: eldy $ - $Date: 2003-06-29 20:57:31 $
+# $Revision: 1.536 $ - $Author: eldy $ - $Date: 2003-07-01 20:25:53 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.535 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.536 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -149,27 +149,25 @@ $UseFramesWhenCGI, $DecodeUA)=
 use vars qw/
 $AllowToUpdateStatsFromBrowser $ArchiveLogRecords $DetailedReportsOnNewWindows
 $FirstDayOfWeek $KeyWordsNotSensitive $SaveDatabaseFilesWithPermissionsForEveryone
-$WarningMessages $DebugMessages
+$WarningMessages $DebugMessages $ShowLinksOnUrl
 $ShowMenu $ShowMonthStats $ShowDaysOfMonthStats $ShowDaysOfWeekStats
 $ShowHoursStats $ShowDomainsStats $ShowHostsStats
 $ShowRobotsStats $ShowWormsStats $ShowSessionsStats $ShowPagesStats $ShowFileTypesStats
 $ShowOSStats $ShowBrowsersStats $ShowOriginStats
 $ShowKeyphrasesStats $ShowKeywordsStats $ShowMiscStats $ShowHTTPErrorsStats
-$ShowFlagLinks $ShowLinksOnUrl
 $AddDataArrayMonthStats $AddDataArrayShowDaysOfMonthStats $AddDataArrayShowDaysOfWeekStats $AddDataArrayShowHoursStats
 /;
 ($AllowToUpdateStatsFromBrowser, $ArchiveLogRecords, $DetailedReportsOnNewWindows,
 $FirstDayOfWeek, $KeyWordsNotSensitive, $SaveDatabaseFilesWithPermissionsForEveryone,
-$WarningMessages, $DebugMessages,
+$WarningMessages, $DebugMessages, $ShowLinksOnUrl,
 $ShowMenu, $ShowMonthStats, $ShowDaysOfMonthStats, $ShowDaysOfWeekStats,
 $ShowHoursStats, $ShowDomainsStats, $ShowHostsStats,
 $ShowRobotsStats, $ShowWormsStats, $ShowSessionsStats, $ShowPagesStats, $ShowFileTypesStats,
 $ShowOSStats, $ShowBrowsersStats, $ShowOriginStats,
 $ShowKeyphrasesStats, $ShowKeywordsStats, $ShowMiscStats, $ShowHTTPErrorsStats,
-$ShowFlagLinks, $ShowLinksOnUrl,
 $AddDataArrayMonthStats, $AddDataArrayShowDaysOfMonthStats, $AddDataArrayShowDaysOfWeekStats, $AddDataArrayShowHoursStats
 )=
-(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
+(1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1);
 use vars qw/
 $LevelForRobotsDetection $LevelForBrowsersDetection $LevelForOSDetection $LevelForRefererAnalyze
 $LevelForSearchEnginesDetection $LevelForKeywordsDetection
@@ -181,13 +179,13 @@ use vars qw/
 $DirLock $DirCgi $DirData $DirIcons $DirLang $AWScript $ArchiveFileName
 $AllowAccessFromWebToFollowingIPAddresses $HTMLHeadSection $HTMLEndSection $LinksToWhoIs $LinksToIPWhoIs
 $LogFile $LogFormat $LogSeparator $Logo $LogoLink $StyleSheet $WrapperScript $SiteDomain
-$UseHTTPSLinkForUrl $URLQuerySeparators $URLWithAnchor $ErrorMessages
+$UseHTTPSLinkForUrl $URLQuerySeparators $URLWithAnchor $ErrorMessages $ShowFlagLinks
 /;
 ($DirLock, $DirCgi, $DirData, $DirIcons, $DirLang, $AWScript, $ArchiveFileName,
 $AllowAccessFromWebToFollowingIPAddresses, $HTMLHeadSection, $HTMLEndSection, $LinksToWhoIs, $LinksToIPWhoIs,
 $LogFile, $LogFormat, $LogSeparator, $Logo, $LogoLink, $StyleSheet, $WrapperScript, $SiteDomain,
-$UseHTTPSLinkForUrl, $URLQuerySeparators, $URLWithAnchor, $ErrorMessages)=
-('','','','','','','','','','','','','','','','','','','','','','','','');
+$UseHTTPSLinkForUrl, $URLQuerySeparators, $URLWithAnchor, $ErrorMessages, $ShowFlagLinks)=
+('','','','','','','','','','','','','','','','','','','','','','','','','');
 use vars qw/
 $color_Background $color_TableBG $color_TableBGRowTitle
 $color_TableBGTitle $color_TableBorder $color_TableRowTitle $color_TableTitle
