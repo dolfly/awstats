@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.713 $ - $Author: eldy $ - $Date: 2004-03-02 20:53:38 $
+# $Revision: 1.714 $ - $Author: eldy $ - $Date: 2004-03-03 20:32:36 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.713 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.714 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -1450,12 +1450,14 @@ sub Check_Config {
 	}
 
 	# Main section
-	while ($LogFile =~ /%([ymdhwYMDHWNSO]+)-(\d+)/) {
-		my $timetag=$1;
-		my $timephase=$2;
-		if ($Debug) { debug(" Found a time tag '$timetag' with a phase of '$timephase' hour in log file name",1); }
+	while ($LogFile =~ /%([ymdhwYMDHWNSO]+)-(\(\d+\)|\d+)/) {
+		# Accept tag %xx-dd and %xx-(dd)
+		my $timetag="$1";
+		my $timephase=quotemeta("$2");
+		my $timephasenb="$2"; $timephasenb=~s/[^\d]//g;
+		if ($Debug) { debug(" Found a time tag '$timetag' with a phase of '$timephasenb' hour in log file name",1); }
 		# Get older time
-		my ($oldersec,$oldermin,$olderhour,$olderday,$oldermonth,$olderyear,$olderwday,$olderyday) = localtime($starttime-($timephase*3600));
+		my ($oldersec,$oldermin,$olderhour,$olderday,$oldermonth,$olderyear,$olderwday,$olderyday) = localtime($starttime-($timephasenb*3600));
 		my $olderweekofmonth=int($olderday/7);
 		my $olderweekofyear=int(($olderyday-1+6-($olderwday==0?6:$olderwday-1))/7)+1; if ($olderweekofyear > 52) { $olderweekofyear = 1; }
 		my $olderdaymod=$olderday%7;
