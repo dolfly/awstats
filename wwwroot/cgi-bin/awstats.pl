@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.579 $ - $Author: eldy $ - $Date: 2003-09-09 11:35:35 $
+# $Revision: 1.580 $ - $Author: eldy $ - $Date: 2003-09-10 12:22:19 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.579 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.580 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -1304,19 +1304,24 @@ sub Read_Ref_Data {
 	# Debian package :                    		"/usr/share/awstats/lib"
 	# Other possible directories :        		"./lib"
 	my @PossibleLibDir=("${DIR}lib","/usr/share/awstats/lib","./lib");
-	my %FilePath=();
+	my %FilePath=(); my %DirAddedInINC=();
 	my @FileListToLoad=();
 	while (my $file=shift) { push @FileListToLoad, "$file.pm"; }
 	foreach my $file (@FileListToLoad) {
 		foreach my $dir (@PossibleLibDir) {
 			my $searchdir=$dir;
 			if ($searchdir && (!($searchdir =~ /\/$/)) && (!($searchdir =~ /\\$/)) ) { $searchdir .= "/"; }
-			if (! $FilePath{$file}) {
+			if (! $FilePath{$file}) {	# To not load twice same plugin in different path
 				if (-s "${searchdir}${file}") {
 					$FilePath{$file}="${searchdir}${file}";
 					if ($Debug) { debug("Call to Read_Ref_Data [FilePath{$file}=\"$FilePath{$file}\"]"); }
-					# push @INC, "${searchdir}"; require "${file}";
-					require "$FilePath{$file}";
+					# Note: cygwin perl 5.8 need a push + require file
+#					require "$FilePath{$file}";
+					if (! $DirAddedInINC{"$searchdir"}) { 
+						push @INC, "${searchdir}";
+						$DirAddedInINC{"$searchdir"}=1;
+					}
+					require "${file}";
 				}
 			}
 		}
@@ -5721,7 +5726,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		elsif ($protocol == 3 || $protocol == 5) {		# Mail record
 			if (! $ValidSMTPCodes{$field[$pos_code]}) {	# Code is not valid
 				$_errors_h{$field[$pos_code]}++;
-				#$_errors_k{$field[$pos_code]}+=int($field[$pos_size]);	# Useless as pos_size should be 0
+				#$_errors_k{$field[$pos_code]}+=int($field[$pos_size]);	# Useless as pos_size is often 0 or ? when error
 				next;	# Next log record
 			}
 		}
