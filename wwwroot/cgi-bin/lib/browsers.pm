@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-05-19 16:53:25 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-06-14 15:17:15 $
 
 
 #package AWSUA;
@@ -30,7 +30,6 @@
 "aol\\-iweng",
 "amaya",
 "amigavoyager",
-"antfresco",
 "bpftp",
 "cyberdog",
 "dreamcast",
@@ -39,6 +38,8 @@
 "emailsiphon",
 "encompass",
 "friendlyspider",
+"fresco",
+"galeon",
 "getright",
 "headdump",
 "hotjava",
@@ -115,7 +116,6 @@
 "aol\\-iweng","AOL-Iweng",
 "amaya","Amaya",
 "amigavoyager","AmigaVoyager",
-"antfresco","ANT Fresco",
 "bpftp","BPFTP",
 "cyberdog","Cyberdog",
 "dreamcast","Dreamcast",
@@ -124,6 +124,8 @@
 "emailsiphon","EmailSiphon",
 "encompass","Encompass",
 "friendlyspider","FriendlySpider",
+"fresco","ANT Fresco",
+"galeon","Galeon",
 "getright","GetRight",
 "headdump","HeadDump",
 "hotjava","Sun HotJava",
@@ -215,7 +217,6 @@
 "aol\\-iweng","notavailable",
 "amaya","amaya",
 "amigavoyager","notavailable",
-"antfresco","notavailable",
 "bpftp","notavailable",
 "cyberdog","notavailable",
 "dreamcast","dreamcast",
@@ -224,6 +225,8 @@
 "emailsiphon","notavailable",
 "encompass","notavailable",
 "friendlyspider","notavailable",
+"fresco","notavailable",
+"galeon","notavailable",
 "getright","getright",
 "headdump","notavailable",
 "hotjava","notavailable",

@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.250 $ - $Author: eldy $ - $Date: 2002-06-14 14:50:37 $
+# $Revision: 1.251 $ - $Author: eldy $ - $Date: 2002-06-14 15:12:47 $
 
 use strict;no strict "refs";
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -30,7 +30,7 @@ use vars qw/ $UseHiRes $UseCompress /;
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.250 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.251 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3591,7 +3591,7 @@ if ($UpdateStats) {
 					# IE ? (For higher speed, we start whith IE, the most often used. This avoid other tests if found)
 					if (($UserAgent =~ /msie/) && ($UserAgent !~ /webtv/) && ($UserAgent !~ /omniweb/) && ($UserAgent !~ /opera/)) {
 						$_browser_h{"msie"}++;
-						if ($UserAgent =~ /msie_(\d)\./) {  # $1 now contains major version no
+						if ($UserAgent =~ /msie_(\d)\./) {  # $1 now contains IE major version no
 							$_msiever_h[$1]++;
 							$found=1;
 							$TmpBrowser{$UserAgent}="msie_$1";
@@ -3600,9 +3600,9 @@ if ($UpdateStats) {
 	
 					# Netscape ?
 					if (!$found) {
-						if (($UserAgent =~ /mozilla/) && ($UserAgent !~ /compatible/) && ($UserAgent !~ /opera/)) {
+						if (($UserAgent =~ /mozilla/) && ($UserAgent !~ /compatible/) && ($UserAgent !~ /opera/) && ($UserAgent !~ /galeon/)) {
 							$_browser_h{"netscape"}++;
-							if ($UserAgent =~ /\/(\d)\./) {		# $1 now contains major version no
+							if ($UserAgent =~ /\/(\d)\./) {		# $1 now contains Netscape major version no
 								$_nsver_h[$1]++;
 								$found=1;
 								$TmpBrowser{$UserAgent}="netscape_$1";
