@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Time::HiRes
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-10-02 16:01:37 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-10-05 05:45:01 $
 
 
 use Time::HiRes qw( gettimeofday );
@@ -16,59 +16,29 @@ use strict;no strict "refs";
 #-----------------------------------------------------------------------------
 # PLUGIN VARIABLES
 #-----------------------------------------------------------------------------
-my $Plugin_need_awstats_version=5001;
-#...
+my $PluginNeedAWStatsVersion="5.1";
+my $PluginHooksFunctions="GetTime";
 
 
 
 #-----------------------------------------------------------------------------
-# PLUGIN Init_check_Version FUNCTION
-#-----------------------------------------------------------------------------
-sub Init_timehires_Check_Version {
-	my $AWStats_Version=shift;
-	if (! $Plugin_need_awstats_version) { return 0; }
-	$AWStats_Version =~ /^(\d+)\.(\d+)/;
-	my $versionnum=($1*1000)+$2;
-	if 	($Plugin_need_awstats_version > $versionnum) {
-		my $maj=int($Plugin_need_awstats_version/1000);
-		my $min=$Plugin_need_awstats_version % 1000;
-		return "Error: AWStats version $maj.$min or higher is required.";
-	}
-	return 0;
-}
-
-
-#-----------------------------------------------------------------------------
-# PLUGIN Init_pluginname FUNCTION
+# PLUGIN FUNTION Init_pluginname
 #-----------------------------------------------------------------------------
 sub Init_timehires {
-	my $AWStats_Version=shift;
-	my $checkversion=Init_timehires_Check_Version($AWStats_Version);
-	return ($checkversion?$checkversion:1);
+	my $AWStatsVersion=shift;
+	my $checkversion=&Check_Plugin_Version($PluginNeedAWStatsVersion);
+	return ($checkversion?$checkversion:"$PluginHooksFunctions");
 }
 
 
 #-----------------------------------------------------------------------------
-# PLUGIN GetTime_pluginname FUNCTION
+# PLUGIN FUNTION GetTime_pluginname
 #-----------------------------------------------------------------------------
 sub GetTime_timehires {
 	my ($sec,$msec)=&gettimeofday();
 	$_[0]=$sec;
 	$_[1]=$msec;
 }
-
-
-#-----------------------------------------------------------------------------
-# PLUGIN ShowField_pluginname FUNCTION
-#-----------------------------------------------------------------------------
-#...
-
-
-#-----------------------------------------------------------------------------
-# PLUGIN Filter_pluginname FUNCTION
-#-----------------------------------------------------------------------------
-#...
-
 
 
 1;	# Do not remove this line
