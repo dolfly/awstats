@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.498 $ - $Author: eldy $ - $Date: 2003-05-08 12:07:45 $
+# $Revision: 1.499 $ - $Author: eldy $ - $Date: 2003-05-08 15:12:32 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.498 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.499 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -993,11 +993,11 @@ sub GetSessionRange {
 #------------------------------------------------------------------------------
 sub Read_Config {
 	# Check config file in common possible directories :
-	# Windows :                                 "$DIR" (same dir than awstats.pl)
-	# FHS standard, Suse and Mandrake package : "/etc/opt/awstats"
-	# Debian package :                          "/etc/awstats"
-	# Other possible directories :              "/etc", "/usr/local/etc/awstats"
-	my @PossibleConfigDir=("$DIR","/etc/opt/awstats","/etc/awstats","/etc","/usr/local/etc/awstats");
+	# Windows :                   	"$DIR" (same dir than awstats.pl)
+	# Mandrake and Debian package :	"/etc/awstats"
+	# FHS standard, Suse package : 	"/etc/opt/awstats"
+	# Other possible directories :	"/etc", "/usr/local/etc/awstats"
+	my @PossibleConfigDir=("$DIR","/etc/awstats","/etc/opt/awstats","/etc","/usr/local/etc/awstats");
 
 	# Open config file
 	$FileConfig=$FileSuffix='';
@@ -4668,7 +4668,7 @@ if ((! $ENV{'GATEWAY_INTERFACE'}) && (! $SiteConfig)) {
 	print "  First, $PROG tries to read $PROG.virtualhostname.conf as the config file.\n";
 	print "  If not found, $PROG tries to read $PROG.conf\n";
 	print "  Note 1: Config files ($PROG.virtualhostname.conf or $PROG.conf) must be\n";
-	print "  in /etc/opt/awstats, /etc/awstats, /etc or same directory than awstats.pl\n";
+	print "  in /etc/awstats, /etc/opt/awstats, /etc or same directory than awstats.pl\n";
 	print "  file.\n";
 	print "  Note 2: If AWSTATS_FORCE_CONFIG environment variable is defined, AWStats will\n";
 	print "  use it as the \"config\" value, whatever is the value on command line or URL.\n";
