@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.29 $ - $Author: eldy $ - $Date: 2004-02-13 22:23:35 $
+# $Revision: 1.30 $ - $Author: eldy $ - $Date: 2004-04-18 18:27:49 $
 
 
 #package AWSSE;
@@ -24,7 +24,7 @@
 'google\.','216\.239\.(35\.101|37\.101|39\.100|39\.101|51\.100|51\.101|35\.100)',
 'msn\.',
 'voila\.',
-'yahoo\.',
+'yahoo\.','(66\.218\.71\.225|216\.109\.117\.135)',
 'search\.aol\.co',
 'tiscali\.',
 'lycos\.',
@@ -127,7 +127,7 @@
 'google\.','google','216\.239\.(35\.101|37\.101|39\.100|39\.101|51\.100|51\.101|35\.100)','google',
 'msn\.','msn',
 'voila\.','voila',
-'yahoo\.','yahoo',
+'yahoo\.','yahoo','(66\.218\.71\.225|216\.109\.117\.135)','yahoo',
 'lycos\.','lycos',
 'alexa\.com','alexa',
 'alltheweb\.com','alltheweb',
