@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.237 $ - $Author: eldy $ - $Date: 2002-05-25 21:29:27 $
+# $Revision: 1.238 $ - $Author: eldy $ - $Date: 2002-05-27 02:34:51 $
 
 use strict;no strict "refs";
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -30,7 +30,7 @@ use vars qw/ $UseHiRes $UseCompress /;
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.237 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.238 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -544,7 +544,10 @@ sub error {
 			print "111.22.33.44 - - [10/Jan/2001:02:14:14 +0200] \"GET / HTTP/1.1\" 200 1234\n";
 			print ($HTMLOutput?"</i></font><br><br>":"");
 		}
-		if ($LogFormat != 1 && $LogFormat != 2 && $LogFormat != 3 && $LogFormat != 4) {
+		if ($LogFormat == 5) {
+			print "<b>\"ISA native log format\"</b><br>\n";
+		}
+		if ($LogFormat !~ /^[1-5]$/) {
 			print "the following personalized log format:<br>\n";
 			print ($HTMLOutput?"<font color=#888888><i>":"");
 			print "$LogFormat\n";
@@ -2902,7 +2905,7 @@ if ($UpdateStats) {
 	if ($Debug) { debug("Generate PerlParsingFormat from LogFormatString=$LogFormatString"); }
 	$PerlParsingFormat="";
 	if ($LogFormat eq "1") {
-		$PerlParsingFormat="([^\\s]+) [^\\s]+ ([^\\s]+) \\[([^\\s]+) [^\\s]+\\] \\\"([^\\s]+) ([^\\s]+) [^\\\"]+\\\" ([\\d|-]+) ([\\d|-]+) \\\"(.*)\\\" \\\"([^\\\"]+)\\\"";
+		$PerlParsingFormat="([^\\s]+) [^\\s]+ ([^\\s]+) \\[([^\\s]+) [^\\s]+\\] \\\"([^\\s]+) ([^\\s]+) [^\\\"]+\\\" ([\\d|-]+) ([\\d|-]+) \\\"(.*)\\\" \\\"([^\\\"]*)\\\"";	# referer and ua might be ""
 		$pos_rc=1;$pos_logname=2;$pos_date=3;$pos_method=4;$pos_url=5;$pos_code=6;$pos_size=7;$pos_referer=8;$pos_agent=9;
 		$lastrequiredfield=9;
 	}
