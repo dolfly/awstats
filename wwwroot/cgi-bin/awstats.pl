@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.627 $ - $Author: eldy $ - $Date: 2003-10-31 23:18:15 $
+# $Revision: 1.628 $ - $Author: eldy $ - $Date: 2003-10-31 23:23:28 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.627 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.628 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -1260,7 +1260,6 @@ sub Read_Ref_Data {
 	if (@BrowsersSearchIDOrder != scalar keys %BrowsersHashIDLib) { error("Not same number of records of BrowsersSearchIDOrder (".(@BrowsersSearchIDOrder)." entries) and BrowsersHashIDLib (".(scalar keys %BrowsersHashIDLib)." entries) in Browsers database. Check your file ".$FilePath{"browsers.pm"}); }
 	if (@SearchEnginesSearchIDOrder != scalar keys %SearchEnginesHashID) { error("Not same number of records of SearchEnginesSearchIDOrder (".(@SearchEnginesSearchIDOrder)." entries) and SearchEnginesHashID (".(scalar keys %SearchEnginesHashID)." entries) in Search Engines database. Check your file ".$FilePath{"search_engines.pm"}); }
 	if ((@RobotsSearchIDOrder_list1+@RobotsSearchIDOrder_list2+@RobotsSearchIDOrder_list3) != scalar keys %RobotsHashIDLib) { error("Not same number of records of RobotsSearchIDOrder_listx (total is ".(@RobotsSearchIDOrder_list1+@RobotsSearchIDOrder_list2+@RobotsSearchIDOrder_list3)." entries) and RobotsHashIDLib (".(scalar keys %RobotsHashIDLib)." entries) in Robots database. Check your file ".$FilePath{"robots.pm"}); }
-
 }
 
 
@@ -3426,11 +3425,11 @@ sub Save_History {
 		my %keysinkeylist=();
 		foreach my $key (@keylist) {
 			$keysinkeylist{$key}=1;
-			print HISTORYTMP "$key ".int($_emails_h{$key})." ".int($_emails_k{$key})." $_emails_l{$key}\n";
+			print HISTORYTMP "$key ".int($_emails_h{$key}||0)." ".int($_emails_k{$key}||0)." $_emails_l{$key}\n";
 		}
 		foreach my $key (keys %_emails_h) {
 			if ($keysinkeylist{$key}) { next; }
-			print HISTORYTMP "$key ".int($_emails_h{$key})." ".int($_emails_k{$key})." $_emails_l{$key}\n";
+			print HISTORYTMP "$key ".int($_emails_h{$key}||0)." ".int($_emails_k{$key}||0)." $_emails_l{$key}\n";
 		}
 		print HISTORYTMP "END_EMAILSENDER\n";
 	}
@@ -3445,11 +3444,11 @@ sub Save_History {
 		my %keysinkeylist=();
 		foreach my $key (@keylist) {
 			$keysinkeylist{$key}=1;
-			print HISTORYTMP "$key ".int($_emailr_h{$key})." ".int($_emailr_k{$key})." $_emailr_l{$key}\n";
+			print HISTORYTMP "$key ".int($_emailr_h{$key}||0)." ".int($_emailr_k{$key}||0)." $_emailr_l{$key}\n";
 		}
 		foreach my $key (keys %_emailr_h) {
 			if ($keysinkeylist{$key}) { next; }
-			print HISTORYTMP "$key ".int($_emailr_h{$key})." ".int($_emailr_k{$key})." $_emailr_l{$key}\n";
+			print HISTORYTMP "$key ".int($_emailr_h{$key}||0)." ".int($_emailr_k{$key}||0)." $_emailr_l{$key}\n";
 		}
 		print HISTORYTMP "END_EMAILRECEIVER\n";
 	}
