@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.723 $ - $Author: eldy $ - $Date: 2004-03-12 23:33:51 $
+# $Revision: 1.724 $ - $Author: eldy $ - $Date: 2004-03-13 02:15:34 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.723 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.724 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -8778,7 +8778,8 @@ if (scalar keys %HTMLOutput) {
 				if ($ShowDaysOfMonthStats =~ /V/i) { print "<td width=\"80\" bgcolor=\"#$color_v\"".($TOOLTIPON?" onmouseover=\"ShowTip(1);\" onmouseout=\"HideTip(1);\"":"").">$Message[10]</td>"; }
 				if ($ShowDaysOfMonthStats =~ /P/i) { print "<td width=\"80\" bgcolor=\"#$color_p\"".($TOOLTIPON?" onmouseover=\"ShowTip(3);\" onmouseout=\"HideTip(3);\"":"").">$Message[56]</td>"; }
 				if ($ShowDaysOfMonthStats =~ /H/i) { print "<td width=\"80\" bgcolor=\"#$color_h\"".($TOOLTIPON?" onmouseover=\"ShowTip(4);\" onmouseout=\"HideTip(4);\"":"").">$Message[57]</td>"; }
-				if ($ShowDaysOfMonthStats =~ /B/i) { print "<td width=\"80\" bgcolor=\"#$color_k\"".($TOOLTIPON?" onmouseover=\"ShowTip(5);\" onmouseout=\"HideTip(5);\"":"").">$Message[75]</td></tr>"; }
+				if ($ShowDaysOfMonthStats =~ /B/i) { print "<td width=\"80\" bgcolor=\"#$color_k\"".($TOOLTIPON?" onmouseover=\"ShowTip(5);\" onmouseout=\"HideTip(5);\"":"").">$Message[75]</td>"; }
+				print "</tr>";
 				foreach my $daycursor ($firstdaytoshowtime..$lastdaytoshowtime) {
 					$daycursor =~ /^(\d\d\d\d)(\d\d)(\d\d)/;
 					my $year=$1; my $month=$2; my $day=$3;
