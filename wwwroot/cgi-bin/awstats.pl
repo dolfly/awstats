@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.462 $ - $Author: eldy $ - $Date: 2003-02-11 13:20:36 $
+# $Revision: 1.463 $ - $Author: eldy $ - $Date: 2003-02-11 16:11:09 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.462 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.463 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -7032,7 +7032,7 @@ if (scalar keys %HTMLOutput) {
 			my $p='&nbsp;';
 			if ($Total) { $p=int($totalfamily_h{$family}/$Total*1000)/10; $p="$p %"; }
 			print "<TR bgcolor=\"#F8F8F8\"><TD class=AWL colspan=2><b>".uc($family)."</b></TD>";
-			print "<TD>&nbsp;</TD><TD><b>$totalfamily_h{$family}</b></TD><TD><b>$p</b></TD><TD>&nbsp;</TD>";
+			print "<TD>&nbsp;</TD><TD><b>".($totalfamily_h{$family}?$totalfamily_h{$family}:'&nbsp;')."</b></TD><TD><b>$p</b></TD><TD>&nbsp;</TD>";
 			print "</TR>\n";
 			foreach my $key (reverse sort keys %_browser_h) {
 				if ($key =~ /^$family(.*)/i) {
