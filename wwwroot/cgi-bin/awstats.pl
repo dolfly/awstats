@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.700 $ - $Author: eldy $ - $Date: 2004-01-09 22:26:27 $
+# $Revision: 1.701 $ - $Author: eldy $ - $Date: 2004-01-10 10:51:02 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.700 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.701 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -6702,7 +6702,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
  			}
 			# Check to avoid too large extra sections
 			if (scalar keys %{'_section_' . $extranum . '_h'} > $MAXDIFFEXTRA) {
-				error("Too many (more than $MAXDIFFEXTRA) different values for row keys of extra section $extranum. Your setup is probably wrong.");
+				error("Too many (more than MAXDIFFEXTRA=$MAXDIFFEXTRA) different values for row keys of extra section $extranum. Are you sure you want to track an array with so many values (may be your ExtraSection setup is wrong) ? If yes, increase the MAXDIFFEXTRA constant in awstats.pl");
 			}
  		}
 
