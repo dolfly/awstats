@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.410 $ - $Author: eldy $ - $Date: 2002-12-02 20:23:09 $
+# $Revision: 1.411 $ - $Author: eldy $ - $Date: 2002-12-03 19:54:05 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.410 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.411 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.2 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5921,7 +5921,7 @@ EOF
 
 	# LOGO AND FLAGS
 	#---------------------------------------------------------------------
-	if (($ShowHeader && $FrameName ne 'mainright') || $FrameName eq 'mainleft') {
+	if ($ShowHeader && ($FrameName ne 'mainright' || $FrameName eq 'mainleft')) {
 		print "<table>\n";
 		print "<tr><td width=120 class=AWL style=\"font-size: 18px arial,verdana,helvetica; font-weight: bold\">AWStats\n";
 		if (! $StaticLinks) { Show_Flag_Links($Lang); }
