@@ -1,6 +1,6 @@
 AWStats-Webmin module Changelog
 -------------------------------
-$Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-12-05 22:06:20 $ 
+$Revision: 1.12 $ - $Author: eldy $ - $Date: 2003-12-22 01:43:51 $ 
 
 
 1.210
@@ -14,6 +14,7 @@ New features/improvements:
   BuildHistoryFormat
   BuildReportFormat
   LevelForFileTypesDetection
+  LevelForWormsDetection
   URLWithQueryWithOnlyFollowingParameters
   ShowWormsStats
 - Removed LinkToIPWhoIs and LinkToWhoIs obsolete parameters.
