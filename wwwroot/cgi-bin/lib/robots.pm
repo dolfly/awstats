@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2002-09-16 15:29:24 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2002-09-25 11:45:57 $
 
 
 #package AWSROB;
@@ -308,6 +308,7 @@
 "awbot",
 "bobby",
 "boris",
+"bumblebee",
 "cscrawler",
 "daviesbot",
 "ezresult",
@@ -607,6 +608,7 @@
 "awbot", "AWBot",
 "bobby", "Bobby", 
 "boris", "Boris",
+"bumblebee", "Bumblebee (relevare.com)",
 "cscrawler","CsCrawler",
 "daviesbot", "DaviesBot",
 "digout4u", "Digout4u",
@@ -635,6 +637,7 @@
 "webcompass", "webcompass",
 "wisenutbot","WISENutbot",
 "yandex", "Yandex bot",
+
 # Generic root ID
 "robot", "Unknown robot"
 );
