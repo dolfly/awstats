@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.534 $ - $Author: eldy $ - $Date: 2003-06-29 20:37:18 $
+# $Revision: 1.535 $ - $Author: eldy $ - $Date: 2003-06-29 20:57:31 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.534 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.535 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -8169,7 +8169,7 @@ if (scalar keys %HTMLOutput) {
 				print "<TR>";
 				print "<TD CLASS=AWS>$key</TD>";
 				&ShowHostInfo($key);
-				if ($ShowHostsStats =~ /P/i) { print "<TD>".($_host_p{$key}||"&nbsp")."</TD>"; }
+				if ($ShowHostsStats =~ /P/i) { print "<TD>".($_host_p{$key}||"&nbsp;")."</TD>"; }
 				if ($ShowHostsStats =~ /H/i) { print "<TD>$_host_h{$key}</TD>"; }
 				if ($ShowHostsStats =~ /B/i) { print "<TD>".Format_Bytes($_host_k{$key})."</TD>"; }
 				if ($ShowHostsStats =~ /L/i) { print "<TD>".($_host_l{$key}?Format_Date($_host_l{$key},1):'-')."</TD>"; }
