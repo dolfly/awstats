@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.248 $ - $Author: eldy $ - $Date: 2002-06-13 00:01:45 $
+# $Revision: 1.249 $ - $Author: eldy $ - $Date: 2002-06-13 00:04:49 $
 
 use strict;no strict "refs";
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -19,7 +19,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 
 use vars qw/ $UseHiRes $UseCompress /;
 # Next 'use' can be uncommented to get miliseconds time in showsteps option
-use Time::HiRes qw( gettimeofday ); $UseHiRes=1;
+#use Time::HiRes qw( gettimeofday ); $UseHiRes=1;
 # Next 'use' can be uncommented to allow read/write of gz compressed log or history files (not working yet)
 #use Compress::Zlib; $UseCompress=1;
 
@@ -30,7 +30,7 @@ use Time::HiRes qw( gettimeofday ); $UseHiRes=1;
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.248 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.249 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
