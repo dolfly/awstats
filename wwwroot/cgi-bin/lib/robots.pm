@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-09-09 13:51:21 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2002-09-11 13:01:54 $
 
 
 #package AWSROB;
@@ -571,9 +571,9 @@
 "webbandit","WebBandit Web Spider",
 "webcatcher","WebCatcher",
 "webcopy","WebCopy",
-"webfetcher","webfetcher",
+"webfetcher","Webfetcher",
 "webfoot","The Webfoot Robot",
-"weblayers","weblayers",
+"weblayers","Weblayers",
 "weblinker","WebLinker",
 "webmirror","WebMirror",
 "webmoose","The Web Moose",
@@ -605,13 +605,13 @@
 "boris", "Boris",
 "cscrawler","CsCrawler",
 "daviesbot", "DaviesBot",
-"digout4u", "digout4u",
+"digout4u", "Digout4u",
 "echo", "EchO!",
 "ezresult",	"Ezresult",
 "fast-webcrawler", "Fast-Webcrawler",
 "gigabot","GigaBot",
 "gnodspider","GNOD Spider",
-"ia_archiver", "ia_archiver",
+"ia_archiver", "IA Archiver",
 "jennybot", "JennyBot",
 "justview", "JustView",
 "linkbot","LinkBot",
