@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.133 $ - $Author: eldy $ - $Date: 2003-08-15 00:22:08 $ 
+$Revision: 1.134 $ - $Author: eldy $ - $Date: 2003-08-16 13:28:45 $ 
 
 
 5.7
@@ -28,6 +28,7 @@ Fixes:
 New features/improvements:
 - Added 'rawlog' plugin to add a form to show raw log content with filter
   capabilities.
+- Added a dynamic exclude filter on CGI full list report pages.
 - Added maillogconvert.pl for analyzing mail log files (better support
   for sendmail, postfix and qmail log files).
 - Added -addfilenum option in logresolvemerge.pl
