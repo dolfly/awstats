@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.383 $ - $Author: eldy $ - $Date: 2002-10-21 13:38:31 $
+# $Revision: 1.384 $ - $Author: eldy $ - $Date: 2002-10-21 14:52:19 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.383 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.384 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -496,7 +496,7 @@ use vars qw/ @Message /;
 "different refering search engines",
 "different refering sites",
 "Other phrases",
-"Anonymous users",
+"Other logins (and/or anonymous users)",
 "Refering search engines",
 "Refering sites",
 "Summary",
@@ -504,7 +504,7 @@ use vars qw/ @Message /;
 "Data value arrays",
 "Sender EMail",
 "Receiver EMail",
-"Report period"
+"Reported period"
 );
 
 
