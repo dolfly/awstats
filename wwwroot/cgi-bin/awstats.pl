@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.492 $ - $Author: eldy $ - $Date: 2003-04-26 15:23:37 $
+# $Revision: 1.493 $ - $Author: eldy $ - $Date: 2003-04-26 16:53:28 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.492 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.493 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5408,7 +5408,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 						}
 						else {
 							if ($ip == 4) {
-								my $lookupresult=gethostbyaddr(pack("C4",split(/\./,$Host)),AF_INET);	# This is very slow, may took 20 seconds
+								my $lookupresult=gethostbyaddr(pack("C4",split(/\./,$Host)),AF_INET);	# This is very slow, may spend 20 seconds
 								if (! $lookupresult || $lookupresult =~ /^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/ || ! IsAscii($lookupresult)) {
 									$TmpDNSLookup{$Host}=$HostResolved='*';
 								}
@@ -5418,8 +5418,18 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 								if ($Debug) { debug("  Reverse DNS lookup for $Host done: $HostResolved",4); }
 							}
 							elsif ($ip == 6) {
-								$TmpDNSLookup{$Host}=$HostResolved='*';
-								if ($Debug) { debug("  Reverse DNS lookup for $Host not available for IPv6",4); }
+								if ($PluginsLoaded{'GetResolveIP'}{'ipv6'}) {
+									my $lookupresult=GetResolvedIP_ipv6($Host);
+									if (! $lookupresult || ! IsAscii($lookupresult)) {
+										$TmpDNSLookup{$Host}=$HostResolved='*';
+									}
+									else {
+										$TmpDNSLookup{$Host}=$HostResolved=$lookupresult;
+									}
+								} else {
+									$TmpDNSLookup{$Host}=$HostResolved='*';
+									warning("Reverse DNS lookup for $Host not available without ipv6 plugin enabled.");
+								}
 							}
 							else { error("Bad value vor ip"); }
 						}
