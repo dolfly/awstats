@@ -6,7 +6,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2003-08-16 13:39:32 $
+# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2003-08-16 13:41:35 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -17,7 +17,7 @@ use strict; no strict "refs";
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.18 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.19 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 # ---------- External Program variables ----------
@@ -156,6 +156,7 @@ if (scalar keys %ParamFile == 0) {
 	print "  $PROG.$Extension [options] file\n";
 	print "  $PROG.$Extension [options] file1 ... filen\n";
 	print "  $PROG.$Extension [options] *.*\n";
+	print "  perl $PROG.$Extension [options] *.* > newfile\n";
 	print "Options:\n";
 	print "  -dnslookup     make a reverse DNS lookup on IP adresses\n";
 #	print "  -dnslookup:n   same with a n parallel threads instead of $QueuePoolSize by default\n";
