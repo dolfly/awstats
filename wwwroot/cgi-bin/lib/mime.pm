@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2004-10-23 15:21:36 $
+# $Revision: 1.20 $ - $Author: eldy $ - $Date: 2005-01-21 22:49:05 $
 
 
 #package AWSMIME;
@@ -13,26 +13,26 @@
 # List of mime's label ("mime id in lower case", "mime text")
 #---------------------------------------------------------------
 %MimeHashLib = (
-'text','Text file',
-'page','HTML or XML static page',
-'script','Dynamic Html page or Script file',
-'image','Image',
-'document','Document',
-'package','Package',
-'archive','Archive',
-'audio','Audio',
-'video','Video',
+'text',      'Text file',
+'page',      'HTML&nbsp;or&nbsp;XML&nbsp;static&nbsp;page',
+'script',    'Dynamic&nbsp;Html&nbsp;page&nbsp;or&nbsp;Script&nbsp;file',
+'image',     'Image',
+'document',  'Document',
+'package',   'Package',
+'archive',   'Archive',
+'audio',     'Audio',
+'video',     'Video',
 'javascript','Javascript file',
-'vbs','Visual Basic script',
-'conf','Config file',
-'css','Cascading Style Sheet file',
-'xsl','Extensible Stylesheet Language file',
-'runtime','HTML dynamic page or Binary runtime',
-'library','Binary library',
-'swf','Macromedia Flash Animation',
-'dtd','Document Type Definition',
-'csv','Comma Separated Value file',
-'jnlp','Java Web Start launch file',
+'vbs',       'Visual Basic script',
+'conf',      'Config file',
+'css',       'Cascading Style Sheet file',
+'xsl',       'Extensible&nbsp;Stylesheet&nbsp;Language&nbsp;file',
+'runtime',   'HTML&nbsp;dynamic&nbsp;page&nbsp;or&nbsp;Binary&nbsp;runtime',
+'library',   'Binary library',
+'swf',       'Macromedia Flash Animation',
+'dtd',       'Document Type Definition',
+'csv',       'Comma Separated Value file',
+'jnlp',      'Java Web Start launch file',
 );
 
 # MimeHashIcon
