@@ -4,7 +4,7 @@
 # you must add an entry in SearchEnginesSearchIDOrder and in SearchEnginesHashIDLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #-------------------------------------------------------
-# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2003-08-29 01:27:38 $
+# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2003-09-09 11:53:50 $
 
 
 #package AWSSE;
@@ -23,11 +23,12 @@
 "voila\.",
 "yahoo\.",
 "lycos\.",
-"altavista\.",
-"search\.terra\.",
+"alexa\.com",
 "alltheweb\.com",
-"netscape\.",
+"altavista\.",
 "dmoz\.org",
+"netscape\.",
+"search\.terra\.",
 "www\.search\.com",
 "tiscali\.",
 "search\.aol\.co",
@@ -109,6 +110,7 @@
 #-------------------------------------------------
 %SearchEnginesKnownUrl=(
 # Most common search engines
+"alexa\.com","q=",
 "alltheweb\.com","q(|uery)=",
 "altavista\.","q=",
 "dmoz\.org","search=",
@@ -206,6 +208,7 @@
 #-----------------------------------------------------------------
 %SearchEnginesHashIDLib=(
 # Major internationnal search engines
+"alexa\.com","Alexa",
 "alltheweb\.com","AllTheWeb",
 "altavista\.","AltaVista",
 "dmoz\.org","DMOZ",
