@@ -10,7 +10,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2002-05-13 07:08:09 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2002-05-17 05:13:52 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -20,8 +20,8 @@ use strict; no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.10 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
-my $VERSION="1.1 (build $REVISION)";
+my $REVISION='$Revision: 1.11 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
 my $Debug=0;
