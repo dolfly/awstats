@@ -1,19 +1,24 @@
 AWStats Changelog
 -----------------
-$Revision: 1.105 $ - $Author: eldy $ - $Date: 2003-05-29 23:55:07 $ 
+$Revision: 1.106 $ - $Author: eldy $ - $Date: 2003-05-31 15:43:57 $ 
 
 
 5.6
 
 Fixes:
 - Domain with no pages hits were always reported as other in domain chart.
+- percent for other in full list of "links for internet search engines"
+  has been fixed.
 
 New features/improvments:
 - Report compression ratios with mod_deflate feature (Apache 2).
 - A better browser detection.
+- Can add regex values for a lot of list parameters (HostAliases,
+  SkipDNSLookupFor, ...)
 
 Other/Documentation:
 - Updated documentation.
+- Update wap/imode browser list.
 
 
 5.5
