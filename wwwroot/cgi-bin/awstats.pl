@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.445 $ - $Author: eldy $ - $Date: 2003-01-16 14:09:31 $
+# $Revision: 1.446 $ - $Author: eldy $ - $Date: 2003-01-16 15:32:13 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.445 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.446 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1051,8 +1051,7 @@ sub Parse_Config {
 
 		# Remove comments
 		if ($_ =~ /^#/) { next; }
-		$_ =~ s/^([^\"]*)#.*/$1/;
-		$_ =~ s/^([^\"]*\"[^\"]*\"[^\"]*)#.*/$1/;
+		$_ =~ s/\s#.*$/$1/;
 		# Extract param and value
 		#if ($Debug) { debug("$_",2); }
 		my @felter=split(/=/,$_,2);
