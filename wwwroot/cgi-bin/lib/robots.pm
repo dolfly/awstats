@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-07-15 22:42:34 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-08-02 23:26:54 $
 
 
 #package AWSROB;
@@ -139,7 +139,6 @@
 "hambot",
 "havindex",
 "hometown",
-"wired-digital",
 "htmlgobble",
 "hyperdecontextualizer",
 "iajabot",
@@ -297,6 +296,7 @@
 "webwatch",
 "whatuseek",
 "whowhere",
+"wired-digital",
 "wmir",
 "wolp",
 "wombat",
@@ -304,17 +304,21 @@
 "wwwc",
 "wz101",
 "xget",
-"nederland.zoek",
 # Other robots reported by users
 "boris",
 "cscrawler",
 "daviesbot",
 "ezresult",
+"gigabot",
 "gnodspider",
 "justview",
+"linkbot",
+"nederland.zoek",
 "perman",
+"psbot",
 "redalert",
 "shoutcast",
+"slysearch",
 "ultraseek",
 "webcompass",
 "yandex"
@@ -412,7 +416,6 @@
 "harvest","Harvest",
 "havindex","havIndex",
 "hometown","Hometown Spider Pro",
-"wired-digital","Wired Digital",
 "htdig","ht://Dig",
 "htmlgobble","HTMLgobble",
 "hyperdecontextualizer","Hyper-Decontextualizer",
@@ -586,6 +589,7 @@
 "wget","Wget",
 "whatuseek","whatUseek Winona",
 "whowhere","WhoWhere Robot",
+"wired-digital","Wired Digital",
 "wmir","w3mir",
 "wolp","WebStolperer",
 "wombat","The Web Wombat",
@@ -603,15 +607,19 @@
 "echo", "EchO!",
 "ezresult",	"Ezresult",
 "fast-webcrawler", "Fast-Webcrawler",
+"gigabot","GigaBot",
 "gnodspider","GNOD Spider",
 "ia_archiver", "ia_archiver",
 "jennybot", "JennyBot",
 "justview", "JustView",
+"linkbot","LinkBot",
 "mercator", "Mercator",
 "perman", "Perman surfer",
 "peternews", "Peternews",
+"psbot","psBot",
 "redalert", "Red Alert",
 "shoutcast","Shoutcast Directory Service",
+"slysearch","SlySearch",
 "ultraseek", "Ultraseek",
 "unlost_web_crawler", "Unlost_Web_Crawler",
 "voila", "Voila",
