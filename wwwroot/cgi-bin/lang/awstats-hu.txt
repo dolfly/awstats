@@ -1,5 +1,5 @@
 # Hungarian message file (gabor.funk@hunetkft.hu)
-# $Revision: 1.14 $ - $Date: 2003-02-03 07:27:10 $
+# $Revision: 1.15 $ - $Date: 2003-07-13 19:34:26 $
 PageCode=iso-8859-2
 message0=Ismeretlen
 message1=Ismeretlen (feloldatlan ip)
@@ -136,3 +136,16 @@ message131=Küldõ E-Mail címe
 message132=Fogadó E-Mail címe
 message133=Statisztikai idõszak
 message134=Extra/Marketing
+message135=Képernyõméretek
+message136=Worm/Virus kérések
+message137=Hozzáadás a kedvencekhez (becslés)
+message138=Napi bontás
+message139=Vegyes
+message140=Böngészõk Java támogatással
+message141=Böngészõk Macromedia Director támogatással
+message142=Böngészõk Flash támogatással
+message143=Böngészõk Real audio támogatással
+message144=Böngészõk Quicktime audio támogatással
+message145=Böngészõk Windows Media audio támogatással
+message146=Böngészõk PDF támogatással
+message147=SMTP hibakódok
