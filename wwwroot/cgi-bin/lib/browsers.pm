@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2002-10-27 05:00:14 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-01-10 18:19:49 $
 
 
 #package AWSUA;
@@ -55,6 +55,7 @@
 "nutscrape",
 "msfrontpageexpress",
 "phoenix",
+"safari",
 "tzgeturl",
 "viking",
 "webfetcher",
@@ -145,6 +146,7 @@
 "nutscrape", "Nutscrape",
 "msfrontpageexpress","MS FrontPage Express",
 "phoenix","Phoenix",
+"safari","Safari",
 "tzgeturl","TzGetURL",
 "viking","Viking",
 "webfetcher","WebFetcher",
@@ -251,6 +253,7 @@
 "nutscrape","notavailable",
 "msfrontpageexpress","notavailable",
 "phoenix","notavailable",
+"safari","notavailable",
 "tzgeturl","notavailable",
 "viking","notavailable",
 "webfetcher","notavailable",
