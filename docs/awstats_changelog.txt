@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.146 $ - $Author: eldy $ - $Date: 2003-09-14 22:42:35 $ 
+$Revision: 1.147 $ - $Author: eldy $ - $Date: 2003-09-15 13:19:27 $ 
 
 
 5.8
@@ -12,6 +12,7 @@ Fixes:
 - Fixed wrong use of config file in rawlog plugin.
 - Some changes on maillogconvert.pl:
   maillogconvert support more exotic sendmail log files (Thanks to W-Mark Kubacki).
+  Fixed wrong parsing of qmail syslog files.
   Fixed pb of '-' in relay hostname.
   When a mail is sent to 2 different receivers, now report 2 records.
   When a forward is active, report the original receiver, not the
