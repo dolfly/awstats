@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.738 $ - $Author: eldy $ - $Date: 2004-03-28 17:03:47 $
+# $Revision: 1.739 $ - $Author: eldy $ - $Date: 2004-04-02 22:28:21 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.738 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.739 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -6409,7 +6409,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 						$_url_e{$field[$pos_url]}++;
 						$DayVisits{$yearmonthdayrecord}++;
 						# We can't count session yet because we don't have the start so
-						# we save save params of first 'wait' session
+						# we save params of first 'wait' session
 						$_waithost_l{$HostResolved}=$timehostl;
 						$_waithost_s{$HostResolved}=$timehosts;
 						$_waithost_u{$HostResolved}=$page;
