@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.458 $ - $Author: eldy $ - $Date: 2003-02-04 00:54:35 $
+# $Revision: 1.459 $ - $Author: eldy $ - $Date: 2003-02-09 18:58:13 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.458 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.459 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -174,8 +174,8 @@ $UseHTTPSLinkForUrl $URLQuerySeparators $URLWithAnchor $ErrorMessages
 ($LastLineChecksum, $DirLock, $DirCgi, $DirData, $DirIcons, $DirLang, $AWScript, $ArchiveFileName,
 $AllowAccessFromWebToFollowingIPAddresses, $HTMLHeadSection, $HTMLEndSection, $LinksToWhoIs, $LinksToIPWhoIs,
 $LogFile, $LogFormat, $LogSeparator, $Logo, $LogoLink, $StyleSheet, $WrapperScript, $SiteDomain,
-$UseHTTPSLinkForUrl, $URLQuerySeparators, $ErrorMessages)=
-('','','','','','','','','','','','','','','','','','','','','','','','');
+$UseHTTPSLinkForUrl, $URLQuerySeparators, $URLWithAnchor, $ErrorMessages)=
+('','','','','','','','','','','','','','','','','','','','','','','','','');
 use vars qw/
 $color_Background $color_TableBG $color_TableBGRowTitle
 $color_TableBGTitle $color_TableBorder $color_TableRowTitle $color_TableTitle
@@ -1077,7 +1077,7 @@ sub Parse_Config {
 
 		# Remove comments
 		if ($_ =~ /^#/) { next; }
-		$_ =~ s/\s#.*$/$1/;
+		$_ =~ s/\s#.*$//;
 		# Extract param and value
 		#if ($Debug) { debug("$_",2); }
 		my @felter=split(/=/,$_,2);
@@ -4766,7 +4766,7 @@ $ENV{'AWSTATS_CURRENT_CONFIG'}=$SiteConfig;
 &Read_Config;
 if ($QueryString =~ /(^|&)lang=([^&]+)/i)	{ $Lang="$2"; }
 if (! $Lang || $Lang eq 'auto') {	# If lang not defined or forced to auto
-	my $langlist=$ENV{'HTTP_ACCEPT_LANGUAGE'}; $langlist =~ s/;[^,]*//g;
+	my $langlist=$ENV{'HTTP_ACCEPT_LANGUAGE'}||''; $langlist =~ s/;[^,]*//g;
 	debug("Search an available language among HTTP_ACCEPT_LANGUAGE=$langlist",1);
 	foreach my $code (split(/,/,$langlist)) {	# Search for a valid lang in priority
 		if ($LangBrowserToAwstats{$code}) { $Lang=$LangBrowserToAwstats{$code}; debug("Will try to use Lang=$Lang",1); last; }
