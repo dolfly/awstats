@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.254 $ - $Author: eldy $ - $Date: 2002-06-28 14:35:16 $
+# $Revision: 1.255 $ - $Author: eldy $ - $Date: 2002-06-29 11:17:24 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -30,7 +30,7 @@ use vars qw/ $UseHiRes $UseCompress /;
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.254 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.255 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -948,7 +948,7 @@ sub Read_Ref_Data {
 	my %FilePath=();
 	my @FileListToLoad=();
 	push @FileListToLoad, "browsers.pm";
-	if ($HTMLOutput) { push @FileListToLoad, "domains.pm"; }	# Used only when HTML output required
+	push @FileListToLoad, "domains.pm";
 	push @FileListToLoad, "operating_systems.pm";
 	push @FileListToLoad, "robots.pm";
 	push @FileListToLoad, "search_engines.pm";
