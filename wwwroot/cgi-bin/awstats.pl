@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.406 $ - $Author: eldy $ - $Date: 2002-11-24 13:15:39 $
+# $Revision: 1.407 $ - $Author: eldy $ - $Date: 2002-11-24 13:17:52 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.406 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.407 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.2 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -34,7 +34,7 @@ $NBOFLINESFORBENCHMARK=5000;		# Benchmark info are printing every NBOFLINESFORBE
 $FRAMEWIDTH=260;					# Width of left frame when UseFramesWhenCGI is on
 $TOOLTIPWIDTH=380;					# Width of tooltips
 $NBOFLASTUPDATELOOKUPTOSAVE=200;	# Nb of records to save in DNS last update cache file
-$LIMITFLUSH=1000;					# Nb of records in data arrays after how we need to flush data on disk
+$LIMITFLUSH=4000;					# Nb of records in data arrays after how we need to flush data on disk
 $VISITTIMEOUT=10000;				# Laps of time to consider a page load as a new visit. 10000 = 1 hour (Default = 10000)
 $NOTSORTEDRECORDTOLERANCE=10000;	# Laps of time to accept a record if not in correct order. 10000 = 1 hour (Default = 10000)
 $MAXDIFFEXTRA=500;
