@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.802 $ - $Author: eldy $ - $Date: 2005-02-01 10:16:29 $
+# $Revision: 1.803 $ - $Author: eldy $ - $Date: 2005-02-01 18:54:00 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.802 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.803 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.3 (build $REVISION)";
 
 # ----- Constants -----
@@ -4290,7 +4290,7 @@ sub UnCompileRegex {
 #------------------------------------------------------------------------------
 sub Sanitize {
 	my $stringtoclean=shift;
-	$stringtoclean =~ s/[^\w_\-\\\/\.\s]//g;
+	$stringtoclean =~ s/[^\w_\-\\\/\.:\s]//g;
 	return $stringtoclean;
 }
 
