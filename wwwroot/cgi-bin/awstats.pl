@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.532 $ - $Author: eldy $ - $Date: 2003-06-27 20:22:09 $
+# $Revision: 1.533 $ - $Author: eldy $ - $Date: 2003-06-28 12:55:13 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.532 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.533 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -5319,7 +5319,12 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		}
 		# Check favicon
 		#-----------------------------------------------
-		elsif ($field[$pos_url] =~ /\/favicon\.ico$/i) { $_misc_h{'AddToFavourites'}++; next; }
+		elsif ($field[$pos_url] =~ /\/favicon\.ico$/i) {
+			if ($field[$pos_code] != 404 || $field[$pos_url] !~ /\/.+\/favicon\.ico$/i) {	# We don't count on hit if not on root and error as another hit will be made on root
+				$_misc_h{'AddToFavourites'}++;	# Hit on favicon on root or without error, we count it
+			}
+			next;
+		}
 		
 		# Check return status code
 		#-------------------------
