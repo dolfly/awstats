@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.808 $ - $Author: eldy $ - $Date: 2005-02-05 19:20:21 $
+# $Revision: 1.809 $ - $Author: eldy $ - $Date: 2005-02-06 22:26:38 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.808 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.809 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.4 (build $REVISION)";
 
 # ----- Constants -----
@@ -7300,7 +7300,7 @@ if (scalar keys %HTMLOutput) {
 			$NewLinkParams =~ tr/&/&/s; $NewLinkParams =~ s/^&//; $NewLinkParams =~ s/&$//;
 			my $NewLinkTarget='';
 			if ($FrameName eq 'mainright') { $NewLinkTarget=" target=\"_parent\""; }
-			print "<form name=\"FormDateFilter\" action=\"".XMLEncode("$AWScript?${NewLinkParams}")."\" style=\"padding: 0px 0px 0px 0px; margin-top: 0\"$NewLinkTarget />\n";
+			print "<form name=\"FormDateFilter\" action=\"".XMLEncode("$AWScript?${NewLinkParams}")."\" style=\"padding: 0px 0px 0px 0px; margin-top: 0\"$NewLinkTarget>\n";
 		}
 
 		if ($QueryString !~ /buildpdf/i) {
