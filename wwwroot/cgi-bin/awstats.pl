@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.670 $ - $Author: eldy $ - $Date: 2003-11-28 23:01:32 $
+# $Revision: 1.671 $ - $Author: eldy $ - $Date: 2003-11-30 20:49:22 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.670 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.671 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -7017,7 +7017,7 @@ if (scalar keys %HTMLOutput) {
 				my $menuicon=0;
 				# Menu HTML
 				print "<table".($frame?" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"":"").">\n";
-				if ($ShowMonthStats)		 { print ($frame?"<tr><td class=\"awsm\">":""); print "<a href=\"$linkanchor#TOP\"$targetpage>$Message[128]</a>"; print ($frame?"</td></tr>\n":" &nbsp; "); }
+				if ($FrameName eq 'mainleft' && $ShowMonthStats)		 { print ($frame?"<tr><td class=\"awsm\">":""); print "<a href=\"$linkanchor#TOP\"$targetpage>$Message[128]</a>"; print ($frame?"</td></tr>\n":" &nbsp; "); }
 				# When
 				$linetitle=&AtLeastOneNotNull($ShowMonthStats,$ShowDaysOfMonthStats,$ShowDaysOfWeekStats,$ShowHoursStats);
 				if ($linetitle) { print "<tr><td class=\"awsm\" width=\"$WIDTHMENU1\"".($frame?"":" valign=\"top\"").">".($menuicon?"<img src=\"$DirIcons/other/menu4.png\" />&nbsp;":"")."<b>$Message[93]:</b></td>\n"; }
