@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2003-08-16 22:23:47 $
+# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2003-08-24 12:06:03 $
 
 
 #package AWSROB;
@@ -269,6 +269,7 @@
 "udmsearch",
 "urlck",
 "valkyrie",
+"verticrawl",
 "victoria",
 "visionsearch",
 "vwbot",
@@ -575,6 +576,7 @@
 "udmsearch","UdmSearch",
 "urlck","URL Check",
 "valkyrie","Valkyrie",
+"verticrawl","Verticrawl",
 "victoria","Victoria",
 "visionsearch","vision-search",
 "voyager\/","Voyager",
