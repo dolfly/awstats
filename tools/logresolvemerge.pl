@@ -6,7 +6,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.30 $ - $Author: eldy $ - $Date: 2004-06-11 22:25:45 $
+# $Revision: 1.31 $ - $Author: eldy $ - $Date: 2004-11-27 14:32:00 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -34,7 +34,7 @@ my %TmpDNSLookup = ();
 
 # ---------- Init variables --------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.30 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.31 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw/ $NBOFLINESFORBENCHMARK /;
@@ -379,8 +379,10 @@ if ($DNSCache) {
 	open(CACHE, "<$DNSCache") or error("Can't open cache file $DNSCache");
 	while (<CACHE>) {
 		my ($time, $ip, $name) = split;
-		$name='ip' if $name eq '*';
-		$MyDNSTable{$ip}=$name;
+        if ($ip && $name) {
+            $name="$ip" if $name eq '*';
+    		$MyDNSTable{$ip}=$name;
+        }
 	}
 	close CACHE;
 }
@@ -502,8 +504,8 @@ while (1 == 1)
 	# END Read new lines for each log file. After this, following var are filled
 	# $timerecord{$logfilenb}
 
-	# We choose wich record of wich log file to process
-	if ($Debug) { debug("Choose of wich record of which log file to process",3); }
+	# We choose which record of which log file to process
+	if ($Debug) { debug("Choose which record of which log file to process",3); }
 	$logfilechosen=-1;
 	my $timeref="99999999999999";
 	foreach my $logfilenb (keys %LogFileToDo) {
