@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-12-13 01:26:38 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2003-12-31 21:41:00 $
 
 
 # <-----
@@ -85,7 +85,7 @@ sub ShowGraph_graphapplet() {
 	else { error("Unknown type parameter in ShowGraph_graphapplet function"); }
 
 #	print "<applet code=\"AWGraphApplet.class\" codebase=\"/classes\" width=\"$graphwidth\" height=\"$graphheight\">\n";
-	print "<applet name=\"$type\" archive=\"awgraphapplet.jar\" code=\"AWGraphApplet.class\" codebase=\"$DirClasses\" width=\"$graphwidth\" height=\"$graphheight\" alt= \"Your browser does not support Java correctly. Change browser or disable AWStats graphapplet plugin.\">\n";
+	print "<applet name=\"$type\" archive=\"awgraphapplet.jar\" code=\"AWGraphApplet.class\" codebase=\"".($DirClasses||"/")."\" width=\"$graphwidth\" height=\"$graphheight\" alt= \"Your browser does not support Java correctly. Change browser or disable AWStats graphapplet plugin.\">\n";
 print <<EOF;
 <param name="title" value="$title" />
 <param name="special" value="$type" />
