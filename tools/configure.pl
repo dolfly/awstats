@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.26 $ - $Author: eldy $ - $Date: 2004-02-14 19:46:22 $
+# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2004-02-14 19:51:54 $
 use strict;
 
 #-------------------------------------------------------
@@ -43,7 +43,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.26 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.27 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -603,6 +603,7 @@ if ($bidon =~ /^y/i) {
 	if (-s $configfile) { print "  Config file already exists. No overwrite possible on existing config files.\n"; }
 	else {
 		%ConfToChange=();
+		# TODO Ask path of log file to change LogFile parameter
 		if ($OS eq 'linux' || $OS eq "macosx") { $ConfToChange{'DirData'}="$AWSTATS_DIRDATA_PATH"; }
 		if ($OS eq 'windows') { $ConfToChange{'DirData'}='.'; }
 		if ($UseAlias) {
