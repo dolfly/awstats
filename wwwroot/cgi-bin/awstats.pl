@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.330 $ - $Author: eldy $ - $Date: 2002-09-18 17:18:59 $
+# $Revision: 1.331 $ - $Author: eldy $ - $Date: 2002-09-19 00:02:39 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.330 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.331 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4362,8 +4362,8 @@ if ($UpdateStats && $FrameName ne "index" && $FrameName ne "mainleft") {	# Updat
 		if ($URLWithQuery) {
 			$urlwithnoquery=$field[$pos_url];
 			$urlwithnoquery =~ s/\?.*//;
-			# We combine the URL and query strings.
-			if ($field[$pos_query] && ($field[$pos_query] ne "-")) { $field[$pos_url] .= "?" . $field[$pos_query]; }
+			# We combine the URL and query strings (for some IIS setup).
+			if ($pos_query >=0 && $field[$pos_query] && $field[$pos_query] ne "-") { $field[$pos_url] .= "?" . $field[$pos_query]; }
 		}
 		else {
 			# Trunc CGI parameters in URL
