@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.479 $ - $Author: eldy $ - $Date: 2003-03-02 04:16:18 $
+# $Revision: 1.480 $ - $Author: eldy $ - $Date: 2003-03-03 10:28:34 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.479 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.480 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5133,7 +5133,12 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 
 		# Check screen size
 		#------------------
-		if ($field[$pos_url] =~ /$LogScreenSizeUrl\?w=(\d+)&h=(\d+)/) { $_screensize_h{"$1x$2"}++; next; }
+		if ($field[$pos_url] =~ /$LogScreenSizeUrl/) {
+			if ($pos_query >=0 && $field[$pos_query]) { # For this fucking IIS in pos_query mode
+				if ($field[$pos_query] =~ /w=(\d+)&h=(\d+)/) { $_screensize_h{"$1x$2"}++; next; }
+			}
+			elsif ($field[$pos_url] =~ /w=(\d+)&h=(\d+)/) { $_screensize_h{"$1x$2"}++; next; }
+		}
 		
 		# Check return status code
 		#-------------------------
