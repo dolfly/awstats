@@ -3,7 +3,7 @@
 # If you want to add worms to extend AWStats database detection capabilities,
 # you must add an entry in WormsSearchIDOrder, WormsHashID and WormsHashLib.
 #-------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-11-01 15:40:19 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-11-23 17:56:22 $
 
 
 #package AWSWORMS;
@@ -31,6 +31,8 @@
 'exe?/c+dir','nimba'
 #'root.exe?/c','nimba',
 #'cmd.exe?/c','nimba'
+#'/MSOffice/cltreq.asp'		# Not a worm, a check by IE to see if discussion bar is turned on
+#'/_vti_bin/owssrv.dll'		# Not a worm, a check by IE to see if discussion bar is turned on
 );
 
 
