@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.540 $ - $Author: eldy $ - $Date: 2003-07-05 18:56:51 $
+# $Revision: 1.541 $ - $Author: eldy $ - $Date: 2003-07-06 05:48:19 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.540 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.541 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.7 (build $REVISION)";
 
 # ----- Constants -----
@@ -5175,7 +5175,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			$protocol=1;
 		}
 		elsif ($field[$pos_method] eq 'SMTP') {
-			# Mail request ('SMTP' for sendmail with sma)
+			# Mail request ('SMTP' for mail log with maillogconvert.pl preprocessor)
 			$protocol=3;
 		}
 		elsif ($field[$pos_method] eq 'RETR' || $field[$pos_method] =~ /get/i) {
@@ -5186,8 +5186,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			# FTP SENT request
 			$protocol=2;
 		}
-		elsif ($field[$pos_method] eq 'mms') {
-			# Streaming request
+		elsif ($field[$pos_method] eq 'mms' || $field[$pos_method] eq 'RTP') {
+			# Streaming request (windows media server or darwin streaming server)
 			$protocol=4;
 		}
 		elsif ($field[$pos_method] =~ /\d\d\d\d/) {
