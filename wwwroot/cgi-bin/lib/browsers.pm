@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-01-10 18:19:49 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2003-01-16 14:10:16 $
 
 
 #package AWSUA;
@@ -209,7 +209,7 @@
 
 # BrowsersHashIcon
 # Each Browsers Search ID is associated to a string that is the name of icon
-# file for this OS.
+# file for this browser.
 #---------------------------------------------------------------------------
 %BrowsersHashIcon = (
 # Standard web browsers
