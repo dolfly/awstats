@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2004-06-13 15:24:16 $
+# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2004-10-23 15:21:36 $
 
 
 #package AWSMIME;
@@ -31,7 +31,8 @@
 'library','Binary library',
 'swf','Macromedia Flash Animation',
 'dtd','Document Type Definition',
-'csv','Comma Separated Value file'
+'csv','Comma Separated Value file',
+'jnlp','Java Web Start launch file',
 );
 
 # MimeHashIcon
@@ -92,6 +93,7 @@
 'ace','archive',
 'bz2','archive',
 'gz','archive',
+'jar','archive',
 'rar','archive',
 'tar','archive',
 'tgz','archive',
@@ -123,6 +125,7 @@
 # Program
 'exe','script',
 'dll','script',
+'jnlp','jnlp',
 );
 
 
@@ -179,6 +182,7 @@
 'ace','archive',
 'bz2','archive',
 'gz','archive',
+'jar','archive',
 'rar','archive',
 'tar','archive',
 'tgz','archive',
@@ -209,6 +213,7 @@
 'dtd','dtd',
 # Program
 'exe','runtime',
+'jnlp','jnlp',
 'dll','library',
 );
 

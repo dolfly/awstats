@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.37 $ - $Author: eldy $ - $Date: 2004-09-13 17:32:45 $
+# $Revision: 1.38 $ - $Author: eldy $ - $Date: 2004-10-23 15:22:50 $
 
 
 #package AWSUA;
@@ -50,6 +50,7 @@
 'hotjava',
 'ibrowse',
 'intergo',
+'javaws',
 'k\-meleon',
 'linemodebrowser',
 'lotus\-notes',
@@ -223,6 +224,7 @@
 'apt','Debian APT',
 'curl','Curl',
 'csscheck','WDG CSS Validator',
+'javaws','Java Web Start',
 'wget','Wget',
 'w3m','w3m',
 'w3c_css_validator','W3C CSS Validator',
@@ -332,6 +334,7 @@
 'webtv','webtv',
 # Other kind of browsers
 'apt','apt',
+'javaws','javaws',
 'webzip','webzip',
 'staroffice','staroffice',
 'mozilla','mozilla'
