@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.561 $ - $Author: eldy $ - $Date: 2003-08-03 17:22:07 $
+# $Revision: 1.562 $ - $Author: eldy $ - $Date: 2003-08-10 13:41:24 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.561 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.562 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.7 (build $REVISION)";
 
 # ----- Constants -----
@@ -3889,7 +3889,7 @@ sub DecodeEncodedString {
 }
 
 #--------------------------------------------------------------------
-# Function:     Clean a string of all HTML code to avoid 'Cross Site Scripting attacks'
+# Function:     Clean a string of HTML tags to avoid 'Cross Site Scripting attacks'
 # Parameters:   stringtodecode
 # Input:        None
 # Output:       None
@@ -3897,7 +3897,9 @@ sub DecodeEncodedString {
 #--------------------------------------------------------------------
 sub CleanFromCSSA {
 	my $stringtoclean=shift;
-	$stringtoclean =~ s/[<>].*$//;
+#	$stringtoclean =~ s/[<>].*$//;
+	$stringtoclean =~ s/</&lt;/g;
+	$stringtoclean =~ s/>/&gt;/g;
 	return $stringtoclean;
 }
 
@@ -7609,7 +7611,7 @@ if (scalar keys %HTMLOutput) {
 		my $count=0;
 		&BuildKeyList($MaxRowsInHTMLOutput,$MinHit{'Keyphrase'},\%_keyphrases,\%_keyphrases);
 		foreach my $key (@keylist) {
-			my $mot = DecodeEncodedString(CleanFromCSSA($key));
+			my $mot = CleanFromCSSA(DecodeEncodedString($key));
 			my $p;
 			if ($TotalKeyphrases) { $p=int($_keyphrases{$key}/$TotalKeyphrases*1000)/10; }
 			print "<TR><TD CLASS=AWS>$mot</TD><TD>$_keyphrases{$key}</TD><TD>$p %</TD></TR>\n";
@@ -7635,7 +7637,7 @@ if (scalar keys %HTMLOutput) {
 		my $count=0;
 		&BuildKeyList($MaxRowsInHTMLOutput,$MinHit{'Keyword'},\%_keywords,\%_keywords);
 		foreach my $key (@keylist) {
-			my $mot = DecodeEncodedString(CleanFromCSSA($key));
+			my $mot = CleanFromCSSA(DecodeEncodedString($key));
 			my $p;
 			if ($TotalKeywords) { $p=int($_keywords{$key}/$TotalKeywords*1000)/10; }
 			print "<TR><TD CLASS=AWS>$mot</TD><TD>$_keywords{$key}</TD><TD>$p %</TD></TR>\n";
@@ -8945,7 +8947,7 @@ if (scalar keys %HTMLOutput) {
 			my $count=0;
 			&BuildKeyList($MaxNbOf{'KeyphrasesShown'},$MinHit{'Keyphrase'},\%_keyphrases,\%_keyphrases);
 			foreach my $key (@keylist) {
-				my $mot = DecodeEncodedString(CleanFromCSSA($key));
+				my $mot = CleanFromCSSA(DecodeEncodedString($key));
 				my $p;
 				if ($TotalKeyphrases) { $p=int($_keyphrases{$key}/$TotalKeyphrases*1000)/10; }
 				print "<TR><TD CLASS=AWS>$mot</TD><TD>$_keyphrases{$key}</TD><TD>$p %</TD></TR>\n";
@@ -8974,7 +8976,7 @@ if (scalar keys %HTMLOutput) {
 			my $count=0;
 			&BuildKeyList($MaxNbOf{'KeywordsShown'},$MinHit{'Keyword'},\%_keywords,\%_keywords);
 			foreach my $key (@keylist) {
-				my $mot = DecodeEncodedString(CleanFromCSSA($key));
+				my $mot = CleanFromCSSA(DecodeEncodedString($key));
 				my $p;
 				if ($TotalKeywords) { $p=int($_keywords{$key}/$TotalKeywords*1000)/10; }
 				print "<TR><TD CLASS=AWS>$mot</TD><TD>$_keywords{$key}</TD><TD>$p %</TD></TR>\n";
@@ -9109,7 +9111,7 @@ if (scalar keys %HTMLOutput) {
 	 			&BuildKeyList($MaxNbOfExtra[$extranum],$MinHitExtra[$extranum],\%{'_section_' . $extranum . '_h'},\%{'_section_' . $extranum . '_h'});
 	 		}
 			foreach my $key (@keylist) {
-	 			my $firstcol = DecodeEncodedString(CleanFromCSSA($key));
+	 			my $firstcol = CleanFromCSSA(DecodeEncodedString($key));
 	 			print "<TR><TD CLASS=AWS>$firstcol</TD>";
 	 			if ($ExtraStatTypes[$extranum] =~ m/P/i) { print "<TD>" . ${'_section_' . $extranum . '_p'}{$key} . "</TD>"; }
 	 			if ($ExtraStatTypes[$extranum] =~ m/H/i) { print "<TD>" . ${'_section_' . $extranum . '_h'}{$key} . "</TD>"; }
