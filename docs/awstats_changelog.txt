@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.121 $ - $Author: eldy $ - $Date: 2003-07-26 15:33:22 $ 
+$Revision: 1.122 $ - $Author: eldy $ - $Date: 2003-07-27 14:36:50 $ 
 
 
 5.7
@@ -28,10 +28,15 @@ New features/improvements:
   sendmail, postfix and qmail log files).
 - Added -addfilenum option in logresolvemerge.pl
 - Better management of plugin load failure.
+- Added hostinfo plugin to handle the "Popup WhoIs link" code.
 
 Other/Documentation:
 - Added mp4 mime type.
 - Updated documentation.
+
+Note 1:
+  The ShowLinksToWhoIs parameter has been removed. You must enable the plugin
+  'hostinfo' to get the same result if it was used.
 
 
 
