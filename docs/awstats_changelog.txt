@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.108 $ - $Author: eldy $ - $Date: 2003-06-09 11:50:07 $ 
+$Revision: 1.109 $ - $Author: eldy $ - $Date: 2003-06-13 21:40:02 $ 
 
 
 5.6
@@ -18,8 +18,10 @@ New features/improvments:
 - StyleSheet parameter works completely now and sample of CSS files are
   provided.
 - Add meta tags robots noindex,nofollow to avoid indexing of stats pages by
-  robots.
-- Added count for "Add to favourites"
+  compliant robots.
+- Added count for "Add to favourites" (must remove the "robots.txt" and
+  "favicon.ico" entries off your SkipFiles parameter in your config file to
+  have this feature working.
 
 Other/Documentation:
 - Updated documentation.
