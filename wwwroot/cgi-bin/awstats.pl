@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.530 $ - $Author: eldy $ - $Date: 2003-06-27 19:47:18 $
+# $Revision: 1.531 $ - $Author: eldy $ - $Date: 2003-06-27 19:49:05 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.530 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.531 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -1465,7 +1465,7 @@ sub Check_Config {
 	if ($ShowOriginStats !~ /[01PH]/)              	{ $ShowOriginStats='PH'; }
 	if ($ShowKeyphrasesStats !~ /[01]/)          	{ $ShowKeyphrasesStats=1; }
 	if ($ShowKeywordsStats !~ /[01]/)            	{ $ShowKeywordsStats=1; }
-	if ($ShowMiscStats !~ /[01AJDFRQWP]/)     	    { $ShowMiscStats='AJDFRQWP'; }
+	if ($ShowMiscStats !~ /[01ajdfrqwp]/)     	    { $ShowMiscStats='ajdfrqwp'; }
 	if ($ShowHTTPErrorsStats !~ /[01]/)          	{ $ShowHTTPErrorsStats=1; }
 	if ($ShowSMTPErrorsStats !~ /[01]/)          	{ $ShowSMTPErrorsStats=0; }
 	if ($AddDataArrayMonthStats !~ /[01]/)        	{ $AddDataArrayMonthStats=1; }
@@ -1530,7 +1530,7 @@ sub Check_Config {
 	if ($ShowPagesStats eq '1') 		{ $ShowPagesStats = 'PBEX'; }
 	if ($ShowFileTypesStats eq '1') 	{ $ShowFileTypesStats = 'HB'; }
 	if ($ShowOriginStats eq '1') 		{ $ShowOriginStats = 'PH'; }
-	if ($ShowMiscStats eq '1') 			{ $ShowMiscStats = 'AJDFRQWP'; }
+	if ($ShowMiscStats eq '1') 			{ $ShowMiscStats = 'ajdfrqwp'; }
 
 	# Convert extra sections data into @ExtraConditionType, @ExtraConditionTypeVal...
 	foreach my $extranum (1..@ExtraName-1) {
