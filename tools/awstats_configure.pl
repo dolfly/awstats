@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2004-05-26 23:00:22 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2004-07-30 22:15:21 $
 require 5.005;
 
 use strict;
@@ -46,7 +46,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.1 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.2 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -602,13 +602,20 @@ if ($bidon =~ /^y/i) {
 	# Define config file path
 	# -----------------------
 	if ($OS eq 'linux') 		{
-		my $configdir="/etc/awstats";
+		print "\n-----> Define config file path\n";
+		print "In which directory do you plan to store your config file(s) ?\n";
+		print "Default: /etc/awstats\n";
+		my $bidon='';
+		print "Directory path to store config file(s) (Enter for default):\n> ";
+		$bidon=<STDIN>; chomp $bidon;
+		if (! $bidon) { $bidon = "/etc/awstats"; }
+		my $configdir=$bidon;
 		if (! -d $configdir) {
 			# Create the directory for config files
 			my $mkdirok=mkdir "$configdir", 0755;
 			if (! $mkdirok) { error("Failed to create directory '$configdir', required to store config files."); }
 		}
-		$configfile="/etc/awstats/awstats.$site.conf";
+		$configfile="$configdir/awstats.$site.conf";
 	}
 	elsif ($OS eq "macosx") 	{ $configfile="$AWSTATS_PATH/wwwroot/cgi-bin/awstats.$site.conf"; }
 	elsif ($OS eq 'windows') 	{ $configfile="$AWSTATS_PATH\\wwwroot\\cgi-bin\\awstats.$site.conf"; }
