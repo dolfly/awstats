@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.533 $ - $Author: eldy $ - $Date: 2003-06-28 12:55:13 $
+# $Revision: 1.534 $ - $Author: eldy $ - $Date: 2003-06-29 20:37:18 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.533 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.534 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -8895,8 +8895,8 @@ if (scalar keys %HTMLOutput) {
 			my $title="$Message[139]";
 			&tab_head("$title",19);
 			print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>$Message[139]</TH>";
-			print "<TH width=100>&nbsp</TH>";
-			print "<TH width=100>&nbsp</TH>";
+			print "<TH width=100>&nbsp;</TH>";
+			print "<TH width=100>&nbsp;</TH>";
 			print "</TR>\n";
 			my %label=('AddToFavourites'=>$Message[137],'JavaEnabled'=>$Message[140],'DirectorSupport'=>$Message[141],
 			'FlashSupport'=>$Message[142],'RealPlayerSupport'=>$Message[143],'QuickTimeSupport'=>$Message[144],
