@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2005-01-15 22:42:58 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2005-03-27 14:50:22 $
 require 5.005;
 
 use strict;
@@ -46,7 +46,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.4 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.5 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -292,8 +292,8 @@ print "Read the AWStats documentation (docs/index.html).\n";
 # Detect OS type
 # --------------
 if ("$^O" =~ /linux/i || (-d "/etc" && -d "/var" && "$^O" !~ /cygwin/i)) { $OS='linux'; $CR=''; }
-elsif (-d "/etc" && -d "/Users") { $OS='macosx'; $CR=''; }
-elsif ("$^O" =~ /cygwin/i || "$^O" =~ /win32/i) { $OS='windows'; $CR="\r"; }
+if ("$^O" !~ /linux/i && -d "/etc" && -d "/Users") { $OS='macosx'; $CR=''; }
+if ("$^O" =~ /cygwin/i || "$^O" =~ /win32/i) { $OS='windows'; $CR="\r"; }
 if (! $OS) {
     print "configure.pl was not able to detect your OS. You must configure AWStats\n";
 	print "manually following the setup documentation (docs/index.html).\n";
