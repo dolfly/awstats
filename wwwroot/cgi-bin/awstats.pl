@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.636 $ - $Author: eldy $ - $Date: 2003-11-08 01:59:57 $
+# $Revision: 1.637 $ - $Author: eldy $ - $Date: 2003-11-08 03:06:53 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.636 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.637 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -5053,7 +5053,7 @@ if ($QueryString =~ /(^|&)staticlinksext=([^&]+)/i) { $StaticExt="$2"; }
 if ($QueryString =~ /(^|&)framename=([^&]+)/i)		{ $FrameName="$2"; }
 if ($QueryString =~ /(^|&)debug=(\d+)/i)			{ $Debug=$2; }
 if ($QueryString =~ /(^|&)updatefor=(\d+)/i)		{ $UpdateFor=$2; }
-if ($QueryString =~ /(^|&)noloadplugin=([^&]+)/i)	{ foreach my $plugin (split(/,/,$2)) { $NoLoadPlugin{"$plugin"}=1; } }
+if ($QueryString =~ /(^|&)noloadplugin=([^&]+)/i)		{ foreach my $plugin (split(/,/,$2)) { $NoLoadPlugin{"$plugin"}=1; } }
 if ($QueryString =~ /(^|&)forceloadplugin=([^&]+)/i)	{ foreach my $plugin (split(/,/,$2)) { $NoLoadPlugin{"$plugin"}=-1; } }
 if ($QueryString =~ /(^|&)limitflush=(\d+)/i)		{ $LIMITFLUSH=$2; }
 # Get/Define output
