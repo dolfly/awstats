@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.373 $ - $Author: eldy $ - $Date: 2002-10-18 11:59:34 $
+# $Revision: 1.374 $ - $Author: eldy $ - $Date: 2002-10-18 13:15:36 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.373 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.374 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1411,14 +1411,15 @@ sub Check_Config {
 		if ($oldersec < 10) { $oldersec = "0$oldersec"; }
 		# Replace tag with new value
 		if ($timetag =~ /YYYY/i) { $LogFile =~ s/%YYYY-$timephase/$olderyear/ig; next; }
-		if ($timetag =~ /YY/i)   { $LogFile =~ s/%YY-$timephase/$oldersmallyear/ig; next;  }
-		if ($timetag =~ /MM/i)   { $LogFile =~ s/%MM-$timephase/$oldermonth/ig; next;  }
-		if ($timetag =~ /DD/i)   { $LogFile =~ s/%DD-$timephase/$olderday/ig; next;  }
-		if ($timetag =~ /HH/i)   { $LogFile =~ s/%HH-$timephase/$olderhour/ig; next;  }
-		if ($timetag =~ /WM/i)   { $LogFile =~ s/%WM-$timephase/$olderweekofmonth/ig; next;  }
-		if ($timetag =~ /WY/i)   { $LogFile =~ s/%WY-$timephase/$olderweekofyear/ig; next;  }
-		if ($timetag =~ /DW/i)   { $LogFile =~ s/%DW-$timephase/$olderwday/ig; next;  }
-		if ($timetag =~ /NS/i)   { $LogFile =~ s/%NS-$timephase/$olderns/ig; next;  }
+		if ($timetag =~ /YY/i)   { $LogFile =~ s/%YY-$timephase/$oldersmallyear/ig; next; }
+		if ($timetag =~ /MM/i)   { $LogFile =~ s/%MM-$timephase/$oldermonth/ig; next; }
+		if ($timetag =~ /DD/i)   { $LogFile =~ s/%DD-$timephase/$olderday/ig; next; }
+		if ($timetag =~ /HH/i)   { $LogFile =~ s/%HH-$timephase/$olderhour/ig; next; }
+		if ($timetag =~ /NS/i)   { $LogFile =~ s/%NS-$timephase/$olderns/ig; next; }
+		if ($timetag =~ /WM/i)   { $LogFile =~ s/%WM-$timephase/$olderweekofmonth/ig; next; }
+		if ($timetag =~ /WY/i)   { $LogFile =~ s/%WY-$timephase/$olderweekofyear/ig; next; }
+		if ($timetag =~ /DW/)    { $LogFile =~ s/%DW-$timephase/$olderwday/g; next; }
+		if ($timetag =~ /Dw/)    { my $olderwday0=$olderwday-1; $LogFile =~ s/%Dw-$timephase/$olderwday0/g; next; }
 		# If unknown tag
 		error("Error: Unknown tag '\%$timetag' in LogFile parameter.");
 	}
@@ -1428,10 +1429,11 @@ sub Check_Config {
 	$LogFile =~ s/%MM/$nowmonth/ig;
 	$LogFile =~ s/%DD/$nowday/ig;
 	$LogFile =~ s/%HH/$nowhour/ig;
+	$LogFile =~ s/%NS/$nowns/ig;
 	$LogFile =~ s/%WM/$nowweekofmonth/ig;
 	$LogFile =~ s/%WY/$nowweekofyear/ig;
-	$LogFile =~ s/%DW/$nowwday/ig;
-	$LogFile =~ s/%NS/$nowns/ig;
+	$LogFile =~ s/%DW/$nowwday/g;
+	my $nowwday0=$nowwday-1; $LogFile =~ s/%Dw/$nowwday0/g;
 	$LogFormat =~ s/\\//g;
 	if ($Debug) {
 		debug(" LogFile='$LogFile'",2);
