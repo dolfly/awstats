@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.34 $ - $Author: eldy $ - $Date: 2004-06-07 19:34:11 $
+# $Revision: 1.35 $ - $Author: eldy $ - $Date: 2004-09-13 17:47:27 $
 
 
 #package AWSROB;
@@ -59,6 +59,7 @@
 'jennybot',
 'mercator',
 'netcraft',
+'msnbot',
 'petersnews',
 'unlost_web_crawler',
 'voila',
@@ -197,7 +198,6 @@
 'momspider',
 'monster',
 'motor',
-'msnbot',
 'muncher',
 'mwdsearch',
 'ndspider',
@@ -409,6 +409,7 @@
 'ia_archiver','Alexa (IA Archiver)',
 'jennybot','JennyBot',
 'mercator','Mercator',
+'msnbot','MSNBot',
 'netcraft','Netcraft',
 'petersnews','Petersnews',
 'unlost_web_crawler','Unlost Web Crawler',
@@ -546,7 +547,6 @@
 'momspider','MOMspider',
 'monster','Monster',
 'motor','Motor',
-'msnbot','MSNBot',
 'muncher','Muncher',
 'mwdsearch','Mwd.Search',
 'ndspider','NDSpider',
