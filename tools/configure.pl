@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-11-10 16:05:07 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2003-11-10 19:28:45 $
 use strict;
 
 #-------------------------------------------------------
@@ -43,7 +43,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.11 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.12 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -401,20 +401,20 @@ foreach my $key (keys %ApacheConfPath) {
 		print CONF "# Directives to allow use of AWStats as a CGI$CR\n";
 		print CONF "#$CR\n";
 		if (! $awstatsclassesfound) {
-			print " Add 'Alias \/awstatsclasses \"$AWSTATS_CLASSES_PATH/\"' to config file\n";
-			print CONF "Alias \/awstatsclasses \"$AWSTATS_CLASSES_PATH/$CR\n";
+			print "  Add 'Alias \/awstatsclasses \"$AWSTATS_CLASSES_PATH\/\"' to config file\n";
+			print CONF "Alias \/awstatsclasses \"$AWSTATS_CLASSES_PATH\/\"$CR\n";
 		}
 		if (! $awstatscssfound) {
-			print " Add 'Alias \/awstatscss \"$AWSTATS_CSS_PATH/\"' to config file\n";
-			print CONF "Alias \/awstatscss \"$AWSTATS_CSS_PATH/$CR\n";
+			print "  Add 'Alias \/awstatscss \"$AWSTATS_CSS_PATH\/\"' to config file\n";
+			print CONF "Alias \/awstatscss \"$AWSTATS_CSS_PATH\/\"$CR\n";
 		}
 		if (! $awstatsiconsfound) {
-			print " Add 'Alias \/awstatsicons \"$AWSTATS_ICON_PATH/\"' to config file\n";
-			print CONF "Alias \/awstatsicons \"$AWSTATS_ICON_PATH/$CR\n";
+			print "  Add 'Alias \/awstatsicons \"$AWSTATS_ICON_PATH\/\"' to config file\n";
+			print CONF "Alias \/awstatsicons \"$AWSTATS_ICON_PATH\/\"$CR\n";
 		}
 		if (! $awstatscgifound) {
-			print " Add 'ScriptAlias \/awstats\/ \"$AWSTATS_CGI_PATH/\"' to config file\n";
-			print CONF "ScriptAlias \/awstats\/ \"$AWSTATS_CGI_PATH/$CR\n";
+			print "  Add 'ScriptAlias \/awstats\/ \"$AWSTATS_CGI_PATH\/\"' to config file\n";
+			print CONF "ScriptAlias \/awstats\/ \"$AWSTATS_CGI_PATH\/\"$CR\n";
 		}
 	close CONF;
 	$UseAlias=1;
@@ -440,7 +440,7 @@ my $site=$bidon;
 # -----------------------
 my $configfile='';
 my $modelfile='';
-if ($OS eq 'linux') 	{ $modelfile="$AWSTATS_MODEL_CONFIG"; $configfile='/etc/awstats/awstats.$site.conf'; }
+if ($OS eq 'linux') 	{ $modelfile="$AWSTATS_MODEL_CONFIG"; $configfile="/etc/awstats/awstats.$site.conf"; }
 if ($OS eq 'windows') 	{ $modelfile="$AWSTATS_PATH\\wwwroot\\cgi-bin\\awstats.model.conf"; $configfile="$AWSTATS_PATH\\wwwroot\\cgi-bin\\awstats.$site.conf"; }
 
 # Update model config file
@@ -512,7 +512,7 @@ if ($OS eq 'windows') {
 }
 if ($OS eq 'linux') {
 	print "Sorry, programming update is not supported yet.\n";
-	print "You can to it manually by adding the following line to your crontab\n";
+	print "You can do it manually by adding the following line to your crontab\n";
 	print "$AWSTATS_CGI_PATH/awstats -update -config=$site\n";
 	print "Or if you have several config files and prefer having only one command:\n";
 	print "$AWSTATS_TOOLS_PATH/awstats_updateall.pl now\n";
