@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.531 $ - $Author: eldy $ - $Date: 2003-06-27 19:49:05 $
+# $Revision: 1.532 $ - $Author: eldy $ - $Date: 2003-06-27 20:22:09 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.531 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.532 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -4527,7 +4527,7 @@ sub DefinePerlParsingFormat {
 				$PerlParsingFormat .= "([^$LogSeparatorWithoutStar]+)";
 			}
 			elsif ($f =~ /%syslog$/) {		# Added for syslog time and host stamp, fields are skipped and not analyzed
-				$PerlParsingFormat .= "\\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d \\w+";
+				$PerlParsingFormat .= "\\w\\w\\w \\d+ \\d\\d:\\d\\d:\\d\\d [^$LogSeparatorWithoutStar]+";
 			}
 			elsif ($f =~ /%email_r$/) {
 				$pos_emailr = $i; $i++; push @fieldlib, 'email_r';
