@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.70 $ - $Date: 2003-11-08 22:17:24 $
+# $Revision: 1.71 $ - $Date: 2003-11-19 20:55:58 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -154,6 +154,7 @@ message150=Taille
 message151=Premier
 message152=Dernier
 message153=Filtre exclusion
-message154=* Les codes présentées ici sont à l'origine de hits ou de traffic "non vus" par les visiteurs donc non représentés dans les autres tableaux.
+message154=Les codes présentées ici sont à l'origine de hits ou de traffic "non vus" par les visiteurs donc non représentés dans les autres tableaux.
 message155=Cluster
-message156=* Les robots présentés ici sont à l'origine de hits ou de traffic "non vus" par les visiteurs donc non représentés dans les autres tableaux.
+message156=Les robots présentés ici sont à l'origine de hits ou de traffic "non vus" par les visiteurs donc non représentés dans les autres tableaux.
+message157=Les nombres après le + indiquent les hits avec succès sur les fichiers "robots.txt".
