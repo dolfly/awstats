@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2003-11-01 15:40:19 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2004-01-20 23:07:01 $
 
 
 #package AWSOS;
@@ -28,7 +28,7 @@
 'win(.*)16','windows[_+ ]3',					# This works for windows_31 and windows_3.1
 'win(.*)ce',
 # Macintosh OS family
-'mac os x',
+'mac[_+ ]os[_+ ]x',
 'mac[_+ ]?p',									# This works for macppc and mac_ppc and mac_powerpc
 'mac[_+ ]68',									# This works for mac_6800 and mac_68k
 'macweb',
@@ -79,7 +79,7 @@
 'win(.*)16','win16','windows[_+ ]3','win16',
 'win(.*)ce','wince',
 # Macintosh OS family
-'mac os x','macosx',
+'mac[_+ ]os[_+ ]x','macosx',
 'mac[_+ ]?p','macintosh','mac[_+ ]68','macintosh','macweb','macintosh','macintosh','macintosh',
 # Unix like OS
 'linux','linux',
