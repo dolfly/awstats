@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.568 $ - $Author: eldy $ - $Date: 2003-08-23 09:57:44 $
+# $Revision: 1.569 $ - $Author: eldy $ - $Date: 2003-08-23 11:34:22 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,8 +20,8 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.568 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
-$VERSION="5.7 (build $REVISION)";
+$REVISION='$Revision: 1.569 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
 use vars qw/
@@ -4946,7 +4946,11 @@ if (! $FrameName) {
 if ($FrameName ne 'index') {
 	&Read_Language_Data($Lang);
 	if ($FrameName ne 'mainleft') {
-		if ($UpdateStats) { &Read_Ref_Data('browsers','domains','operating_systems','robots','search_engines','worms'); }
+		# Update only
+		if ($UpdateStats && ! scalar keys %HTMLOutput) { &Read_Ref_Data('browsers','domains','operating_systems','robots','search_engines','worms','referer_spam'); }
+		# Update and output
+		elsif ($UpdateStats && scalar keys %HTMLOutput) { &Read_Ref_Data('browsers','domains','operating_systems','robots','search_engines','worms','referer_spam','mime'); }
+		# Output only
 		elsif (scalar keys %HTMLOutput) { &Read_Ref_Data('browsers','domains','operating_systems','robots','search_engines','worms','mime'); }
 		&Read_Plugins();
 	}
