@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.776 $ - $Author: eldy $ - $Date: 2004-08-14 15:34:25 $
+# $Revision: 1.777 $ - $Author: eldy $ - $Date: 2004-08-14 17:29:06 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.776 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.777 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -7130,7 +7130,7 @@ END_ERROR_TEXT
 			my $bold=($ENV{'GATEWAY_INTERFACE'}?'<b>':'');
 			my $unbold=($ENV{'GATEWAY_INTERFACE'}?'</b>':'');
 			my $br=($ENV{'GATEWAY_INTERFACE'}?'<br />':'');
-			truncate(LOG,0) || warning("Warning: $bold$PROG$unbold couldn't purge logfile \"$bold$LogFile$unbold\".$br\nChange your logfile permissions to allow write for your web server CGI process or change PurgeLogFile=1 into PurgeLogFile=0 in configure file and think to purge sometines manually your logfile (just after running an update process to not loose any not already processed records your log file contains).");
+			truncate(LOG,0) || warning("Warning: $bold$PROG$unbold couldn't purge logfile \"$bold$LogFile$unbold\".$br\nChange your logfile permissions to allow write for your web server CGI process or change PurgeLogFile=1 into PurgeLogFile=0 in configure file and think to purge sometimes manually your logfile (just after running an update process to not loose any not already processed records your log file contains).");
 		}
 		close(LOG);
 	}
