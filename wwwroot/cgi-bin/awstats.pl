@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.518 $ - $Author: eldy $ - $Date: 2003-06-15 17:24:28 $
+# $Revision: 1.519 $ - $Author: eldy $ - $Date: 2003-06-15 18:41:15 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.518 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.519 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -8774,7 +8774,7 @@ if (scalar keys %HTMLOutput) {
 		if ($ShowKeyphrasesStats) { print "$Center<a name=\"KEYPHRASES\">&nbsp;</a>"; }
 		if ($ShowKeywordsStats)   {	print "$Center<a name=\"KEYWORDS\">&nbsp;</a>"; }
 		if ($ShowKeyphrasesStats || $ShowKeywordsStats) { print "<BR>\n"; }
-		if ($ShowKeyphrasesStats && $ShowKeywordsStats) { print "<table width=\"100%\"><tr>"; }
+		if ($ShowKeyphrasesStats && $ShowKeywordsStats) { print "<table width=\"100%\" cellpadding=0 cellspacing=0><tr>"; }
 		if ($ShowKeyphrasesStats) {
 			# By Keyphrases
 			if ($ShowKeyphrasesStats && $ShowKeywordsStats) { print "<td width=\"50%\" valign=top>\n";	}
@@ -8803,6 +8803,7 @@ if (scalar keys %HTMLOutput) {
 			&tab_end;
 			if ($ShowKeyphrasesStats && $ShowKeywordsStats) { print "</td>\n";	}
 		}
+		if ($ShowKeyphrasesStats && $ShowKeywordsStats) { print "<td> &nbsp; </td>"; }
 		if ($ShowKeywordsStats) {
 			# By Keywords
 			if ($ShowKeyphrasesStats && $ShowKeywordsStats) { print "<td width=\"50%\" valign=top>\n";	}
