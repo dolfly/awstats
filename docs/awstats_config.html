@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.89 $ - $Author: eldy $ - $Date: 2003-02-27 09:45:11 $ -->
+<!-- $Revision: 1.90 $ - $Author: eldy $ - $Date: 2003-03-16 01:27:38 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -485,7 +485,9 @@ when reading it), follow the example:<br>
 <br># by a previous run of AWStats. This file is erased and recreated after each
 <br># statistics update process. You don't need to create and/or edit it.
 <br># AWStats will read and save this file in DirData directory.
-<br># This option is not used if DNSLookup=0.
+<br># This option is used only if DNSLookup=1.
+<br># Note: If a DNSStaticCacheFile is available, AWStats will check for DNS
+<br># lookup in DNSLastUpdateCacheFile after checking into DNSStaticCacheFile.
 <br># Example: "/mydnscachedir/dnscachelastupdate"
 <br># Default: "dnscachelastupdate.txt"
 <br>#
