@@ -1,5 +1,5 @@
 # Portuguese (Brazilian) message file
-# $Revision: 1.5 $ - $Date: 2003-05-04 13:32:38 $
+# $Revision: 1.6 $ - $Date: 2003-06-21 19:42:12 $
 # by Osmany Washington (osmany@xtms.net)
 message0=Desconhecido
 message1=Desconhecido (ip não resolvido)
@@ -140,3 +140,11 @@ message135=Tamanhos de tela
 message136=Ataques de Worm/Virus
 message137=Adicionar em favoritos
 message138=Dias do Mês
+message139=Variados
+message140=Browsers com suporte ao Java
+message141=Browsers com suporte ao Macromedia Director
+message142=Browsers com suporte ao Flash
+message143=Browsers com suporte ao Real áudio
+message144=Browsers com suporte ao Quicktime áudio
+message145=Browsers com suporte ao Windows Media áudio
+message146=Browsers com suporte ao PDF
