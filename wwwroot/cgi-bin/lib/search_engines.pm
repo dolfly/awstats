@@ -4,7 +4,7 @@
 # you must add an entry in SearchEnginesSearchIDOrder and in SearchEnginesHashIDLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #-------------------------------------------------------
-# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2003-09-22 15:01:53 $
+# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2003-09-22 15:06:43 $
 
 
 #package AWSSE;
@@ -90,7 +90,7 @@
 # Minor swedish search engines
 "evreka\.passagen\.se",
 # Minor swiss search engines
-"search\.bluewin\.ch",
+"search\.ch", "search\.bluewin\.ch",
 # Other
 "search\..*\.\w+"
 );
@@ -183,7 +183,7 @@
 # Minor swedish search engines
 "evreka\.passagen\.se","q=",
 # Minor swiss search engines
-"search\.bluewin\.ch","qry=",
+"search\.ch", "q=", "search\.bluewin\.ch", "qry="       # Minor swiss search engines
 );
 
 # SearchEnginesKnownUrlNotFound
@@ -284,7 +284,7 @@
 # Minor swedish search engines
 "evreka\.passagen\.se","Evreka",
 # Minor Swiss search engines
-"search.bluewin.ch","Bluewin",
+"search\.ch", "search.ch", "search\.bluewin\.ch", "search.bluewin.ch",								
 # Other
 "search\..*\.\w+","Other search engines"
 );
