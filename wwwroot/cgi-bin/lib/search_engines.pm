@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.22 $ - $Author: eldy $ - $Date: 2003-11-01 15:33:14 $
+# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2003-11-07 02:19:08 $
 
 
 #package AWSSE;
@@ -332,7 +332,7 @@
 #------------------------------------------------------------------------------
 %SearchEnginesKnownUrlNotFound=(
 # Most common search engines
-'msn\.','origq='
+'msn','origq='
 );
 
 # If no rules are known, WordsToExtractSearchUrl will be used to search keyword parameter
@@ -346,8 +346,8 @@
 #------------------------------------------------------------------------------
 %SearchEnginesKnownUTFCoding=(
 # Most common search engines
-'google\.','ie=utf-8',
-'alltheweb\.com','cs=utf-8'
+'google','ie=utf-8',
+'alltheweb','cs=utf-8'
 );
 
 
