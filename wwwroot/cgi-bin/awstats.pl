@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.269 $ - $Author: eldy $ - $Date: 2002-07-20 21:48:13 $
+# $Revision: 1.270 $ - $Author: eldy $ - $Date: 2002-07-20 22:07:15 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -18,7 +18,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.269 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.270 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.2 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -2576,8 +2576,8 @@ sub Read_DNS_Cache_File {
 	}
 
 	if ($UseHashFiles) {
-		my ($tmp,$tmp,$tmp,$tmp,$tmp,$tmp,$tmp,$tmp,$tmp,$datesource,$tmp,$tmp,$tmp) = stat("$filetoload");
-		my ($tmp,$tmp,$tmp,$tmp,$tmp,$tmp,$tmp,$tmp,$tmp,$datehash,$tmp,$tmp,$tmp) = stat("$filetoload.hash");
+		my ($tmp1a,$tmp2a,$tmp3a,$tmp4a,$tmp5a,$tmp6a,$tmp7a,$tmp8a,$tmp9a,$datesource,$tmp10a,$tmp11a,$tmp12a) = stat("$filetoload");
+		my ($tmp1b,$tmp2b,$tmp3b,$tmp4b,$tmp5b,$tmp6b,$tmp7b,$tmp8b,$tmp9b,$datehash,$tmp10b,$tmp11b,$tmp12b) = stat("$filetoload.hash");
 		if (! $datesource || $datehash >= $datesource) {
 			# There is no source file of there is and hash file is up to date. We can load hash file
 			$donotloadhash=0;
@@ -3802,7 +3802,7 @@ if ($UpdateStats) {
 						}
 						else {
 							my $lookupresult=gethostbyaddr(pack("C4",split(/\./,$Host)),AF_INET);	# This is very slow, may took 20 seconds
-							$HostResolved=$TmpDNSLookup{$Host}=(lookupresult && IsAscii($lookupresult)?$lookupresult:"ip");
+							$HostResolved=$TmpDNSLookup{$Host}=($lookupresult && IsAscii($lookupresult)?$lookupresult:"ip");
 							if ($Debug) { debug(" Reverse DNS lookup for $Host done: $HostResolved",4); }
 						}
 					}
