@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2003-12-05 23:38:17 $
+# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2004-01-07 05:43:31 $
 
 
 #package AWSROB;
@@ -18,6 +18,7 @@
 # Rem: calif changed into calif[^r] to avoid confusion between Tiscalifreenet browser
 # Rem: fish changed into [^a]fish to avoid confusion between Madsafish browser
 # Rem: roadrunner changed into road_runner
+# Rem: lycos changed to lycos_ to avoid confusion with lycos-online browser
 
 
 # RobotsSearchIDOrder
@@ -44,7 +45,7 @@
 'jeeves',
 'jennybot',
 'linkwalker',
-'lycos',
+'lycos_',
 'mercator',
 'moget',
 'muscatferret',
@@ -479,7 +480,7 @@
 'linkwalker','LinkWalker',
 'lockon','Lockon',
 'logo_gif','logo.gif Crawler',
-'lycos','Lycos',
+'lycos_','Lycos',
 'macworm','Mac WWWWorm',
 'magpie','Magpie',
 'marvin','marvin/infoseek',
