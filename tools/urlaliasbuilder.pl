@@ -17,7 +17,7 @@ use strict;no strict "refs";
 
 
 # variables, etc
-my $REVISION='$Revision: 1.5 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.6 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 ############### EDIT HERE ###############
@@ -26,7 +26,7 @@ my $VERSION="1.0 (build $REVISION)";
 my $SITECONFIG = "";
 
 # Where the default input is located.
-my $awStatsDataDir = "/var/cache/awstats";
+my $awStatsDataDir = "/var/lib/awstats";
 
 # Throttle HTTP requests - help avoid DoS-like results if on a quick network.
 # Number is the number of seconds to pause between requests. Set to zero for
