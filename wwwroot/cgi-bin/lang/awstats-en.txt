@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.60 $ - $Date: 2003-08-02 11:56:28 $
+# $Revision: 1.61 $ - $Date: 2003-08-02 12:04:09 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -151,3 +151,5 @@ message147=SMTP Error codes
 message148=Countries
 message149=Mails
 message150=Size
+message151=First
+message152=Last
