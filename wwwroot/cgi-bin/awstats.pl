@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.585 $ - $Author: eldy $ - $Date: 2003-09-12 23:04:18 $
+# $Revision: 1.586 $ - $Author: eldy $ - $Date: 2003-09-13 16:57:53 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.585 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.586 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -1509,7 +1509,7 @@ sub Check_Config {
 	$DirCgi||='/cgi-bin';
 	$DirIcons||='/icon';
 	if ($DNSLookup !~ /[0-2]/)                      { error("DNSLookup parameter is wrong in config/domain file. Value is '$DNSLookup' (should be 0 or 1)"); }
-	if (! $SiteDomain)                              { error("SiteDomain parameter not found in your config/domain file. You must add it for using this version."); }
+	if (! $SiteDomain)                              { error("SiteDomain parameter not defined in your config/domain file. You must add it for using this version of AWStats."); }
 	if ($AllowToUpdateStatsFromBrowser !~ /[0-1]/) 	{ $AllowToUpdateStatsFromBrowser=0; }
 	# Optional setup section
 	if ($EnableLockForUpdate !~ /[0-1]/)           	{ $EnableLockForUpdate=0; }
