@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.387 $ - $Author: eldy $ - $Date: 2002-10-22 16:16:28 $
+# $Revision: 1.388 $ - $Author: eldy $ - $Date: 2002-10-23 13:01:29 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.387 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.388 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4103,11 +4103,11 @@ else {								# Run from command line
 		}
 		# TODO Check if ARGV is an AllowedArg
 		if ($_ > 0) { $QueryString .= "&"; }
-		my $NewLinkParams=$ARGV[$_]; $NewLinkParams =~ s/^-+//; $NewLinkParams =~ s/\s/%20/g;
+		my $NewLinkParams=$ARGV[$_]; $NewLinkParams =~ s/^-+//;
 		$QueryString .= "$NewLinkParams";
 	}
 	$QueryString = CleanFromCSSA($QueryString);
-	if ($QueryString =~ /config=([^\s&]+)/i)	{ $SiteConfig=$1; }
+	if ($QueryString =~ /config=([^&]+)/i)		{ $SiteConfig=$1; }
 	$UpdateStats=1; $HTMLOutput="";                           								# Update with no report by default when run from command line
 	if ($QueryString =~ /showsteps/i) 			{ $ShowSteps=1; }
 	$QueryString=~s/showsteps[^&]*//i;
@@ -4117,9 +4117,9 @@ else {								# Run from command line
 	$QueryString=~s/showdropped[^&]*//i;
 	if ($QueryString =~ /showunknownorigin/i)	{ $ShowUnknownOrigin=1; }
 	$QueryString=~s/showunknownorigin[^&]*//i;
-	if ($QueryString =~ /logfile=([^\s&]+)/i )	{ $LogFile="$1"; }
-	if ($QueryString =~ /output=urldetail:([^\s&]+)/i)	{ $URLFilter="$1"; }	# Filter on URL list can be defined with output=urldetail:filter to reduce number of lines read and showed
-	if ($QueryString =~ /urlfilter=([^\s&]+)/i)	{ $URLFilter="$1"; }			# Filter on URL list can also be defined with urlfilter=filter
+	if ($QueryString =~ /logfile=([^&]+)/i )	{ $LogFile="$1"; }
+	if ($QueryString =~ /output=urldetail:([^&]+)/i)	{ $URLFilter="$1"; }	# Filter on URL list can be defined with output=urldetail:filter to reduce number of lines read and showed
+	if ($QueryString =~ /urlfilter=([^&]+)/i)	{ $URLFilter="$1"; }			# Filter on URL list can also be defined with urlfilter=filter
 }
 
 if ($QueryString =~ /staticlinks/i) 			{ $StaticLinks=".$SiteConfig"; }
