@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.102 $ - $Author: eldy $ - $Date: 2003-05-08 15:25:53 $ 
+$Revision: 1.103 $ - $Author: eldy $ - $Date: 2003-05-11 19:55:37 $ 
 
 
 5.5
@@ -52,7 +52,7 @@ Other/Documentation:
   supporting bugged and non standard MS products. Sorry but this takes me too
   many times. To use AWStats with an ISA server, just use now a preprocessor
   tool to convert into a W3C log file.
-- Added estonian and serban language.
+- Added estonian, serban and icelandic language files.
 - Updated documentation.
 
 
