@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.527 $ - $Author: eldy $ - $Date: 2003-06-23 02:00:57 $
+# $Revision: 1.528 $ - $Author: eldy $ - $Date: 2003-06-23 17:47:10 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.527 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.528 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -1053,7 +1053,7 @@ sub Parse_Config {
 			next;
 		}
 
-		if ($_ =~ /^$/) { next; }
+		if ($_ =~ /^\s*$/) { next; }
 
 		# Check includes
 		if ($_ =~ /^Include "([^\"]+)"/ || $_ =~ /^#include "([^\"]+)"/) {	# #include kept for backward compatibility
@@ -1086,8 +1086,8 @@ sub Parse_Config {
 		$param =~ s/^\s+//; $param =~ s/\s+$//;
 
 		# If not a param=value, try with next line
-		if (! $param) { warning("Warning: Syntax error in file '$configFile'. Config line is ignored: $_\n"); next; }
-		if (! defined $value) { warning("Warning: Syntax error in file '$configFile'. Config line is ignored: $_\n"); next; }
+		if (! $param) { warning("Warning: Syntax error line $conflinenb in file '$configFile'. Config line is ignored."); next; }
+		if (! defined $value) { warning("Warning: Syntax error line $conflinenb in file '$configFile'. Config line is ignored."); next; }
 
 		if ($value) {
 			$value =~ s/^\s+//; $value =~ s/\s+$//;
