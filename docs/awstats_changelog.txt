@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.88 $ - $Author: eldy $ - $Date: 2003-03-23 15:41:19 $ 
+$Revision: 1.89 $ - $Author: eldy $ - $Date: 2003-03-28 21:11:38 $ 
 
 
 5.5
@@ -8,6 +8,7 @@ $Revision: 1.88 $ - $Author: eldy $ - $Date: 2003-03-23 15:41:19 $
 Fixes:
 - Summary robots list was limited to MaxNbOfLoginShown instead of
   being limited to MaxNbOfRobotShown value.
+- Fixed a bug when using HBL codes in ShowRobotsStats parameter.
 
 New features/improvments:
 - Added a 'Screen Size' report.

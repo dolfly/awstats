@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.485 $ - $Author: eldy $ - $Date: 2003-03-25 22:39:57 $
+# $Revision: 1.486 $ - $Author: eldy $ - $Date: 2003-03-28 21:09:23 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.485 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.486 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -6845,8 +6845,8 @@ if (scalar keys %HTMLOutput) {
 			print "<TR><TD CLASS=AWL>$key</TD>";
 			if ($ShowAuthenticatedUsers =~ /P/i) { print "<TD>".($_login_p{$key}?$_login_p{$key}:"&nbsp;")."</TD>"; }
 			if ($ShowAuthenticatedUsers =~ /H/i) { print "<TD>$_login_h{$key}</TD>"; }
-			if ($ShowAuthenticatedUsers =~ /B/i) { print  "<TD>".Format_Bytes($_login_k{$key})."</TD>"; }
-			if ($ShowAuthenticatedUsers =~ /L/i) { print "<td>".($_login_l{$key}?Format_Date($_login_l{$key},1):'-')."</td>"; }
+			if ($ShowAuthenticatedUsers =~ /B/i) { print "<TD>".Format_Bytes($_login_k{$key})."</TD>"; }
+			if ($ShowAuthenticatedUsers =~ /L/i) { print "<TD>".($_login_l{$key}?Format_Date($_login_l{$key},1):'-')."</TD>"; }
 			print "</TR>\n";
 			$total_p += $_login_p{$key}||0;
 			$total_h += $_login_h{$key};
@@ -6875,7 +6875,10 @@ if (scalar keys %HTMLOutput) {
 		if ($HTMLOutput{'lastrobots'}) { $title.="$Message[9]"; }
 		&tab_head("$title",19);
 		print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>".(scalar keys %_robot_h)." $Message[51]</TH>";
-		print "<TH bgcolor=\"#$color_h\" width=80>$Message[57]</TH><TH bgcolor=\"#$color_k\" width=80>$Message[75]</TH><TH width=120>$Message[9]</TH></TR>\n";
+		if ($ShowRobotsStats =~ /H/i) { print "<TH bgcolor=\"#$color_h\" width=80>$Message[57]</TH>"; }
+		if ($ShowRobotsStats =~ /B/i) { print "<TH bgcolor=\"#$color_k\" width=80>$Message[75]</TH>"; }
+		if ($ShowRobotsStats =~ /L/i) { print "<TH width=120>$Message[9]</TH>"; }
+		print "</TR>\n";
 		$total_p=$total_h=$total_k=0;
 		my $count=0;
 		if ($HTMLOutput{'allrobots'})  { &BuildKeyList($MaxRowsInHTMLOutput,$MinHit{'Robot'},\%_robot_h,\%_robot_h); }
