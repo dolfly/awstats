@@ -3,8 +3,10 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-05-07 15:52:48 $
+# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2002-05-18 19:10:26 $
 
+
+#package AWSOS;
 
 
 # OSSearchIDOrder

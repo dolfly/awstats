@@ -3,7 +3,10 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-05-08 16:18:27 $
+# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2002-05-18 19:10:26 $
+
+
+#package AWSROB;
 
 
 # Robots list was found at http://www.robotstxt.org/wc/active/all.txt

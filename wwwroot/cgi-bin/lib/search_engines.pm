@@ -4,7 +4,10 @@
 # you must add an entry in SearchEnginesSearchIDOrder and in SearchEnginesHashIDLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-05-07 15:47:21 $
+# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2002-05-18 19:10:26 $
+
+
+#package AWSSE;
 
 
 # SearchEnginesSearchIDOrder
