@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.609 $ - $Author: eldy $ - $Date: 2003-09-25 17:40:31 $
+# $Revision: 1.610 $ - $Author: eldy $ - $Date: 2003-09-27 11:01:58 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.609 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.610 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.9 (build $REVISION)";
 
 # ----- Constants -----
@@ -1187,7 +1187,7 @@ sub Parse_Config {
 			$value =~ s/^\s+//; $value =~ s/\s+$//;
 			$value =~ s/^\"//; $value =~ s/\";?$//;
 			# Replace __MONENV__ with value of environnement variable MONENV
-			while ($value =~ /__(\w+)__/) {	my $var=$1;	$value =~ s/__${var}__/$ENV{$var}/g; }
+			while ($value =~ /__(\w+(?:_\w+)*)__/) { my $var=$1; $value =~ s/__${var}__/$ENV{$var}/g; }
 		}
 
 		# Initialize parameter for (param,value)
