@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.232 $ - $Author: eldy $ - $Date: 2002-05-19 02:52:41 $
+# $Revision: 1.233 $ - $Author: eldy $ - $Date: 2002-05-19 03:27:54 $
 
 use strict;no strict "refs";
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -26,7 +26,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is not supported by all T
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.232 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.233 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -122,7 +122,7 @@ $NewLinePhase $NbOfLinesForCorruptedLog $PurgeLogFile
 $ShowAuthenticatedUsers $ShowCompressionStats $ShowFileSizesStats
 $ShowDropped $ShowCorrupted $ShowUnknownOrigin $ShowLinksToWhoIs
 $SplitSearchString $StartSeconds $StartMicroseconds
-$UpdateStats $URLWithQuery
+$HTMLOutput $UpdateStats $URLWithQuery
 /;
 ($AllowAccessFromWebToAuthenticatedUsersOnly, $BarHeight, $BarWidth, $DebugResetDone,
 $Expires, $CreateDirDataIfNotExists, $KeepBackupOfHistoricFiles, $MaxLengthOfURL,
@@ -135,8 +135,8 @@ $NewLinePhase, $NbOfLinesForCorruptedLog, $PurgeLogFile,
 $ShowAuthenticatedUsers, $ShowCompressionStats, $ShowFileSizesStats,
 $ShowDropped, $ShowCorrupted, $ShowUnknownOrigin, $ShowLinksToWhoIs,
 $SplitSearchString, $StartSeconds, $StartMicroseconds,
-$UpdateStats, $URLWithQuery)=
-(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
+$HTMLOutput, $UpdateStats, $URLWithQuery)=
+(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
 use vars qw/
 $AllowToUpdateStatsFromBrowser $ArchiveLogRecords $DetailedReportsOnNewWindows
 $FirstDayOfWeek $SaveDatabaseFilesWithPermissionsForEveryone
@@ -184,11 +184,11 @@ $color_text, $color_textpercent, $color_titletext, $color_weekend, $color_link, 
 $color_h, $color_k, $color_p, $color_e, $color_x, $color_s, $color_u, $color_v)=
 ("","","","","","","","","","","","","","","","","","","","","");
 use vars qw/
-$FileConfig $FileSuffix $Host $HTMLOutput $LastUpdate $DayRequired $MonthRequired $YearRequired
+$FileConfig $FileSuffix $Host $LastUpdate $DayRequired $MonthRequired $YearRequired
 $QueryString $SiteConfig $StaticLinks $URLFilter $PageCode $LogFormatString $PerlParsingFormat
 $SiteToAnalyze $SiteToAnalyzeWithoutwww $UserAgent
 /;
-($FileConfig, $FileSuffix, $Host, $HTMLOutput, $LastUpdate, $DayRequired, $MonthRequired, $YearRequired,
+($FileConfig, $FileSuffix, $Host, $LastUpdate, $DayRequired, $MonthRequired, $YearRequired,
 $QueryString, $SiteConfig, $StaticLinks, $URLFilter, $PageCode, $LogFormatString, $PerlParsingFormat,
 $SiteToAnalyze, $SiteToAnalyzeWithoutwww, $UserAgent)=
 ("","","","","","","","","","","","","","","","","","");
@@ -893,7 +893,7 @@ sub Read_Ref_Data {
 	my %FilePath=();
 	my @FileListToLoad=();
 	push @FileListToLoad, "browsers.pm";
-	if (! $HTMLOutput) { push @FileListToLoad, "domains.pm"; }				# Not required if no output asked
+	if ($HTMLOutput) { push @FileListToLoad, "domains.pm"; }	# Used only when HTML output required
 	push @FileListToLoad, "operating_systems.pm";
 	push @FileListToLoad, "robots.pm";
 	push @FileListToLoad, "search_engines.pm";
