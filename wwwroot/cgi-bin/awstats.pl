@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.623 $ - $Author: eldy $ - $Date: 2003-10-30 13:31:08 $
+# $Revision: 1.624 $ - $Author: eldy $ - $Date: 2003-10-30 13:37:51 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.623 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.624 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -6399,8 +6399,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
  					if ($field[$pos_referer] =~ m/$conditiontypeval/) { $conditionok=1; last; }
  				}
  				elsif ($conditiontype eq 'UA') {
-					if ($Debug) { debug(" Check condition '$conditiontype' must contain '$conditiontypeval' in $field[$pos_ua]",5); }
- 					if ($field[$pos_ua] =~ m/$conditiontypeval/) { $conditionok=1; last; }
+					if ($Debug) { debug(" Check condition '$conditiontype' must contain '$conditiontypeval' in $field[$pos_agent]",5); }
+ 					if ($field[$pos_agent] =~ m/$conditiontypeval/) { $conditionok=1; last; }
  				}
  				elsif ($conditiontype eq 'HOST') {
 					if ($Debug) { debug(" Check condition '$conditiontype' must contain '$conditiontypeval' in $field[$pos_host]",5); }
@@ -6428,7 +6428,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
  					if ($field[$pos_referer] =~ m/$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
  				}
  				elsif ($rowkeytype eq 'UA') {
- 					if ($field[$pos_ua] =~ m/$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
+ 					if ($field[$pos_agent] =~ m/$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
  				}
  				elsif ($rowkeytype eq 'HOST') {
  					if ($HostResolved =~ m/$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
