@@ -1,5 +1,5 @@
 # Galician message file by Ignacio Agulló (ignacio@agullo.tk)
-# $Revision: 1.1 $ - $Date: 2003-11-20 22:12:51 $
+# $Revision: 1.2 $ - $Date: 2003-11-21 01:07:33 $
 message0=Descoñecido
 message1=Descoñecido (IP non resolto)
 message2=Outros
@@ -154,5 +154,5 @@ message150=Tamaño
 message151=Primeiro
 message152=Último
 message153=Excluír Filtro
-message154=* Os códigos amosados aquí contan accesos ou tráfico "non visto" por visitantes, logo están aillados nesta táboa.
+message154=Os códigos amosados aquí contan accesos ou tráfico "non visto" por visitantes, logo están aillados nesta táboa.
 message155=Grupo
