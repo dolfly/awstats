@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Glossary">
 <title>AWStats Documentation - Glossary</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.26 $ - $Author: eldy $ - $Date: 2004-03-04 14:49:50 $ -->
+<!-- $Revision: 1.27 $ - $Author: eldy $ - $Date: 2004-03-21 00:13:18 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -101,8 +101,8 @@ of times a visitor has added your web site into its favourite bookmarks.<br>
 The technical rules for that is the following formula:<br>
 <i>Number of Add to Favourites = round((x+y) / r)</i><br>
 where<br>
-x = Number of hits made by IE browsers for "/anydir/favicon.ico" with no 404 error<br>
-y = Number of hits made by IE browsers for "/favicon.ico" (with or without 404 error)<br>
+x = Number of hits made by IE browsers for "/anydir/favicon.ico", with a referer field not defined, and with no 404 error code<br>
+y = Number of hits made by IE browsers for "/favicon.ico", with a referer field not defined, with or without 404 error code<br>
 r = Ratio of hits made by IE browsers compared to hits made by all browsers (r <= 1)<br>
 <br>
 As you can see in formula, only IE is used to count reliable "add", the "Add to favourites"
@@ -622,7 +622,7 @@ This are permanent error codes. Mail transfer is definitly a failure. No other t
 <br><hr>
 
 <script language=javascript>
-	var date='$Date: 2004-03-04 14:49:50 $';
+	var date='$Date: 2004-03-21 00:13:18 $';
 	document.writeln("Last revision: "+date);
 </script>
 
