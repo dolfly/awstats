@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.476 $ - $Author: eldy $ - $Date: 2003-02-27 11:03:26 $
+# $Revision: 1.477 $ - $Author: eldy $ - $Date: 2003-02-27 11:21:23 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.476 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.477 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -8266,11 +8266,11 @@ if (scalar keys %HTMLOutput) {
 			print "$Center<a name=\"SCREENSIZE\">&nbsp;</a><BR>\n";
 			my $Totalh=0; foreach my $key (keys %_screensize_h) { $Totalh+=$_screensize_h{$key}; }
 			my $title="$Message[135]";
-			&tab_head("$title",19);
+			&tab_head("$title",0);
 			print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TH>$Message[135]</TH><TH bgcolor=\"#$color_h\" width=80>$Message[15]</TH></TR>\n";
 			my $total_h=0;
 			my $count=0;
-			&BuildKeyList($MaxNbOf{'ScreenSizes'},$MinHit{'ScreenSizes'},\%_screensize_h,\%_screensize_h);
+			&BuildKeyList($MaxNbOf{'ScreenSizesShown'},$MinHit{'ScreenSize'},\%_screensize_h,\%_screensize_h);
 			foreach my $key (@keylist) {
 				my $p='&nbsp;';
 				if ($Totalh) { $p=int($_screensize_h{$key}/$Totalh*1000)/10; $p="$p %"; }
@@ -8288,11 +8288,11 @@ if (scalar keys %HTMLOutput) {
 				print "</TR>\n";
 				$count++;
 			}
-			$rest_h=$Totalh-$total_s;
+			$rest_h=$Totalh-$total_h;
 			if ($rest_h > 0) {	# All others sessions
 				my $p=0;
 				if ($Totalh) { $p=int($rest_h/$Totalh*1000)/10; }
-				print "<tr".($TOOLTIPON?" onmouseover=\"ShowTip(20);\" onmouseout=\"HideTip(20);\"":"")."><td CLASS=AWL><font color=\"#$color_other\">$Message[0]</font></td>";
+				print "<tr><td CLASS=AWL><font color=\"#$color_other\">$Message[2]</font></td>";
 				print "<td>".($rest_h?"$p %":"&nbsp;")."</td>";
 				print "</tr>\n";
 			}
