@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.119 $ - $Author: eldy $ - $Date: 2003-07-15 23:01:06 $ 
+$Revision: 1.120 $ - $Author: eldy $ - $Date: 2003-07-20 13:07:35 $ 
 
 
 5.7
@@ -26,6 +26,7 @@ New features/improvements:
 - awstats_buildstaticpages.pl can also build one PDF file (need htmldoc).
 - Added maillogconvert.p for analyzing mail log files (support better
   sendmail, postfix and qmail log files).
+- Added -addfilenum option in logresolvemerge.pl
 
 Other/Documentation:
 - Added mp4 mime type.
