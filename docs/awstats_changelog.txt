@@ -1,11 +1,12 @@
 AWStats Changelog
 -----------------
-$Revision: 1.144 $ - $Author: eldy $ - $Date: 2003-09-14 17:17:04 $ 
+$Revision: 1.145 $ - $Author: eldy $ - $Date: 2003-09-14 17:56:19 $ 
 
 
 5.8
 
 Fixes:
+- mod_deflate compression reported bandwith saved instead of bandwidth used.
 - Fixed wrong number of column for "other" row in host chart.
 - Fixed problem of parsing with uabracket and refererquot.
 - Fixed wrong use of config file in rawlog plugin.
