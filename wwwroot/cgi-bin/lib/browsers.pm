@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2003-10-30 19:17:39 $
+# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2003-10-31 13:08:09 $
 
 
 #package AWSUA;
@@ -234,8 +234,8 @@
 "teleport","1",
 "webcapture","1",
 "webcopier","1",
-"curl","1"
-"wget","1",
+"curl","1",
+"wget","1"
 );
 
 
