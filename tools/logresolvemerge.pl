@@ -6,7 +6,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2003-09-29 02:26:47 $
+# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2003-09-29 02:28:08 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -34,7 +34,7 @@ my %TmpDNSLookup = ();
 
 # ---------- Init variables --------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.23 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.24 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw/ $NBOFLINESFORBENCHMARK /;
@@ -310,8 +310,7 @@ if (scalar @ParamFile == 0) {
 	print "Now supports/detects:\n";
 	print "  Automatic detection of log format\n";
 	print "  Files can be .gz/.bz2 files if zcat/bzcat tools are available in PATH.\n";
-#	print "  Multithreaded reverse DNS lookup (several parallel requests)\n";
-#	print "  No need of extra Perl library\n";
+	print "  Multithreaded reverse DNS lookup (several parallel requests)\n";
 	print "New versions and FAQ at http://awstats.sourceforge.net\n";
 	exit 0;
 }
