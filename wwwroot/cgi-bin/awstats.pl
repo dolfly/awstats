@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.757 $ - $Author: eldy $ - $Date: 2004-06-11 20:33:59 $
+# $Revision: 1.758 $ - $Author: eldy $ - $Date: 2004-06-11 21:34:28 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.757 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.758 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.2 (build $REVISION)";
 
 # ----- Constants -----
@@ -4707,6 +4707,22 @@ sub ShowUserInfo {
 	# Call to plugins' function ShowInfoUser
 	foreach my $pluginname (keys %{$PluginsLoaded{'ShowInfoUser'}})  {
 		my $function="ShowInfoUser_$pluginname('$user')";
+		eval("$function");
+	}
+}
+
+#------------------------------------------------------------------------------
+# Function:     Write other cluster info (with help of plugin)
+# Parameters:   $clusternb
+# Input:        $SiteConfig
+# Output:       Cluster info
+# Return:       None
+#------------------------------------------------------------------------------
+sub ShowClusterInfo {
+	my $user=shift;
+	# Call to plugins' function ShowInfoCluster
+	foreach my $pluginname (keys %{$PluginsLoaded{'ShowInfoCluster'}})  {
+		my $function="ShowInfoCluster_$pluginname('$user')";
 		eval("$function");
 	}
 }
@@ -10103,7 +10119,8 @@ if (scalar keys %HTMLOutput) {
 			print "$Center<a name=\"clusters\">&nbsp;</a><br />\n";
 			my $title="$Message[155]";
 			&tab_head("$title",19,0,'clusters');
-			print "<tr bgcolor=\"#$color_TableBGRowTitle\"><th colspan=\"2\">$Message[155]</th>";
+			print "<tr bgcolor=\"#$color_TableBGRowTitle\"><th>$Message[155]</th>";
+			&ShowClusterInfo('__title__');
 			if ($ShowClusterStats =~ /P/i) { print "<th bgcolor=\"#$color_p\" width=\"80\">$Message[56]</th><th bgcolor=\"#$color_p\" width=\"80\">$Message[15]</th>"; }
 			if ($ShowClusterStats =~ /H/i) { print "<th bgcolor=\"#$color_h\" width=\"80\">$Message[57]</th><th bgcolor=\"#$color_h\" width=\"80\">$Message[15]</th>"; }
 			if ($ShowClusterStats =~ /B/i) { print "<th bgcolor=\"#$color_k\" width=\"80\">$Message[75]</th><th bgcolor=\"#$color_k\" width=\"80\">$Message[15]</th>"; }
@@ -10122,7 +10139,8 @@ if (scalar keys %HTMLOutput) {
 				my $p_h=int($_cluster_h{$key}/$total_h*1000)/10;
 				my $p_k=int($_cluster_k{$key}/$total_k*1000)/10;
 				print "<tr>";
-				print "<td class=\"aws\" colspan=\"2\">Computer $key</td>";
+				print "<td class=\"aws\">Computer $key</td>";
+				&ShowClusterInfo($key);
 				if ($ShowClusterStats =~ /P/i) { print "<td>".($_cluster_p{$key}?$_cluster_p{$key}:"&nbsp;")."</td><td>$p_p %</td>"; }
 				if ($ShowClusterStats =~ /H/i) { print "<td>$_cluster_h{$key}</td><td>$p_h %</td>"; }
 				if ($ShowClusterStats =~ /B/i) { print "<td>".Format_Bytes($_cluster_k{$key})."</td><td>$p_k %</td>"; }
