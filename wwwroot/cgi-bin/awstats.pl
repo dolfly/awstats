@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.522 $ - $Author: eldy $ - $Date: 2003-06-21 00:29:09 $
+# $Revision: 1.523 $ - $Author: eldy $ - $Date: 2003-06-21 15:34:57 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.522 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.523 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -118,6 +118,7 @@ $DNSLastUpdateCacheFile='dnscachelastupdate.txt';
 $MiscTrackerUrl=quotemeta('/js/awstats_misc_tracker.js');
 $Lang='auto';
 $MaxRowsInHTMLOutput=1000;
+$MaxLengthOfURL=72;
 $MaxLengthOfStoredURL=256;			# Note: Apache LimitRequestLine is default to 8190
 $MaxLengthOfStoredUA=256;
 %BarPng=('vv'=>'vv.png','vu'=>'vu.png','hu'=>'hu.png','vp'=>'vp.png','hp'=>'hp.png',
@@ -135,7 +136,7 @@ $Expires $UpdateStats $MigrateStats $URLNotCaseSensitive $URLWithQuery $URLRefer
 $UseFramesWhenCGI $DecodeUA
 /;
 ($EnableLockForUpdate, $DNSLookup, $AllowAccessFromWebToAuthenticatedUsersOnly,
-$BarHeight, $BarWidth, $CreateDirDataIfNotExists, $KeepBackupOfHistoricFiles, $MaxLengthOfURL,
+$BarHeight, $BarWidth, $CreateDirDataIfNotExists, $KeepBackupOfHistoricFiles,
 $NbOfLinesParsed, $NbOfLinesDropped, $NbOfLinesCorrupted, $NbOfOldLines, $NbOfNewLines,
 $NbOfLinesShowsteps, $NewLinePhase, $NbOfLinesForCorruptedLog, $PurgeLogFile,
 $ShowAuthenticatedUsers, $ShowFileSizesStats, $ShowScreenSizeStats, $ShowSMTPErrorsStats,
