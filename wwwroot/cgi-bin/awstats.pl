@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.691 $ - $Author: eldy $ - $Date: 2003-12-29 17:13:07 $
+# $Revision: 1.692 $ - $Author: eldy $ - $Date: 2003-12-29 18:48:16 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.691 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.692 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -3886,8 +3886,8 @@ sub Read_DNS_Cache {
 	if ($PluginsLoaded{'LoadCache'}{'hashfiles'}) { LoadCache_hashfiles($filetoload,$hashtoload); }
 	if (! scalar keys %$hashtoload) {
 		open(DNSFILE,"$filetoload") or error("Couldn't open DNS Cache file \"$filetoload\": $!");
-		binmode DNSFILE;
-		# This is the fastest way to load with regexp that I know
+		#binmode DNSFILE;		# If we set binmode here, it seems that the load is broken on ActiveState 5.8
+		# This is a fast way to load with regexp
 		%$hashtoload = map(/^(?:\d{0,10}\s+)?([0-9A-F:\.]+)\s+([^\s]+)$/oi,<DNSFILE>);
 		close DNSFILE;
 		if ($savetohash) {
