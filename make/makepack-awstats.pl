@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.8 $
+# \version      $Revision: 1.9 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ if (-d "/usr/src/RPM") {
     $RPMDIR="/usr/src/RPM";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.8 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.9 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -296,18 +296,18 @@ rename("$BUILDROOT/$PROJECT","$BUILDROOT/$FILENAMETGZ");
 
     		print "Copy $SOURCE/make/rpm/${BUILDFIC} to $BUILDROOT\n";
 #    		$ret=`cp -p "$SOURCE/make/rpm/${BUILDFIC}" "$BUILDROOT"`;
-            open (SPECFROM,"<$SOURCE/make/rpm/${BUILDFIC}") || die "Error";
-            open (SPECTO,">$BUILDROOT/$BUILDFIC") || die "Error";
-        while (<SPECFROM>) {
-            $_ =~ s/__VERSION__/$MAJOR.$MINOR/;
-            print SPECTO $_;
-        }
-        close SPECFROM;
-        close SPECTO;
+            open (SPECFROM,"<$SOURCE/make/rpm/${BUILDFIC}") || die "Error, can't open input file $SOURCE/make/rpm/${BUILDFIC}";
+            open (SPECTO,">$TEMP/$BUILDFIC") || die "Error, can't open output file $TEMP/$BUILDFIC";
+            while (<SPECFROM>) {
+                $_ =~ s/__VERSION__/$MAJOR.$MINOR/;
+                print SPECTO $_;
+            }
+            close SPECFROM;
+            close SPECTO;
 
-    		print "Launch RPM build (rpm --clean -ba $BUILDROOT/${BUILDFIC})\n";
-    		$ret=`rpm --clean -ba $BUILDROOT/${BUILDFIC}`;
-	
+    		print "Launch RPM build (rpm --clean -ba $TEMP/${BUILDFIC})\n";
+    		$ret=`rpm --clean -ba $TEMP/${BUILDFIC}`;
+
    		    print "Move $RPMDIR/RPMS/noarch/${FILENAMERPM}.noarch.rpm into $DESTI/${FILENAMERPM}.noarch.rpm\n";
    		    $cmd="mv \"$RPMDIR/RPMS/noarch/${FILENAMERPM}.noarch.rpm\" \"$DESTI/${FILENAMERPM}.noarch.rpm\"";
     		$ret=`$cmd`;
