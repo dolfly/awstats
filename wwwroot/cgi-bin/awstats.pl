@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.313 $ - $Author: eldy $ - $Date: 2002-09-12 16:43:21 $
+# $Revision: 1.314 $ - $Author: eldy $ - $Date: 2002-09-12 16:50:35 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.313 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.314 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -6418,9 +6418,9 @@ EOF
 		my $TotalPagesRobots = 0; #foreach my $val (values %_robot_p) { $TotalPagesRobots+=$val; }
 		my $TotalHitsRobots = 0; foreach my $val (values %_robot_h) { $TotalHitsRobots+=$val; }
 		my $TotalBytesRobots = 0; #foreach my $val (values %_robot_k) { $TotalBytesRobots+=$val; }
-		#$rest_p=$TotalPagesRobots-$total_p;
+		$rest_p=0; #$rest_p=$TotalPagesRobots-$total_p;
 		$rest_h=$TotalHitsRobots-$total_h;
-		#$rest_k=$TotalBytesrobots-$total_k;
+		$rest_k=0; #$rest_k=$TotalBytesrobots-$total_k;
 		if ($rest_p > 0 || $rest_h > 0 || $rest_k > 0) {	# All other login
 			print "<TR><TD CLASS=AWL><font color=blue>$Message[2]</font></TD><TD>$rest_h</TD><TD>&nbsp;</TD></TR>\n";
 		}
