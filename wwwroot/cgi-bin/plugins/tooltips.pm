@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-10-31 21:19:21 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2004-02-07 16:16:17 $
 
 
 # <-----
@@ -23,7 +23,7 @@ use strict;no strict "refs";
 # <-----
 # ENTER HERE THE MINIMUM AWSTATS VERSION REQUIRED BY YOUR PLUGIN
 # AND THE NAME OF ALL FUNCTIONS THE PLUGIN MANAGE.
-my $PluginNeedAWStatsVersion="5.4";
+my $PluginNeedAWStatsVersion="6.1";
 my $PluginHooksFunctions="AddHTMLStyles AddHTMLBodyHeader";
 # ----->
 
@@ -146,17 +146,18 @@ sub _ReadAndOutputTooltipFile {
 	my @PossibleLangDir=("$DirLang","${DIR}lang","/usr/share/awstats/lang","./lang");
 
 	my $FileLang='';
+	my $logtype=lc($LogType);
 	foreach my $dir (@PossibleLangDir) {
 		my $searchdir=$dir;
 		if ($searchdir && (!($searchdir =~ /\/$/)) && (!($searchdir =~ /\\$/)) ) { $searchdir .= "/"; }
-		if (open(LANG,"${searchdir}awstats-tt-$_[0].txt")) { $FileLang="${searchdir}awstats-tt-$_[0].txt"; last; }
+		if (open(LANG,"${searchdir}tooltips_${logtype}/awstats-tt-$_[0].txt")) { $FileLang="${searchdir}tooltips_${logtype}/awstats-tt-$_[0].txt"; last; }
 	}
 	# If file not found, we try english
 	if (! $FileLang) {
 		foreach my $dir (@PossibleLangDir) {
 			my $searchdir=$dir;
 			if ($searchdir && (!($searchdir =~ /\/$/)) && (!($searchdir =~ /\\$/)) ) { $searchdir .= "/"; }
-			if (open(LANG,"${searchdir}awstats-tt-en.txt")) { $FileLang="${searchdir}awstats-tt-en.txt"; last; }
+			if (open(LANG,"${searchdir}tooltips_${logtype}/awstats-tt-en.txt")) { $FileLang="${searchdir}tooltips_${logtype}/awstats-tt-en.txt"; last; }
 		}
 	}
 	if ($Debug) { debug("Call to Read_Language_Tooltip [FileLang=\"$FileLang\"]"); }
