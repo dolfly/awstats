@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.36 $ - $Author: eldy $ - $Date: 2004-05-01 16:44:56 $
+# $Revision: 1.37 $ - $Author: eldy $ - $Date: 2004-09-13 17:32:45 $
 
 
 #package AWSUA;
@@ -129,8 +129,8 @@
 # Common web browsers text
 'msie','MS Internet Explorer',
 'netscape','Netscape',
-'firebird','Firebird (Old FireFox)',
-'firefox','FireFox',
+'firebird','Firebird (Old Firefox)',
+'firefox','Firefox',
 'go!zilla','Go!Zilla',
 'icab','iCab',
 'konqueror','Konqueror',
