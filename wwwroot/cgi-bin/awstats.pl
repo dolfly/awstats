@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.615 $ - $Author: eldy $ - $Date: 2003-09-28 02:05:47 $
+# $Revision: 1.616 $ - $Author: eldy $ - $Date: 2003-09-28 02:21:01 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.615 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.616 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -1003,7 +1003,7 @@ sub Read_Config {
 	}
 	# If parameter ValidSMTPCodes not found, init for backward compatibility
 	if (! $FoundValidSMTPCodes) {
-		$ValidHTTPCodes{"1"}=$ValidHTTPCodes{"250"}=1;
+		$ValidSMTPCodes{"1"}=$ValidSMTPCodes{"250"}=1;
 	}
 }
 
