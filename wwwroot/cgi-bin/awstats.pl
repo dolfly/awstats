@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.649 $ - $Author: eldy $ - $Date: 2003-11-18 23:34:46 $
+# $Revision: 1.650 $ - $Author: eldy $ - $Date: 2003-11-18 23:51:27 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.649 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.650 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -8530,9 +8530,6 @@ if (scalar keys %HTMLOutput) {
 				my @valaverage=($average_p,$average_h,$average_k);
 				my @valdata=();
 				my $xx=0;
-				$avg_dayofweek_p[$_]=sprintf("%.2f",$avg_dayofweek_p[$_]);
-				$avg_dayofweek_h[$_]=sprintf("%.2f",$avg_dayofweek_h[$_]);
-				$avg_dayofweek_k[$_]=sprintf("%.2f",$avg_dayofweek_k[$_]);
 				for (@DOWIndex) {
 					$valdata[$xx++]=$avg_dayofweek_p[$_]||0;
 					$valdata[$xx++]=$avg_dayofweek_h[$_]||0;
