@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-07-27 14:29:43 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-09-09 11:09:37 $
 
 
 # <-----
@@ -81,7 +81,10 @@ EOF
 #-----------------------------------------------------------------------------
 # PLUGIN FUNCTION: ShowInfoHost_pluginname
 # UNIQUE: NO (Several plugins using this function can be loaded)
-# Function called to add additionnal information for Users in users' report.
+# Function called to add additionnal columns to the Hosts report.
+# This function is called when building rows of the report (One call for each
+# row). So it allows you to add a column in report, for example with code :
+#   print "<TD>This is a new cell</TD>";
 # Parameters: Host name or ip
 #-----------------------------------------------------------------------------
 sub ShowInfoHost_hostinfo {

@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-06-22 21:26:22 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-09-09 11:09:37 $
 
 
 # <-----
@@ -59,9 +59,11 @@ sub Init_urlalias {
 
 
 #-----------------------------------------------------------------------------
-# PLUGIN FUNCTION: ReplaceURL_pluginname
+# PLUGIN FUNCTION: ShowInfoURL_pluginname
 # UNIQUE: NO (Several plugins using this function can be loaded)
 # Function called to add additionnal information for URLs in URLs' report.
+# This function is called after writing the URL value in the URL cell of the
+# Top Pages-URL report.
 # Parameters: URL
 #-----------------------------------------------------------------------------
 sub ShowInfoURL_urlalias {
