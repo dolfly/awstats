@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2003-01-16 14:10:16 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2003-01-28 14:24:49 $
 
 
 #package AWSUA;
@@ -83,10 +83,12 @@
 "xaudio",
 # PDA/Phonecell browsers
 "alcatel",
+"docomo",
 "mmef",
 "mot-a",
 "mspie",
 "nokia",
+"sonyericsson",
 "up\.",					# Works for UP.Browser and UP.Link
 "wapalizer",
 "wapsilon",
@@ -174,10 +176,12 @@
 "xaudio","Some XAudio Engine based MPEG player (media player)",
 # PDA/Phonecell browsers
 "alcatel","Alcatel Browser (PDA/Phone browser)",
+"docomo","IMode phone (PDA/Phone browser)",
 "mmef","Microsoft Mobile Explorer (PDA/Phone browser)",
 "mot-a","Motorola Browser (PDA/Phone browser)",
 "mspie","MS Pocket Internet Explorer (PDA/Phone browser)",
 "nokia","Nokia Browser (PDA/Phone browser)",
+"sonyericsson","Sony/Ericsson Browser (PDA/Phone browser)",
 "up\.","UP.Browser (PDA/Phone browser)",					# Works for UP.Browser and UP.Link
 "wapalizer","WAPalizer (PDA/Phone browser)",
 "wapsilon","WAPsilon (PDA/Phone browser)",
@@ -281,10 +285,12 @@
 "xaudio","mediaplayer",
 # PDA/Phonecell browsers
 "alcatel","pdaphone",
+"docomo","pdaphone",
 "mmef","pdaphone",
 "mot-a","pdaphone",
 "mspie","pdaphone",
 "nokia","pdaphone",
+"sonyericsson","pdaphone",
 "up\.","pdaphone",					# Works for UP.Browser and UP.Link
 "wapalizer","pdaphone",
 "wapsilon","pdaphone",

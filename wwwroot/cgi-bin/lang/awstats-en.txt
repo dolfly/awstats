@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.47 $ - $Date: 2002-10-17 14:42:32 $
+# $Revision: 1.48 $ - $Date: 2003-01-28 14:24:48 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -134,3 +134,4 @@ message130=Data value arrays
 message131=Sender EMail
 message132=Receiver EMail
 message133=Reported period
+message134=Extra/Marketing
