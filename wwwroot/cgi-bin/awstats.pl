@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.499 $ - $Author: eldy $ - $Date: 2003-05-08 15:12:32 $
+# $Revision: 1.500 $ - $Author: eldy $ - $Date: 2003-05-08 15:16:57 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.499 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.500 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -1626,7 +1626,7 @@ sub Read_Plugins {
 	# Check plugin files in common possible directories :
 	# Windows :                           		"${DIR}plugins" (plugins in same dir than awstats.pl)
 	# Debian package :                    		"/usr/share/awstats/plugins"
-	# Other possible directories :        		"./lang"
+	# Other possible directories :        		"./plugins"
 	my @PossiblePluginsDir=("${DIR}plugins","/usr/share/awstats/plugins","./plugins");
 
 	if ($Debug) { debug("Call to Read_Plugins with list: @PluginsToLoad"); }
