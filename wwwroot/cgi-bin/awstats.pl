@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.490 $ - $Author: eldy $ - $Date: 2003-04-22 02:36:39 $
+# $Revision: 1.491 $ - $Author: eldy $ - $Date: 2003-04-22 03:19:03 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.490 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.491 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -7339,7 +7339,7 @@ if (scalar keys %HTMLOutput) {
 		if ($rest_s > 0) {
 			my $p;
 			if ($TotalKeyphrases) { $p=int($rest_s/$TotalKeyphrases*1000)/10; }
-			print "<TR><TD CLASS=AWL><font color=\"#$color_other\">$Message[30]</font></TD><TD>$rest_s</TD>";
+			print "<TR><TD CLASS=AWL><font color=\"#$color_other\">$Message[124]</font></TD><TD>$rest_s</TD>";
 			print "<TD>$p %</TD></TR>\n";
 		}
 		&tab_end;
@@ -7585,8 +7585,6 @@ if (scalar keys %HTMLOutput) {
 				
 			$average_nb=$average_u=$average_v=$average_p=$average_h=$average_k=0;
 			$total_u=$total_v=$total_p=$total_h=$total_k=0;
-#			print "<TABLE>";
-#			print "<TR valign=bottom>";
 			# Define total and max
 			$max_v=$max_h=$max_k=0;		# Start from 0 because can be lower than 1
 			foreach my $daycursor ($firstdaytoshowtime..$lastdaytoshowtime) {
