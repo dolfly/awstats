@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-05-07 15:52:48 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-05-11 16:27:13 $
 
 
 
@@ -74,7 +74,7 @@
 "uy","Uruguay","uz","Uzbekistan","va","Vatican City State","vc",
 "Saint Vincent &amp; Grenadines","ve","Venezuela","vg","Virgin Islands (British)",
 "vi","Virgin Islands (USA)","vn","Vietnam","vu","Vanuatu","wf","Wallis and Futuna Islands",
-"ws","Samoa","ye","Yemen","yt","Mayotte","yu","Yugoslavia","za","South Africa",
+"ws","Web sites","ye","Yemen","yt","Mayotte","yu","Yugoslavia","za","South Africa",
 "zm","Zambia","zr","Zaire","zw","Zimbabwe"
 );
 
