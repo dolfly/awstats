@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.495 $ - $Author: eldy $ - $Date: 2003-04-26 19:26:37 $
+# $Revision: 1.496 $ - $Author: eldy $ - $Date: 2003-05-01 21:13:51 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.495 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.496 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4519,7 +4519,7 @@ if ($tomorrowsec < 10) { $tomorrowsec = "0$tomorrowsec"; }
 $tomorrowtime=int($tomorrowyear.$tomorrowmonth.$tomorrowday.$tomorrowhour.$tomorrowmin.$tomorrowsec);
 
 my @AllowedArgs=('-site','-config','-showsteps','-showdropped','-showcorrupted',
-'-showunknownorigin','-logfile','-output','-staticlinks','-lang',
+'-showunknownorigin','-logfile','-output','-staticlinks','-staticlinksext','-lang',
 '-hostfilter','-urlfilter','-refererpagesfilter',
 '-month','-year','-framename','-debug','-limitflush');
 
@@ -4635,6 +4635,9 @@ elsif ($QueryString =~ /(^|&)month=(all)/i) { $MonthRequired='all'; }
 else { $MonthRequired="$nowmonth"; }
 if ($QueryString =~ /(^|&)day=(\d{1,2})/i) { $DayRequired=sprintf("%02d",$2); }	# day is a hidden option. Must not be used (Make results not understandable). Available for users that rename history files with day.
 else { $DayRequired=''; }
+
+# Check parameter validity
+# TODO
 
 # Print AWStats and Perl version 
 if ($Debug) {
