@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.541 $ - $Author: eldy $ - $Date: 2003-07-06 05:48:19 $
+# $Revision: 1.542 $ - $Author: eldy $ - $Date: 2003-07-06 06:52:45 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.541 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.542 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.7 (build $REVISION)";
 
 # ----- Constants -----
@@ -1463,7 +1463,7 @@ sub Check_Config {
 	if ($ShowOriginStats !~ /[01PH]/)              	{ $ShowOriginStats='PH'; }
 	if ($ShowKeyphrasesStats !~ /[01]/)          	{ $ShowKeyphrasesStats=1; }
 	if ($ShowKeywordsStats !~ /[01]/)            	{ $ShowKeywordsStats=1; }
-	if ($ShowMiscStats !~ /[01ajdfrqwp]/)     	    { $ShowMiscStats='ajdfrqwp'; }
+	if ($ShowMiscStats !~ /[01ajdfrqwp]/)     	    { $ShowMiscStats='a'; }
 	if ($ShowHTTPErrorsStats !~ /[01]/)          	{ $ShowHTTPErrorsStats=1; }
 	if ($ShowSMTPErrorsStats !~ /[01]/)          	{ $ShowSMTPErrorsStats=0; }
 	if ($AddDataArrayMonthStats !~ /[01]/)        	{ $AddDataArrayMonthStats=1; }
