@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.85 $ - $Author: eldy $ - $Date: 2003-02-28 12:17:57 $ 
+$Revision: 1.86 $ - $Author: eldy $ - $Date: 2003-03-02 04:12:38 $ 
 
 
 5.5
@@ -11,6 +11,7 @@ Fixes:
 
 New features/improvments:
 - Added a screen size report.
+- Group OS by families. Added a detailed OS version chart.
 - Better 404 errors management. URLs are always cleaned from their
   parameter to build '404 not found' URLs list (because parameters are not
   interesting as they can't have effect as page is not found). Referrer

@@ -7,7 +7,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2003-02-24 23:58:52 $
+# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2003-03-02 04:12:44 $
 
 # use strict is commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -19,7 +19,7 @@ use strict;no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.15 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.16 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -43,7 +43,7 @@ my @OutputList=(
 "alllogins","lastlogins",
 "allrobots","lastrobots",
 "urldetail","urlentry","urlexit",
-"unknownos","unknownbrowser","browserdetail",
+"unknownos","unknownbrowser","osdetail","browserdetail",
 "refererse","refererpages",
 #"referersites",
 "keyphrases","keywords",
