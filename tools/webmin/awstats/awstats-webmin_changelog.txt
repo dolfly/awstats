@@ -1,6 +1,6 @@
 AWStats-Webmin module Changelog
 -------------------------------
-$Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-10-30 09:47:52 $ 
+$Revision: 1.6 $ - $Author: eldy $ - $Date: 2003-11-09 04:51:30 $ 
 
 
 1.2
@@ -9,7 +9,8 @@ Fixes:
 - None
 
 New features/improvements:
-- Added UseXMLForOutput parameter
+- Added UseXMLForOutput parameter in edit config area
+- Added LevelForFileTypesDetection parameter in edit config area
 
 Other/Documentation:
 - None
