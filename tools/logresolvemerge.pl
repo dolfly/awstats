@@ -6,7 +6,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2003-08-02 01:09:35 $
+# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2003-08-16 13:39:32 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -17,7 +17,7 @@ use strict; no strict "refs";
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.17 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.18 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 # ---------- External Program variables ----------
@@ -174,7 +174,7 @@ if (scalar keys %ParamFile == 0) {
 	print "(but that is the case in all web server log files).\n";
 	print "$PROG is particularly usefull when you want to merge large log\n";
 	print "files in a fast process and with a low use of memory getting records in a\n";
-	print "chronological order from a pipe (for use by a log analyzer).\n";
+	print "chronological order through a pipe (for use by third tool, like log analyzer).\n";
 	print "\n";
 	print "WARNING: If log files are old MAC text files (lines ended with CR char), you\n";
 	print "can't run this tool on Win or Unix platforms.\n";
