@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.586 $ - $Author: eldy $ - $Date: 2003-09-13 16:57:53 $
+# $Revision: 1.587 $ - $Author: eldy $ - $Date: 2003-09-14 01:26:06 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.586 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.587 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -8684,8 +8684,7 @@ if (scalar keys %HTMLOutput) {
 			foreach my $key (@keylist) {
 				my $p=int($_filetypes_h{$key}/$Totalh*1000)/10;
 				if ($key eq 'Unknown') {
-					print "<TR><TD".($count?"":" width=$WIDTHCOLICON")."><IMG SRC=\"$DirIcons\/mime\/unknown.png\"".AltTitle("")."></TD><TD CLASS=AWS><font color=\"#$color_other\">$Message[0]</font></TD>";
-					print "<TD>&nbsp;</TD>";
+					print "<TR><TD".($count?"":" width=$WIDTHCOLICON")."><IMG SRC=\"$DirIcons\/mime\/unknown.png\"".AltTitle("")."></TD><TD CLASS=AWS colspan=2><font color=\"#$color_other\">$Message[0]</font></TD>";
 				}
 				else {
 					my $nameicon=$MimeHashIcon{$key}||"notavailable";
