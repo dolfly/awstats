@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.308 $ - $Author: eldy $ - $Date: 2002-09-09 15:14:07 $
+# $Revision: 1.309 $ - $Author: eldy $ - $Date: 2002-09-10 15:40:39 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.308 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.309 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -152,13 +152,13 @@ $LevelForSearchEnginesDetection, $LevelForKeywordsDetection)=
 (2,1,1,1,1,1);
 use vars qw/
 $DirLock $DirCgi $DirData $DirIcons $DirLang $AWScript $ArchiveFileName
-$HTMLHeadSection $HTMLEndSection $LinksToWhoIs
+$AllowAccessFromWebToFollowingIPAddresses $HTMLHeadSection $HTMLEndSection $LinksToWhoIs
 $LogFile $LogFormat $LogSeparator $Logo $LogoLink $StyleSheet $WrapperScript $SiteDomain
 /;
 ($DirLock, $DirCgi, $DirData, $DirIcons, $DirLang, $AWScript, $ArchiveFileName,
-$HTMLHeadSection, $HTMLEndSection, $LinksToWhoIs,
+$AllowAccessFromWebToFollowingIPAddresses, $HTMLHeadSection, $HTMLEndSection, $LinksToWhoIs,
 $LogFile, $LogFormat, $LogSeparator, $Logo, $LogoLink, $StyleSheet, $WrapperScript, $SiteDomain)=
-("","","","","","","","","","","","","","","","","","");
+("","","","","","","","","","","","","","","","","","","");
 use vars qw/
 $color_Background $color_TableBG $color_TableBGRowTitle
 $color_TableBGTitle $color_TableBorder $color_TableRowTitle $color_TableTitle
@@ -823,6 +823,7 @@ sub Read_Config {
 			foreach my $elem (split(/\s+/,$value))	  { push @AllowAccessFromWebToFollowingAuthenticatedUsers,$elem; }
 			next;
 			}
+		if ($param =~ /^AllowAccessFromWebToFollowingIPAddresses/)		{ $AllowAccessFromWebToFollowingIPAddresses=$value; next; }
 		if ($param =~ /^CreateDirDataIfNotExists/)   { $CreateDirDataIfNotExists=$value; next; }
 		if ($param =~ /^SaveDatabaseFilesWithPermissionsForEveryone/)   { $SaveDatabaseFilesWithPermissionsForEveryone=$value; next; }
 		if ($param =~ /^PurgeLogFile/)          { $PurgeLogFile=$value; next; }
@@ -3407,6 +3408,21 @@ sub SigHandler {
 	sleep 10;
 }
 
+#--------------------------------------------------------------------
+# Function:     Convert an IPAddress into an integer
+# Parameters:   IPAddress
+# Input:        None
+# Output:       None
+# Return:       Int
+#--------------------------------------------------------------------
+sub Convert_IP_To_Decimal()
+{
+	my ($IPAddress) = @_;
+	my @ip_seg_arr = split(/\./,$IPAddress);
+	my $decimal_ip_address = 256 * 256 *256 * $ip_seg_arr[0] + 256 * 256 * $ip_seg_arr[1] + 256 * $ip_seg_arr[2] + $ip_seg_arr[3];
+	return($decimal_ip_address);
+}
+
 
 #--------------------------------------------------------------------
 # MAIN
@@ -3672,6 +3688,17 @@ if ($AllowAccessFromWebToAuthenticatedUsersOnly && $ENV{"GATEWAY_INTERFACE"}) {
 		if (! $userisinlist) {
 			error("Error: User <b>".$ENV{"REMOTE_USER"}."</b> is not allowed to access statistics of this domain/config.");
 		}
+	}
+}
+if ($AllowAccessFromWebToFollowingIPAddresses && $ENV{"GATEWAY_INTERFACE"}) {
+	if ($AllowAccessFromWebToFollowingIPAddresses	!~ /^(\d+\.\d+\.\d+\.\d+)-(\d+\.\d+\.\d+\.\d+)$/) {
+		error("Error: AllowAccessFromWebToFollowingIPAddresses is defined to '$AllowAccessFromWebToFollowingIPAddresses' but does not match the correct syntax: IPAddressMin-IPAddressMax");
+	}
+	my $ipmin=&Convert_IP_To_Decimal($1);
+	my $ipmax=&Convert_IP_To_Decimal($2);
+	my $useripaddress=&Convert_IP_To_Decimal($ENV{"REMOTE_ADDR"});
+	if ($useripaddress < $ipmin || $useripaddress > $ipmax) {
+		error("Error: Access to statistics is not allowed from your IP Address ".$ENV{"REMOTE_ADDR"});
 	}
 }
 if ($UpdateStats && (! $AllowToUpdateStatsFromBrowser) && $ENV{"GATEWAY_INTERFACE"}) {
