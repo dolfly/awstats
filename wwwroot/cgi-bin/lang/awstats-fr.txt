@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.77 $ - $Date: 2004-02-07 16:13:26 $
+# $Revision: 1.78 $ - $Date: 2004-03-04 13:23:43 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -167,3 +167,4 @@ message163=Vers
 message164=vers differents
 message165=Mails transférés
 message166=Mails en échec/refusés
+message167=Cibles sensibles

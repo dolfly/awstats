@@ -1,6 +1,6 @@
 # Dutch message file (door Amedee Van Gasse - amedee.be)
 # Addon by Marcel Huijkman - marcel.huijkman@raketnet.nl
-# $Revision: 1.12 $ - $Date: 2003-08-29 01:20:52 $
+# $Revision: 1.13 $ - $Date: 2004-03-04 13:23:43 $
 message0=Onbekend
 message1=Onbekend (Onbekend ip)
 message2=Andere
@@ -155,3 +155,16 @@ message150=Grootte
 message151=Eerste
 message152=Laatste
 message153=Uitsluiten filter
+message154=De hier getoonde codes zijn van oorsprong "niet bekeken" hits of verkeer van bezoekers en worden niet getoond in andere grafieken.
+message155=Cluster
+message156=De hier getoonde robots zijn van oorsprong "niet bekeken" hits of verkeer van bezoekers en worden niet getoond in andere grafieken.
+message157=Cijfers achter het + teken zijn succesvolle hits uit "robots.txt" bestanden.
+message158=De hier getoonde wormen zijn van oorsprong "niet bekeken" hits of verkeer van bezoekers en worden niet getoond in andere grafieken.
+message159=Niet bekeken verkeer is verkeer gegenereerd door robotten, wormen of antwoorden met een speciale HTTP status code.
+message160=Bekeken verkeer
+message161=Niet bekeken verkeer
+message162=Maandelijkse historiek
+message163=Wormen
+message164=verschillende wormen
+message165=Successvolle mails
+message166=Geweigerde of slechte mails
