@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-11-17 20:56:43 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2003-11-18 23:25:13 $
 
 
 # <-----
@@ -81,7 +81,7 @@ sub ShowGraph_graphapplet() {
 	print "<applet name=\"$type\" archive=\"awgraphapplet.jar\" code=\"AWGraphApplet.class\" codebase=\"/classes\" width=\"$graphwidth\" height=\"$graphheight\" alt= \"Your browser does not support Java correctly. Change browser or disable AWStats graphapplet plugin.\">\n";
 print <<EOF;
 <param name="title" value="$title" />
-<param name="awstats_type" value="$type" />
+<param name="special" value="$type" />
 <param name="orientation" value="vertical" />
 <param name="barsize" value="$barsize" />
 <param name="background_color" value="$color_Background" />
