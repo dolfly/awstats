@@ -9,11 +9,11 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-12-11 20:36:00 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-12-13 01:10:21 $
 
 
 # <-----
-# ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
+# ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES.
 # ----->
 use strict;no strict "refs";
 
