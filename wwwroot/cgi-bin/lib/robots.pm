@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2002-10-08 04:00:52 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2002-12-02 20:45:59 $
 
 
 #package AWSROB;
@@ -328,10 +328,13 @@
 "redalert",
 "shoutcast",
 "slysearch",
+"surveybot",
 "turnitinbot",
 "ultraseek",
+"webclipping\.com",
 "webcompass",
 "yandex",
+"zealbot",
 "zyborg"
 );
 @RobotsSearchIDOrder_list3 = (
@@ -642,14 +645,17 @@
 "redalert", "Red Alert",
 "shoutcast","Shoutcast Directory Service",
 "slysearch","SlySearch",
+"surveybot","SurveyBot",
 "turnitinbot","Turn It In",
 "ultraseek", "Ultraseek",
 "unlost_web_crawler", "Unlost Web Crawler",
 "voila", "Voila",
 "webbase", "WebBase",
 "webcompass", "webcompass",
+"webclipping\.com", "WebClipping.com",
 "wisenutbot","WISENutbot (Looksmart)",
 "yandex", "Yandex bot",
+"zealbot","ZealBot",
 "zyborg","Zyborg (Looksmart)",
 
 # Generic root ID
