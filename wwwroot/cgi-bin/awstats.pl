@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.652 $ - $Author: eldy $ - $Date: 2003-11-19 20:55:52 $
+# $Revision: 1.653 $ - $Author: eldy $ - $Date: 2003-11-19 21:28:14 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.652 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.653 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -599,7 +599,7 @@ sub html_end {
 	if (scalar keys %HTMLOutput) {
 		if ($FrameName ne 'index' && $FrameName ne 'mainleft') {
 			print "$Center<br /><br />\n";
-			print "<span style=\"font: 11px verdana, arial, helvetica; color: #$color_text;\">";
+			print "<span dir=\"ltr\" style=\"font: 11px verdana, arial, helvetica; color: #$color_text;\">";
 			print "<b>Advanced Web Statistics $VERSION</b> - <a href=\"http://awstats.sourceforge.net\" target=\"awstatshome\">Created by $PROG";
 			my $atleastoneplugin=0;
 			foreach my $pluginname (keys %{$PluginsLoaded{'init'}}) {

@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2003-11-15 19:35:27 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2003-11-19 21:30:27 $
 
 
 # <-----
@@ -108,7 +108,7 @@ sub _ShowForm {
 	print "<table class=\"aws_border\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"100%\">\n";
 	print "<tr><td>";
 	print "<table class=\"aws_data\" border=\"0\" cellpadding=\"1\" cellspacing=\"0\" width=\"100%\">\n";
-	print "<tr><td><b>Show content of file '$LogFile' ($MAXLINE first lines):</b></td></tr>\n";
+	print "<tr><td><span dir=\"ltr\"><b>Show content of file '$LogFile' ($MAXLINE first lines):</b></span></td></tr>\n";
 	print "<tr><td>$Message[79]: <input type=\"text\" name=\"filterrawlog\" value=\"$Filter\" /><input type=\"submit\" value=\"List\" class=\"aws_button\" />\n";
 	print "<input type=\"hidden\" name=\"config\" value=\"$SiteConfig\" /><input type=\"hidden\" name=\"framename\" value=\"$FrameName\" /><input type=\"hidden\" name=\"pluginmode\" value=\"rawlog\" />";
 	print "</td></tr>\n";
