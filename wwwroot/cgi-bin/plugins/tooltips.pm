@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-02-11 16:00:11 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2003-02-27 10:41:44 $
 
 
 # <-----
@@ -169,7 +169,7 @@ sub _ReadAndOutputTooltipFile {
 			if ($_ =~ /\<!--/) { next; }	# Remove comment
 			# Search for replaceable parameters
 			s/#PROG#/$aws_PROG/;
-			s/#MaxNbOfRefererShown#/$MaxNbOfRefererShown/;
+			s/#MaxNbOfRefererShown#/$MaxNbOf{'RefererShown'}/;
 			s/#VisitTimeOut#/$aws_VisitTimeout/;
 			s/#RobotArray#/$aws_NbOfRobots/;
 			s/#SearchEnginesArray#/$aws_NbOfSearchEngines/;
