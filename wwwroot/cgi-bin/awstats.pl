@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.746 $ - $Author: eldy $ - $Date: 2004-04-27 00:48:32 $
+# $Revision: 1.747 $ - $Author: eldy $ - $Date: 2004-04-27 18:34:42 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.746 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.747 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -8908,7 +8908,7 @@ if (scalar keys %HTMLOutput) {
 
 			$max_h=$max_k=0;	# Start from 0 because can be lower than 1
 			# Get average value for day of week
-			my @avg_dayofweek_nb = my @avg_dayofweek_p = my @avg_dayofweek_h = my @avg_dayofweek_k = ();
+			my @avg_dayofweek_nb=(); my @avg_dayofweek_p=(); my @avg_dayofweek_h=(); my @avg_dayofweek_k=();
 			foreach my $daycursor ($firstdaytocountaverage..$lastdaytocountaverage) {
 				$daycursor =~ /^(\d\d\d\d)(\d\d)(\d\d)/;
 				my $year=$1; my $month=$2; my $day=$3;
