@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.448 $ - $Author: eldy $ - $Date: 2003-01-23 22:16:54 $
+# $Revision: 1.449 $ - $Author: eldy $ - $Date: 2003-01-26 22:07:39 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.448 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.449 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4381,7 +4381,7 @@ sub DefinePerlParsingFormat() {
 				$pos_code = $i; $i++; push @fieldlib, 'code';
 				$PerlParsingFormat .= "([\\d|-]+)";
 			}
-			elsif ($f =~ /%codemms$/) {		# codemms is used for code if method not already found (for MMS)
+			elsif ($f =~ /%codemms$/) {		# codemms is used for code if code not already found (for MMS)
 				if ($pos_code < 0) {
 					$pos_code = $i; $i++; push @fieldlib, 'code';
 					$PerlParsingFormat .= "([\\d|-]+)";
