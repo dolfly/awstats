@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.468 $ - $Author: eldy $ - $Date: 2003-02-23 05:14:06 $
+# $Revision: 1.469 $ - $Author: eldy $ - $Date: 2003-02-23 05:53:14 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.468 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.469 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.5 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -73,8 +73,8 @@ $FoundNotPageList=$FoundValidHTTPCodes=$FoundValidSMTPCodes=0;
 use vars qw/
 $DNSStaticCacheFile
 $DNSLastUpdateCacheFile
-$Lang
 $LogScreenSizeUrl
+$Lang
 $MaxRowsInHTMLOutput
 $BarImageVertical_v
 $BarImageVertical_u
@@ -89,8 +89,8 @@ $BarImageHorizontal_k
 /;
 $DNSStaticCacheFile='dnscache.txt';
 $DNSLastUpdateCacheFile='dnscachelastupdate.txt';
-$Lang='auto';
 $LogScreenSizeUrl='logscreensizeurl';
+$Lang='auto';
 $MaxRowsInHTMLOutput = 1000;
 $BarImageVertical_v   = 'vv.png';
 #$BarImageHorizontal_v = 'hv.png';
@@ -528,7 +528,10 @@ use vars qw/ @Message /;
 'Sender EMail',
 'Receiver EMail',
 'Reported period',
-'Extra/Marketing'
+'Extra/Marketing',
+'Screen sizes',
+'Worm/Virus attacks',
+'Add to favourites'
 );
 
 
@@ -1863,9 +1866,9 @@ sub Read_History_With_TmpUpdate {
 		if ($UpdateStats || $MigrateStats || ($HTMLOutput{'main'} && $ShowFileTypesStats) || $HTMLOutput{'filetypes'}) { $SectionsToLoad{'filetypes'}=$order++; }
 		if ($UpdateStats || $MigrateStats || ($HTMLOutput{'main'} && $ShowOSStats) || $HTMLOutput{'os'}) { $SectionsToLoad{'os'}=$order++; }
 		if ($UpdateStats || $MigrateStats || ($HTMLOutput{'main'} && $ShowBrowsersStats) || $HTMLOutput{'browserdetail'}) { $SectionsToLoad{'browser'}=$order++; }
-		if ($UpdateStats || $MigrateStats || ($HTMLOutput{'main'} && $ShowScreenSizeStats)) { $SectionsToLoad{'screensize'}=$order++; }
 		if ($UpdateStats || $MigrateStats || $HTMLOutput{'unknownos'})      { $SectionsToLoad{'unknownreferer'}=$order++; }
 		if ($UpdateStats || $MigrateStats || $HTMLOutput{'unknownbrowser'}) { $SectionsToLoad{'unknownrefererbrowser'}=$order++; }
+		if ($UpdateStats || $MigrateStats || ($HTMLOutput{'main'} && $ShowScreenSizeStats)) { $SectionsToLoad{'screensize'}=$order++; }
 		# Referers
 		if ($UpdateStats || $MigrateStats || ($HTMLOutput{'main'} && $ShowOriginStats) || $HTMLOutput{'origin'}) { $SectionsToLoad{'origin'}=$order++; }
 		if ($UpdateStats || $MigrateStats || ($HTMLOutput{'main'} && $ShowOriginStats) || $HTMLOutput{'refererse'}) { $SectionsToLoad{'sereferrals'}=$order++; }
@@ -5270,7 +5273,14 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 					$_errors_h{$field[$pos_code]}++;
 					$_errors_k{$field[$pos_code]}+=int($field[$pos_size]);
 					foreach my $code (keys %TrapInfosForHTTPErrorCodes) {
-						if ($field[$pos_code] == $code) { $_sider404_h{$field[$pos_url]}++; $_referer404_h{$field[$pos_url]}=$field[$pos_referer]; }
+						if ($field[$pos_code] == $code) {
+							my $newurl=$field[$pos_url];
+							$newurl =~ s/([$URLQuerySeparators])(.*)$//;
+							$_sider404_h{$newurl}++;
+							my $newreferer=$field[$pos_referer];
+							if (! $URLReferrerWithQuery) { $newreferer =~ s/([$URLQuerySeparators])(.*)$//; }
+							$_referer404_h{$newurl}=$newreferer;
+						}
 					}
 					next;
 				}
