@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - What is AWStats">
 <title>AWStats Documentation - What is AWStats</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.37 $ - $Author: eldy $ - $Date: 2003-11-08 18:22:43 $ -->
+<!-- $Revision: 1.38 $ - $Author: eldy $ - $Date: 2003-11-10 16:20:05 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -94,17 +94,8 @@
 <hr>
 
 <script language=javascript>
-	var lastmod = new Date(document.lastModified);
-	if (lastmod.getDate() > 0) {
-		if (lastmod.getDate()<10) zerod="0"
-		else zerod="";
-		if (lastmod.getMonth()<9) zerom="0"
-		else zerom=""
-		year2kok=lastmod.getYear();
-		if (year2kok<100) year2kok+=2000;
-		if ((year2kok>=100) && (year2kok < 1970)) year2kok+=1900;
-		document.writeln("Last revision: "+year2kok+"-"+zerom+(lastmod.getMonth()+1)+"-"+zerod+lastmod.getDate());
-	}
+	var date='$Date: 2003-11-10 16:20:05 $';
+	document.writeln("Last revision: "+date);
 </script>
 
 </body>
