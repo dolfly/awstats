@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.683 $ - $Author: eldy $ - $Date: 2003-12-13 01:26:37 $
+# $Revision: 1.684 $ - $Author: eldy $ - $Date: 2003-12-21 01:34:52 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.683 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.684 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -1638,7 +1638,7 @@ sub Check_Config {
 		foreach my $rowkeycouple (split(/\s\|\s/, $ExtraFirstColumnValues[$extranum])) {
 	 		my ($rowkeytype, $rowkeytypeval)=split(/,/,$rowkeycouple,2);
 	 		$ExtraFirstColumnValuesType[$extranum][$part]=$rowkeytype;
-			if ($rowkeytype =~ /^REGEX\[(.*)\]$/i) { $rowkeytype=$1; }
+			if ($rowkeytypeval =~ /^REGEX\[(.*)\]$/i) { $rowkeytypeval=$1; }
 			#else { $rowkeytype=quotemeta($rowkeytype); }
 	 		$ExtraFirstColumnValuesTypeVal[$extranum][$part]=qr/$rowkeytypeval/i;
 			$part++;
