@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.41 $ - $Date: 2002-06-11 23:40:48 $
+# $Revision: 1.42 $ - $Date: 2002-07-13 12:58:55 $
 message0=Inconnu
 message1=Inconnu (IP non résolue)
 message2=Autres
@@ -24,7 +24,7 @@ message20=Heures
 message21=Navigateurs
 message22=Erreurs HTTP
 message23=Origine/Referrer
-message24=
+message24=Jamais mis à jour
 message25=Domaines/pays visiteurs
 message26=des hôtes
 message27=des pages
