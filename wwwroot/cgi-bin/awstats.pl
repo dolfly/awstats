@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.461 $ - $Author: eldy $ - $Date: 2003-02-11 12:31:47 $
+# $Revision: 1.462 $ - $Author: eldy $ - $Date: 2003-02-11 13:20:36 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.461 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.462 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3102,7 +3102,7 @@ sub Save_History {
 	if ($sectiontosave eq 'general') {
 		if ($LastUpdate < int("$nowyear$nowmonth$nowday$nowhour$nowmin$nowsec")) { $LastUpdate=int("$nowyear$nowmonth$nowday$nowhour$nowmin$nowsec"); }
 		print HISTORYTMP "\n";
-		print HISTORYTMP "# LastLine    = Date of last record processed - Last line offset in last log - Last line signature value\n";
+		print HISTORYTMP "# LastLine    = Date of last record processed - Last record offset in last log - Last record signature value\n";
 		print HISTORYTMP "# FirstTime   = Date of first visit for history file\n";
 		print HISTORYTMP "# LastTime    = Date of last visit for history file\n";
 		print HISTORYTMP "# LastUpdate  = Date of last update - Nb of lines read - Nb of old records - Nb of new records - Nb of corrupted - Nb of dropped\n";
@@ -4292,7 +4292,7 @@ sub DefinePerlParsingFormat() {
 	if ($LogFormat =~ /^[1-6]$/) {	# Pre-defined log format
 		if ($LogFormat eq '1' || $LogFormat eq '6') {	# Same than "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"".
 			# %u (user) is "(.+)" instead of "[^ ]+" because can contain space (Lotus Notes). referer and ua might be "".
-			$PerlParsingFormat="([^ ]+) [^ ]+ (.+) \\[([^ ]+) [^ ]+\\] \\\"([^ ]+) ([^ ]+) [^\\\"]+\\\" ([\\d|-]+) ([\\d|-]+) \\\"(.*)\\\" \\\"([^\\\"]*)\\\"";
+			$PerlParsingFormat="([^ ]+) [^ ]+ ([^\\[]+) \\[([^ ]+) [^ ]+\\] \\\"([^ ]+) ([^ ]+) [^\\\"]+\\\" ([\\d|-]+) ([\\d|-]+) \\\"(.*)\\\" \\\"([^\\\"]*)\\\"";
 			$pos_host=0;$pos_logname=1;$pos_date=2;$pos_method=3;$pos_url=4;$pos_code=5;$pos_size=6;$pos_referer=7;$pos_agent=8;
 			@fieldlib=('host','logname','date','method','url','code','size','referer','ua');
 		}
