@@ -1,6 +1,6 @@
 # Czech message file (js@fsid.cvut.cz)
 # win->iso conversion and czech corrections (one@one.cz)
-# $Revision: 1.10 $ - $Date: 2003-04-22 18:54:18 $
+# $Revision: 1.11 $ - $Date: 2003-09-14 22:43:58 $
 PageCode=iso-8859-2
 message0=Neznámý
 message1=Neznámý (nepøelo¾ená IP)
@@ -136,3 +136,23 @@ message130=Data value arrays
 message131=Adresa odesílatele
 message132=Adresa pøíjemce
 message133=Zobrazený èasový úsek
+message134=Extra/Marketing
+message135=Rozli¹ení obrazovky
+message136=Útoky èervù/virù
+message137=Oblíbené (odhad)
+message138=Dny v mìsíci
+message139=Rùzné
+message140=Prohlí¾eèe s podporou Javy
+message141=Prohlí¾eèe s podporou Macromedia Director
+message142=Prohlí¾eèe s podporou Flash
+message143=Prohlí¾eèe s podporou pøehrávání Real audio
+message144=Prohlí¾eèe s podporou pøehrávání Quicktime audio
+message145=Prohlí¾eèe s podporou pøehrávání Windows Media audio
+message146=Prohlí¾eèe s podporou PDF
+message147=Kódy chyb SMTP
+message148=Zemì
+message149=Zprávy
+message150=Velikost
+message151=Køestní
+message152=Pøíjmení
+message153=Odfiltrováno
