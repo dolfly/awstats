@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.788 $ - $Author: eldy $ - $Date: 2004-11-13 00:09:10 $
+# $Revision: 1.789 $ - $Author: eldy $ - $Date: 2004-11-27 14:41:05 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.788 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.789 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.3 (build $REVISION)";
 
 # ----- Constants -----
@@ -7414,7 +7414,7 @@ if (scalar keys %HTMLOutput) {
 				my $menuicon=0; # TODO a virer
 				# Menu HTML
 				print "<table".($frame?" cellspacing=\"0\" cellpadding=\"0\" border=\"0\"":"").">\n";
-				if ($FrameName eq 'mainleft' && $ShowMonthStats)		 { print ($frame?"<tr><td class=\"awsm\">":""); print "<a href=\"$linkanchor#TOP\"$targetpage>$Message[128]</a>"; print ($frame?"</td></tr>\n":" &nbsp; "); }
+				if ($FrameName eq 'mainleft' && $ShowMonthStats)		 { print ($frame?"<tr><td class=\"awsm\">":""); print "<a href=\"$linkanchor#top\"$targetpage>$Message[128]</a>"; print ($frame?"</td></tr>\n":" &nbsp; "); }
 				my %menu=(); my %menulink=(); my %menutext=();
 				# When
                 %menu=('month'=>$ShowMonthStats?1:0,'daysofmonth'=>$ShowDaysOfMonthStats?2:0,'daysofweek'=>$ShowDaysOfWeekStats?3:0,'hours'=>$ShowHoursStats?4:0);
