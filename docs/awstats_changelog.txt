@@ -1,13 +1,15 @@
 AWStats Changelog
 -----------------
-$Revision: 1.63 $ - $Author: eldy $ - $Date: 2003-01-03 04:30:30 $ 
+$Revision: 1.64 $ - $Author: eldy $ - $Date: 2003-01-03 05:10:17 $ 
 
 
 5.4
 
 Fixes:
-- File name with space inside were not correctly reported when doing
-  FTP log server analysis.
+- File name with space inside were not correctly reported when doing FTP log
+  server analysis.
+- Problem in %Wy tag for ten first weeks of year (coded one 1 char instead
+  of 2: First week should be "00" instead of "0").
 
 New features/improvments:
 - Added urlbuildalias.pl tool.

@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.433 $ - $Author: eldy $ - $Date: 2003-01-03 04:32:15 $
+# $Revision: 1.434 $ - $Author: eldy $ - $Date: 2003-01-03 05:07:53 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,8 +19,8 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.433 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
-$VERSION="5.3 (build $REVISION)";
+$REVISION='$Revision: 1.434 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
 # Constants
@@ -1477,7 +1477,7 @@ sub Check_Config {
 		if ($timetag =~ /WM/)    { $LogFile =~ s/%WM-$timephase/$olderweekofmonth/g; next; }
 		if ($timetag =~ /Wm/)    { my $olderweekofmonth0=$olderweekofmonth-1; $LogFile =~ s/%Wm-$timephase/$olderweekofmonth0/g; next; }
 		if ($timetag =~ /WY/)    { $LogFile =~ s/%WY-$timephase/$olderweekofyear/g; next; }
-		if ($timetag =~ /Wy/)    { my $olderweekofyear0=$olderweekofyear-1; $LogFile =~ s/%Wy-$timephase/$olderweekofyear0/g; next; }
+		if ($timetag =~ /Wy/)    { my $olderweekofyear0=sprintf("%02d",$olderweekofyear-1); $LogFile =~ s/%Wy-$timephase/$olderweekofyear0/g; next; }
 		if ($timetag =~ /DW/)    { $LogFile =~ s/%DW-$timephase/$olderwday/g; next; }
 		if ($timetag =~ /Dw/)    { my $olderwday0=$olderwday-1; $LogFile =~ s/%Dw-$timephase/$olderwday0/g; next; }
 		# If unknown tag
