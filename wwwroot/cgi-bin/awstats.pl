@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.328 $ - $Author: eldy $ - $Date: 2002-09-18 12:25:39 $
+# $Revision: 1.329 $ - $Author: eldy $ - $Date: 2002-09-18 13:45:25 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.328 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.329 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3488,7 +3488,7 @@ else {								# Run from command line
 		if ($ARGV[$_] =~ /^(-|)migrate=/) {
 			$MigrateStats=$ARGV[$_];
 			$MigrateStats =~ /^(.*)$PROG(\d{0,2})(\d\d)(\d\d\d\d)(.*)\.txt$/;
-			$SiteConfig=$5?$5:"xxx";
+			$SiteConfig=$5?$5:"xxx"; $SiteConfig =~ s/^\.//;
 			last;
 		}
 		if ($_ > 0) { $QueryString .= "&"; }
