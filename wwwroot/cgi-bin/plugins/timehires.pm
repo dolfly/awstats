@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Time::HiRes
 #-----------------------------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-10-05 05:45:01 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2002-10-05 17:01:18 $
 
 
 use Time::HiRes qw( gettimeofday );
@@ -25,7 +25,7 @@ my $PluginHooksFunctions="GetTime";
 # PLUGIN FUNTION Init_pluginname
 #-----------------------------------------------------------------------------
 sub Init_timehires {
-	my $AWStatsVersion=shift;
+	my $InitParams=shift;
 	my $checkversion=&Check_Plugin_Version($PluginNeedAWStatsVersion);
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
 }
@@ -33,6 +33,7 @@ sub Init_timehires {
 
 #-----------------------------------------------------------------------------
 # PLUGIN FUNTION GetTime_pluginname
+# UNIQUE: YES (Only one function GetTime can exists for all loaded plugins)
 #-----------------------------------------------------------------------------
 sub GetTime_timehires {
 	my ($sec,$msec)=&gettimeofday();

@@ -6,10 +6,13 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Storable
 #-----------------------------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-10-05 05:45:01 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2002-10-05 17:01:18 $
 
 
+# <-----
+# ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
 use Storable;
+# ----->
 use strict;no strict "refs";
 
 
@@ -20,9 +23,12 @@ use strict;no strict "refs";
 my $PluginNeedAWStatsVersion="5.1";
 my $PluginHooksFunctions="SearchFile LoadCache SaveHash";
 
+# <-----
+# IF YOUR PLUGIN NEED GLOBAL VARIABLES, THEY MUST BE DECLARED HERE
 use vars qw/
 $PluginHashfilesUpToDate
 /;
+# ----->
 
 
 
@@ -30,11 +36,17 @@ $PluginHashfilesUpToDate
 # PLUGIN FUNTION Init_pluginname
 #-----------------------------------------------------------------------------
 sub Init_hashfiles {
-	my $AWStatsVersion=shift;
+	my $InitParams=shift;
+
+	# <-----
+	# YOU CAN ENTER HERE CODE TO INIT PLUGIN GLOBAL VARIABLES
 	$PluginHashfilesUpToDate=1;
+	# ----->
+
 	my $checkversion=&Check_Plugin_Version($PluginNeedAWStatsVersion);
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
 }
+
 
 
 #-----------------------------------------------------------------------------

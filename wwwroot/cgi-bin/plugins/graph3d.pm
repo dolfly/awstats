@@ -5,10 +5,13 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Graph3D
 #-----------------------------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-10-05 05:45:01 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-10-05 17:01:18 $
 
 
+# <-----
+# ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
 use GD::Graph3d;
+# ----->
 use strict;no strict "refs";
 
 
@@ -25,8 +28,13 @@ my $PluginHooksFunctions="";
 # PLUGIN FUNTION Init_pluginname
 #-----------------------------------------------------------------------------
 sub Init_graph3d {
-	my $AWStatsVersion=shift;
-	$hashfileuptodate=1;
+	my $InitParams=shift;
+
+	# <-----
+	# YOU CAN ENTER HERE CODE TO INIT PLUGIN GLOBAL VARIABLES
+	$PluginHashfilesUpToDate=1;
+	# ----->
+
 	my $checkversion=&Check_Plugin_Version($PluginNeedAWStatsVersion);
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
 }
