@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.268 $ - $Author: eldy $ - $Date: 2002-07-20 20:41:48 $
+# $Revision: 1.269 $ - $Author: eldy $ - $Date: 2002-07-20 21:48:13 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -18,7 +18,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.268 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.269 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.2 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -2755,9 +2755,10 @@ sub Show_Flag_Links {
 sub Format_Bytes {
 	my $bytes = shift||0;
 	my $fudge = 1;
-	if ($bytes >= $fudge * exp(3*log(1024))) { return sprintf("%.2f", $bytes/exp(3*log(1024)))." $Message[110]"; }
-	if ($bytes >= $fudge * exp(2*log(1024))) { return sprintf("%.2f", $bytes/exp(2*log(1024)))." $Message[109]"; }
-	if ($bytes >= $fudge * exp(1*log(1024))) { return sprintf("%.2f", $bytes/exp(1*log(1024)))." $Message[108]"; }
+	# Do not use exp/log function to calculate 1024power, function make segfault on some unix/perl versions
+	if ($bytes >= $fudge * 1073741824) { return sprintf("%.2f", $bytes/1073741824)." $Message[110]"; }
+	if ($bytes >= $fudge * 1048576)    { return sprintf("%.2f", $bytes/1048576)." $Message[109]"; }
+	if ($bytes >= $fudge * 1024)       { return sprintf("%.2f", $bytes/1024)." $Message[108]"; }
 	if ($bytes < 0) { $bytes="?"; }
 	return int($bytes)." $Message[119]";
 }
