@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.638 $ - $Author: eldy $ - $Date: 2003-11-08 21:52:24 $
+# $Revision: 1.639 $ - $Author: eldy $ - $Date: 2003-11-08 22:41:32 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.638 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.639 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.91 (build $REVISION)";
 
 # ----- Constants -----
@@ -345,7 +345,7 @@ use vars qw/ @Message /;
 'Browsers',
 '',
 'Referers',
-'Never updated',
+'Never updated (See \'Build/Update\' on awstats_setup.html page)',
 'Visitors domains/countries',
 'hosts',
 'pages',
