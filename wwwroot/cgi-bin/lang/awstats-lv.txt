@@ -1,5 +1,5 @@
 # Latvieðu valodas ziòojumu fils (madmaster@gobbo.caves.lv)
-# $Revision: 1.2 $ - $Date: 2002-07-17 22:53:15 $
+# $Revision: 1.3 $ - $Date: 2002-08-29 13:48:37 $
 PageCode=windows-1257
 message0=Nezinâms
 message1=Nezinâms (neatpazîts ip)
@@ -100,7 +100,7 @@ message95=Min
 message96=Vid
 message97=Maks
 message98=Web salîdzinâjums
-message99=Bandwith saved
+message99=bandwidth saved
 message100=Pirms salîdzinâðanas
 message101=Pçc salîdzinâðanas
 message102=Kopâ

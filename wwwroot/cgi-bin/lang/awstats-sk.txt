@@ -1,5 +1,5 @@
 # Slovak message file (lecram@lecram.sk)
-# $Revision: 1.1 $ - $Date: 2002-07-14 15:10:12 $
+# $Revision: 1.2 $ - $Date: 2002-08-29 13:48:37 $
 PageCode=windows-1250
 message0=Neznámy
 message1=Neznámy (neprelo¾ená IP)
@@ -100,7 +100,7 @@ message95=Min
 message96=Priemer
 message97=Max
 message98=Web kompresia
-message99=Bandwith saved
+message99=bandwidth saved
 message100=Pred kompresiou
 message101=Po kompresii
 message102=Celkom
