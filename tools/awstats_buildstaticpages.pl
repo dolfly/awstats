@@ -3,7 +3,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2003-12-06 16:39:03 $
+# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2003-12-12 18:59:43 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -15,7 +15,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.27 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.28 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -44,10 +44,13 @@ my $FileConfig;
 my $FileSuffix;
 my $SiteConfig;
 use vars qw/
-$ShowDomainsStats $ShowHostsStats $ShowAuthenticatedUsers $ShowRobotsStats
-$ShowEMailSenders $ShowEMailReceivers $ShowSessionsStats $ShowPagesStats $ShowFileTypesStats
-$ShowOSStats $ShowBrowsersStats $ShowScreenSizeStats $ShowOriginStats $ShowKeyphrasesStats
-$ShowKeywordsStats $ShowMiscStats $ShowHTTPErrorsStats $ShowSMTPErrorsStats
+$ShowAuthenticatedUsers $ShowFileSizesStats $ShowScreenSizeStats $ShowSMTPErrorsStats
+$ShowEMailSenders $ShowEMailReceivers $ShowWormsStats $ShowClusterStats
+$ShowMenu $ShowMonthStats $ShowDaysOfMonthStats $ShowDaysOfWeekStats
+$ShowHoursStats $ShowDomainsStats $ShowHostsStats
+$ShowRobotsStats $ShowSessionsStats $ShowPagesStats $ShowFileTypesStats
+$ShowOSStats $ShowBrowsersStats $ShowOriginStats
+$ShowKeyphrasesStats $ShowKeywordsStats $ShowMiscStats $ShowHTTPErrorsStats
 /;
 # ----- Time vars -----
 use vars qw/

@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.680 $ - $Author: eldy $ - $Date: 2003-12-12 18:44:01 $
+# $Revision: 1.681 $ - $Author: eldy $ - $Date: 2003-12-12 18:59:24 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.680 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.681 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.0 (build $REVISION)";
 
 # ----- Constants -----
@@ -134,8 +134,8 @@ $EnableLockForUpdate $DNSLookup $AllowAccessFromWebToAuthenticatedUsersOnly
 $BarHeight $BarWidth $CreateDirDataIfNotExists $KeepBackupOfHistoricFiles
 $NbOfLinesParsed $NbOfLinesDropped $NbOfLinesCorrupted $NbOfOldLines $NbOfNewLines
 $NbOfLinesShowsteps $NewLinePhase $NbOfLinesForCorruptedLog $PurgeLogFile
-$ShowAuthenticatedUsers $ShowFileSizesStats $ShowScreenSizeStats $ShowSMTPErrorsStats
 $ShowDropped $ShowCorrupted $ShowUnknownOrigin $ShowLinksToWhoIs
+$ShowAuthenticatedUsers $ShowFileSizesStats $ShowScreenSizeStats $ShowSMTPErrorsStats
 $ShowEMailSenders $ShowEMailReceivers $ShowWormsStats $ShowClusterStats
 $AuthenticatedUsersNotCaseSensitive
 $Expires $UpdateStats $MigrateStats $URLNotCaseSensitive $URLWithQuery $URLReferrerWithQuery
@@ -145,8 +145,8 @@ $DecodeUA
 $BarHeight, $BarWidth, $CreateDirDataIfNotExists, $KeepBackupOfHistoricFiles,
 $NbOfLinesParsed, $NbOfLinesDropped, $NbOfLinesCorrupted, $NbOfOldLines, $NbOfNewLines,
 $NbOfLinesShowsteps, $NewLinePhase, $NbOfLinesForCorruptedLog, $PurgeLogFile,
-$ShowAuthenticatedUsers, $ShowFileSizesStats, $ShowScreenSizeStats, $ShowSMTPErrorsStats,
 $ShowDropped, $ShowCorrupted, $ShowUnknownOrigin, $ShowLinksToWhoIs,
+$ShowAuthenticatedUsers, $ShowFileSizesStats, $ShowScreenSizeStats, $ShowSMTPErrorsStats,
 $ShowEMailSenders, $ShowEMailReceivers, $ShowWormsStats, $ShowClusterStats,
 $AuthenticatedUsersNotCaseSensitive,
 $Expires, $UpdateStats, $MigrateStats, $URLNotCaseSensitive, $URLWithQuery, $URLReferrerWithQuery,
