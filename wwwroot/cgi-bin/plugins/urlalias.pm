@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-12-13 01:10:21 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2003-01-06 18:52:29 $
 
 
 # <-----
@@ -59,9 +59,9 @@ sub Init_urlalias {
 
 
 #-----------------------------------------------------------------------------
-# PLUGIN FUNTION GetCountryCodeByName_pluginname
-# UNIQUE: YES (Only one function GetCountryName can exists for all loaded plugins)
-# GetCountryName is called to translate a host name or ip to a country name.
+# PLUGIN FUNTION ReplaceURL_pluginname
+# UNIQUE: NO (Several ReplaceURL can exists for all loaded plugins)
+# ReplaceURL is called to add additionnal information for URLs in URLs' report.
 #-----------------------------------------------------------------------------
 sub ReplaceURL_urlalias {
 	# <-----
