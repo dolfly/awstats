@@ -1,5 +1,5 @@
 # Basque - Euskara message file
-# $Revision: 1.1 $ - $Date: 2003-06-12 20:19:31 $
+# $Revision: 1.1 $ - $Date: 2003-11-28 18:06:25 $
 # aktor - aktor@aktornet.ath.cx
 message0=Ezezaguna
 message1=IP helbide ezezagunekoa
