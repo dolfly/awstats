@@ -10,7 +10,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2002-10-23 15:40:43 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2002-10-23 17:16:54 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -20,8 +20,9 @@ use strict; no strict "refs";
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.12 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
-my $VERSION="1.2 (build $REVISION)";
+use vars qw/ $REVISION $VERSION /;
+$REVISION='$Revision: 1.13 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
 my $Debug=0;
@@ -35,8 +36,6 @@ my $DirData="";
 my $DNSLookupAlreadyDone=0;
 my $QueuePoolSize=10;
 my $NbOfLinesForBenchmark=5000;
-my $nowtime = my $nowweekofmonth = my $nowdaymod = my $nowsmallyear = 0; 
-my $nowsec = my $nowmin = my $nowhour = my $nowday = my $nowmonth = my $nowyear = my $nowwday = 0;
 # ---------- Init arrays --------
 my @SkipDNSLookupFor=();
 # ---------- Init hash arrays --------

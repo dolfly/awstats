@@ -4,14 +4,15 @@
 # so AWStats is immedialty working.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-10-17 03:59:24 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2002-10-23 17:16:54 $
 
 
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.3 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
-my $VERSION="1.0 (build $REVISION)";
+use vars qw/ $REVISION $VERSION /;
+$REVISION='$Revision: 1.4 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG and AWSTATSSCRIPT
 my $DIRCONFIG = "/etc/opt/awstats";
@@ -45,8 +46,6 @@ sub debug {
 #-------------------------------------------------------
 my $QueryString=""; for (0..@ARGV-1) { $QueryString .= "$ARGV[$_] "; }
 if ($QueryString =~ /debug=/i) { $Debug=$QueryString; $Debug =~ s/.*debug=//; $Debug =~ s/&.*//; $Debug =~ s/ .*//; }
-if ($QueryString =~ /dnslookup/i) { $DNSLookup=1; }
-if ($QueryString =~ /showsteps/i) { $ShowSteps=1; }
 
 my $helpfound=0;
 for (0..@ARGV-1) {
@@ -80,6 +79,7 @@ if ($nowsec < 10) { $nowsec = "0$nowsec"; }
 
 
 print "This script is not ready yet.\n";
+print "See AWStats setup documentation instead (file docs/index.html).\n";
 
 
 
