@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.86 $ - $Author: eldy $ - $Date: 2003-03-02 04:12:38 $ 
+$Revision: 1.87 $ - $Author: eldy $ - $Date: 2003-03-11 09:35:04 $ 
 
 
 5.5
@@ -21,7 +21,7 @@ New features/improvments:
 - Optimized HTML output report size.
 
 Other/Documentation:
-- Added Isle of Man flag icon.
+- Added Isle of Man, Monserat, and Palestinian flag icon.
 - Updated documentation.
 
 
