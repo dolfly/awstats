@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2002-10-05 17:01:18 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2002-10-23 17:11:54 $
 
 
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -43,8 +43,8 @@ sub Init_timezone {
 
 	# <-----
 	# YOU CAN ENTER HERE CODE TO INIT PLUGIN GLOBAL VARIABLES
-	if (! $InitParams) { return "Error: Disable plugin if TimeZone is 0 (Plugin useless)"; }	# We do not need this plugin if TZ=0
-	$PluginTimeZoneSeconds=($InitParams*3600);
+	if (! $InitParams || int($InitParams) == 0) { return "Error: Disable plugin if TimeZone is 0 (Plugin useless)"; }	# We do not need this plugin if TZ=0
+	$PluginTimeZoneSeconds=(int($InitParams)*3600);
 	# ----->
 
 	my $checkversion=&Check_Plugin_Version($PluginNeedAWStatsVersion);
