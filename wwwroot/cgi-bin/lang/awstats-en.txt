@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.79 $ - $Date: 2004-12-30 17:55:54 $
+# $Revision: 1.80 $ - $Date: 2005-03-19 19:52:35 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -171,3 +171,5 @@ message167=Sensitive targets
 message168=Javascript disabled
 message169=Created by
 message170=plugins
+message171=Regions
+message172=Cities

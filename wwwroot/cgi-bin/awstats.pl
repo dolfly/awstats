@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.818 $ - $Author: eldy $ - $Date: 2005-03-04 21:38:04 $
+# $Revision: 1.819 $ - $Author: eldy $ - $Date: 2005-03-19 19:52:27 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.818 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.819 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.4 (build $REVISION)";
 
 # ----- Constants -----
@@ -514,7 +514,9 @@ use vars qw/ @Message /;
 'Sensitive targets',
 'Javascript disabled',
 'Created by',
-'plugins'
+'plugins',
+'Regions',
+'Cities'
 );
 
 
