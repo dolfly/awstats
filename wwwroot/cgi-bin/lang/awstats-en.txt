@@ -1,5 +1,5 @@
 # English message file (eldy@users.sourceforge.net)
-# $Revision: 1.69 $ - $Date: 2003-11-19 20:55:58 $
+# $Revision: 1.70 $ - $Date: 2003-11-23 03:34:21 $
 message0=Unknown
 message1=Unknown (unresolved ip)
 message2=Others
@@ -158,3 +158,4 @@ message154=Codes shown here gave hits or traffic "not viewed" by visitors, so th
 message155=Cluster
 message156=Robots shown here gave hits or traffic "not viewed" by visitors, so thay are not included in other charts.
 message157=Numbers after + are successful hits on "robots.txt" files.
+message158=Worms shown here gave hits or traffic "not viewed" by visitors, so thay are not included in other charts.
