@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.218 $ - $Author: eldy $ - $Date: 2002-05-02 22:00:00 $
+# $Revision: 1.219 $ - $Author: eldy $ - $Date: 2002-05-02 22:06:36 $
 
 # Next 'use' are commented to make AWStats working with old perl.
 use strict;no strict "refs";
@@ -27,7 +27,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is not supported by all T
 #-------------------------------------------------------
 # Defines
 #-------------------------------------------------------
-my $REVISION='$Revision: 1.218 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.219 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -2586,14 +2586,6 @@ for (my $ix=1; $ix<=12; $ix++) {
 #------------------------------------------
 if ($Debug) { debug("UpdateStats is $UpdateStats",2); }
 if ($UpdateStats) {
-
-	if ($DNSLookup) {
-	#	eval { use Socket; };
-	#	if ($@){
-	#		error("Error: The perl 'Socket' module is not installed. Install it from CPAN or use a more 'standard' perl interpreter.\n");
-	#	}
-		use Socket;
-	}
 
 	# Init RobotsSearchIDOrder required for update process
 	push @RobotArrayList,"list1";
