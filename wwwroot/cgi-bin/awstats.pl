@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.556 $ - $Author: eldy $ - $Date: 2003-08-02 01:14:24 $
+# $Revision: 1.557 $ - $Author: eldy $ - $Date: 2003-08-02 12:13:00 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.556 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.557 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.7 (build $REVISION)";
 
 # ----- Constants -----
@@ -525,7 +525,10 @@ use vars qw/ @Message /;
 'Browsers with PDF support',
 'SMTP Error codes',
 'Countries',
-'Mails'
+'Mails',
+'Size',
+'First',
+'Last'
 );
 
 
@@ -1314,7 +1317,15 @@ sub Read_Language_Data {
 		warning("Warning: Can't find language files for \"$_[0]\". English will be used.");
 	}
 	# Some language string changes
-	if ($LogType eq 'M') { $Message[57]=$Message[149]; }
+	if ($LogType eq 'M') {	# For mail
+		$Message[8]=$Message[151];
+		$Message[9]=$Message[152];
+		$Message[57]=$Message[149];
+		$Message[75]=$Message[150];
+	}
+	if ($LogType eq 'F') {	# For web
+
+	}
 }
 
 
