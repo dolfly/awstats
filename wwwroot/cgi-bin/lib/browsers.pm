@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2002-09-16 14:23:55 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2002-09-16 15:29:24 $
 
 
 #package AWSUA;
@@ -299,3 +299,7 @@
 # Netscape 6.0		Mozilla/5.0 (Macintosh; N; PPC; fr-FR; m18) Gecko/20001108 Netscape6/6.0
 # MSIE     4.0  	Mozilla/4.0 (compatible; MSIE 5.0; Windows 98; DigExt; KITV4 Wanadoo; KITV5 Wanadoo)
 # Autre             Mozilla/3.01 (compatible;)
+# Opera    6.03		Mozilla/3.0 (Windows 98; U) Opera 6.03  [en]
+# Opera    5.12     Mozilla/3.0 (Windows 98; U) Opera 5.12  [en]
+# Opera    3.21     Opera 3.21, Windows:
+
