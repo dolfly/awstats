@@ -3,7 +3,7 @@
 # If you want to extend AWStats detection capabilities,
 # you must add an entry in RefererSpamKeys
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-06-05 19:35:36 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-08-16 22:25:39 $
 
 
 #package AWSREFSPAMMERS;
@@ -13,7 +13,7 @@
 # RefererSpamKeys
 # This list is used to know which keywords to search for in referer URLs
 # to find if hits comes from a referer spammers. If referer URLs has a
-# cost higher or equal to 4
+# cost higher or equal to 4, it's a referer spammer.
 # key, cost
 #-------------------------------------------------------
 %RefererSpamKeys = (
