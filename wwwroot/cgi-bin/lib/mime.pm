@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2003-01-28 00:52:00 $
+# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-01-31 12:17:31 $
 
 
 #package AWSMIME;
@@ -39,6 +39,7 @@
 'html','html',
 'htm','html',
 # HTML Dynamic pages or script
+'cgi','script',
 'ksh','script',
 'php','script',
 'php3','script',
@@ -99,20 +100,53 @@
 # Text file
 'txt','page',
 # HTML Static page
-'html','page','htm','page',
+'html','page',
+'htm','page',
 # HTML Dynamic pages or script
-'ksh','script','php','script','php3','script','php4','script','pl','script','py','script','sh','script','shtml','script','tcl','script',
+'cgi','script',
+'ksh','script',
+'php','script',
+'php3','script',
+'php4','script',
+'pl','script',
+'py','script',
+'sh','script',
+'shtml','script',
+'tcl','script',
 # Image
-'gif','image','png','image','bmp','image','jpg','image','jpeg','image',
+'gif','image',
+'png','image',
+'bmp','image',
+'jpg','image',
+'jpeg','image',
 # Document
-'doc','document','pdf','document','xls','document','ppt','document','pps','document',
-'sxw','document','sxc','document','sxi','document','sxd','document',
+'doc','document',
+'pdf','document',
+'xls','document',
+'ppt','document',
+'pps','document',
+'sxw','document',
+'sxc','document',
+'sxi','document',
+'sxd','document',
 # Archive
-'zip','archive','tgz','archive','tar','archive','gz','archive','rar','archive','7z','archive','bz2','archive',
+'7z','archive',
+'bz2','archive',
+'zip','archive',
+'tgz','archive',
+'tar','archive',
+'gz','archive',
+'rar','archive',
 # Audio
-'mp3','audio','ogg','audio','wav','audio','wma','audio',
+'mp3','audio',
+'ogg','audio',
+'wav','audio',
+'wma','audio',
 # Video
-'avi','video','divx','video','mpeg','video','mpg','video',
+'avi','video',
+'divx','video',
+'mpeg','video',
+'mpg','video',
 # JS
 'js','javascript',
 # Config
