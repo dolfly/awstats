@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.126 $ - $Author: eldy $ - $Date: 2003-08-02 01:10:44 $ 
+$Revision: 1.127 $ - $Author: eldy $ - $Date: 2003-08-02 12:56:28 $ 
 
 
 5.7
@@ -24,6 +24,7 @@ Fixes:
 
 New features/improvements:
 - Added support for Darwin streaming server.
+- Added Firebird browser detection.
 - awstats_buildstaticpages.pl can also build one PDF file (need htmldoc).
 - Added maillogconvert.p for analyzing mail log files (support better
   sendmail, postfix and qmail log files).
