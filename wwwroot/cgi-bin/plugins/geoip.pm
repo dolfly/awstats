@@ -1,13 +1,14 @@
 #!/usr/bin/perl
 #-----------------------------------------------------------------------------
-# GeoIp AWStats plugin
-# This plugin allow you to get AWStats country report with countries detected
+# GeoIp Maxmind AWStats plugin
+# This plugin allow you to get country report with countries detected
 # from a Geographical database (GeoIP internal database) instead of domain
 # hostname suffix.
+# Need the country database from Maxmind (free).
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2004-05-21 21:11:51 $
+# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2005-01-22 16:39:53 $
 
 
 # <-----
