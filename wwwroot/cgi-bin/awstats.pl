@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.307 $ - $Author: eldy $ - $Date: 2002-09-09 15:09:01 $
+# $Revision: 1.308 $ - $Author: eldy $ - $Date: 2002-09-09 15:14:07 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.307 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.308 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -6416,31 +6416,29 @@ else {
 0;	# Do not remove this line
 
 
-# TODO If PurgeLogFile is on, only one update process must be allowed
-
-
 #-------------------------------------------------------
 # ALGORITHM SUMMARY
 # Read config file
 # Init variables
+# Get last history file name
+# Read general section of this last history file
 # If 'update'
-#   Get last history file name
-#   Read this last history file (LastLine, data arrays, ...)
 #   Loop on each new line in log file
 #     If line older than LastLine, skip
 #     If new line
-#        If other month/year, save data arrays, reset them
+#        If other month/year
+#          Read/update history file
+#          Reset data arrays
 #        Analyse record and complete data arrays
 #     End of new line
 #   End of loop
+#   Read/update history file
 # End of 'update'
-# Save data arrays
-# Reset data arrays if not required month/year
-# Loop for each month of current year
-#   If required month, read 1st and 2nd part of history file for this month
-#   If not required month, read 1st part of history file for this month
-# End of loop
 # If 'output'
+#   Loop for each month of current year
+#     If required month, read all need sections
+#     If not required month, read general and time section only
+#   End of loop
 #   Show data arrays in HTML page
 # End of 'output'
 #-------------------------------------------------------
