@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.376 $ - $Author: eldy $ - $Date: 2002-10-19 16:55:53 $
+# $Revision: 1.377 $ - $Author: eldy $ - $Date: 2002-10-19 17:46:27 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.376 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.377 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -525,7 +525,8 @@ sub html_head {
 		else { print "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Frameset//EN\">\n\n"; }
 		print "<html lang='$Lang'>\n";
 		print "<head>\n";
-		if ($PageCode) { print "<META HTTP-EQUIV=\"content-type\" CONTENT=\"text/html; charset=$PageCode\"\n"; }		# If not defined, iso-8859-1 is used in major countries
+		if ($PageCode) { print "<META HTTP-EQUIV=\"content-type\" CONTENT=\"text/html; charset=$PageCode\">\n"; }		# If not defined, iso-8859-1 is used in major countries
+		#else { print "<META HTTP-EQUIV=\"content-type\" CONTENT=\"text/html; charset=iso-8859-1\">\n"; }
 		if ($Expires)  { print "<META HTTP-EQUIV=\"expires\" CONTENT=\"".(gmtime(time()+$Expires))."\">\n"; }
 		print "<meta http-equiv=\"description\" content=\"".ucfirst($PROG)." - Advanced Web Statistics for $SiteDomain\">\n";
 		if ($FrameName ne "mainleft") { print "<meta http-equiv=\"keywords\" content=\"$SiteDomain, free, advanced, realtime, web, server, logfile, log, analyzer, analysis, statistics, stats, perl, analyse, performance, hits, visits\">\n"; }
