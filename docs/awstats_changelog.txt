@@ -1,11 +1,12 @@
 AWStats Changelog
 -----------------
-$Revision: 1.124 $ - $Author: eldy $ - $Date: 2003-07-28 01:01:11 $ 
+$Revision: 1.125 $ - $Author: eldy $ - $Date: 2003-07-31 19:01:17 $ 
 
 
 5.7
 
 Fixes:
+- Fix failing call to ipv6 plugin.
 - Pb with some regex value used in the new REGEX fields added in 5.6.
 - Count for add to favourites is done on hits to favicon.ico for IE only. This
   avoid counting wrong "Add" done by browsers that hit the file even when no
