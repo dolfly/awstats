@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.5 $
+# \version      $Revision: 1.6 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ if (-d "/usr/src/RPM") {
     $RPMDIR="/usr/src/RPM";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.5 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.6 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -294,7 +294,7 @@ rename("$BUILDROOT/$PROJECT","$BUILDROOT/$FILENAMETGZ");
             open (SPECFROM,"<$SOURCE/make/rpm/${BUILDFIC}") || die "Error";
             open (SPECTO,">$BUILDROOT/$BUILDFIC") || die "Error";
         while (<SPECFROM>) {
-            $_ =~ s/__VERSION__/$MAJOR.$MINOR.$BUILD/;
+            $_ =~ s/__VERSION__/$MAJOR.$MINOR/;
             print SPECTO $_;
         }
         close SPECFROM;
