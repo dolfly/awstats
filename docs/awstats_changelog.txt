@@ -1,6 +1,11 @@
 AWStats Changelog
 -----------------
-$Revision: 1.216 $ - $Author: eldy $ - $Date: 2004-05-04 22:21:55 $
+$Revision: 1.217 $ - $Author: eldy $ - $Date: 2004-05-15 13:22:38 $
+
+6.2
+
+Other/Documentation:
+- Minor change on documentation.
 
 
 6.1
