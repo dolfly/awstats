@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.452 $ - $Author: eldy $ - $Date: 2003-01-29 15:41:43 $
+# $Revision: 1.453 $ - $Author: eldy $ - $Date: 2003-01-29 16:25:17 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.452 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.453 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.4 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -3916,7 +3916,7 @@ sub ShowWhoIsCell {
 		$linkforwhois=2;
 	}
 	else {	# Hostname
-		$keyurl =~ /(\w+\.\w+\.(au|uk|jp|nz))$/ or $keyurl =~ /(\w+\.\w+)$/;
+		$keyurl =~ /([-\w]+\.[-\w]+\.(au|uk|jp|nz))$/ or $keyurl =~ /([-\w]+\.[-\w]+)$/;
 		$keyforwhois=$1;
 		$linkforwhois=1;
 	}
