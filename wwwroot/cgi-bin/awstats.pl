@@ -9,7 +9,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-------------------------------------------------------
-# $Revision: 1.242 $ - $Author: eldy $ - $Date: 2002-05-28 08:49:46 $
+# $Revision: 1.243 $ - $Author: eldy $ - $Date: 2002-05-28 09:03:13 $
 
 use strict;no strict "refs";
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -30,7 +30,7 @@ use vars qw/ $UseHiRes $UseCompress /;
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.242 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.243 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="4.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -4102,8 +4102,10 @@ EOF
 			print "<tr><th class=AWL>$Message[23] : </th>";
 			print "<td class=AWL>";
 			if ($ShowOriginStats)		 { print "<a href=\"#REFERER\">$Message[37]</a> &nbsp;\n"; }
-			if ($ShowKeyphrasesStats)	 { print "<a href=\"#SEARCHKEYS\">$Message[120]</a> &nbsp;\n"; }
-			if ($ShowKeywordsStats)	 	 { print "<a href=\"#SEARCHKEYS\">$Message[121]</a> &nbsp;\n"; }
+#			if ($ShowOriginStats)		 { print "<a href=\"".($ENV{"GATEWAY_INTERFACE"} || !$StaticLinks?"$AWScript?${NewLinkParams}output=refererse":"$PROG$StaticLinks.refererse.html")."\"".($DetailedReportsOnNewWindows?" target=\"awstatsbis\"":"").">$Message[34]</a> &nbsp;\n"; }
+#			if ($ShowOriginStats)		 { print "<a href=\"".($ENV{"GATEWAY_INTERFACE"} || !$StaticLinks?"$AWScript?${NewLinkParams}output=refererpages":"$PROG$StaticLinks.refererpages.html")."\"".($DetailedReportsOnNewWindows?" target=\"awstatsbis\"":"").">$Message[34]</a> &nbsp;\n"; }
+			if ($ShowKeyphrasesStats)	 { print "<a href=\"#KEYPHRASES\">$Message[120]</a> &nbsp;\n"; }
+			if ($ShowKeywordsStats)	 	 { print "<a href=\"#KEYWORDS\">$Message[121]</a> &nbsp;\n"; }
 			print "<br></td></tr>";
 			# Others
 			print "<tr><th class=AWL>$Message[2] : </th>";
