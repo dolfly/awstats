@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.279 $ - $Author: eldy $ - $Date: 2002-07-27 17:19:33 $
+# $Revision: 1.280 $ - $Author: eldy $ - $Date: 2002-07-27 17:35:59 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -18,7 +18,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.279 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.280 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -2660,7 +2660,6 @@ sub Save_DNS_Cache_File {
 			warning("Warning: Failed to open for writing last update DNS Cache file \"$filetosave\": $!");
 			return 1;
 		}
-		# TODO Limit size of save
 		foreach my $key (keys %$hashtosave) {
 #			if ($hashtosave->{$key} ne "ip") {
 				#print DNSFILE "0\t$key\t$hashtosave->{$key}\n";
