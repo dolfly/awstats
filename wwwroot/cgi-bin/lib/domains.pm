@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2003-01-31 11:31:22 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-03-23 03:39:45 $
 
 
 #package AWSDOM;
@@ -16,6 +16,8 @@
 #-------------------------------------------------------
 %DomainsHashIDLib = (
 "localhost","localhost",
+"i0","Local network host",
+"a2","Satellite access host",
 
 "ac","Ascension Island","ad","Andorra","ae","United Arab Emirates",
 "aero","Aero/Travel domains","af","Afghanistan",
