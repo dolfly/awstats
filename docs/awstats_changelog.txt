@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.71 $ - $Author: eldy $ - $Date: 2003-01-10 20:08:20 $ 
+$Revision: 1.72 $ - $Author: eldy $ - $Date: 2003-01-11 03:50:10 $ 
 
 
 5.4
@@ -13,6 +13,7 @@ Fixes:
 - Tooltips now works correctly with Netscape (>= 5.0).
 - Better parsing of parameters (Solved bug 635962).
 - Users did not appear in Authenticated users list if hits on pages were 0.
+- Value of title "Top x" for domains chart was not always correct.
 
 New features/improvments:
 - Added urlaliasbuilder.pl tool.
