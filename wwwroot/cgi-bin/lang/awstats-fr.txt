@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.47 $ - $Date: 2002-09-11 16:26:46 $
+# $Revision: 1.48 $ - $Date: 2002-10-06 04:22:42 $
 message0=Inconnu
 message1=Inconnu (IP non résolue)
 message2=Autres
@@ -131,3 +131,5 @@ message127=Sites référenceurs
 message128=Résumé
 message129=Valeur exacte indisponible en vue 'annuelle'
 message130=Tableaux des valeurs
+message131=EMail Emetteur
+message132=EMail Destinataire
