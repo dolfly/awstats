@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.741 $ - $Author: eldy $ - $Date: 2004-04-10 20:17:30 $
+# $Revision: 1.742 $ - $Author: eldy $ - $Date: 2004-04-18 18:14:53 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.741 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.742 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -269,7 +269,7 @@ use vars qw/
 %DomainsHashIDLib
 %MimeHashLib %MimeHashIcon %MimeHashFamily
 %OSHashID %OSHashLib
-%RobotsHashIDLib
+%RobotsHashIDLib %RobotsAffiliateLib
 %SearchEnginesHashID %SearchEnginesHashLib %SearchEnginesKnownUrl %NotSearchEnginesKeys
 %WormsHashID %WormsHashLib %WormsHashTarget
 /;
