@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Other tools">
 <title>AWStats Documentation - Other tools</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.29 $ - $Author: eldy $ - $Date: 2003-12-06 16:39:00 $ -->
+<!-- $Revision: 1.30 $ - $Author: eldy $ - $Date: 2004-01-04 17:37:18 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -171,6 +171,9 @@ All those tools are available in <b>tools</b> directory of AWStats distribution.
 <br>WARNING: If log files are old MAC text files (lines ended with CR char), you
 <br>can't run this tool on Win or Unix platforms.
 <br>
+<br>WARNING: Because of important memory holes in ActiveState Perl version, use
+<br>another Perl interpreter if you need to process large lof files.
+<br>
 <br>Now supports/detects:
 <br>  Automatic detection of log format
 <br>  Files can be .gz/.bz2 files if zcat/bzcat tools are available in PATH.
@@ -182,7 +185,7 @@ All those tools are available in <b>tools</b> directory of AWStats distribution.
 <hr>
 
 <script language=javascript>
-	var date='$Date: 2003-12-06 16:39:00 $';
+	var date='$Date: 2004-01-04 17:37:18 $';
 	document.writeln("Last revision: "+date);
 </script>
 

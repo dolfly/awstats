@@ -6,7 +6,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2003-12-27 17:52:40 $
+# $Revision: 1.28 $ - $Author: eldy $ - $Date: 2004-01-04 17:36:26 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -34,7 +34,7 @@ my %TmpDNSLookup = ();
 
 # ---------- Init variables --------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.27 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.28 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw/ $NBOFLINESFORBENCHMARK /;
@@ -329,6 +329,9 @@ if (scalar @ParamFile == 0) {
 	print "\n";
 	print "WARNING: If log files are old MAC text files (lines ended with CR char), you\n";
 	print "can't run this tool on Win or Unix platforms.\n";
+	print "\n";
+	print "WARNING: Because of important memory holes in ActiveState Perl version, use\n";
+	print "another Perl interpreter if you need to process large lof files.\n";
 	print "\n";
 	print "Now supports/detects:\n";
 	print "  Automatic detection of log format\n";
