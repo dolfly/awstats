@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2002-05-18 19:10:26 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-06-14 15:17:35 $
 
 
 #package AWSOS;
@@ -51,7 +51,7 @@
 "cp/m",
 "crayos",
 "dreamcast",
-"riscos",
+"riscos","risc_os",
 "webtv"
 );
 
@@ -92,7 +92,7 @@
 "cp/m","cp/m",
 "crayos","crayos",
 "dreamcast","dreamcast",
-"riscos","riscos",
+"riscos","riscos","risc_os","riscos",
 "webtv","webtv"
 );
 
@@ -131,7 +131,7 @@
 "cp/m","CPM",
 "crayos","CrayOS",
 "dreamcast","Dreamcast",
-"riscos","Acorn RISC OS",
+"riscos","RISC OS",
 "webtv","WebTV"
 );
 
