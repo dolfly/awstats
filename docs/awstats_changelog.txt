@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.141 $ - $Author: eldy $ - $Date: 2003-09-10 12:25:31 $ 
+$Revision: 1.142 $ - $Author: eldy $ - $Date: 2003-09-12 12:44:32 $ 
 
 
 5.8
@@ -18,6 +18,7 @@ Fixes:
 - Fixed not working timezone plugin with 5.7.
 - Fixed missing propagated configdir parameter when changing month/year.
 - Error when loading database pm file with some cygwin perl version.
+- Fixed not working file type detection for default pages.
 
 New features/improvements:
 - Added %lognamequot tag for LogFormat parameter.

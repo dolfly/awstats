@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.581 $ - $Author: eldy $ - $Date: 2003-09-11 17:04:46 $
+# $Revision: 1.582 $ - $Author: eldy $ - $Date: 2003-09-12 12:43:47 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -20,7 +20,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.581 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.582 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="5.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -1191,9 +1191,10 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^DefaultFile/)           {
-			foreach my $elem (split(/\s+/,$value))	{	# No REGEX for this option
-				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
-				else { $elem='^'.quotemeta($elem).'$'; }
+			foreach my $elem (split(/\s+/,$value))	{	
+				# No REGEX for this option
+				#if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
+				#else { $elem='^'.quotemeta($elem).'$'; }
 				if ($elem) { push @DefaultFile,$elem; }
 			}
 			next;
@@ -5815,6 +5816,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		my $PageBool=1;
 		my $extension;
 		# Extension
+print "xxx $urlwithnoquery yyy $DefaultFile[0] zzz";
 		if ($urlwithnoquery =~ /\.(\w{1,6})$/ || ($urlwithnoquery =~ /[\\\/]$/ && $DefaultFile[0] =~ /\.(\w{1,6})$/)) {
 			$extension=lc($1);
 			if ($NotPageList{$extension}) { $PageBool=0; }
