@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.25 $ - $Author: eldy $ - $Date: 2003-10-31 23:11:19 $
+# $Revision: 1.26 $ - $Author: eldy $ - $Date: 2003-11-07 23:01:52 $
 
 
 #package AWSUA;
@@ -152,7 +152,7 @@
 'getright','GetRight',
 'headdump','HeadDump',
 'hotjava','Sun HotJava',
-'ibrowse','IBrowse',
+'ibrowse','iBrowse',
 'intergo','InterGO',
 'k-meleon','K-Meleon',
 'linemodebrowser','W3C Line Mode Browser',
