@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.725 $ - $Author: eldy $ - $Date: 2004-03-13 13:03:44 $
+# $Revision: 1.726 $ - $Author: eldy $ - $Date: 2004-03-13 14:34:12 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.725 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.726 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.1 (build $REVISION)";
 
 # ----- Constants -----
@@ -6214,9 +6214,14 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			$_filetypes_h{$extension}++;
 			$_filetypes_k{$extension}+=int($field[$pos_size]);	# TODO can cause a warning
 			# Compression
-			if ($pos_compratio>=0 && ($field[$pos_compratio] =~ /(\d+)/)) { # Calculate in/out size from percentage (% is size after/before)
-				#$_filetypes_gz_in{$extension}+=int($field[$pos_size]*100/((100-$1)||1));
-				$_filetypes_gz_in{$extension}+=int($field[$pos_size]*100/($1||1));
+			if ($pos_compratio>=0 && ($field[$pos_compratio] =~ /(\d+)/)) { # Calculate in/out size from percentage
+				if ($fieldlib[$pos_compratio] eq 'gzipratio') {
+					# with mod_gzip:    % is size (before-after)/before (low for jpg) ??????????
+					$_filetypes_gz_in{$extension}+=int($field[$pos_size]*100/((100-$1)||1));
+				} else {
+					# with mod_deflate: % is size after/before (high for jpg)
+					$_filetypes_gz_in{$extension}+=int($field[$pos_size]*100/($1||1));
+				}
 				$_filetypes_gz_out{$extension}+=int($field[$pos_size]);
 			}
 			elsif ($pos_gzipin>=0 && $field[$pos_gzipin]) {	# If in and out in log
