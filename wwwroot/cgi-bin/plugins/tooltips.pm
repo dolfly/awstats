@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2003-09-16 17:00:52 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2003-10-31 21:19:21 $
 
 
 # <-----
@@ -164,7 +164,7 @@ sub _ReadAndOutputTooltipFile {
 		my $aws_PROG=ucfirst($PROG);
 		my $aws_VisitTimeout = $VISITTIMEOUT/10000*60;
 		my $aws_NbOfRobots = scalar keys %RobotsHashIDLib;
-		my $aws_NbOfSearchEngines = scalar keys %SearchEnginesHashIDLib;
+		my $aws_NbOfSearchEngines = scalar keys %SearchEnginesHashLib;
 		while (<LANG>) {
 			if ($_ =~ /\<!--/) { next; }	# Remove comment
 			# Search for replaceable parameters
