@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.790 $ - $Author: eldy $ - $Date: 2004-12-10 22:45:17 $
+# $Revision: 1.791 $ - $Author: eldy $ - $Date: 2004-12-19 17:19:14 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.790 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.791 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.3 (build $REVISION)";
 
 # ----- Constants -----
@@ -4393,6 +4393,21 @@ sub Format_Bytes {
 	if ($bytes >= ($fudge << 10)) { return sprintf("%.2f", $bytes/1024)." $Message[108]"; }
 	if ($bytes < 0) { $bytes="?"; }
 	return int($bytes).(int($bytes)?" $Message[119]":"");
+}
+
+#------------------------------------------------------------------------------
+# Function:		Format a number
+# Parameters:   number
+# Input:        None
+# Output:       None
+# Return:       "999 999 999 999"
+#------------------------------------------------------------------------------
+sub Format_Number {
+	my $number = shift||0;
+	$number=~s/(\d)(\d\d\d)$/$1 $2/;
+	$number=~s/(\d)(\d\d\d\s\d\d\d)$/$1 $2/;
+	$number=~s/(\d)(\d\d\d\s\d\d\d\s\d\d\d)$/$1 $2/;
+	return $number;
 }
 
 #------------------------------------------------------------------------------
