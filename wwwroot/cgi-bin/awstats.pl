@@ -5,7 +5,7 @@
 # necessary from your scheduler to update your statistics.
 # See AWStats documenation (in docs/ directory) for all setup instructions.
 #-----------------------------------------------------------------------------
-# $Revision: 1.336 $ - $Author: eldy $ - $Date: 2002-09-22 13:13:44 $
+# $Revision: 1.337 $ - $Author: eldy $ - $Date: 2002-09-22 22:58:26 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -19,7 +19,7 @@ use Socket;
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.336 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.337 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.0 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -5054,7 +5054,7 @@ EOF
 	#---------------------------------------------------------------------
 	if (($ShowHeader && $FrameName ne "mainright") || $FrameName eq "mainleft") {
 		print "<table>\n";
-		print "<tr><td width=120 class=AWL style=\"font: 18px arial,verdana,helvetica; font-weight: bold\">AWStats\n";
+		print "<tr><td width=120 class=AWL style=\"font-size: 18px arial,verdana,helvetica; font-weight: bold\">AWStats\n";
 		if (! $StaticLinks) { Show_Flag_Links($Lang); }
 		print "</td>\n";
 		if ($LogoLink =~ "http://awstats.sourceforge.net") {
@@ -5449,7 +5449,7 @@ EOF
 			my $dayofweekcursor=DayOfWeek($day,$month,$year);
 			print "<TD valign=middle".($dayofweekcursor==0||$dayofweekcursor==6?" bgcolor=\"#$color_weekend\"":"").">";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"<b>":"");
-			print "$day<br><font style=\"font: ".($FrameName ne "mainright"?"10":"9")."px;\">".$MonthLib{$month}."</font>";
+			print "$day<br><font style=\"font-size: ".($FrameName ne "mainright"?"10":"9")."px;\">".$MonthLib{$month}."</font>";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"</b>":"");
 			print "</TD>\n";
 		}
@@ -6072,8 +6072,8 @@ EOF
 
 		# Show range and links for possible years
 		print "<TR bgcolor=\"#$color_TableBGRowTitle\"><TD><b>$Message[8]</b></TD>";
-		if ($MonthRequired eq "year") { print "<TD colspan=3 rowspan=2><font style=\"font: 18px arial,verdana,helvetica; font-weight: normal\">$Message[6] $YearRequired</font><br>"; }
-		else { print "<TD colspan=3 rowspan=2><font style=\"font: 18px arial,verdana,helvetica; font-weight: normal\">$Message[5] $MonthLib{$MonthRequired} $YearRequired</font><br>"; }
+		if ($MonthRequired eq "year") { print "<TD colspan=3 rowspan=2><font style=\"font-size: 18px arial,verdana,helvetica; font-weight: normal\">$Message[6] $YearRequired</font><br>"; }
+		else { print "<TD colspan=3 rowspan=2><font style=\"font-size: 18px arial,verdana,helvetica; font-weight: normal\">$Message[5] $MonthLib{$MonthRequired} $YearRequired</font><br>"; }
 		foreach my $key (sort keys %ListOfYears) {
 			if ($ENV{"GATEWAY_INTERFACE"} || !$StaticLinks) {
 				print "<a href=\"$AWScript?${NewLinkParams}year=$key&month=year\"$NewLinkTarget>$Message[6] $key</a> &nbsp; ";
@@ -6230,7 +6230,7 @@ EOF
 			my $dayofweekcursor=DayOfWeek($day,$month,$year);
 			print "<TD valign=middle".($dayofweekcursor==0||$dayofweekcursor==6?" bgcolor=\"#$color_weekend\"":"").">";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"<b>":"");
-			print "$day<br><font style=\"font: ".($FrameName ne "mainright"?"10":"9")."px;\">".$MonthLib{$month}."</font>";
+			print "$day<br><font style=\"font-size: ".($FrameName ne "mainright"?"10":"9")."px;\">".$MonthLib{$month}."</font>";
 			print ($day==$nowday && $month==$nowmonth && $year==$nowyear?"</b>":"");
 			print "</TD>\n";
 		}
