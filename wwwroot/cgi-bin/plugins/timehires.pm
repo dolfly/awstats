@@ -5,10 +5,11 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Time::HiRes
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2002-07-27 17:07:40 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2002-07-27 17:15:08 $
 
 
 use Time::HiRes qw( gettimeofday );
+use strict;no strict "refs";
 $Plugin_timehires=1;
 
 
