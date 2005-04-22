@@ -19,7 +19,7 @@ use strict;no strict "refs";
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.31 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.32 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw/
@@ -64,7 +64,7 @@ sub debug {
 	my $level = $_[1] || 1;
 	if ($Debug >= $level) { 
 		my $debugstring = $_[0];
-		if ($ENV{"GATEWAY_INTERFACE"}) { $debugstring =~ s/^ /&nbsp&nbsp /; $debugstring .= "<br>"; }
+		if ($ENV{"GATEWAY_INTERFACE"}) { $debugstring =~ s/^ /&nbsp&nbsp /; $debugstring .= "<br />"; }
 		print localtime(time)." - DEBUG $level - $. - : $debugstring\n";
 		}
 	0;

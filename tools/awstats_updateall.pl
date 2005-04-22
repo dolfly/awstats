@@ -3,13 +3,13 @@
 # Launch update process for all config files found in a particular directory.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2004-06-07 12:27:26 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2005-04-22 17:34:05 $
 
 
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.10 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.11 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG
@@ -52,7 +52,7 @@ sub debug {
 	my $level = $_[1] || 1;
 	if ($Debug >= $level) {
 		my $debugstring = $_[0];
-		if ($ENV{"GATEWAY_INTERFACE"}) { $debugstring =~ s/^ /&nbsp&nbsp /; $debugstring .= "<br>"; }
+		if ($ENV{"GATEWAY_INTERFACE"}) { $debugstring =~ s/^ /&nbsp&nbsp /; $debugstring .= "<br />"; }
 		print localtime(time)." - DEBUG $level - $debugstring\n";
 	}
 }

@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2005-03-27 14:50:22 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2005-04-22 17:34:05 $
 require 5.005;
 
 use strict;
@@ -46,7 +46,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.5 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.6 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -98,7 +98,7 @@ sub debug {
 	my $level = $_[1] || 1;
 	if ($Debug >= $level) { 
 		my $debugstring = $_[0];
-		if ($ENV{"GATEWAY_INTERFACE"}) { $debugstring =~ s/^ /&nbsp&nbsp /; $debugstring .= "<br>"; }
+		if ($ENV{"GATEWAY_INTERFACE"}) { $debugstring =~ s/^ /&nbsp&nbsp /; $debugstring .= "<br />"; }
 		print "DEBUG $level - ".time." : $debugstring\n";
 		}
 	0;
