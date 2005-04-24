@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2004-08-16 19:56:00 $
+# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2005-04-24 23:51:11 $
 
 
 # <-----
@@ -83,7 +83,7 @@ sub BuildFullHTMLOutput_rawlog {
 
     # A security check
 	if ($QueryString =~ /logfile=/i) { 
-	    print "<br>Option logfile is not allowed while building rawlog output.<br>";
+	    print "<br />Option logfile is not allowed while building rawlog output.<br />";
         return 0;
 	}
 
