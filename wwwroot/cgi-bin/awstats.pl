@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.823 $ - $Author: eldy $ - $Date: 2005-05-01 03:40:24 $
+# $Revision: 1.824 $ - $Author: eldy $ - $Date: 2005-05-03 23:57:02 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.823 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.824 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -5040,7 +5040,7 @@ sub DefinePerlParsingFormat {
 				$pos_date = $i;	$i++; push @fieldlib, 'date';
 				$PerlParsingFormat .= "([^$LogSeparatorWithoutStar]+\\s[^$LogSeparatorWithoutStar]+)";	# Need \s for Exchange log files
 			}
-			elsif ($f =~ /%time3$/) {	# mon d hh:mm:ss  or  mon dd hh:mm:ss yyyy  or  day mon dd hh:mm:ss  or  day mon dd hh:mm:ss yyyy
+			elsif ($f =~ /%time3$/) {	# mon d hh:mm:ss  or  mon  d hh:mm:ss  or  mon dd hh:mm:ss yyyy  or  day mon dd hh:mm:ss  or  day mon dd hh:mm:ss yyyy
 				$pos_date = $i;	$i++; push @fieldlib, 'date';
 				$PerlParsingFormat .= "(?:\\w\\w\\w )?(\\w\\w\\w \\s?\\d+ \\d\\d:\\d\\d:\\d\\d(?: \\d\\d\\d\\d)?)";
 			}
@@ -5672,7 +5672,9 @@ if ((! $ENV{'GATEWAY_INTERFACE'}) && (! $SiteConfig)) {
 	print "  ".(scalar keys %RobotsHashIDLib)." robots\n";
 	print "  ".(scalar keys %WormsHashLib)." worm's families\n";
 	print "  ".(scalar keys %OSHashLib)." operating systems\n";
-	print "  ".(scalar keys %BrowsersHashIDLib)." browsers\n";
+	print "  ".(scalar keys %BrowsersHashIDLib)." browsers";
+	&Read_Ref_Data('browsers_phone');
+	print " (".(scalar keys %BrowsersHashIDLib)." with phone browsers database)\n";
 	print "  ".(scalar keys %SearchEnginesHashLib)." search engines (and keyphrases/keywords used from them)\n";
 	print "  All HTTP errors with last referrer\n";
 	print "  Report by day/month/year\n";
