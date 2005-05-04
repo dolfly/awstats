@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.824 $ - $Author: eldy $ - $Date: 2005-05-03 23:57:02 $
+# $Revision: 1.825 $ - $Author: eldy $ - $Date: 2005-05-04 19:51:01 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.824 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.825 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -5796,8 +5796,9 @@ if ($AllowAccessFromWebToAuthenticatedUsersOnly && $ENV{'GATEWAY_INTERFACE'}) {
 	}
 	if (@AllowAccessFromWebToFollowingAuthenticatedUsers) {
 		my $userisinlist=0;
-		my $currentuser=qr/^$ENV{"REMOTE_USER"}$/i;
-		$currentuser =~ s/\s/%20/g;	# Allow authenticated user with space in name to be compared to allowed user list
+        my $remoteuser=quotemeta($ENV{"REMOTE_USER"});
+		$remoteuser =~ s/\s/%20/g;	        # Allow authenticated user with space in name to be compared to allowed user list
+		my $currentuser=qr/^$remoteuser$/i; # Set precompiled regex
 		foreach (@AllowAccessFromWebToFollowingAuthenticatedUsers) {
 			if (/$currentuser/o) { $userisinlist=1; last; }
 		}
