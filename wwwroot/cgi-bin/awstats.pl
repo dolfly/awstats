@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.826 $ - $Author: eldy $ - $Date: 2005-05-04 19:54:42 $
+# $Revision: 1.827 $ - $Author: eldy $ - $Date: 2005-05-04 20:06:43 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.826 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.827 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -8205,7 +8205,7 @@ if (scalar keys %HTMLOutput) {
     		my $count=0;
     		&BuildKeyList($MaxRowsInHTMLOutput,1,\%_unknownreferer_l,\%_unknownreferer_l);
     		foreach my $key (@keylist) {
-    			my $useragent=CleanFromCSSA($key);
+    			my $useragent=XMLEncode(CleanFromCSSA($key));
     			print "<tr><td class=\"aws\">$useragent</td>";
     			print "<td>".Format_Date($_unknownreferer_l{$key},1)."</td>";
     			print "</tr>\n";
@@ -8230,7 +8230,7 @@ if (scalar keys %HTMLOutput) {
     		my $count=0;
     		&BuildKeyList($MaxRowsInHTMLOutput,1,\%_unknownrefererbrowser_l,\%_unknownrefererbrowser_l);
     		foreach my $key (@keylist) {
-    			my $useragent=CleanFromCSSA($key);
+    			my $useragent=XMLEncode(CleanFromCSSA($key));
     			print "<tr><td class=\"aws\">$useragent</td><td>".Format_Date($_unknownrefererbrowser_l{$key},1)."</td></tr>\n";
     			$total_l+=1;
     			$count++;
