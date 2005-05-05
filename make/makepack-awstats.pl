@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.10 $
+# \version      $Revision: 1.11 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -41,7 +41,7 @@ if (-d "/usr/src/RPM") {
     $RPMDIR="/usr/src/RPM";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.10 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.11 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -265,10 +265,10 @@ rename("$BUILDROOT/$PROJECT","$BUILDROOT/$FILENAMETGZ");
 
     	if ($target eq 'TGZ') {
     		unlink $FILENAMETGZ.tgz;
-    		print "Compress $FILENAMETGZ.tgz into $FILENAMETGZ\n";
-    		$ret=`tar --directory="$BUILDROOT" -czvf $FILENAMETGZ.tgz $FILENAMETGZ`;
-    		print "Move $FILENAMETGZ.tgz to $DESTI\n";
-    		rename("$FILENAMETGZ.tgz","$DESTI/$FILENAMETGZ.tgz");
+    		print "Compress $FILENAMETGZ into $FILENAMETGZ.tar.gz\n";
+    		$ret=`tar --directory="$BUILDROOT" -czvf $FILENAMETGZ.tar.gz $FILENAMETGZ`;
+    		print "Move $FILENAMETGZ.tar.gz to $DESTI\n";
+    		rename("$FILENAMETGZ.tar.gz","$DESTI/$FILENAMETGZ.tar.gz");
     		next;
     	}	
     
