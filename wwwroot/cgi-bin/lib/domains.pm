@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2004-06-25 20:01:39 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2005-05-05 17:58:18 $
 
 
 #package AWSDOM;
@@ -40,7 +40,7 @@
 'dj','Djibouti','dk','Denmark','dm','Dominica','do','Dominican Republic',
 'dz','Algeria','ec','Ecuador','edu','USA Educational','ee','Estonia',
 'eg','Egypt','eh','Western Sahara','er','Eritrea','es','Spain','et','Ethiopia',
-'eu','European Union',
+'eu','European country',
 'fi','Finland','fj','Fiji','fk','Falkland Islands','fm','Micronesia','fo','Faroe Islands',
 'fr','France','fx','France (European Territory)','ga','Gabon',
 'gb','Great Britain','gd','Grenada','ge','Georgia','gf','French Guyana',
