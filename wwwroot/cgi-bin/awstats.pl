@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.827 $ - $Author: eldy $ - $Date: 2005-05-04 20:06:43 $
+# $Revision: 1.828 $ - $Author: eldy $ - $Date: 2005-05-07 23:27:35 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.827 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.828 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -7721,8 +7721,13 @@ if (scalar keys %HTMLOutput) {
 	my $FirstTime=0;
 	my $LastTime=0;
 	foreach my $key (keys %FirstTime) {
-		if ($FirstTime{$key} && ($FirstTime == 0 || $FirstTime > $FirstTime{$key})) { $FirstTime = $FirstTime{$key}; }
-		if ($LastTime < ($LastTime{$key}||0)) { $LastTime = $LastTime{$key}; }
+	    my $keyqualified=0;
+		if ($MonthRequired eq 'all')                    { $keyqualified=1; }
+		if ($key =~ /^$YearRequired$MonthRequired/)    { $keyqualified=1; }
+		if ($keyqualified) {
+		    if ($FirstTime{$key} && ($FirstTime == 0 || $FirstTime > $FirstTime{$key})) { $FirstTime = $FirstTime{$key}; }
+		    if ($LastTime < ($LastTime{$key}||0)) { $LastTime = $LastTime{$key}; }
+		}
 	}
 	
 	# TotalVisits TotalUnique TotalPages TotalHits TotalBytes TotalHostsKnown TotalHostsUnknown
