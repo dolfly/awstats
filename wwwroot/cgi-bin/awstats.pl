@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.828 $ - $Author: eldy $ - $Date: 2005-05-07 23:27:35 $
+# $Revision: 1.829 $ - $Author: eldy $ - $Date: 2005-05-23 12:19:46 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.828 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.829 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -7168,6 +7168,10 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 					if ($Debug) { debug("  Check condition '$conditiontype' must contain '$conditiontypeval' in '$standalonequery'",5); }
  					if ($standalonequery =~ /$conditiontypeval/) {	$conditionok=1; last; }
  				}
+                elsif ($conditiontype eq 'URLWITHQUERY') {
+                    if ($Debug) { debug("  Check condition '$conditiontype' must contain '$conditiontypeval' in '$urlwithnoquery$tokenquery$standalonequery'",5); }
+                    if ("$urlwithnoquery$tokenquery$standalonequery" =~ /$conditiontypeval/) { $conditionok=1; last; }
+                }
  				elsif ($conditiontype eq 'REFERER') {
 					if ($Debug) { debug("  Check condition '$conditiontype' must contain '$conditiontypeval' in '$field[$pos_referer]'",5); }
  					if ($field[$pos_referer] =~ /$conditiontypeval/) { $conditionok=1; last; }
@@ -7202,6 +7206,9 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 					if ($Debug) { debug("  Extract value from '$standalonequery' with regex '$rowkeytypeval'.",5); }
  					if ($standalonequery =~ /$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
  				}
+                elsif ($rowkeytype eq 'URLWITHQUERY') {
+                    if ("$urlwithnoquery$tokenquery$standalonequery" =~ /$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
+                }
  				elsif ($rowkeytype eq 'REFERER') {
  					if ($field[$pos_referer] =~ /$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
  				}
