@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.832 $ - $Author: eldy $ - $Date: 2005-06-11 19:22:47 $
+# $Revision: 1.833 $ - $Author: eldy $ - $Date: 2005-06-11 19:32:42 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.832 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.833 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -1218,6 +1218,7 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^HostAliases/) {
+            @HostAliases=();
 			foreach my $elem (split(/\s+/,$value))	{
 			    if ($elem =~ s/^\@//) { # If list of hostaliases in a file
 			        open(DATAFILE,"<$elem") || error("Failed to open file '$elem' declared in HostAliases parameter");
@@ -1235,6 +1236,7 @@ sub Parse_Config {
 			}
 		# Special optional setup params
 		if ($param =~ /^SkipDNSLookupFor/) {
+            @SkipDNSLookupFor=();
 			foreach my $elem (split(/\s+/,$value))	{
 				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
 				else { $elem='^'.quotemeta($elem).'$'; }
@@ -1243,10 +1245,12 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^AllowAccessFromWebToFollowingAuthenticatedUsers/) {
+		    @AllowAccessFromWebToFollowingAuthenticatedUsers=();
 			foreach (split(/\s+/,$value))	{ push @AllowAccessFromWebToFollowingAuthenticatedUsers,$_; }
 			next;
 			}
 		if ($param =~ /^DefaultFile/)           {
+		    @DefaultFile=();
 			foreach my $elem (split(/\s+/,$value))	{	
 				# No REGEX for this option
 				#if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
@@ -1256,6 +1260,7 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^SkipHosts/) {
+		    @SkipHosts=();
 			foreach my $elem (split(/\s+/,$value))	{
 				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
 				else { $elem='^'.quotemeta($elem).'$'; }
@@ -1264,6 +1269,7 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^SkipUserAgents/) {
+		    @SkipUserAgents=();
 			foreach my $elem (split(/\s+/,$value))	{
 				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
 				else { $elem='^'.quotemeta($elem).'$'; }
@@ -1272,6 +1278,7 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^SkipFiles/) {
+		    @SkipFiles=();
 			foreach my $elem (split(/\s+/,$value))	{
 				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
 				else { $elem='^'.quotemeta($elem).'$'; }
@@ -1280,6 +1287,7 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^OnlyHosts/) {
+		    @OnlyHosts=();
 			foreach my $elem (split(/\s+/,$value))	{
 				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
 				else { $elem='^'.quotemeta($elem).'$'; }
@@ -1288,6 +1296,7 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^OnlyUserAgents/) {
+		    @OnlyUserAgents=();
 			foreach my $elem (split(/\s+/,$value))	{
 				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
 				else { $elem='^'.quotemeta($elem).'$'; }
@@ -1296,6 +1305,7 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^OnlyFiles/) {
+		    @OnlyFiles=();
 			foreach my $elem (split(/\s+/,$value))	{
 				if ($elem =~ /^REGEX\[(.*)\]$/i) { $elem=$1; }
 				else { $elem='^'.quotemeta($elem).'$'; }
@@ -1304,15 +1314,18 @@ sub Parse_Config {
 			next;
 			}
 		if ($param =~ /^NotPageList/) {
+            %NotPageList=();
 			foreach (split(/\s+/,$value))	{ $NotPageList{$_}=1; }
 			$FoundNotPageList=1;
 			next;
 			}
 		if ($param =~ /^ValidHTTPCodes/) {
+            %ValidHTTPCodes=();
 			foreach (split(/\s+/,$value))	{ $ValidHTTPCodes{$_}=1; }
 			next;
 			}
 		if ($param =~ /^ValidSMTPCodes/) {
+		    %ValidSMTPCodes=();
 			foreach (split(/\s+/,$value))	{ $ValidSMTPCodes{$_}=1; }
 			next;
 			}
