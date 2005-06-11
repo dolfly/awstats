@@ -8,7 +8,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2005-05-01 03:37:59 $
+# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2005-06-11 17:36:53 $
 
 
 # <-----
@@ -141,7 +141,7 @@ sub ShowInfoHost_geoip {
     	if ($NewLinkParams) { $NewLinkParams="${NewLinkParams}&"; }
 
 		print "<th width=\"80\">";
-        print "<a href=\"#countries\">GeoIP<br>Country</a>";
+        print "<a href=\"#countries\">GeoIP<br />Country</a>";
         print "</th>";
 	}
 	elsif ($param) {
