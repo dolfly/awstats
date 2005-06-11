@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Configuration directives and parameters">
 <title>AWStats Documentation - Configuration directives and parameters</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.178 $ - $Author: eldy $ - $Date: 2005-03-27 14:43:21 $ -->
+<!-- $Revision: 1.179 $ - $Author: eldy $ - $Date: 2005-06-11 19:10:00 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -322,7 +322,8 @@ when reading it), follow the example:<br>
 <br># "your_own_personalized_log_format" = If your log is ftp, mail or other format,
 <br>#     you must use following keys to define the log format string (See FAQ for
 <br>#     ftp, mail or exotic web log format examples):
-<br>#   %host             Host client name or IP address
+<br>#   %host             Client hostname or IP address (or Sender host for mail log)
+<br>#   %host_r           Receiver hostname or IP address (for mail log)
 <br>#   %lognamequot      Authenticated login/user with format: "alex"
 <br>#   %logname          Authenticated login/user with format: alex
 <br>#   %time1            Date and time with format: [dd/mon/yyyy:hh:mm:ss +0000] or [dd/mon/yyyy:hh:mm:ss]
@@ -1791,7 +1792,7 @@ all ExtraSection...X directives and how to use them.
 <br><br><hr>
 
 <script language=javascript>
-	var date='$Date: 2005-03-27 14:43:21 $';
+	var date='$Date: 2005-06-11 19:10:00 $';
 	document.writeln("Last revision: "+date);
 </script>
 
