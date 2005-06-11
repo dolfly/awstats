@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.830 $ - $Author: eldy $ - $Date: 2005-06-11 18:57:58 $
+# $Revision: 1.831 $ - $Author: eldy $ - $Date: 2005-06-11 19:03:17 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.830 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.831 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -1160,6 +1160,10 @@ sub Parse_Config {
 		# Check includes
 		if ($_ =~ /^Include "([^\"]+)"/ || $_ =~ /^#include "([^\"]+)"/) {	# #include kept for backward compatibility
 		    my $includeFile = $1;
+		    # Expand __var__ by values
+		    while ($includeFile =~ /__([^\s_]+(?:_[^\s_]+)*)__/) {
+		        my $var=$1; $includeFile =~ s/__${var}__/$ENV{$var}/g;
+		    }
 			if ($Debug) { debug("Found an include : $includeFile",2); }
 		    if ( $includeFile !~ /^[\\\/]/ ) {
 			    # Correct relative include files
