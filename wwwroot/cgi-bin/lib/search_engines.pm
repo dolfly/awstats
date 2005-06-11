@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.31 $ - $Author: eldy $ - $Date: 2004-11-10 23:10:27 $
+# $Revision: 1.32 $ - $Author: eldy $ - $Date: 2005-06-11 17:49:37 $
 
 
 #package AWSSE;
@@ -279,8 +279,8 @@
 'altavista','q=',
 'a9','a9\.com\/', 
 'dmoz','search=',
-'google','(p|q)=',
-'google_image','(p|q)=',
+'google','(p|q|as_p|as_q)=',
+'google_image','(p|q|as_p|as_q)=',
 'lycos','query=',
 'msn','q=',
 'netscape','search=',
