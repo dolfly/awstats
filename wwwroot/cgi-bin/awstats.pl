@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.834 $ - $Author: eldy $ - $Date: 2005-06-11 19:59:55 $
+# $Revision: 1.835 $ - $Author: eldy $ - $Date: 2005-06-22 23:20:29 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.834 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.835 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -8174,7 +8174,7 @@ if (scalar keys %HTMLOutput) {
     		foreach my $pluginname (keys %{$PluginsLoaded{'ShowPagesAddField'}})  {
 #    			my $function="ShowPagesAddField_$pluginname('title')";
 #    			eval("$function");
-    			my $function="ShowPagesAddField_$pluginname()";
+    			my $function="ShowPagesAddField_$pluginname";
     			&$function('title');
     		}
     		print "<th>&nbsp;</th></tr>\n";
