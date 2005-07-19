@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.838 $ - $Author: eldy $ - $Date: 2005-07-19 22:25:00 $
+# $Revision: 1.839 $ - $Author: eldy $ - $Date: 2005-07-19 22:36:41 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.838 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.839 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -5723,7 +5723,7 @@ if ((! $ENV{'GATEWAY_INTERFACE'}) && (! $SiteConfig)) {
 	print "  -debug=X     to add debug informations lesser than level X (speed reduced)\n";
 	print "\n";
 	print "Now supports/detects:\n";
-	print "  Web/Ftp/Mail log analyze (and load balanced log files)\n";
+	print "  Web/Ftp/Mail/streaming server log analyzis (and load balanced log files)\n";
 	print "  Reverse DNS lookup (IPv4 and IPv6) and GeoIP lookup\n";
 	print "  Number of visits, number of unique visitors\n";
 	print "  Visits duration and list of last visits\n";
