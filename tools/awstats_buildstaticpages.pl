@@ -3,7 +3,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.32 $ - $Author: eldy $ - $Date: 2005-04-22 17:33:57 $
+# $Revision: 1.33 $ - $Author: eldy $ - $Date: 2005-08-23 19:56:35 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -15,7 +15,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.32 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.33 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -435,10 +435,11 @@ for my $output (@OutputList) {
 # Build pdf file
 if ($QueryString =~ /(^|-|&)buildpdf/i) {
 #	my $pdffile=$pages[0]; $pdffile=~s/\.\w+$/\.pdf/;
-	my $command="\"$HtmlDoc\" -t pdf --webpage --quiet --no-title --textfont helvetica --left 16 --bottom 8 --top 8 --browserwidth 800 --headfootsize 8.0 --fontsize 7.0 --header xtx --footer xd/ --outfile awstats.$OutputSuffix.pdf @pages\n";
+	$OutputFile=($OutputDir?$OutputDir:"")."awstats.$OutputSuffix.pdf";
+	my $command="\"$HtmlDoc\" -t pdf --webpage --quiet --no-title --textfont helvetica --left 16 --bottom 8 --top 8 --browserwidth 800 --headfootsize 8.0 --fontsize 7.0 --header xtx --footer xd/ --outfile $OutputFile @pages\n";
 	print "Build PDF file : $command\n";
 	$retour=`$command  2>&1`;
-	my $signal_num=$? & 127;
+    my $signal_num=$? & 127;
 	my $dumped_core=$? & 128;
 	my $exit_value=$? >> 8;
 	if ($? || $retour =~ /error/) {
