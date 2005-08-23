@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.842 $ - $Author: eldy $ - $Date: 2005-08-23 19:42:36 $
+# $Revision: 1.843 $ - $Author: eldy $ - $Date: 2005-08-23 20:08:27 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.842 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.843 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -4311,8 +4311,8 @@ sub XMLEncode {
 	$string =~ s/&/&amp;/g;
 	$string =~ s/</&lt;/g;
 	$string =~ s/>/&gt;/g;
-	$string =~ s/\"/&quot;/g;
-	$string =~ s/\'/&apos;/g;
+    $string =~ s/\"/&quot;/g;
+    $string =~ s/\'/&apos;/g;
 	return $string;
 }
 
@@ -4328,8 +4328,8 @@ sub XMLEncodeForHisto {
 	$string =~ s/&/&amp;/g;
 	$string =~ s/</&lt;/g;
 	$string =~ s/>/&gt;/g;
-	$string =~ s/\"/&aquot;/g;
-	$string =~ s/\'/&apos;/g;
+    $string =~ s/\"/&quot;/g;
+    $string =~ s/\'/&apos;/g;
 	return $string;
 }
 
