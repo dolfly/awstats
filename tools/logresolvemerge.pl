@@ -6,7 +6,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.32 $ - $Author: eldy $ - $Date: 2005-05-07 18:31:39 $
+# $Revision: 1.33 $ - $Author: eldy $ - $Date: 2005-09-20 20:23:06 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -34,7 +34,7 @@ my %TmpDNSLookup = ();
 
 # ---------- Init variables --------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.32 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.33 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw/ $NBOFLINESFORBENCHMARK /;
@@ -499,7 +499,7 @@ while (1 == 1)
 
 				# Split DD/Month/YYYY:HH:MM:SS or YYYY-MM-DD HH:MM:SS or MM/DD/YY\tHH:MM:SS
 				my $year=0; my $month=0; my $day=0; my $hour=0; my $minute=0; my $second=0;
-				if ($_ =~ /(\d\d\d\d)-(\d\d)-(\d\d) (\d\d):(\d\d):(\d\d)/) { $year=$1; $month=$2; $day=$3; $hour=$4; $minute=$5; $second=$6; }
+				if ($_ =~ /(\d\d\d\d)-(\d\d)-(\d\d)\s(\d\d):(\d\d):(\d\d)/) { $year=$1; $month=$2; $day=$3; $hour=$4; $minute=$5; $second=$6; }
 				elsif ($_ =~ /\[(\d\d)[\/:\s](\w+)[\/:\s](\d\d\d\d)[\/:\s](\d\d)[\/:\s](\d\d)[\/:\s](\d\d) /) { $year=$3; $month=$2; $day=$1; $hour=$4; $minute=$5; $second=$6; }
 				elsif ($_ =~ /\[\w+ (\w+) (\d\d) (\d\d)[\/:\s](\d\d)[\/:\s](\d\d) (\d\d\d\d)\]/) { $year=$6; $month=$1; $day=$2; $hour=$3; $minute=$4; $second=$5; }
 
