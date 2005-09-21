@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.845 $ - $Author: eldy $ - $Date: 2005-09-19 21:46:35 $
+# $Revision: 1.846 $ - $Author: eldy $ - $Date: 2005-09-21 19:25:48 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.845 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.846 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -1290,7 +1290,7 @@ sub Parse_Config {
 			}
 			next;
 			}
-		if ($param =~ /^SkipReferrerBlackList/) {
+		if ($param =~ /^SkipReferrersBlackList/) {
 			open (BLACKLIST, "<$value") || die "Failed to open blacklist: $!\n";
 			while (<BLACKLIST>) {
 				chomp;
@@ -6391,8 +6391,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		# Skip for some client host IP addresses, some URLs, other URLs
 		if    (@SkipHosts && (&SkipHost($field[$pos_host]) || ($pos_hostr && &SkipHost($field[$pos_hostr]))))   { $qualifdrop="Dropped record (host $field[$pos_host]".($pos_hostr?" and $field[$pos_hostr]":"")." not qualified by SkipHosts)"; }
 		elsif (@SkipFiles && &SkipFile($field[$pos_url]))    { $qualifdrop="Dropped record (URL $field[$pos_url] not qualified by SkipFiles)"; }
-		elsif (@SkipReferrers && $pos_referer >= 0 && &SkipReferrer($field[$pos_referer]))    { $qualifdrop="Dropped record (URL $field[$pos_referer] not qualified by SkipReferrers)"; }
 		elsif (@SkipUserAgents && $pos_agent >= 0 && &SkipUserAgent($field[$pos_agent]))	{ $qualifdrop="Dropped record (user agent '$field[$pos_agent]' not qualified by SkipUserAgents)"; }
+		elsif (@SkipReferrers && $pos_referer >= 0 && &SkipReferrer($field[$pos_referer]))    { $qualifdrop="Dropped record (URL $field[$pos_referer] not qualified by SkipReferrers)"; }
 		elsif (@OnlyHosts && ! &OnlyHost($field[$pos_host]) && (! $pos_hostr || ! &OnlyHost($field[$pos_hostr]))) { $qualifdrop="Dropped record (host $field[$pos_host]".($pos_hostr?" and $field[$pos_hostr]":"")." not qualified by OnlyHosts)"; } 
 		elsif (@OnlyFiles && ! &OnlyFile($field[$pos_url]))  { $qualifdrop="Dropped record (URL $field[$pos_url] not qualified by OnlyFiles)"; }
 		elsif (@OnlyUserAgents && ! &OnlyUserAgent($field[$pos_agent]))  { $qualifdrop="Dropped record (user agent '$field[$pos_agent]' not qualified by OnlyUserAgents)"; }
