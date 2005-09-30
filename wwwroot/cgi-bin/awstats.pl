@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.846 $ - $Author: eldy $ - $Date: 2005-09-21 19:25:48 $
+# $Revision: 1.847 $ - $Author: eldy $ - $Date: 2005-09-30 22:16:15 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.846 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.847 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -254,7 +254,7 @@ use vars qw/
 'en'=>'en','et'=>'et','fi'=>'fi','fr'=>'fr','gl'=>'gl',
 'es'=>'es','eu'=>'eu','ca'=>'ca',
 'el'=>'gr','hu'=>'hu','is'=>'is','in'=>'id','it'=>'it',
-'ja'=>'jp','ko'=>'kr','lv'=>'lv','nl'=>'nl','no'=>'nb','nb'=>'nb','nn'=>'nn',
+'ja'=>'jp','kr'=>'ko','lv'=>'lv','nl'=>'nl','no'=>'nb','nb'=>'nb','nn'=>'nn',
 'pl'=>'pl','pt'=>'pt','pt-br'=>'br','ro'=>'ro','ru'=>'ru','sr'=>'sr','sk'=>'sk',
 'sv'=>'se','th'=>'th','tr'=>'tr','uk'=>'ua','cy'=>'cy','wlk'=>'cy'
 );
