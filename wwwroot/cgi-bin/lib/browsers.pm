@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.42 $ - $Author: eldy $ - $Date: 2005-05-01 02:14:40 $
+# $Revision: 1.43 $ - $Author: eldy $ - $Date: 2005-10-09 16:08:41 $
 
 
 #package AWSUA;
@@ -404,7 +404,6 @@
 'syndirella', 'rss',
 # Other kind of browsers
 'apt','apt',
-'javaws','javaws',
 'webzip','webzip',
 'staroffice','staroffice',
 'mozilla','mozilla'
