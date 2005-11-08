@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.44 $ - $Author: eldy $ - $Date: 2005-10-09 16:11:48 $
+# $Revision: 1.45 $ - $Author: eldy $ - $Date: 2005-11-08 23:30:20 $
 
 
 #package AWSUA;
@@ -41,6 +41,7 @@
 'ecatch',
 'emailsiphon',
 'encompass',
+'epiphany',
 'friendlyspider',
 'fresco',
 'galeon',
@@ -179,6 +180,7 @@
 'ecatch', 'eCatch',
 'emailsiphon','EmailSiphon',
 'encompass','Encompass',
+'epiphany','Epiphany',
 'friendlyspider','FriendlySpider',
 'fresco','ANT Fresco',
 'galeon','Galeon',
@@ -328,6 +330,7 @@
 'dreamcast','dreamcast',
 'ecatch','ecatch',
 'encompass','encompass',
+'epiphany','epiphany',
 'fresco','fresco',
 'galeon','galeon',
 'getright','getright',
