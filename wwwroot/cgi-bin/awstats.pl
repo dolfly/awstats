@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.853 $ - $Author: eldy $ - $Date: 2005-11-19 00:38:53 $
+# $Revision: 1.854 $ - $Author: eldy $ - $Date: 2005-11-19 01:44:04 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.853 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.854 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -9608,10 +9608,10 @@ if (scalar keys %HTMLOutput) {
 				print "<tr>";
 				print "<td class=\"aws\">$key</td>";
 				&ShowHostInfo($key);
-				if ($ShowHostsStats =~ /P/i) { print "<td>".($_host_p{$key}||"&nbsp;")."</td>"; }
+				if ($ShowHostsStats =~ /P/i) { print '<td>'.($_host_p{$key}||"&nbsp;").'</td>'; }
 				if ($ShowHostsStats =~ /H/i) { print "<td>$_host_h{$key}</td>"; }
-				if ($ShowHostsStats =~ /B/i) { print "<td>".Format_Bytes($_host_k{$key})."</td>"; }
-				if ($ShowHostsStats =~ /L/i) { print "<td nowrap>".($_host_l{$key}?Format_Date($_host_l{$key},1):'-')."</td>"; }
+				if ($ShowHostsStats =~ /B/i) { print '<td>'.Format_Bytes($_host_k{$key}).'</td>'; }
+				if ($ShowHostsStats =~ /L/i) { print '<td nowrap="nowrap">'.($_host_l{$key}?Format_Date($_host_l{$key},1):'-').'</td>'; }
 				print "</tr>\n";
 				$total_p += $_host_p{$key};
 				$total_h += $_host_h{$key};
@@ -9861,7 +9861,7 @@ if (scalar keys %HTMLOutput) {
 					print "<td class=\"aws\">$nametype</td>";
 				}
 				if ($ShowFileTypesStats =~ /H/i) { print "<td>$_filetypes_h{$key}</td><td>$p_h</td>"; }
-				if ($ShowFileTypesStats =~ /B/i) { print "<td nowrap>".Format_Bytes($_filetypes_k{$key})."</td><td>$p_k</td>"; }
+				if ($ShowFileTypesStats =~ /B/i) { print '<td nowrap="nowrap">'.Format_Bytes($_filetypes_k{$key})."</td><td>$p_k</td>"; }
 				if ($ShowFileTypesStats =~ /C/i) {
 					if ($_filetypes_gz_in{$key}) {
 						my $percent=int(100*(1-$_filetypes_gz_out{$key}/$_filetypes_gz_in{$key}));
