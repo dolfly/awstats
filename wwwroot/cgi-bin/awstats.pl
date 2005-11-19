@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.852 $ - $Author: eldy $ - $Date: 2005-10-09 15:56:16 $
+# $Revision: 1.853 $ - $Author: eldy $ - $Date: 2005-11-19 00:38:53 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.852 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.853 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -6141,9 +6141,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 	my $regreferer=qr/^(\w+):\/\/([^\/:]+)(:\d+|)/;
 	my $regreferernoquery=qr/^([^$URLQuerySeparators]+)/;
 	my $reglocal=qr/^(www\.|)$sitewithoutwww/i;
-	my $regget=qr/get/i;
-	my $regsent=qr/sent/i;
-	my $regput=qr/put/i;
+	my $regget=qr/get|out/i;
+	my $regsent=qr/sent|put|in/i;
     
 	# Define value of $pos_xxx, @fieldlib, $PerlParsingFormat
 	&DefinePerlParsingFormat($LogFormat);
@@ -6304,7 +6303,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 		elsif ($LogType eq 'F' && ($field[$pos_method] eq 'RETR' || $field[$pos_method] eq 'o' || $field[$pos_method] =~ /$regget/o)) {
 			# FTP GET request
 		}
-		elsif ($LogType eq 'F' && ($field[$pos_method] eq 'STOR' || $field[$pos_method] eq 'i' || $field[$pos_method] =~ /$regsent/o || $field[$pos_method] =~ /$regput/o)) {
+		elsif ($LogType eq 'F' && ($field[$pos_method] eq 'STOR' || $field[$pos_method] eq 'i' || $field[$pos_method] =~ /$regsent/o)) {
 			# FTP SENT request
 		}
 		else {
