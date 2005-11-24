@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.242 $ - $Author: eldy $ - $Date: 2005-11-24 20:12:39 $
+$Revision: 1.243 $ - $Author: eldy $ - $Date: 2005-11-24 20:26:35 $
 
 
 ***** 6.5 *****
@@ -37,6 +37,7 @@ New features/improvements:
 - Support in/out method in ftp detection.
 - Update xsd files and fix xml support to have now a full support of xslt
   transformations and xml validations.
+- Added javabestart to browsers.
 
 Fixes:
 - Fixed: No more increase of Google search engine count when click came
