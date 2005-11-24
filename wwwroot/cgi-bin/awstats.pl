@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.856 $ - $Author: eldy $ - $Date: 2005-11-24 19:19:32 $
+# $Revision: 1.857 $ - $Author: eldy $ - $Date: 2005-11-24 20:11:19 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.856 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.857 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -2154,7 +2154,7 @@ sub Read_History_With_TmpUpdate {
 	if ($withupdate) {
 		open(HISTORYTMP,">$filetowrite") || error("Couldn't open file \"$filetowrite\" for write: $!");
 		binmode HISTORYTMP;
-		if ($xml) { print HISTORYTMP "<xml>\n\n"; }
+		if ($xml) { print HISTORYTMP '<xml xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://awstats.sourceforge.net/files/awstats.xsd">'."\n\n"; }
 		Save_History("header",$year,$month,$date);
 	}
 
