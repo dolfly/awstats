@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.46 $ - $Author: eldy $ - $Date: 2005-11-24 20:25:43 $
+# $Revision: 1.47 $ - $Author: eldy $ - $Date: 2005-11-26 00:02:26 $
 
 
 #package AWSUA;
@@ -413,6 +413,36 @@
 'webzip','webzip',
 'staroffice','staroffice',
 'mozilla','mozilla'
+);
+
+# Source for this is http://developer.apple.com/internet/safari/uamatrix.html
+%BrowsersSafariBuildToVersionHash = 
+(
+    '48' => '0.8',
+    '51' => '0.8.1',
+    '60' => '0.8.2',
+    '73' => '0.9',
+    '74' => '1.0b2',
+    '85' => '1.0',
+    '85.5' => '1.0',
+    '85.7' => '1.0.2',
+    '85.8' => '1.0.3',
+    '85.8.1' => '1.0.3',
+    '100' => '1.1',
+    '100.1' => '1.1.1',
+    '125.7' => '1.2.2',
+    '125.8' => '1.2.2',
+    '125.9' => '1.2.3',
+    '125.11' => '1.2.4',
+    '125.12' => '1.2.4',
+    '312' => '1.3',
+    '312.3' => '1.3.1',
+    '312.3.1' => '1.3.1',
+    '412' => '2.0',
+    '412.2' => '2.0',
+    '412.2.2' => '2.0',
+    '412.5' => '2.0.1',
+    '416.12' => '2.0.2'
 );
 
 
