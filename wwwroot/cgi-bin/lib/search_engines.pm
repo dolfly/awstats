@@ -5,9 +5,9 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.34 $ - $Author: eldy $ - $Date: 2005-11-23 20:50:30 $
+# $Revision: 1.35 $ - $Author: eldy $ - $Date: 2005-11-26 19:24:18 $
 
-# 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html:
+# 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
 #                  arianna http://arianna.libero.it/
 #                  supereva http://search.supereva.com/
