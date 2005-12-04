@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.243 $ - $Author: eldy $ - $Date: 2005-11-24 20:26:35 $
+$Revision: 1.244 $ - $Author: eldy $ - $Date: 2005-12-04 21:11:29 $
 
 
 ***** 6.5 *****
@@ -13,6 +13,8 @@ into
  LoadPlugin="geoip GEOIP_STANDARD /pathto/GeoIP.dat"
 
 New features/improvements:
+- Tuning: logresolvemerge.pl is 30 times faster when merging a lot of log
+  files (1000) at same time (Thanks to Dan Armstrong).
 - Added detection of linux and bsd distributions (redhat, mandriva, ...)
   Thanks for idea to Sean Carlos.
 - Added option SkipReferrersBlackList to exlude records from SPAM referrers.
