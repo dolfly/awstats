@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2005-11-26 19:24:18 $
+# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2005-12-04 21:33:46 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              - added specific Linux distributions in addition to 
@@ -51,6 +51,7 @@
 'gnu.hurd',
 # BSDs family
 'bsdi',
+'gnu.kfreebsd',								    # Must be before freebsd
 'freebsd',
 'openbsd',
 'netbsd',
@@ -109,10 +110,11 @@
 # Hurd family
 'gnu.hurd','gnu',
 # BSDs family (bsdyyy)
-'netbsd','bsdnetbsd',
 'bsdi','bsdi',
+'gnu.kfreebsd','bsdkfreebsd',						    # Must be before freebsd
 'freebsd','bsdfreebsd',
 'openbsd','bsdopenbsd',
+'netbsd','bsdnetbsd',
 # Other Unix, Unix-like
 'aix','aix',
 'sunos','sunos',
@@ -167,13 +169,14 @@
 # Hurd
 'gnu','<a href="www.gnu.org/software/hurd/hurd.html" title="GNU Hurd home page [new window]" target="_blank">GNU Hurd</a>',
 # BSDs
-'netbsd','<a href="http://www.netbsd.org/" title="NetBSD home page [new window]" target="_blank">NetBSD</a>', # For backard compatibility
-'bsdnetbsd','<a href="http://www.netbsd.org/" title="NetBSD home page [new window]" target="_blank">NetBSD</a>',
 'bsdi','<a href="http://en.wikipedia.org/wiki/BSDi" title="BSDi home page [new window]" target="_blank">BSDi</a>',
+'bsdkfreebsd','GNU/kFreeBSD',
 'freebsd','<a href="http://www.freebsd.org/" title="FreeBSD home page [new window]" target="_blank">FreeBSD</a>',    # For backard compatibility
 'bsdfreebsd','<a href="http://www.freebsd.org/" title="FreeBSD home page [new window]" target="_blank">FreeBSD</a>',
 'openbsd','<a href="http://www.openbsd.org/" title="OpenBSD home page [new window]" target="_blank">OpenBSD</a>',    # For backard compatibility
 'bsdopenbsd','<a href="http://www.openbsd.org/" title="OpenBSD home page [new window]" target="_blank">OpenBSD</a>',
+'netbsd','<a href="http://www.netbsd.org/" title="NetBSD home page [new window]" target="_blank">NetBSD</a>', # For backard compatibility
+'bsdnetbsd','<a href="http://www.netbsd.org/" title="NetBSD home page [new window]" target="_blank">NetBSD</a>',
 # Other Unix, Unix-like
 'aix','<a href="http://www-1.ibm.com/servers/aix/" title="Aix home page [new window]" target="_blank">Aix</a>',
 'sunos','<a href="http://www.sun.com/software/solaris/" title="Sun Solaris home page [new window]" target="_blank">Sun Solaris</a>',
