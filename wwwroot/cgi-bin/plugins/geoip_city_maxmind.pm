@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP (Geo::IP::PurePerl is not yet supported)
 #-----------------------------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2005-11-19 01:43:14 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2005-12-14 23:44:33 $
 
 
 # <-----
@@ -4416,17 +4416,18 @@ sub ShowInfoHost_geoip_city_maxmind {
 	# <-----
 	if ($param eq '__title__') {
     	my $NewLinkParams=${QueryString};
-    	$NewLinkParams =~ s/(^|&)update(=\w*|$)//i;
-    	$NewLinkParams =~ s/(^|&)output(=\w*|$)//i;
-    	$NewLinkParams =~ s/(^|&)staticlinks(=\w*|$)//i;
-    	$NewLinkParams =~ s/(^|&)framename=[^&]*//i;
+    	$NewLinkParams =~ s/(^|&|&amp;)update(=\w*|$)//i;
+    	$NewLinkParams =~ s/(^|&|&amp;)output(=\w*|$)//i;
+    	$NewLinkParams =~ s/(^|&|&amp;)staticlinks(=\w*|$)//i;
+    	$NewLinkParams =~ s/(^|&|&amp;)framename=[^&]*//i;
     	my $NewLinkTarget='';
     	if ($DetailedReportsOnNewWindows) { $NewLinkTarget=" target=\"awstatsbis\""; }
     	if (($FrameName eq 'mainleft' || $FrameName eq 'mainright') && $DetailedReportsOnNewWindows < 2) {
     		$NewLinkParams.="&framename=mainright";
     		$NewLinkTarget=" target=\"mainright\"";
     	}
-    	$NewLinkParams =~ tr/&/&/s; $NewLinkParams =~ s/^&//; $NewLinkParams =~ s/&$//;
+    	$NewLinkParams =~ s/(&amp;|&)+/&amp;/i;
+    	$NewLinkParams =~ s/^&amp;//; $NewLinkParams =~ s/&amp;$//;
     	if ($NewLinkParams) { $NewLinkParams="${NewLinkParams}&"; }
 
 		print "<th width=\"80\">";
