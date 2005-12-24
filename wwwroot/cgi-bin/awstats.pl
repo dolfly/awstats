@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.857 $ - $Author: eldy $ - $Date: 2005-11-24 20:11:19 $
+# $Revision: 1.858 $ - $Author: eldy $ - $Date: 2005-12-24 22:02:29 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.857 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.858 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.5 (build $REVISION)";
 
 # ----- Constants -----
@@ -249,7 +249,7 @@ use vars qw/
 # HTTP-Accept or Lang parameter => AWStats code to use for lang
 # ISO-639-1 or 2 or other       => awstats-xx.txt where xx is ISO-639-1
 %LangBrowserToLangAwstats=(
-'sq'=>'al','ar'=>'ar','ba'=>'ba','bg'=>'bg','zh-tw'=>'tw','zh'=>'cn','cz'=>'cz',
+'sq'=>'al','ar'=>'ar','ba'=>'ba','bg'=>'bg','zh-tw'=>'tw','zh'=>'cn','cs'=>'cz',
 'de'=>'de','da'=>'dk',
 'en'=>'en','et'=>'et','fi'=>'fi','fr'=>'fr','gl'=>'gl',
 'es'=>'es','eu'=>'eu','ca'=>'ca',
