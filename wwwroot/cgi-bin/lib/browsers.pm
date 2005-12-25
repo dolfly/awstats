@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.49 $ - $Author: eldy $ - $Date: 2005-12-20 12:43:51 $
+# $Revision: 1.50 $ - $Author: eldy $ - $Date: 2005-12-25 18:01:50 $
 
 
 #package AWSUA;
@@ -348,7 +348,7 @@
 'webcopier','webcopier',
 # Media only browsers
 'real','real',
-'winamp','winamp',				# Works for winampmpeg and winamp3httprdr
+'winamp','mediaplayer',				# Works for winampmpeg and winamp3httprdr
 'windows\-media\-player','mplayer',
 'audion','mediaplayer',
 'freeamp','mediaplayer',
