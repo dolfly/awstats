@@ -1,6 +1,6 @@
 # Latvieðu valodas ziòojumu fils (madmaster@gobbo.caves.lv)
 # Updated by edvinsma@inbox.lv 2004/01/24 00:40:00
-# $Revision: 1.4 $ - $Date: 2004-01-25 15:41:58 $
+# $Revision: 1.5 $ - $Date: 2006-01-25 00:07:59 $
 PageCode=windows-1257
 message0=Nezinâms
 message1=Nezinâms (neatpazîts ip)
@@ -61,7 +61,7 @@ message55=no
 message56=Lapas
 message57=Trâpîjumi
 message58=Versijas
-message59=Operâciju Sistçmas
+message59=Operçtâjsistçmas
 message60=Jan
 message61=Feb
 message62=Mar
@@ -122,7 +122,7 @@ message116=Izejas pages
 message117=Apmeklçjuma ilgums
 message118=Aizvçrt logu
 message119=Baiti
-message120=Meklçðans&nbsp;atslçgfrâzes
+message120=Meklçðanas&nbsp;atslçgfrâzes
 message121=Meklçðanas&nbsp;atslçgvârdi
 message122=Citas meklçtâju lapas ar atsaucçm
 message123=Citas lapas ar atsaucçm
@@ -168,3 +168,11 @@ message161=Nav apskatîts trafiks
 message162=Mçneða atskaite
 message163=Tîkla târpi
 message164=Daþâdi tîkla târpi
+message165=Veiksmîgi nosûtîti e-pasti
+message166=Neveiksmîgas e-pasta sûtîðanas
+message167=Ievainojamîba
+message168=Atslçgtsw Javascript
+message169=Izveidojis
+message170=spraudòi
+message171=Reìioni
+message172=Pilsçtas
