@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.22 $ - $Author: eldy $ - $Date: 2005-12-17 16:05:10 $
+# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2006-02-14 21:31:15 $
 
 
 #package AWSMIME;
@@ -60,6 +60,7 @@
 'wmlp','html',
 'xhtml','html',
 'xml','html',
+'vak','glasses',
 'sgm','html',
 'sgml','html',
 # HTML Dynamic pages or script
@@ -167,6 +168,7 @@
 'wmlp','page',
 'xhtml','page',
 'xml','page',
+'vak','page',
 'sgm','page',
 'sgml','page',
 # HTML Dynamic pages or script
