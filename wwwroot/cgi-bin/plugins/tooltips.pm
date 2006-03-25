@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2004-07-11 11:23:20 $
+# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2006-03-25 15:06:58 $
 
 
 # <-----
@@ -88,11 +88,13 @@ sub AddHTMLBodyHeader_tooltips {
 		#          .style.left/.height/.width/.top						IE456 OK				Netscape67 OK	XHTML OK
 		# document.getElementById										IE456 OK	Opera OK	Netscape67 OK	XHTML OK
 		# document.body.offsetWidth|document.body.style.pixelWidth		IE OK		Opera OK	Netscape OK		XHTML KO	Visible width of container
-		# document.body.scrollTop                                       IE OK		Opera OK	Netscape OK		XHTML KO	Visible width of container
 		# document.documentElement.offsetWidth																	XHTML OK	Visible width of container
-		# document.body.scrollTop                                       IE OK		Opera OK	Netscape OK		XHTML KO	Visible width of container
 		# tooltipOBJ.offsetWidth|tooltipOBJ.style.pixelWidth			IE OK		Opera OK	Netscape OK					Width of an object
-		# event.clientXY												IE OK		Opera OK	Netscape KO		XHTML KO	Return position of mouse
+		# event.clientXY												IE OK		Opera OK	Netscape KO		XHTML KO	Position of mouse
+		# window.innerHeight											IE OK					Netscape OK					Height of container
+
+		# window.pageYOffset																								?
+		# document.body.scrollTop                                       IE OK		Opera OK	Netscape ?		XHTML KO	?
 
 		my $docwidth="document.body.offsetWidth";
 		my $doctop="document.body.scrollTop";
