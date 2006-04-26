@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.867 $ - $Author: eldy $ - $Date: 2006-04-21 22:28:49 $
+# $Revision: 1.868 $ - $Author: eldy $ - $Date: 2006-04-26 19:23:45 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.867 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.868 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -870,7 +870,7 @@ sub error {
 				print "Example: If your config file is awstats.mysite.conf, use -config=mysite\n";
 			}
 			print "- ${tagbold}Did you create your config file 'awstats.$SiteConfig.conf' ?${tagunbold}${tagbr}\n";
-			print "If not, you can run \"$dir/tools/awstats_configure.pl\"\nfrom command line, or create it manually.${tagbr}\n";
+			print "If not, you can run \"awstats_configure.pl\"\nfrom command line, or create it manually.${tagbr}\n";
 			print "${tagbr}\n";
 		}
 		else { print "${tagbr}${tagbold}Setup (".($FileConfig?"'".$FileConfig."'":"Config")." file, web server or permissions) may be wrong.${tagunbold}${tagbr}\n"; }
