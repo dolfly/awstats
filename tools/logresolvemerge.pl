@@ -6,7 +6,7 @@
 # alone for any other log analyzer.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-----------------------------------------------------------------------------
-# $Revision: 1.34 $ - $Author: eldy $ - $Date: 2005-12-04 21:10:46 $
+# $Revision: 1.35 $ - $Author: eldy $ - $Date: 2006-05-02 22:21:32 $
 
 use strict; no strict "refs";
 #use diagnostics;
@@ -34,7 +34,7 @@ my %TmpDNSLookup = ();
 
 # ---------- Init variables --------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.34 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.35 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw/ $NBOFLINESFORBENCHMARK /;
@@ -84,7 +84,7 @@ use vars qw/
 
 # ---------- External Program variables ----------
 # For gzip compression
-my $zcat = 'zcat';
+my $zcat = 'gzip -cd';
 my $zcat_file = '\.gz$';
 # For bz2 compression
 my $bzcat = 'bzcat';
