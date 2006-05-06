@@ -6,12 +6,12 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.872 $ - $Author: eldy $ - $Date: 2006-05-06 02:56:39 $
+# $Revision: 1.873 $ - $Author: eldy $ - $Date: 2006-05-06 12:25:47 $
 require 5.005;
 
 #$|=1;
-use warnings;		# Must be used in test mode only. This reduce a little process speed
-use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
+#use warnings;		# Must be used in test mode only. This reduce a little process speed
+#use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
 use strict;no strict "refs";
 use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not supported by all Time::Local modules
 use Socket;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.872 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.873 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
