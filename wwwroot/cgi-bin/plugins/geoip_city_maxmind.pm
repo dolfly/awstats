@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2006-05-06 02:51:34 $
+# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2006-05-06 02:54:48 $
 
 
 # <-----
@@ -4627,7 +4627,7 @@ sub ShowInfoHost_geoip_city_maxmind {
 # UNIQUE: NO (Several plugins using this function can be loaded)
 #-----------------------------------------------------------------------------
 sub SectionInitHashArray_geoip_city_maxmind {
-    my $param="$_[0]";
+#    my $param="$_[0]";
 	# <-----
 	if ($Debug) { debug(" Plugin geoip_city_maxmind: Init_HashArray"); }
 	%_city_p = %_city_h = %_city_k = %_city_l =();

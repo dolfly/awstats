@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2006-05-06 02:51:35 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2006-05-06 02:54:48 $
 
 
 # <-----
@@ -443,7 +443,7 @@ sub ShowInfoHost_geoip_region_maxmind {
 # UNIQUE: NO (Several plugins using this function can be loaded)
 #-----------------------------------------------------------------------------
 sub SectionInitHashArray_geoip_region_maxmind {
-    my $param="$_[0]";
+#    my $param="$_[0]";
 	# <-----
 	if ($Debug) { debug(" Plugin geoip_region_maxmind: Init_HashArray"); }
 	%_region_p = %_region_h = %_region_k = %_region_l =();
