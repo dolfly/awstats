@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2006-03-24 23:42:32 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2006-05-06 02:51:35 $
 
 
 # <-----
@@ -166,7 +166,8 @@ sub Init_geoip_region_maxmind {
 	} else {
 		$geoip_region_maxmind = Geo::IP->open($datafile, $mode);
 	}
- 	debug(" Plugin geoip_region_maxmind: GeoIP initialized database_info=".$geoip_region_maxmind->database_info());
+# Fails with some geoip versions
+# 	debug(" Plugin geoip_region_maxmind: GeoIP initialized database_info=".$geoip_region_maxmind->database_info());
  	# ----->
 
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");

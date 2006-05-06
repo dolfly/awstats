@@ -8,7 +8,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2006-03-23 12:36:32 $
+# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2006-05-06 02:51:34 $
 
 
 # <-----
@@ -75,7 +75,8 @@ sub Init_geoip {
 	} else {
 		$gi = Geo::IP->open($datafile, $mode);
 	}
- 	debug(" Plugin geoip: GeoIP initialized database_info=".$gi->database_info());
+# Fails on some GeoIP version
+# 	debug(" Plugin geoip: GeoIP initialized database_info=".$gi->database_info());
 	# ----->
 
 	return ($checkversion?$checkversion:"$PluginHooksFunctions");
