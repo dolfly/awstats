@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.870 $ - $Author: eldy $ - $Date: 2006-05-06 01:41:44 $
+# $Revision: 1.871 $ - $Author: eldy $ - $Date: 2006-05-06 02:20:26 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.870 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.871 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -1134,11 +1134,14 @@ sub Read_Config {
 	if ($configdir)
 	{
 		# If from CGI, overwriting of configdir is only possible if AWSTATS_ENABLE_CONFIG_DIR defined
-		if ($ENV{'GATEWAY_INTERFACE'} && ! $ENV{"AWSTATS_ENABLE_CONFIG_DIR"})
-		{
-			error("Sorry, to allow overwriting of configdir parameter from an AWStats CGI usage, environment variable AWSTATS_ENABLE_CONFIG_DIR must be set to 1");
-		}
-		else { @PossibleConfigDir=("$configdir"); }
+		#if ($ENV{'GATEWAY_INTERFACE'} && ! $ENV{"AWSTATS_ENABLE_CONFIG_DIR"})
+		#{
+		#	error("Sorry, to allow overwriting of configdir parameter from an AWStats CGI usage, environment variable AWSTATS_ENABLE_CONFIG_DIR must be set to 1");
+		#}
+		#else
+		#{
+			@PossibleConfigDir=("$configdir");
+		#}
 	}
 	else { @PossibleConfigDir=("$DIR","/etc/awstats","/usr/local/etc/awstats","/etc","/etc/opt/awstats"); }
 
