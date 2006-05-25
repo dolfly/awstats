@@ -3,13 +3,13 @@
 # Launch update process for all config files found in a particular directory.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2005-04-22 17:34:05 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2006-05-25 00:22:01 $
 
 
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.11 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.12 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG
@@ -69,7 +69,14 @@ for (0..@ARGV-1) {
 	if ($ARGV[$_] =~ /^-*h/i)     		  	 { $helpfound=1; last; }
 	if ($ARGV[$_] =~ /^-*awstatsprog=(.*)/i) { $Awstats="$1"; next; }
 	if ($ARGV[$_] =~ /^-*configdir=(.*)/i)   { $DIRCONFIG="$1"; next; }
-	if ($ARGV[$_] =~ /^-*excludeconf=(.*)/i) { $confexcluded{"$1"}=1; next; }
+	if ($ARGV[$_] =~ /^-*excludeconf=(.*)/i) {
+			#try to get the different files to exclude
+			@conftoexclude = split(/,/, $1);
+			foreach (@conftoexclude) {
+				$confexcluded{"$_"}=1;
+			}
+			next; 
+	}
 	if ($ARGV[$_] =~ /^-*debug=(\d+)/i)  	 { $Debug=$1; next; }
 	if ($ARGV[$_] =~ /^now/i)     		  	 { $nowfound=1; next; }
 }
@@ -88,7 +95,7 @@ if (!$nowfound || $helpfound || ! @ARGV) {
 	print "Where options are:\n";
 	print "  -awstatsprog=pathtoawstatspl\n";
 	print "  -configdir=directorytoscan\n";
-	print "  -excludeconf=conftoexclude (Note: awstats.model.conf is always excluded)\n";
+	print "  -excludeconf=conftoexclude[,conftoexclude2,...] (Note: awstats.model.conf is always excluded)\n";
 	print "\n";
 	exit 0;
 }
@@ -152,3 +159,4 @@ if (@files) {
 }
 
 0;	# Do not remove this line
+
