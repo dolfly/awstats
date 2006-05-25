@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.873 $ - $Author: eldy $ - $Date: 2006-05-06 12:25:47 $
+# $Revision: 1.874 $ - $Author: eldy $ - $Date: 2006-05-25 00:20:49 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.873 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.874 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -1460,7 +1460,7 @@ sub Read_Ref_Data {
 	# Sanity check (if loaded)
 	if ((scalar keys %OSHashID) && @OSSearchIDOrder != scalar keys %OSHashID) { error("Not same number of records of OSSearchIDOrder (".(@OSSearchIDOrder)." entries) and OSHashID (".(scalar keys %OSHashID)." entries) in OS database. Check your file ".$FilePath{"operating_systems.pm"}); }
 	if ((scalar keys %SearchEnginesHashID) && (@SearchEnginesSearchIDOrder_list1+@SearchEnginesSearchIDOrder_list2+@SearchEnginesSearchIDOrder_listgen) != scalar keys %SearchEnginesHashID) { error("Not same number of records of SearchEnginesSearchIDOrder_listx (total is ".(@SearchEnginesSearchIDOrder_list1+@SearchEnginesSearchIDOrder_list2+@SearchEnginesSearchIDOrder_listgen)." entries) and SearchEnginesHashID (".(scalar keys %SearchEnginesHashID)." entries) in Search Engines database. Check your file ".$FilePath{"search_engines.pm"}." is up to date."); }
-	if ((scalar keys %BrowsersHashIDLib) && @BrowsersSearchIDOrder != (scalar keys %BrowsersHashIDLib) - 4) { error("Not same number of records of BrowsersSearchIDOrder (".(@BrowsersSearchIDOrder)." entries) and BrowsersHashIDLib (".((scalar keys %BrowsersHashIDLib) - 3)." entries without msie,netscape,firefox,svn) in Browsers database. May be you updated AWStats without updating browsers.pm file or you made changed into browsers.pm not correctly. Check your file ".$FilePath{"browsers.pm"}." is up to date."); }
+	if ((scalar keys %BrowsersHashIDLib) && @BrowsersSearchIDOrder != (scalar keys %BrowsersHashIDLib) - 4) { error("Not same number of records of BrowsersSearchIDOrder (".(@BrowsersSearchIDOrder)." entries) and BrowsersHashIDLib (".((scalar keys %BrowsersHashIDLib) - 4)." entries without msie,netscape,firefox,svn) in Browsers database. May be you updated AWStats without updating browsers.pm file or you made changed into browsers.pm not correctly. Check your file ".$FilePath{"browsers.pm"}." is up to date."); }
 	if ((scalar keys %RobotsHashIDLib) && (@RobotsSearchIDOrder_list1+@RobotsSearchIDOrder_list2+@RobotsSearchIDOrder_listgen) != (scalar keys %RobotsHashIDLib) - 1) { error("Not same number of records of RobotsSearchIDOrder_listx (total is ".(@RobotsSearchIDOrder_list1+@RobotsSearchIDOrder_list2+@RobotsSearchIDOrder_listgen)." entries) and RobotsHashIDLib (".((scalar keys %RobotsHashIDLib) - 1)." entries without 'unknown') in Robots database. Check your file ".$FilePath{"robots.pm"}." is up to date."); }
 }
 
