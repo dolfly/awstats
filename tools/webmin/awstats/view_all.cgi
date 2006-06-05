@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # view_all.cgi
 # Display summary of all available config files
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2005-01-15 15:01:13 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2006-06-05 06:54:43 $
 
 require './awstats-lib.pl';
 &ReadParse();
@@ -375,19 +375,19 @@ if (scalar @config) {
 		    print "</td>";
 		}
         else {
-    		print "<td align=\"right\">";
+    		print "<td align=\"right\" nowrap=\"1\">";
     		print Format_Number($view_u{$l});
     		print "</td>";
-    		print "<td align=\"right\">";
+    		print "<td align=\"right\" nowrap=\"1\">";
     		print Format_Number($view_v{$l});
     		print "</td>";
-    		print "<td align=\"right\">";
+    		print "<td align=\"right\" nowrap=\"1\">";
     		print Format_Number($view_p{$l});
     		print "</td>";
-    		print "<td align=\"right\">";
+    		print "<td align=\"right\" nowrap=\"1\">";
     		print Format_Number($view_h{$l});
     		print "</td>";
-    		print "<td align=\"right\">";
+    		print "<td align=\"right\" nowrap=\"1\">";
     		print Format_Bytes($view_k{$l});
     		print "</td>";
             # Print bargraph
