@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.19 $ - $Author: eldy $ - $Date: 2006-02-14 21:31:15 $
+# $Revision: 1.20 $ - $Author: eldy $ - $Date: 2006-06-05 07:06:35 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              - added specific Linux distributions in addition to 
@@ -78,7 +78,7 @@
 'risc[_+ ]?os',
 'symbian',
 'webtv',
-'playstation\sportable',
+'playstation[_+ ]portable',
 'xbox'
 );
 
@@ -142,7 +142,7 @@
 'risc[_+ ]?os','riscos',
 'symbian','symbian',
 'webtv','webtv',
-'playstation\sportable', 'psp',
+'playstation[_+ ]portable', 'psp',
 'xbox', 'winxbox',
 );
 
