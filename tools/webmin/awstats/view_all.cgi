@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # view_all.cgi
 # Display summary of all available config files
-# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2006-06-05 06:54:43 $
+# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2006-06-09 21:32:33 $
 
 require './awstats-lib.pl';
 &ReadParse();
@@ -284,6 +284,8 @@ if (scalar @config) {
         }
     }
 
+	($total_u,$total_v,$total_p,$total_h,$total_k)=();
+	
 	# Loop on each config file to show info
 	#--------------------------------------
 	foreach my $l (@config) {
@@ -375,6 +377,11 @@ if (scalar @config) {
 		    print "</td>";
 		}
         else {
+        	$total_u+=$view_u{$l};
+        	$total_v+=$view_v{$l};
+        	$total_p+=$view_p{$l};
+        	$total_h+=$view_h{$l};
+        	$total_k+=$view_k{$l};
     		print "<td align=\"right\" nowrap=\"1\">";
     		print Format_Number($view_u{$l});
     		print "</td>";
@@ -424,7 +431,34 @@ if (scalar @config) {
 		print "</tr>\n";
 	}
 
-	if ($nbofallowedconffound > 0) { print "</table><br>\n"; }
+	if ($nbofallowedconffound > 0)
+	{
+		print "<tr $cb>\n";
+
+		print "<td colspan=\"2\">&nbsp;</td>";
+		print "<td>Total</td>";
+
+		print "<td align=\"right\" nowrap=\"1\">";
+		print Format_Number($total_u);
+		print "</td>";
+		print "<td align=\"right\" nowrap=\"1\">";
+		print Format_Number($total_v);
+		print "</td>";
+		print "<td align=\"right\" nowrap=\"1\">";
+		print Format_Number($total_p);
+		print "</td>";
+		print "<td align=\"right\" nowrap=\"1\">";
+		print Format_Number($total_h);
+		print "</td>";
+		print "<td align=\"right\" nowrap=\"1\">";
+		print Format_Bytes($total_k);
+		print "</td>";
+        # Print bargraph
+        print '<td colspan="2">&nbsp;</td>';
+		print "</tr>\n";		
+		
+		print "</table><br>\n";
+	}
 }
 
 if (! $nbofallowedconffound) {
