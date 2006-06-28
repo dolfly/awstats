@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.876 $ - $Author: eldy $ - $Date: 2006-06-05 07:22:30 $
+# $Revision: 1.877 $ - $Author: eldy $ - $Date: 2006-06-28 01:19:30 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.876 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.877 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -5336,9 +5336,9 @@ sub ShowEmailSendersChart {
 		if ($direction == 0) { print "<td colspan=\"3\"><span style=\"color: #$color_other\">$newkey</span></td>"; }
 		if ($direction < 0) { print "<td class=\"aws\">&nbsp;</td><td>&lt;-</td><td>$newkey</td>"; }
 		if ($ShowEMailSenders =~ /H/i) { print "<td>$_emails_h{$key}</td>"; }
-		if ($ShowEMailSenders =~ /B/i) { print "<td>".Format_Bytes($_emails_k{$key})."</td>"; }
-		if ($ShowEMailSenders =~ /M/i) { print "<td>".Format_Bytes($_emails_k{$key}/($_emails_h{$key}||1))."</td>"; }
-		if ($ShowEMailSenders =~ /L/i) { print "<td>".($_emails_l{$key}?Format_Date($_emails_l{$key},1):'-')."</td>"; }
+		if ($ShowEMailSenders =~ /B/i) { print "<td nowrap=\"nowrap\">".Format_Bytes($_emails_k{$key})."</td>"; }
+		if ($ShowEMailSenders =~ /M/i) { print "<td nowrap=\"nowrap\">".Format_Bytes($_emails_k{$key}/($_emails_h{$key}||1))."</td>"; }
+		if ($ShowEMailSenders =~ /L/i) { print "<td nowrap=\"nowrap\">".($_emails_l{$key}?Format_Date($_emails_l{$key},1):'-')."</td>"; }
 		print "</tr>\n";
 		#$total_p += $_emails_p{$key};
 		$total_h += $_emails_h{$key};
@@ -5351,8 +5351,8 @@ sub ShowEmailSendersChart {
 	if ($rest_p > 0 || $rest_h > 0 || $rest_k > 0) {	# All other sender emails
 		print "<tr><td colspan=\"3\"><span style=\"color: #$color_other\">$Message[2]</span></td>";
 		if ($ShowEMailSenders =~ /H/i) { print "<td>$rest_h</td>"; }
-		if ($ShowEMailSenders =~ /B/i) { print "<td>".Format_Bytes($rest_k)."</td>"; }
-		if ($ShowEMailSenders =~ /M/i) { print "<td>".Format_Bytes($rest_k/($rest_h||1))."</td>"; }
+		if ($ShowEMailSenders =~ /B/i) { print "<td nowrap=\"nowrap\">".Format_Bytes($rest_k)."</td>"; }
+		if ($ShowEMailSenders =~ /M/i) { print "<td nowrap=\"nowrap\">".Format_Bytes($rest_k/($rest_h||1))."</td>"; }
 		if ($ShowEMailSenders =~ /L/i) { print "<td>&nbsp;</td>"; }
 		print "</tr>\n";
 	}
