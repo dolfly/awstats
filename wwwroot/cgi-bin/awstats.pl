@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.879 $ - $Author: eldy $ - $Date: 2006-07-17 22:49:50 $
+# $Revision: 1.880 $ - $Author: eldy $ - $Date: 2006-07-17 23:11:19 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.879 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.880 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -6024,6 +6024,16 @@ if ($lastyearbeforeupdate) {
 	# Read 'general' section of last history file for LastLine
 	&Read_History_With_TmpUpdate($lastyearbeforeupdate,$lastmonthbeforeupdate,$lastdaybeforeupdate,$lasthourbeforeupdate,0,0,"general");
 }
+# Warning if lastline in future 
+if ($LastLine > ($nowtime + 20000))
+{
+	warning("WARNING: LastLine parameter in history file is '$LastLine' so in future. May be you need to correct manually the line LastLine in some awstats*.$SiteConfig files.");
+}
+# Force LastLine
+if ($QueryString =~ /lastline=(\d{14})/i)
+{
+	$LastLine=$1;	
+}
 if ($Debug) {
 	debug("Last year=$lastyearbeforeupdate - Last month=$lastmonthbeforeupdate");
 	debug("Last day=$lastdaybeforeupdate - Last hour=$lasthourbeforeupdate");
@@ -6033,11 +6043,7 @@ if ($Debug) {
 	debug("LastLineChecksum=$LastLineChecksum");
 }
 
-# Warning if lastline in future 
-if ($LastLine > ($nowtime + 20000))
-{
-	warning("WARNING: LastLine parameter in history file is in future. May be you need to correct manually the line LastLine in some awstats*.$SiteConfig files.");
-}
+
 
 # Init vars
 &Init_HashArray();

@@ -3,13 +3,13 @@
 # Launch update process for all config files found in a particular directory.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2006-05-25 00:22:01 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2006-07-17 23:11:18 $
 
 
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.12 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.13 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG
@@ -21,6 +21,7 @@ my $Awstats='awstats.pl';
 
 my $AwstatsDir='';
 my $AwstatsProg='';
+my $LastLine='';
 
 
 
@@ -78,6 +79,7 @@ for (0..@ARGV-1) {
 			next; 
 	}
 	if ($ARGV[$_] =~ /^-*debug=(\d+)/i)  	 { $Debug=$1; next; }
+	if ($ARGV[$_] =~ /^-*lastline=(\d+)/i)   { $LastLine=$1; next; }
 	if ($ARGV[$_] =~ /^now/i)     		  	 { $nowfound=1; next; }
 }
 
