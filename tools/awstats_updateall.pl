@@ -3,13 +3,13 @@
 # Launch update process for all config files found in a particular directory.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2006-07-17 23:11:18 $
+# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2006-07-19 19:38:51 $
 
 
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.13 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.14 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG
@@ -76,7 +76,7 @@ for (0..@ARGV-1) {
 			foreach (@conftoexclude) {
 				$confexcluded{"$_"}=1;
 			}
-			next; 
+			next;
 	}
 	if ($ARGV[$_] =~ /^-*debug=(\d+)/i)  	 { $Debug=$1; next; }
 	if ($ARGV[$_] =~ /^-*lastline=(\d+)/i)   { $LastLine=$1; next; }
@@ -104,7 +104,7 @@ if (!$nowfound || $helpfound || ! @ARGV) {
 
 debug("Scan directory $DIRCONFIG");
 
-# Scan directory $DIRCONFIG 
+# Scan directory $DIRCONFIG
 opendir(DIR, $DIRCONFIG) || error("Can't scan directory $DIRCONFIG");
 my @filesindir = grep { /^awstats\.(.*)conf$/ } sort readdir(DIR);
 closedir(DIR);
@@ -157,7 +157,7 @@ if (@files) {
 		}
 	}
 } else {
-	print "No AWStats config file found in $DIRCONFIG\n";	
+	print "No AWStats config file found in $DIRCONFIG\n";
 }
 
 0;	# Do not remove this line
