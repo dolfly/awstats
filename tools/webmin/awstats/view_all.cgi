@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # view_all.cgi
 # Display summary of all available config files
-# $Revision: 1.7 $ - $Author: eldy $ - $Date: 2006-06-09 21:32:33 $
+# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2006-07-21 23:32:43 $
 
 require './awstats-lib.pl';
 &ReadParse();
@@ -431,7 +431,7 @@ if (scalar @config) {
 		print "</tr>\n";
 	}
 
-	if ($nbofallowedconffound > 0)
+	if ($nbofallowedconffound > 0 && 1==2)
 	{
 		print "<tr $cb>\n";
 
@@ -456,9 +456,9 @@ if (scalar @config) {
         # Print bargraph
         print '<td colspan="2">&nbsp;</td>';
 		print "</tr>\n";		
-		
-		print "</table><br>\n";
 	}
+
+	print "</table><br>\n";
 }
 
 if (! $nbofallowedconffound) {
