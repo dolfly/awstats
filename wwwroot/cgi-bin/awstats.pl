@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.881 $ - $Author: eldy $ - $Date: 2006-07-21 22:45:55 $
+# $Revision: 1.882 $ - $Author: eldy $ - $Date: 2006-07-22 22:05:29 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.881 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.882 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -5091,6 +5091,7 @@ sub DefinePerlParsingFormat {
 		$LogFormatString =~ s/cs-mime-type/%other/g;
 		$LogFormatString =~ s/s-object-source/%other/g;
 		$LogFormatString =~ s/s-cache-info/%other/g;
+		$LogFormatString =~ s/cluster-node/%cluster/g;
 		# Added for MMS
 		$LogFormatString =~ s/protocol/%protocolmms/g;	# cs-method might not be available
 		$LogFormatString =~ s/c-status/%codemms/g;		# c-status used when sc-status not available
