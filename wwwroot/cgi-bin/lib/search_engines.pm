@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.36 $ - $Author: eldy $ - $Date: 2006-05-25 00:18:32 $
+# $Revision: 1.37 $ - $Author: eldy $ - $Date: 2006-07-22 21:04:10 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
@@ -122,7 +122,7 @@
 'euroseek\.',
 'looksmart\.',
 'spray\.',
-'nbci\.com/search',
+'nbci\.com\/search',
 'de\.ask.\com', # break out Ask country specific engines.  (.jp is in Japan section)
 'es\.ask.\com',
 'fr\.ask.\com',
@@ -230,7 +230,7 @@
 
 
 # NotSearchEnginesKeys
-# If a search engie key is found, we check its exclude list to know if it's
+# If a search engine key is found, we check its exclude list to know if it's
 # really a search engine
 #------------------------------------------------------------------------------
 %NotSearchEnginesKeys=(
@@ -285,7 +285,7 @@
 'euroseek\.','euroseek',
 'looksmart\.','looksmart',
 'spray\.','spray',
-'nbci\.com/search','nbci',
+'nbci\.com\/search','nbci',
 'de\.ask.\com','askde', # break out Ask country specific engines.
 'es\.ask.\com','askes',
 'fr\.ask.\com','askfr',
