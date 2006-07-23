@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.882 $ - $Author: eldy $ - $Date: 2006-07-22 22:05:29 $
+# $Revision: 1.883 $ - $Author: eldy $ - $Date: 2006-07-23 23:00:30 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.882 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.883 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -6038,7 +6038,7 @@ if ($lastyearbeforeupdate) {
 # Warning if lastline in future 
 if ($LastLine > ($nowtime + 20000))
 {
-	warning("WARNING: LastLine parameter in history file is '$LastLine' so in future. May be you need to correct manually the line LastLine in some awstats*.$SiteConfig files.");
+	warning("WARNING: LastLine parameter in history file is '$LastLine' so in future. May be you need to correct manually the line LastLine in some awstats*.$SiteConfig.conf files.");
 }
 # Force LastLine
 if ($QueryString =~ /lastline=(\d{14})/i)

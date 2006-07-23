@@ -3,13 +3,13 @@
 # Launch update process for all config files found in a particular directory.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2006-07-19 19:38:51 $
+# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2006-07-23 22:57:48 $
 
 
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.14 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.15 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 # Default value of DIRCONFIG
@@ -150,6 +150,10 @@ if (@files) {
 			# Define command line
 			my $command="\"$AwstatsDir/$AwstatsProg\" -update -config=$domain";
 			$command.=" -configdir=\"$DIRCONFIG\"";
+			if ($LastLine) 
+			{
+				$command.=" -lastline=$LastLine";
+			}
 			# Run command line
 			print "Running '$command' to update config $domain\n";
 			my $output = `$command 2>&1`;
