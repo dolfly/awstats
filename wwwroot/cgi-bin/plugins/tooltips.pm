@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2006-03-25 15:06:58 $
+# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2006-07-29 18:20:49 $
 
 
 # <-----
@@ -94,7 +94,7 @@ sub AddHTMLBodyHeader_tooltips {
 		# window.innerHeight											IE OK					Netscape OK					Height of container
 
 		# window.pageYOffset																								?
-		# document.body.scrollTop                                       IE OK		Opera OK	Netscape ?		XHTML KO	?
+		# document.body.scrollTop                                       IE OK		Opera OK	Netscape OK		XHTML KO	Vertical position of scrollbar
 
 		my $docwidth="document.body.offsetWidth";
 		my $doctop="document.body.scrollTop";
