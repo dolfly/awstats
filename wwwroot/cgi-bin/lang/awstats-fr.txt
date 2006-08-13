@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.82 $ - $Date: 2006-06-05 06:59:37 $
+# $Revision: 1.83 $ - $Date: 2006-08-13 19:47:06 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -67,7 +67,7 @@ message63=Avr
 message64=Mai
 message65=Juin
 message66=Juil
-message67=Août
+message67=Aoû
 message68=Sep
 message69=Oct
 message70=Nov
