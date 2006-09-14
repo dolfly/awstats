@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.53 $ - $Author: eldy $ - $Date: 2006-05-25 00:14:20 $
+# $Revision: 1.54 $ - $Author: eldy $ - $Date: 2006-09-14 22:22:12 $
 
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
 # 				akregator (rss)
@@ -383,7 +383,7 @@
 'microsoft\-webdav\-miniredir', 'Microsoft Data Access Component Internet Publishing Provider',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\scache\smanager', 'Microsoft Data Access Component Internet Publishing Provider Cache Manager',
 'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sdav', 'Microsoft Data Access Component Internet Publishing Provider DAV',
-'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sprotocol\sdiscovery', 'Microsoft Data Access Component Internet Publishing Provider Protocol Discovery (Server probe for data access operations using MS Frontpage with OPTION header)',
+'microsoft\sdata\saccess\sinternet\spublishing\sprovider\sprotocol\sdiscovery', 'Microsoft Data Access Component Internet Publishing Provider Protocol Discovery',
 'POE\-Component\-Client\-HTTP','HTTP user-agent for POE (portable networking framework for Perl)',
 'mozilla','Mozilla',
 'libwww','LibWWW',
