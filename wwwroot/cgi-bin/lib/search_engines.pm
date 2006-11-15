@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.39 $ - $Author: eldy $ - $Date: 2006-10-01 14:37:54 $
+# $Revision: 1.40 $ - $Author: eldy $ - $Date: 2006-11-15 22:21:39 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
@@ -692,7 +692,7 @@
 'mysearch','searchfor=',
 'vivisimo','query=',
 # kartoo: No keywords passed in referring URL.
-'kartoo',,
+'kartoo','',
 'icerocket','q=',
 'sphere','q=',
 'ledix','q=',
