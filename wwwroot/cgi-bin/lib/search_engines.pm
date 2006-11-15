@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.40 $ - $Author: eldy $ - $Date: 2006-11-15 22:21:39 $
+# $Revision: 1.41 $ - $Author: eldy $ - $Date: 2006-11-15 22:30:15 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
@@ -351,7 +351,8 @@
 'google\.'=>'translate\.google\.',
 'msn\.'=>'hotmail\.msn\.',
 'tiscali\.'=>'mail\.tiscali\.',
-'yahoo\.'=>'mail\.yahoo\.'
+'yahoo\.'=>'mail\.yahoo\.',
+'yandex\.'=>'direct\.yandex\.'
 );
 
 
