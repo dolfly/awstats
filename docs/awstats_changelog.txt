@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.247 $ - $Author: eldy $ - $Date: 2006-07-21 23:41:08 $
+$Revision: 1.248 $ - $Author: eldy $ - $Date: 2006-12-23 13:36:30 $
 
 
 ***** 6.6 *****
@@ -10,6 +10,7 @@ New features/improvements:
 - Possible use of vhost in extra section.
 - Support IPv6 in AllowAccessFromWebToFollowingIPAddresses parameter.
 - Added svn family to browsers detection.
+- Support for IE7.
 
 Fixes:
 - Remove some Perl warnings.

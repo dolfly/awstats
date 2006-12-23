@@ -1,6 +1,10 @@
 AWStats-Webmin module Changelog
 -------------------------------
-$Revision: 1.19 $ - $Author: eldy $ - $Date: 2005-07-10 16:25:27 $ 
+$Revision: 1.20 $ - $Author: eldy $ - $Date: 2006-12-23 13:33:54 $ 
+
+1.700
+
+Just minor bug fixes.
 
 
 1.600
