@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.889 $ - $Author: eldy $ - $Date: 2007-03-06 18:35:20 $
+# $Revision: 1.890 $ - $Author: eldy $ - $Date: 2007-05-05 02:19:20 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.889 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.890 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.6 (build $REVISION)";
 
 # ----- Constants -----
@@ -7791,6 +7791,7 @@ if (scalar keys %HTMLOutput) {
 			}
 			else {
 				print "<span style=\"font-size: 14px;\">";
+				if ($DayRequired) { print "$Message[4] $DayRequired - "; }	
 				if ($MonthRequired eq 'all') { print "$Message[6] $YearRequired"; }
 				else { print "$Message[5] $MonthNumLib{$MonthRequired} $YearRequired"; }
 				print "</span>";
