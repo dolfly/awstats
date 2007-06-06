@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.42 $ - $Author: eldy $ - $Date: 2007-06-05 19:27:20 $
+# $Revision: 1.43 $ - $Author: eldy $ - $Date: 2007-06-06 17:14:21 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
@@ -920,10 +920,10 @@
 'sphere','<a href="http://www.sphere.com/" title="Search Engine Home Page [new window]" target="_blank">Sphere (Blog)</a>',
 'ledix','<a href="http://www.ledix.net/" title="Search Engine Home Page [new window]" target="_blank">Ledix</a>',
 'shawca','<a href="http://start.shaw.ca/" title="Search Engine Home Page [new window]" target="_blank">Shaw.ca</a>',
-'searchalot','<http://www.searchalot.com/" title="Search Engine Home Page [new window]" target="_blank">Searchalot</a>',
-'copernic','<http://www.copernic.com/" title="Search Engine Home Page [new window]" target="_blank">Copernic</a>',
-'avantfind','<http://www.avantfind.com/" title="Search Engine Home Page [new window]" target="_blank">Avantfind</a>',
-'steadysearch','<http://www.avantfind.com/" title="Search Engine Home Page [new window]" target="_blank">Avantfind</a>',
+'searchalot','<a href="http://www.searchalot.com/" title="Search Engine Home Page [new window]" target="_blank">Searchalot</a>',
+'copernic','<a href="http://www.copernic.com/" title="Search Engine Home Page [new window]" target="_blank">Copernic</a>',
+'avantfind','<a href="http://www.avantfind.com/" title="Search Engine Home Page [new window]" target="_blank">Avantfind</a>',
+'steadysearch','<a href="http://www.avantfind.com/" title="Search Engine Home Page [new window]" target="_blank">Avantfind</a>',
 # Chello Portals
 'chelloat','<a href="http://www.chello.at/" title="Search Engine Home Page [new window]" target="_blank">Chello Austria</a>',
 'chellobe','<a href="http://www.chello.be/" title="Search Engine Home Page [new window]" target="_blank">Chello Belgium</a>',
