@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2005-05-05 17:58:18 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2007-07-02 21:50:51 $
 
 
 #package AWSDOM;
@@ -52,7 +52,9 @@
 'hr','Croatia','ht','Haiti','hu','Hungary','id','Indonesia','ie','Ireland','il','Israel',
 'im','Isle of Man','in','India','info','Info domains','int','International','io','British Indian Ocean Territory',
 'iq','Iraq','ir','Iran','is','Iceland','it','Italy',
-'je','Jersey','jm','Jamaica','jo','Jordan','jp','Japan','ke','Kenya','kg','Kyrgyzstan',
+'je','Jersey','jm','Jamaica','jo','Jordan',
+'jobs','Jobs domains',
+'jp','Japan','ke','Kenya','kg','Kyrgyzstan',
 'kh','Cambodia','ki','Kiribati','km','Comoros','kn','Saint Kitts &amp; Nevis Anguilla',
 'kp','North Korea','kr','South Korea','kw','Kuwait',
 'ky','Cayman Islands','kz','Kazakhstan','la','Laos','lb','Lebanon','lc','Saint Lucia',
@@ -60,6 +62,7 @@
 'lu','Luxembourg','lv','Latvia','ly','Libya','ma','Morocco','mc','Monaco',
 'md','Moldova','mg','Madagascar','mh','Marshall Islands','mil','USA Military',
 'mk','Macedonia','ml','Mali','mm','Myanmar','mn','Mongolia','mo','Macau',
+'mobi','Mobi domains',
 'mp','Northern Mariana Islands','mq','Martinique (French)','mr','Mauritania',
 'ms','Montserrat','mt','Malta','mu','Mauritius','museum','Museum domains','mv','Maldives',
 'mw','Malawi','mx','Mexico','my','Malaysia','mz','Mozambique','na','Namibia','name','Name domains','nato','NATO',
