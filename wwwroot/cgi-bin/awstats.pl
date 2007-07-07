@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.891 $ - $Author: eldy $ - $Date: 2007-07-07 10:57:14 $
+# $Revision: 1.892 $ - $Author: eldy $ - $Date: 2007-07-07 11:00:05 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.891 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.892 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.7 (build $REVISION)";
 
 # ----- Constants -----
@@ -5690,7 +5690,7 @@ if ($ENV{'AWSTATS_FORCE_CONFIG'}) {
 
 if ((! $ENV{'GATEWAY_INTERFACE'}) && (! $SiteConfig)) {
 	&Read_Ref_Data('browsers','domains','operating_systems','robots','search_engines','worms');
-	print "----- $PROG $VERSION (c) 2000-2006 Laurent Destailleur -----\n";
+	print "----- $PROG $VERSION (c) 2000-2007 Laurent Destailleur -----\n";
 	print "AWStats is a free web server logfile analyzer to show you advanced web\n";
 	print "statistics.\n";
 	print "AWStats comes with ABSOLUTELY NO WARRANTY. It's a free software distributed\n";
