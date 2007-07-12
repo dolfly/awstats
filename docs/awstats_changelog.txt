@@ -1,6 +1,13 @@
 AWStats Changelog
 -----------------
-$Revision: 1.250 $ - $Author: eldy $ - $Date: 2007-07-07 10:40:33 $
+$Revision: 1.251 $ - $Author: eldy $ - $Date: 2007-07-12 21:38:20 $
+
+
+***** 6.8 *****
+
+Fixes:
+- Fixed pb in xml output for history files
+
 
 
 ***** 6.7 *****
