@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.56 $ - $Author: eldy $ - $Date: 2007-08-10 21:01:41 $
+# $Revision: 1.57 $ - $Author: eldy $ - $Date: 2007-08-26 19:41:26 $
 
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
 # 				akregator (rss)
@@ -121,6 +121,7 @@
 'applesyndication',
 'betanews_reader',
 'blogbridge',
+'cyndicate',
 'feeddemon', 
 'feedreader', 
 'feedtools',
@@ -305,6 +306,7 @@
 'applesyndication','<a href="http://www.apple.com/macosx/features/safari/" title="Browser home page [new window]" target="_blank">AppleSyndication (RSS Reader)</a>',
 'betanews_reader','Betanews Reader (RSS Reader)',
 'blogbridge','<a href="http://www.blogbridge.com/" title="Browser home page [new window]" target="_blank">BlogBridge (RSS Reader)</a>',
+'cyndicate','Cyndicate (RSS Reader)',
 'feeddemon', 'FeedDemon (RSS Reader)',
 'feedreader', 'FeedReader (RSS Reader)',
 'feedtools','<a href="http://sporkmonger.com/projects/feedtools/" title="Browser home page [new window]" target="_blank">FeedTools (RSS Reader)</a>',
