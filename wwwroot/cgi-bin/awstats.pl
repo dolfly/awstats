@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.894 $ - $Author: eldy $ - $Date: 2007-07-12 21:38:20 $
+# $Revision: 1.895 $ - $Author: eldy $ - $Date: 2007-08-26 19:39:02 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.894 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.895 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -6364,6 +6364,8 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 			|| $field[$pos_method] eq 'REPORT'
 			|| $field[$pos_method] eq 'MKCOL'
 			|| $field[$pos_method] eq 'COPY'
+			|| $field[$pos_method] eq 'RPC_IN_DATA'
+			|| $field[$pos_method] eq 'RPC_OUT_DATA'
 			|| $field[$pos_method] =~ /OK/i
 			|| $field[$pos_method] =~ /ERR\!/i)) {
 			# HTTP request.	Keep only GET, POST, HEAD, *OK* and ERR! for Webstar. Do not keep OPTIONS, TRACE
