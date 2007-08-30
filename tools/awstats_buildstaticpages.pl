@@ -3,7 +3,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.34 $ - $Author: eldy $ - $Date: 2007-05-05 02:18:05 $
+# $Revision: 1.35 $ - $Author: eldy $ - $Date: 2007-08-30 16:43:15 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -15,7 +15,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.34 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.35 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -253,7 +253,6 @@ if ($QueryString =~ /(^|-|&)staticlinksext=([^&]+)/i)	{ $StaticExt="$2"; }
 if ($QueryString =~ /(^|-|&)dir=([^&]+)/i)			{ $OutputDir="$2"; }
 if ($QueryString =~ /(^|-|&)diricons=([^&]+)/i)		{ $DirIcons="$2"; }
 if ($QueryString =~ /(^|-|&)update/i)				{ $Update=1; }
-if ($QueryString =~ /(^|-|&)date/i)					{ $BuildDate='%YY%MM%DD'; }		# For backward compatibility
 if ($QueryString =~ /(^|-|&)builddate=?([^&]*)/i)	{ $BuildDate=$2||'%YY%MM%DD'; }
 if ($QueryString =~ /(^|-|&)year=(\d\d\d\d)/i) 		{ $YearRequired="$2"; }
 if ($QueryString =~ /(^|-|&)month=(\d{1,2})/i || $QueryString =~ /(^|-|&)month=(all)/i) { $MonthRequired="$2"; }
