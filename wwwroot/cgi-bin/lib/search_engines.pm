@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.44 $ - $Author: eldy $ - $Date: 2007-08-10 21:01:42 $
+# $Revision: 1.45 $ - $Author: eldy $ - $Date: 2007-09-11 18:51:20 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
@@ -1070,9 +1070,9 @@
 'passagen','Evreka',
 'enirose','<a href="http://www.eniro.se/" title="Eniro Sverige home page [new window]" target="_blank">Eniro Sverige</a>',
 # Minor Slovak search engines
-'zoznam','<a href="http://www.zoznam.sk/" Searc Engine home page [new window]" target="_blank">Zoznam</a>',
+'zoznam','<a href="http://www.zoznam.sk/" title="Zoznam search engine home page [new window]" target="_blank">Zoznam</a>',
 # Minor Portuguese search engines
-'sapo','<a href="http://www.sapo.pt/" Searc Engine home page [new window]" target="_blank">Sapo</a>',
+'sapo','<a href="http://www.sapo.pt/" title="Sapo search engine home page [new window]" target="_blank">Sapo</a>',
 # Minor Swiss search engines
 'searchch', 'search.ch', 'bluewin', 'search.bluewin.ch',								
 # Generic search engines
