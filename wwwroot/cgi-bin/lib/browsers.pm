@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.57 $ - $Author: eldy $ - $Date: 2007-08-26 19:41:26 $
+# $Revision: 1.58 $ - $Author: eldy $ - $Date: 2007-10-16 17:13:13 $
 
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
 # 				akregator (rss)
@@ -511,7 +511,6 @@
 'webtv','webtv',
 # Anonymous Proxy Browsers (can be used as grabbers as well...)
 'cjb\.net','cjbnet',
-'ossproxy','ossproxy',
 # RSS Readers
 'abilon', 'abilon',
 'aggrevator', 'rss',
