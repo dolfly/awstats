@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.252 $ - $Author: eldy $ - $Date: 2007-10-12 22:17:06 $
+$Revision: 1.253 $ - $Author: eldy $ - $Date: 2007-11-11 20:19:26 $
 
 
 ***** 6.8 *****
@@ -32,6 +32,8 @@ Other/Documentation:
   1569208 Browser update on potu rss reader and lilina rss reader
 - Added a more complete xslt example.
 - Remove some deprecated code.
+- Update status of GeoIP City plugin database. A free version is
+  now available like GeoIP Country database.
 
 
 ***** 6.7 *****
