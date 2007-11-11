@@ -3,7 +3,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.35 $ - $Author: eldy $ - $Date: 2007-08-30 16:43:15 $
+# $Revision: 1.36 $ - $Author: eldy $ - $Date: 2007-11-11 19:40:33 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -15,7 +15,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.35 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.36 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -55,7 +55,9 @@ $ShowRobotsStats $ShowSessionsStats $ShowPagesStats $ShowFileTypesStats
 $ShowOSStats $ShowBrowsersStats $ShowOriginStats
 $ShowKeyphrasesStats $ShowKeywordsStats $ShowMiscStats $ShowHTTPErrorsStats
 $BuildReportFormat
+@ExtraName
 /;
+@ExtraName = ();
 # ----- Time vars -----
 use vars qw/
 $starttime
@@ -223,6 +225,9 @@ sub Parse_Config {
 			while ($value =~ /__([^\s_]+(?:_[^\s_]+)*)__/) { my $var=$1; $value =~ s/__${var}__/$ENV{$var}/g; }
 		}
 
+		# Extra parameters
+ 		if ($param =~ /^ExtraSectionName(\d+)/)			{ $ExtraName[$1]=$value; next; }
+
 		# If parameters was not found previously, defined variable with name of param to value
 		$$param=$value;
 	}
@@ -354,6 +359,9 @@ if ($ShowHTTPErrorsStats) {
 	push @OutputList,'errors404';		
 }
 #if ($ShowSMTPErrorsStats) { push @OutputList,'errors'; }
+foreach my $extranum (1..@ExtraName-1) {
+	push @OutputList,'allextra'.$extranum;
+}
 
 # Launch awstats update
 if ($Update) {

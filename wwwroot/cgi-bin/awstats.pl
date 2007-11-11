@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.898 $ - $Author: eldy $ - $Date: 2007-10-12 22:04:33 $
+# $Revision: 1.899 $ - $Author: eldy $ - $Date: 2007-11-11 19:40:43 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.898 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.899 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -1442,11 +1442,14 @@ sub Parse_Config {
  		if ($param =~ /^ExtraSectionAddSumRow(\d+)/) 	{ $ExtraAddSumRow[$1]=$value; next; }
  		if ($param =~ /^MaxNbOfExtra(\d+)/) 			{ $MaxNbOfExtra[$1]=$value; next; }
  		if ($param =~ /^MinHitExtra(\d+)/) 				{ $MinHitExtra[$1]=$value; next; }
-		# Special appearance parameters
+
+		# Plugins
 		if ($param =~ /^LoadPlugin/)          			{ push @PluginsToLoad, $value; next; }
+
 		# Other parameter checks we need to put after MaxNbOfExtra and MinHitExtra
  		if ($param =~ /^MaxNbOf(\w+)/) 	{ $MaxNbOf{$1}=$value; next; }
  		if ($param =~ /^MinHit(\w+)/) 	{ $MinHit{$1}=$value; next; }
+
 		# Check if this is a known parameter
 #		if (! $ConfOk{$param}) { error("Unknown config parameter '$param' found line $conflinenb in file \"configFile\""); }
 		# If parameters was not found previously, defined variable with name of param to value
@@ -5779,6 +5782,7 @@ if ((! $ENV{'GATEWAY_INTERFACE'}) && (! $SiteConfig)) {
 	print "               keyphrases       to list all keyphrases used on search engines\n";
 	print "               keywords         to list all keywords used on search engines\n";
 	print "               errors404        to list 'Referers' for 404 errors\n";
+	print "               allextraX        to build page of all values for ExtraSection X\n";
 	print "  -staticlinks to have static links in HTML report page\n";
 	print "  -staticlinksext=xxx to have static links with .xxx extension instead of .html\n";
 	print "  -lang=LL     to output a HTML report in language LL (en,de,es,fr,it,nl,...)\n";
