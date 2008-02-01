@@ -1,5 +1,5 @@
 # French message file (eldy@users.sourceforge.net)
-# $Revision: 1.83 $ - $Date: 2006-08-13 19:47:06 $
+# $Revision: 1.84 $ - $Date: 2008-02-01 23:49:46 $
 message0=Inconnu
 message1=Inconnus (IP non résolue)
 message2=Autres
@@ -38,7 +38,7 @@ message34=Versions de MS Internet Explorer
 message35=Dernière mise à jour
 message36=Connexions au site par
 message37=Origine de la connexion
-message38=Adresse directe / Bookmarks
+message38=Adresse directe / Bookmark / Lien dans email...
 message39=Origine inconnue
 message40=Lien depuis un moteur de recherche Internet
 message41=Lien depuis une page externe (autres sites, hors moteurs)
