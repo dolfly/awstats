@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.51 $ - $Author: eldy $ - $Date: 2008-02-02 14:45:33 $
+# $Revision: 1.52 $ - $Author: eldy $ - $Date: 2008-03-12 21:13:24 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              added dipsie (not tested with real data).
@@ -963,7 +963,9 @@
 'robot',
 'crawl',
 'spider',
-'bot[\.\;\/\-]'
+'bot[+:,\.\;\/\\\-]',
+'[+:,\.\;\/\\\-]bot',
+'no_user_agent'
 );
 
 
@@ -1597,7 +1599,9 @@
 'robot', 'Unknown robot (identified by \'robot\')',
 'crawl', 'Unknown robot (identified by \'crawl\')',
 'spider', 'Unknown robot (identified by \'spider\')',
-'bot[\.\;\/\-]', 'Unknown robot (identified by \'bot.\', \'bot;\', \'bot/\' or \'bot-\')',
+'bot[+:,\.\;\/\\\-]','Unknown robot (identified by \'bot*\')',
+'[+:,\.\;\/\\\-]bot','Unknown robot (identified by \'*bot\')',
+'no_user_agent','Unknown robot (identified by empty user agent string)',
 # Unknown robots identified by hit on robots.txt
 'unknown', 'Unknown robot (identified by hit on \'robots.txt\')'
 );
