@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.20 $ - $Author: eldy $ - $Date: 2006-09-04 06:04:04 $
+# $Revision: 1.21 $ - $Author: eldy $ - $Date: 2008-03-15 00:17:14 $
 
 
 # <-----
@@ -4777,7 +4777,7 @@ sub SectionReadHistory_geoip_city_maxmind {
 		}
 		$_=<HISTORY>;
 		chomp $_; s/\r//;
-		@field=split(/\s+/,($xmlold?CleanFromTags($_):$_));
+		@field=split(/\s+/,($xmlold?XMLDecodeFromHisto($_):$_));
 		$countlines++;
 	}
 	until ($field[0] eq 'END_PLUGIN_geoip_city_maxmind' || $field[0] eq "${xmleb}END_PLUGIN_geoip_city_maxmind" || ! $_);

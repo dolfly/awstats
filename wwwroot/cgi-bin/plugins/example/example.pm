@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Put here list of all required plugins
 #-----------------------------------------------------------------------------
-# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2007-07-23 19:32:56 $
+# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2008-03-15 00:17:14 $
 
 
 # <-----
@@ -278,7 +278,7 @@ sub SectionReadHistory_example {
 #		}
 #		$_=<HISTORY>;
 #		chomp $_; s/\r//;
-#		@field=split(/\s+/,($xmlold?CleanFromTags($_):$_));
+#		@field=split(/\s+/,($xmlold?XMLDecodeFromHisto($_):$_));
 #		$countlines++;
 #	}
 #	until ($field[0] eq 'END_PLUGIN_example' || $field[0] eq "${xmleb}END_PLUGIN_example" || ! $_);
