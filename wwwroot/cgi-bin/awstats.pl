@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.903 $ - $Author: eldy $ - $Date: 2008-03-12 21:13:19 $
+# $Revision: 1.904 $ - $Author: eldy $ - $Date: 2008-04-03 01:13:25 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.903 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.904 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -9703,7 +9703,7 @@ if (scalar keys %HTMLOutput) {
 					my $hrs=($ix>=12?$ix-12:$ix);
 					my $hre=($ix>=12?$ix-11:$ix+1);
 					my $apm=($ix>=12?"pm":"am");
-					print "<td><img src=\"$DirIcons\/clock\/hr$hre.png\" width=\"10\" alt=\"$hrs:00 - $hre:00 $apm\" /></td>\n";
+					print "<td><img src=\"$DirIcons\/clock\/hr$hre.png\" width=\"12\" alt=\"$hrs:00 - $hre:00 $apm\" /></td>\n";
 				}
 				print "</tr>\n";
 				print "</table>\n";
