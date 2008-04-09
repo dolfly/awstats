@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.906 $ - $Author: eldy $ - $Date: 2008-04-06 14:30:15 $
+# $Revision: 1.907 $ - $Author: eldy $ - $Date: 2008-04-09 23:47:02 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.906 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.907 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -7733,7 +7733,9 @@ if (scalar keys %HTMLOutput) {
 	# HTMLHeadSection
 	if ($FrameName ne 'index' && $FrameName ne 'mainleft') {
 		print "<a name=\"top\">&nbsp;</a>\n\n";
-		print "$HTMLHeadSection\n";
+		my $newhead=$HTMLHeadSection;
+		$newhead =~ s/\\n/\n/g;
+		print "$newhead\n";
 		print "\n";
 	}
 
