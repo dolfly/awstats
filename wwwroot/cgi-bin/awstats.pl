@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.908 $ - $Author: eldy $ - $Date: 2008-04-13 14:38:38 $
+# $Revision: 1.909 $ - $Author: eldy $ - $Date: 2008-04-16 01:13:38 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.908 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.909 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -5477,9 +5477,9 @@ sub ShowEmailReceiversChart {
 		if ($direction == 0) { print "<td colspan=\"3\"><span style=\"color: #$color_other\">$newkey</span></td>"; }
 		if ($direction < 0) { print "<td class=\"aws\">&nbsp;</td><td>-&gt;</td><td>$newkey</td>"; }
 		if ($ShowEMailReceivers =~ /H/i) { print "<td>$_emailr_h{$key}</td>"; }
-		if ($ShowEMailReceivers =~ /B/i) { print "<td>".Format_Bytes($_emailr_k{$key})."</td>"; }
-		if ($ShowEMailReceivers =~ /M/i) { print "<td>".Format_Bytes($_emailr_k{$key}/($_emailr_h{$key}||1))."</td>"; }
-		if ($ShowEMailReceivers =~ /L/i) { print "<td>".($_emailr_l{$key}?Format_Date($_emailr_l{$key},1):'-')."</td>"; }
+		if ($ShowEMailReceivers =~ /B/i) { print "<td nowrap=\"nowrap\">".Format_Bytes($_emailr_k{$key})."</td>"; }
+		if ($ShowEMailReceivers =~ /M/i) { print "<td nowrap=\"nowrap\">".Format_Bytes($_emailr_k{$key}/($_emailr_h{$key}||1))."</td>"; }
+		if ($ShowEMailReceivers =~ /L/i) { print "<td nowrap=\"nowrap\">".($_emailr_l{$key}?Format_Date($_emailr_l{$key},1):'-')."</td>"; }
 		print "</tr>\n";
 		#$total_p += $_emailr_p{$key};
 		$total_h += $_emailr_h{$key};
@@ -5492,8 +5492,8 @@ sub ShowEmailReceiversChart {
 	if ($rest_p > 0 || $rest_h > 0 || $rest_k > 0) {	# All other receiver emails
 		print "<tr><td colspan=\"3\"><span style=\"color: #$color_other\">$Message[2]</span></td>";
 		if ($ShowEMailReceivers =~ /H/i) { print "<td>$rest_h</td>"; }
-		if ($ShowEMailReceivers =~ /B/i) { print "<td>".Format_Bytes($rest_k)."</td>"; }
-		if ($ShowEMailReceivers =~ /M/i) { print "<td>".Format_Bytes($rest_k/($rest_h||1))."</td>"; }
+		if ($ShowEMailReceivers =~ /B/i) { print "<td nowrap=\"nowrap\">".Format_Bytes($rest_k)."</td>"; }
+		if ($ShowEMailReceivers =~ /M/i) { print "<td nowrap=\"nowrap\">".Format_Bytes($rest_k/($rest_h||1))."</td>"; }
 		if ($ShowEMailReceivers =~ /L/i) { print "<td>&nbsp;</td>"; }
 		print "</tr>\n";
 	}
