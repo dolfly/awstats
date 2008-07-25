@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2008-03-15 00:17:14 $
+# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2008-07-25 07:29:09 $
 
 
 # <-----
@@ -73,7 +73,6 @@ sub Init_geoip_isp_maxmind {
 		if ($mode eq '' || $mode eq 'GEOIP_MEMORY_CACHE')  { $mode=Geo::IP::GEOIP_MEMORY_CACHE(); }
 		else { $mode=Geo::IP::GEOIP_STANDARD(); }
 	}
-	%TmpDomainLookup=();
 	debug(" Plugin geoip_isp_maxmind: GeoIP initialized type=$type mode=$mode",1);
 	if ($type eq 'geoippureperl') {
 		$geoip_isp_maxmind = Geo::IP::PurePerl->open($datafile, $mode);
