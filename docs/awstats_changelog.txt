@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.255 $ - $Author: eldy $ - $Date: 2008-07-27 17:18:42 $
+$Revision: 1.256 $ - $Author: eldy $ - $Date: 2008-07-27 18:09:33 $
 
 ***** 6.9 *****
 
@@ -9,7 +9,7 @@ New features/improvements:
 
 Fixes:
 - Fixed broken maxmind citi and org plugins.
-
+- Fix: Security fix 2001151.
 Other/Documentation:
 - None
 
