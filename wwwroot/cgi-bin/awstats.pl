@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.913 $ - $Author: eldy $ - $Date: 2008-07-27 18:02:39 $
+# $Revision: 1.914 $ - $Author: eldy $ - $Date: 2008-07-27 18:21:56 $
 require 5.005;
 
 #$|=1;
@@ -21,9 +21,9 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.913 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.914 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.9 (build $REVISION)";
-
+ 
 # ----- Constants -----
 use vars qw/
 $DEBUGFORCED $NBOFLINESFORBENCHMARK $FRAMEWIDTH $NBOFLASTUPDATELOOKUPTOSAVE
@@ -344,7 +344,7 @@ $regdate=qr/(\d\d\d\d)(\d\d)(\d\d)(\d\d)(\d\d)(\d\d)/;
 #use Tie::Cache::LRU;
 #tie %_host_p, 'Tie::StdHash';
 #tie %TmpOS, 'Tie::Cache::LRU';
-
+ 
 # PROTOCOL CODES
 use vars qw/ %httpcodelib %ftpcodelib %smtpcodelib /;
 
