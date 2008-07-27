@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.910 $ - $Author: eldy $ - $Date: 2008-04-21 21:13:28 $
+# $Revision: 1.911 $ - $Author: eldy $ - $Date: 2008-07-27 17:41:57 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.910 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.911 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.8 (build $REVISION)";
 
 # ----- Constants -----
@@ -4406,6 +4406,7 @@ sub EncodeString {
 sub DecodeEncodedString {
 	my $stringtodecode=shift;
 	$stringtodecode =~ tr/\+/ /s;
+	$stringtodecode =~ s/%22//g;
 	$stringtodecode =~ s/%([A-F0-9][A-F0-9])/pack("C", hex($1))/ieg;
 	return $stringtodecode;
 }
@@ -4458,9 +4459,12 @@ sub Sanitize {
 #------------------------------------------------------------------------------
 sub CleanXSS {
 	my $stringtoclean=shift;
+	# To avoid html tags and javascript
 	$stringtoclean =~ s/</&lt;/g;
 	$stringtoclean =~ s/>/&gt;/g;
 	$stringtoclean =~ s/|//g;
+	# To avoid onload="
+	$stringtoclean =~ s/onload//g;
 	return $stringtoclean;
 }
 
