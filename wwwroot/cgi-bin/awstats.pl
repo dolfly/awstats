@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.912 $ - $Author: eldy $ - $Date: 2008-07-27 17:44:11 $
+# $Revision: 1.913 $ - $Author: eldy $ - $Date: 2008-07-27 18:02:39 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.912 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.913 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.9 (build $REVISION)";
 
 # ----- Constants -----
@@ -7496,7 +7496,7 @@ if ($UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft') {	# Updat
 					my $hosttouse=($HostResolved?$HostResolved:$Host);
  					if ($hosttouse =~ /$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
  				}
- 				elsif ($rowkeytype eq 'VHOST') {
+				elsif ($rowkeytype eq 'VHOST') {
  					if ($field[$pos_vh] =~ /$rowkeytypeval/) { $rowkeyval = "$1"; $rowkeyok = 1; last; }
  				}
  				elsif ($rowkeytype =~ /extra(\d+)/i) {
