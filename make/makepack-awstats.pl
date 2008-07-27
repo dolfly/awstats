@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.17 $
+# \version      $Revision: 1.18 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -10,7 +10,7 @@ use Cwd;
 
 $PROJECT="awstats";
 $MAJOR="6";
-$MINOR="8";
+$MINOR="9";
 $RPMSUBVERSION="1";
 
 @LISTETARGET=("TGZ","ZIP","RPM","DEB","EXE");   # Possible packages
@@ -45,7 +45,7 @@ if (-d "/usr/src/rpm") {
     $RPMDIR="/usr/src/rpm";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.17 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.18 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
