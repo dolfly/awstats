@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Benchmark page">
 <title>AWStats Documentation - Benchmark page</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.54 $ - $Author: eldy $ - $Date: 2008-08-01 20:10:31 $ -->
+<!-- $Revision: 1.55 $ - $Author: eldy $ - $Date: 2008-08-01 20:18:03 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -101,10 +101,7 @@ to complete correctly <a href="awstats_config.html#URLQuerySeparators">URLQueryS
 Duration with DNSLookup set to 0 (or 2) is with Athlon 1GHz/256MB, Cygwin Perl 5.8 and LogFormat=1.<br>
 
 <!--
-* début le dimanche 20 avril 2008, 13:32:22 (UTC+0200)
-au bout de 3 heures : 112:44.30 perl
-au bout de 24 heures : 876:24.56 perl
-* fin : mardi 22 avril 2008, 12:00:06 (UTC+0200)
+Configuration used for tests:
 
 # cat /proc/cpuinfo
 processor       : 0
@@ -126,6 +123,7 @@ wp              : yes
 flags           : fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe pni monitor ds_cpl cid
 bogomips        : 5334.63
 
+# free
 mémoire : 524Mo
 Mem:    505680k total,   492548k used,    13132k free,    18244k buffers
 Swap:   522104k total,    12752k used,   509352k free,   188820k cached
@@ -172,7 +170,7 @@ For example, it seems that the "use64bitint=define usemymalloc=y" can increase s
 <hr>
 
 <script language=javascript>
-	var date='$Date: 2008-08-01 20:10:31 $';
+	var date='$Date: 2008-08-01 20:18:03 $';
 	document.writeln("Last revision: "+date);
 </script>
 
