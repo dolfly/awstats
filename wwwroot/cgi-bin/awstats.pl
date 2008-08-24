@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.915 $ - $Author: eldy $ - $Date: 2008-08-24 16:15:57 $
+# $Revision: 1.916 $ - $Author: eldy $ - $Date: 2008-08-24 16:29:14 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.915 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.916 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.9 (build $REVISION)";
  
 # ----- Constants -----
@@ -5212,6 +5212,10 @@ sub DefinePerlParsingFormat {
 			elsif ($f =~ /%host$/) {
 				$pos_host = $i; $i++; push @fieldlib, 'host';
 				$PerlParsingFormat .= "([^$LogSeparatorWithoutStar]+)";
+			}
+			elsif ($f =~ /%host_proxy$/) {	# if host_proxy tag used, host tag must not be used
+				$pos_host = $i; $i++; push @fieldlib, 'host';
+				$PerlParsingFormat .= "(.+?)(?:, .*)*";
 			}
 			elsif ($f =~ /%logname$/) {
 				$pos_logname = $i; $i++; push @fieldlib, 'logname';
