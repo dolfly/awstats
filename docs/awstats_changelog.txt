@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.259 $ - $Author: eldy $ - $Date: 2008-09-04 22:42:59 $
+$Revision: 1.260 $ - $Author: eldy $ - $Date: 2008-09-07 14:20:00 $
 
 ***** 6.9 *****
 
@@ -12,6 +12,7 @@ New features/improvements:
 - Add option stoponfirsteof in logresolvemerge tool.
 - Add patch to support host_proxy tag in LogFormat (for Apache LogFormat
   containing %{X-Forwarded-For}i)
+- Added Google Chrome browser in browsers database.
 
 Fixes:
 - Fixed broken maxmind citi, org and isp plugins.
