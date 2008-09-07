@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.59 $ - $Author: eldy $ - $Date: 2008-09-07 13:00:04 $
+# $Revision: 1.60 $ - $Author: eldy $ - $Date: 2008-09-07 14:05:59 $
 
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
 # 				akregator (rss)
@@ -21,7 +21,7 @@
 #				Potu Rss-Reader http://www.potu.com/
 #				OSSProxy http://www.marketscore.com/FAQ.Aspx
 
-#				
+		
 #package AWSUA;
 
 
