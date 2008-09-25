@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.262 $ - $Author: eldy $ - $Date: 2008-09-25 17:40:09 $
+$Revision: 1.263 $ - $Author: eldy $ - $Date: 2008-09-25 17:41:50 $
 
 ***** 6.9 *****
 
@@ -21,6 +21,7 @@ Fixes:
 - Fix: [ 2038681 ] missing <br _/_> in plugins/geoip_org_maxmind.pm
 - Fix: [ 1921942 ] html footer is missing from the allextraN report.
 - Fix: [ 1943466 ] error geoip_city_maxmind Can't locate object method "record_
+- Fix: [ 1808277 ] Incorrect function call in geoip_isp_maxmind.pm
 
 Other/Documentation:
 - None
