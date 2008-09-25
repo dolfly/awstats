@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2008-08-05 20:14:35 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2008-09-25 17:09:16 $
 
 
 # <-----
@@ -223,7 +223,7 @@ sub ShowInfoHost_geoip_org_maxmind {
     	if ($NewLinkParams) { $NewLinkParams="${NewLinkParams}&"; }
 
 		print "<th width=\"80\">";
-        print "<a href=\"".($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks?XMLEncode("$AWScript?${NewLinkParams}output=plugin_geoip_org_maxmind"):"$PROG$StaticLinks.plugin_geoip_org_maxmind.$StaticExt")."\"$NewLinkTarget>GeoIP<br>Org</a>";
+        print "<a href=\"".($ENV{'GATEWAY_INTERFACE'} || !$StaticLinks?XMLEncode("$AWScript?${NewLinkParams}output=plugin_geoip_org_maxmind"):"$PROG$StaticLinks.plugin_geoip_org_maxmind.$StaticExt")."\"$NewLinkTarget>GeoIP<br />Org</a>";
         print "</th>";
 	}
 	elsif ($param) {

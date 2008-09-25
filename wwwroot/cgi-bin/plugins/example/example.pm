@@ -9,7 +9,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Put here list of all required plugins
 #-----------------------------------------------------------------------------
-# $Revision: 1.14 $ - $Author: eldy $ - $Date: 2008-03-15 00:17:14 $
+# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2008-09-25 17:08:58 $
 
 
 # <-----
@@ -143,7 +143,7 @@ sub AddHTMLContentHeader_example {
 #-----------------------------------------------------------------------------
 sub BuildFullHTMLOutput_example {
 	# <-----
-	print "This is an output for plugin example<br>\n";
+	print "This is an output for plugin example<br />\n";
 	return 1;
 	# ----->
 }
