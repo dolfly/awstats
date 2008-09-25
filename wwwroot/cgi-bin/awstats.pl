@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.916 $ - $Author: eldy $ - $Date: 2008-08-24 16:29:14 $
+# $Revision: 1.917 $ - $Author: eldy $ - $Date: 2008-09-25 17:29:25 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.916 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.917 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="6.9 (build $REVISION)";
  
 # ----- Constants -----
@@ -551,8 +551,9 @@ sub file_filt (@) {
 #------------------------------------------------------------------------------
 sub http_head {
 	if (! $HeaderHTTPSent) {
-		if ($BuildReportFormat eq 'xhtml' || $BuildReportFormat eq 'xml') { print ($ENV{'HTTP_USER_AGENT'}=~/MSIE|Googlebot/i?"Content-type: text/html; charset=$PageCode\n":"Content-type: text/xml; charset=$PageCode\n"); }
-		else { print "Content-type: text/html; charset=$PageCode\n"; }
+		my $newpagecode = $PageCode?$PageCode:"utf-8";
+		if ($BuildReportFormat eq 'xhtml' || $BuildReportFormat eq 'xml') { print ($ENV{'HTTP_USER_AGENT'}=~/MSIE|Googlebot/i?"Content-type:text/html; charset=$newpagecode\n":"Content-type: text/xml; charset=$newpagecode\n"); }
+		else { print "Content-type: text/html; charset=$pagecode\n"; }
 
 		# Expires must be GMT ANSI asctime and must be after Content-type to avoid pb with some servers (SAMBAR)
 		if ($Expires =~ /^\d+$/) {
