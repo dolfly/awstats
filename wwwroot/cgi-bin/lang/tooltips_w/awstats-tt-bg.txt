@@ -1,5 +1,5 @@
 <!-- Bulgarian tooltips message file translated by Aryan(aryan@bgns.net) -->
-<!-- $Revision: 1.1 $ - $Date: 2004-02-07 16:14:10 $ -->
+<!-- $Revision: 1.2 $ - $Date: 2008-10-05 11:13:13 $ -->
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
 <div class="CTooltip" id="tt1">
 Ново посещение се отчита при всеки нов <b>входящ посетител</b> (разглеждащ страница), който не е посещавал през последните <b>#VisitTimeOut# min</b>.
@@ -37,7 +37,7 @@
 #PROG# може да разпознае до <b>#RobotArray#</b> робота.
 </div>
 <div class="CTooltip" id="tt17">
-Всички времеви статистики са базирани на часовото време на сървъра.<br />
+Всички времеви статистики са базирани на часовото време на сървъра.
 </div>
 <div class="CTooltip" id="tt18">
 Докладваните данни са: <b>приблизителни стойности</b> (изчислени от всички данни между началното и последното посещение)

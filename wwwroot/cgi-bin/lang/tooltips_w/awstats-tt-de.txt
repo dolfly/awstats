@@ -1,4 +1,4 @@
-<!-- $Revision: 1.1 $ - $Date: 2004-02-07 16:14:10 $ -->
+<!-- $Revision: 1.2 $ - $Date: 2008-10-05 11:13:13 $ -->
 <div class="CTooltip" id="tt1">
 Ein neuer Besucher wird definiert als jeder neue <b>Besucher</b>, der eine Seite abgerufen hat und der auf Ihre Web Site in den letzten <b>#VisitTimeOut# min.</b> nicht zugegriffen hat.
 </div>
@@ -34,7 +34,7 @@ Robots (manchmal auch als Spider bezeichnet) sind <b>automatische Computerbesuch
 #PROG# ist in der Lage, bis zu <b>#RobotArray#</b> Robots zu erkennen.
 </div>
 <div class="CTooltip" id="tt17">
-Alle zeitbezogenen Statistiken basieren auf der Serverzeit.<br />
+Alle zeitbezogenen Statistiken basieren auf der Serverzeit.
 </div>
 <div class="CTooltip" id="tt18">
 Die angezeigten Werte sind <b>Durchschnittswerte</b> (berechnet aus allen Werten zwischen dem ersten und letzten Besuch)

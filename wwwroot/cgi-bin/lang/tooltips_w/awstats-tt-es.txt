@@ -1,5 +1,5 @@
 <!-- Spanish tooltips message file (temujinnn@hotmail.com) -->
-<!-- $Revision: 1.1 $ - $Date: 2004-02-07 16:14:10 $ -->
+<!-- $Revision: 1.2 $ - $Date: 2008-10-05 11:13:13 $ -->
 <div class="CTooltip" id="tt1">
 Se considera un nueva vista por <b>cada nuevo visitante</b> que consulta una página y que no haya accedido al sitio en los últimos <b>#VisitTimeOut# mins.</b>.
 </div>
@@ -35,7 +35,7 @@ Los Robots son <b>visitantes automáticos</b> que escanean o viajan por su sitio 
 El programa #PROG# reconoce hasta <b>#RobotArray#</b> robots.
 </div>
 <div class="CTooltip" id="tt17">
-Todos los tiempos relacionados con las estad&iacute;sticas est&aacute;n	basados en tiempos de servidor.<br />
+Todos los tiempos relacionados con las estad&iacute;sticas est&aacute;n	basados en tiempos de servidor.
 </div>
 <div class="CTooltip" id="tt18">
 Aquí, las fechas reportadas son: <b>valores medios</b> (calculado desde todos los datos entre las primeras y los ultimas visitas en el rango analizado)
