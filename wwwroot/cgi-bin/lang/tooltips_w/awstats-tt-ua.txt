@@ -1,5 +1,5 @@
 <!-- Ukrainian tooltips message file (roman@elsyst.km.ua) -->
-<!-- $Revision: 1.1 $ - $Date: 2004-02-07 16:14:10 $ -->
+<!-- $Revision: 1.2 $ - $Date: 2008-10-05 11:13:13 $ -->
 <div class="CTooltip" id="tt1">
 Новий вiзит зараховується тодi, коли з'являється (завантажує iпереглядає сторiнки) <strong>новий вiдвiдувач</strong> з хоста, з якого нiхто не з'єднувався з сервером протягом останнiх <strong>".(#VisitTimeOut#)." хв</strong>.
 </div>
@@ -42,7 +42,7 @@
 </div>
 <div class="CTooltip" id="tt17">
 Вся статистика, пов'язана з часом, базується на часовi, 
-встановленому на серверi.<br />
+встановленому на серверi.
 </div>
 <div class="CTooltip" id="tt18">
 Тут показуються <strong>середнi значення</strong> (розрахованi за 

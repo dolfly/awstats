@@ -1,4 +1,4 @@
-<!-- $Revision: 1.1 $ - $Date: 2004-02-07 16:14:10 $ -->
+<!-- $Revision: 1.2 $ - $Date: 2008-10-05 11:13:13 $ -->
 <!-- Japanese message file (info@kchosting.jp) -->
 <div class="CTooltip" id="tt1">
 <b>#VisitTimeOut# 分</b>前までの訪問数。
@@ -32,7 +32,7 @@
 <div class="CTooltip" id="tt16">
 ロボット（別名スパイダー）とは、ウェブ中を動き回って全てのコンテンツを中央サーバー上に保存するコンピューター・プログラム。</div>
 <div class="CTooltip" id="tt17">
-これらのデータはサーバー時間に基づいています。<br />
+これらのデータはサーバー時間に基づいています。
 </div>
 <div class="CTooltip" id="tt18">
 最初から最後までの訪問で集めたデータによって計算した<b>平均数</b>。 
