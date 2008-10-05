@@ -1,11 +1,12 @@
 # Italian message file
-# $Revision: 1.16 $ - $Date: 2006-01-04 18:52:44 $
+# $Revision: 1.17 $ - $Date: 2008-10-05 11:01:31 $
 # PaniC! - panic@freemail.it 
 # Francesco Potorti - pot@gnu.org
 # iDave - idave@idave.it
 # Salvo - salvo@scicli.com
 # CereS - ceres@divxmania.it
 # StarKnight - starknight@starkingdom.it
+PageCode=iso-8859-1
 message0=Sconosciuti
 message1=Sconosciuti (ip non risolto)
 message2=Altri

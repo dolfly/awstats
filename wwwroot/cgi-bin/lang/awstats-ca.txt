@@ -1,5 +1,6 @@
 # Catalan message file (Temu-BCN temujinnn@hotmail.com)
-# $Revision: 1.4 $ - $Date: 2004-01-25 15:49:31 $
+# $Revision: 1.5 $ - $Date: 2008-10-05 11:01:31 $
+PageCode=iso-8859-1
 message0=Desconegut
 message1=Desconegut (Adreça IP desconeguda)
 message2=Altres

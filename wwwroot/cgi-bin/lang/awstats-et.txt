@@ -1,5 +1,6 @@
 # Estonian message file Andrei Kolu(antik@nek.ee)
-# $Revision: 1.2 $ - $Date: 2003-04-11 23:37:06 $
+# $Revision: 1.3 $ - $Date: 2008-10-05 11:01:31 $
+PageCode=iso-8859-1
 message0=Tundmatu
 message1=Tundmatut (domeeninimeta ip-d)
 message2=Teised

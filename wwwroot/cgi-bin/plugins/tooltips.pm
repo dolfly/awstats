@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.15 $ - $Author: eldy $ - $Date: 2006-07-29 18:20:49 $
+# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2008-10-05 11:01:31 $
 
 
 # <-----
@@ -105,7 +105,7 @@ sub AddHTMLBodyHeader_tooltips {
 
 		print <<EOF;
 
-<script language="javascript" type="text/javascript">
+<script type="text/javascript">
 function ShowTip(fArg)
 {
 	var tooltipOBJ = (document.getElementById) ? document.getElementById('tt' + fArg) : eval("document.all['tt" + fArg + "']");

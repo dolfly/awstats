@@ -1,6 +1,7 @@
 # Welsh message file (jim@hebffinia.com)
 # Cyfieithiad gan Maredudd ap Rheinallt
-# $Revision: 1.1 $ - $Date: 2004-06-28 02:49:28 $
+# $Revision: 1.2 $ - $Date: 2008-10-05 11:01:31 $
+PageCode=iso-8859-1
 message0=Anhysbys
 message1=Anhysbys (cyfeiriad IP heb ei ganfod)
 message2=Eraill

@@ -1,7 +1,8 @@
 # Basque - Euskara message file
-# $Revision: 1.2 $ - $Date: 2008-01-25 22:35:17 $
+# $Revision: 1.3 $ - $Date: 2008-10-05 11:01:31 $
 # aktor - aktor@aktornet.ath.cx
 # agonirena - agonirena@gmail.com
+PageCode=iso-8859-1
 message0=Ezezaguna
 message1=IP helbide ezezagunekoa
 message2=Beste batzuk
