@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.23 $ - $Author: eldy $ - $Date: 2006-02-14 21:31:15 $
+# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2008-10-05 11:25:27 $
 
 
 #package AWSMIME;
@@ -144,7 +144,7 @@
 # Config
 'cf','other',
 'conf','other',
-'css','other',
+'css','css',
 'ini','other',
 'dtd','other',
 # Program
