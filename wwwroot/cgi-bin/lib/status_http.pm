@@ -3,7 +3,7 @@
 # If you want to add a HTTP status code, you must add
 # an entry in httpcodelib.
 #-------------------------------------------------------
-# $Revision: 1.1 $ - $Author: eldy $ - $Date: 2003-09-27 13:56:10 $
+# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2008-11-06 21:11:05 $
 
 
 #package AWSHTTPCODES;

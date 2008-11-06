@@ -3,7 +3,7 @@
 # If you want to add a SMTP status code, you must add
 # an entry in smtpcodelib.
 #-------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2003-11-17 05:12:55 $
+# $Revision: 1.3 $ - $Author: eldy $ - $Date: 2008-11-06 21:11:05 $
 
 
 #package AWSSMTPCODES;
