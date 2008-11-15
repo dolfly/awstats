@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.920 $ - $Author: eldy $ - $Date: 2008-11-15 14:58:01 $
+# $Revision: 1.921 $ - $Author: eldy $ - $Date: 2008-11-15 15:11:31 $
 require 5.005;
 
 #$|=1;
@@ -22,7 +22,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.920 $';
+$REVISION = '$Revision: 1.921 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.9 (build $REVISION)";
@@ -33,6 +33,7 @@ use vars qw/
   $LIMITFLUSH $NEWDAYVISITTIMEOUT $VISITTIMEOUT $NOTSORTEDRECORDTOLERANCE
   $WIDTHCOLICON $TOOLTIPON
   $lastyearbeforeupdate $lastmonthbeforeupdate $lastdaybeforeupdate $lasthourbeforeupdate $lastdatebeforeupdate
+  $NOHTML
   /;
 $DEBUGFORCED = 0
   ; # Force debug level to log lesser level into debug.log file (Keep this value to 0)
@@ -50,6 +51,7 @@ $NOTSORTEDRECORDTOLERANCE = 20000
   ; # Lapse of time to accept a record if not in correct order. 20000 = 2 hour (Default = 20000)
 $WIDTHCOLICON = 32;
 $TOOLTIPON    = 0;    # Tooltips plugin loaded
+$NOHTML = 0;		  # Suppress the html headers
 
 # ----- Running variables -----
 use vars qw/
@@ -769,6 +771,7 @@ sub http_head {
 #------------------------------------------------------------------------------
 sub html_head {
 	my $dir = $PageDir ? 'right' : 'left';
+	if ($NOHTML) { return; }
 	if ( scalar keys %HTMLOutput || $PluginMode ) 
 	{
 		my $periodtitle = " ($YearRequired";
@@ -1022,6 +1025,14 @@ sub tab_head {
 	my $tooltipnb = shift;
 	my $width     = shift || 70;
 	my $class     = shift;
+	
+	# Call to plugins' function TabHeadHTML
+	my $extra_head_html='';
+	foreach my $pluginname (keys %{$PluginsLoaded{'TabHeadHTML'}})  {
+		my $function="TabHeadHTML_$pluginname";
+		$extra_head_html .=&$function($title);
+	}
+
 	if ( $width == 70 && $QueryString =~ /buildpdf/i ) {
 		print
 "<table class=\"aws_border\" border=\"0\" cellpadding=\"2\" cellspacing=\"0\" width=\"800\">\n";
@@ -1032,12 +1043,10 @@ sub tab_head {
 	}
 
 	if ($tooltipnb) {
-		print "<tr><td class=\"aws_title\" width=\"$width%\""
-		  . Tooltip( $tooltipnb, $tooltipnb )
-		  . ">$title </td>";
+		print "<tr><td class=\"aws_title\" width=\"$width%\"".Tooltip($tooltipnb,$tooltipnb).">$title ".$extra_head_html."</td>";
 	}
 	else {
-		print "<tr><td class=\"aws_title\" width=\"$width%\">$title </td>";
+		print "<tr><td class=\"aws_title\" width=\"$width%\">$title ".$extra_head_html."</td>";
 	}
 	print "<td class=\"aws_blank\">&nbsp;</td></tr>\n";
 	print "<tr><td colspan=\"2\">\n";
