@@ -7,7 +7,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IPfree (version 0.2+)
 #-----------------------------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2004-05-21 21:11:52 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2008-11-15 16:03:42 $
 
 
 # <-----
@@ -15,7 +15,8 @@
 push @INC, "${DIR}/plugins";
 if (!eval ('require "Geo/IPfree.pm";')) { return $@?"Error: $@":"Error: Need Perl module Geo::IPfree"; }
 # ----->
-use strict;no strict "refs";
+#use strict;
+no strict "refs";
 
 
 

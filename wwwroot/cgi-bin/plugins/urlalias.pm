@@ -9,14 +9,15 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2004-05-21 21:22:52 $
+# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2008-11-15 16:03:42 $
 
 
 # <-----
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
 #if (!eval ('require "TheModule.pm";')) { return $@?"Error: $@":"Error: Need Perl module TheModule"; }
 # ----->
-use strict;no strict "refs";
+#use strict;
+no strict "refs";
 
 
 

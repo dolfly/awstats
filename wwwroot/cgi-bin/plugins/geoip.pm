@@ -8,7 +8,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2006-05-06 02:51:34 $
+# $Revision: 1.25 $ - $Author: eldy $ - $Date: 2008-11-15 16:03:42 $
 
 
 # <-----
@@ -26,7 +26,8 @@ if (!eval ('require "Geo/IP.pm";')) {
 	}
 }
 # ----->
-use strict;no strict "refs";
+#use strict;
+no strict "refs";
 
 
 

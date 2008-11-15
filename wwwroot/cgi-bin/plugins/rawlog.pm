@@ -6,13 +6,14 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2005-04-24 23:51:11 $
+# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2008-11-15 16:03:42 $
 
 
 # <-----
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES.
 # ----->
-use strict;no strict "refs";
+#use strict;
+no strict "refs";
 
 
 
