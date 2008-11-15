@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.52 $ - $Author: eldy $ - $Date: 2008-03-12 21:13:24 $
+# $Revision: 1.53 $ - $Author: eldy $ - $Date: 2008-11-15 14:58:01 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              added dipsie (not tested with real data).
@@ -801,6 +801,7 @@
 'lwp\-request',
 'lwp\-trivial',
 'magpierss',
+'mail\.ru',
 'mapoftheinternet\.com',
 'mediapartners\-google',
 'megite',
@@ -1437,6 +1438,7 @@
 'linkchecker','<a href="http://linkchecker.sourceforge.net" title="Bot home page [new window]" target="_blank">LinkChecker</a>',
 'livejournal\.com', 'LiveJournal.com',
 'magpierss', 'MagpieRSS',
+'mail\.ru', 'Mail.ru bot',
 'mapoftheinternet\.com','<a href="http://MapoftheInternet.com/" title="MapoftheInternet.com home page [new window]" target="_blank">MapoftheInternet.com</a>',
 'mediapartners\-google','<a href="https://adwords.google.com/" title="Bot home page [new window]" target="_blank">Google AdSense</a>',
 'megite','<a href="http://www.megite.com/" title="Megite home page [new window]" target="_blank">Megite</a>',
