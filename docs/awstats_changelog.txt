@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.264 $ - $Author: eldy $ - $Date: 2008-11-15 14:58:01 $
+$Revision: 1.265 $ - $Author: eldy $ - $Date: 2008-11-15 16:20:53 $
 
 ***** 6.9 *****
 
@@ -26,6 +26,7 @@ Fixes:
 - Fix: [ 1921942 ] html footer is missing from the allextraN report.
 - Fix: [ 1943466 ] error geoip_city_maxmind Can't locate object method "record_
 - Fix: [ 1808277 ] Incorrect function call in geoip_isp_maxmind.pm
+- Fix: Full list of extrasections was not ordered correctly
 - A lot of other fixes.
 - Added missing icons
 
