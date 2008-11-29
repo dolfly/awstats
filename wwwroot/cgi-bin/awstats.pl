@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.923 $ - $Author: eldy $ - $Date: 2008-11-19 22:25:17 $
+# $Revision: 1.924 $ - $Author: eldy $ - $Date: 2008-11-29 18:17:44 $
 require 5.005;
 
 #$|=1;
@@ -21,7 +21,7 @@ use Socket;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.923 $';
+$REVISION = '$Revision: 1.924 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.9 (build $REVISION)";
@@ -7479,6 +7479,17 @@ sub XMLEncodeForHisto {
 	$string =~ s/>/&gt;/g;
 	$string =~ s/\"/&quot;/g;
 	$string =~ s/\'/&apos;/g;
+	return $string;
+}
+
+#------------------------------------------------------------------------------
+# Function:     Encode an ISO string to PageCode output
+# Parameters:	stringtoencode
+# Return:		encodedstring
+#------------------------------------------------------------------------------
+sub EncodeToPageCode {
+	my $string = shift;
+
 	return $string;
 }
 
