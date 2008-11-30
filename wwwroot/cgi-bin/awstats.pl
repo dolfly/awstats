@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.924 $ - $Author: eldy $ - $Date: 2008-11-29 18:17:44 $
+# $Revision: 1.925 $ - $Author: eldy $ - $Date: 2008-11-30 15:42:46 $
 require 5.005;
 
 #$|=1;
@@ -16,12 +16,13 @@ use strict;
 no strict "refs";
 use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not supported by all Time::Local modules
 use Socket;
+use Encode;
 
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.924 $';
+$REVISION = '$Revision: 1.925 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.9 (build $REVISION)";
@@ -7465,7 +7466,8 @@ sub XMLEncode {
 
 #------------------------------------------------------------------------------
 # Function:		Transforms spaces into %20 and special chars by HTML entities as needed in XML/XHTML
-#				Decoding is done by XMLDecodeFromHisto
+#				Decoding is done by XMLDecodeFromHisto.
+#				AWStats data files are stored in ISO-8859-1. 
 # Parameters:	stringtoencode
 # Return:		encodedstring
 #------------------------------------------------------------------------------
@@ -7489,7 +7491,7 @@ sub XMLEncodeForHisto {
 #------------------------------------------------------------------------------
 sub EncodeToPageCode {
 	my $string = shift;
-
+	if ($PageCode eq 'utf-8') { $string=encode("utf8", $string); }
 	return $string;
 }
 
@@ -7586,6 +7588,7 @@ sub CleanXSS {
 
 #------------------------------------------------------------------------------
 # Function:     Clean tags in a string
+#				AWStats data files are stored in ISO-8859-1. 
 # Parameters:   stringtodecode
 # Input:        None
 # Output:       None
