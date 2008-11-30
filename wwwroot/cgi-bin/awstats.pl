@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.922 $ - $Author: eldy $ - $Date: 2008-11-15 16:20:07 $
+# $Revision: 1.925 $ - $Author: eldy $ - $Date: 2008-11-30 15:42:46 $
 require 5.005;
 
 #$|=1;
@@ -16,12 +16,13 @@ use strict;
 no strict "refs";
 use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not supported by all Time::Local modules
 use Socket;
+use Encode;
 
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.922 $';
+$REVISION = '$Revision: 1.925 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.9 (build $REVISION)";
@@ -3587,16 +3588,10 @@ sub Read_History_With_TmpUpdate {
 				}
 				next;
 			}
-			if (    $field[0] eq 'LastUpdate'
-				 || $field[0] eq "${xmlrb}LastUpdate" )
+			if ($field[0] eq 'LastUpdate'
+				 || $field[0] eq "${xmlrb}LastUpdate")
 			{
-				if ( $LastUpdate < $field[1] ) {
-					$LastUpdate = int( $field[1] );
-
-					#$LastUpdateLinesRead=int($field[2]);
-					#$LastUpdateNewLinesRead=int($field[3]);
-					#$LastUpdateLinesCorrupted=int($field[4]);
-				}
+				if (! $LastUpdate) { $LastUpdate=int($field[1]); }; 
 				next;
 			}
 			if (    $field[0] eq 'TotalVisits'
@@ -6114,12 +6109,8 @@ sub Save_History {
 	}
 
 	# General
-	if ( $sectiontosave eq 'general' ) {
-		if ( $LastUpdate <
-			 int("$nowyear$nowmonth$nowday$nowhour$nowmin$nowsec") )
-		{
-			$LastUpdate = int("$nowyear$nowmonth$nowday$nowhour$nowmin$nowsec");
-		}
+	if ($sectiontosave eq 'general') {
+		$LastUpdate=int("$nowyear$nowmonth$nowday$nowhour$nowmin$nowsec");
 		print HISTORYTMP "\n";
 		if ($xml) {
 			print HISTORYTMP "<section id='$sectiontosave'><comment>\n";
@@ -7475,7 +7466,8 @@ sub XMLEncode {
 
 #------------------------------------------------------------------------------
 # Function:		Transforms spaces into %20 and special chars by HTML entities as needed in XML/XHTML
-#				Decoding is done by XMLDecodeFromHisto
+#				Decoding is done by XMLDecodeFromHisto.
+#				AWStats data files are stored in ISO-8859-1. 
 # Parameters:	stringtoencode
 # Return:		encodedstring
 #------------------------------------------------------------------------------
@@ -7489,6 +7481,17 @@ sub XMLEncodeForHisto {
 	$string =~ s/>/&gt;/g;
 	$string =~ s/\"/&quot;/g;
 	$string =~ s/\'/&apos;/g;
+	return $string;
+}
+
+#------------------------------------------------------------------------------
+# Function:     Encode an ISO string to PageCode output
+# Parameters:	stringtoencode
+# Return:		encodedstring
+#------------------------------------------------------------------------------
+sub EncodeToPageCode {
+	my $string = shift;
+	if ($PageCode eq 'utf-8') { $string=encode("utf8", $string); }
 	return $string;
 }
 
@@ -7585,6 +7588,7 @@ sub CleanXSS {
 
 #------------------------------------------------------------------------------
 # Function:     Clean tags in a string
+#				AWStats data files are stored in ISO-8859-1. 
 # Parameters:   stringtodecode
 # Input:        None
 # Output:       None

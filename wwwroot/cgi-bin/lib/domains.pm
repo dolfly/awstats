@@ -3,7 +3,7 @@
 # If you want to add a new domain to extend AWStats database detection capabilities,
 # you must add an entry in DomainsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2007-07-02 21:50:51 $
+# $Revision: 1.13 $ - $Author: eldy $ - $Date: 2008-11-30 16:02:44 $
 
 
 #package AWSDOM;
@@ -25,6 +25,7 @@
 'am','Armenia','an','Netherlands Antilles','ao','Angola',
 'aq','Antarctica','ar','Argentina','arpa','Old style Arpanet',
 'as','American Samoa','at','Austria','au','Australia','aw','Aruba',
+'ax','Aland islands',
 'az','Azerbaidjan','ba','Bosnia-Herzegovina','bb','Barbados',
 'bd','Bangladesh','be','Belgium','bf','Burkina Faso','bg','Bulgaria',
 'bh','Bahrain','bi','Burundi','biz','Biz domains','bj','Benin','bm','Bermuda',
@@ -73,7 +74,9 @@
 'pg','Papua New Guinea','ph','Philippines','pk','Pakistan','pl','Poland',
 'pm','Saint Pierre and Miquelon','pn','Pitcairn Island','pr','Puerto Rico','pro','Professional domains',
 'ps','Palestinian Territories','pt','Portugal','pw','Palau','py','Paraguay','qa','Qatar',
-'re','Reunion (French)','ro','Romania','ru','Russian Federation','rw','Rwanda',
+'re','Reunion (French)','ro','Romania',
+'rs','Republic of Serbia',
+'ru','Russian Federation','rw','Rwanda',
 'sa','Saudi Arabia','sb','Solomon Islands','sc','Seychelles',
 'sd','Sudan','se','Sweden','sg','Singapore','sh','Saint Helena','si','Slovenia',
 'sj','Svalbard and Jan Mayen Islands','sk','Slovak Republic','sl','Sierra Leone',
