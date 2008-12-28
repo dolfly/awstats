@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.18 $
+# \version      $Revision: 1.19 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -45,7 +45,7 @@ if (-d "/usr/src/rpm") {
     $RPMDIR="/usr/src/rpm";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.18 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.19 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -122,7 +122,7 @@ while (! $found) {
 		printf(" %d - %3s    (%s)\n",$cpt,$target,"Need ".$REQUIREMENTTARGET{$target});
 	}
 
-	# On demande de choisir le fichier à passer
+	# On demande de choisir le fichier ï¿½ passer
 	print "Choose one package number or several separated with space: ";
 	$NUM_SCRIPT=<STDIN>; 
 	chomp($NUM_SCRIPT);
@@ -277,12 +277,13 @@ rename("$BUILDROOT/$PROJECT","$BUILDROOT/$FILENAMETGZ");
     	}	
     
     	if ($target eq 'ZIP') {
-        		unlink $FILENAMEZIP.zip;
-        		print "Compress $FILENAMETGZ into $FILENAMEZIP.zip...\n";
+			unlink $FILENAMEZIP.zip;
+			print "Compress $FILENAMETGZ into $FILENAMEZIP.zip...\n";
      		chdir("$BUILDROOT");
-    		#print "cd $BUILDROOTNT & 7z a -r -tzip -mx $BUILDROOT/$FILENAMEZIP.zip $FILENAMETGZ\\*.*\n";
-    		#$ret=`cd $BUILDROOTNT & 7z a -r -tzip -mx $BUILDROOT/$FILENAMEZIP.zip $FILENAMETGZ\\*.*`;
-    		$ret=`7z a -r -tzip -mx $BUILDROOT/$FILENAMEZIP.zip $FILENAMETGZ\\*.*`;
+    		#print "cd $BUILDROOT & 7z a -r -tzip -mx $BUILDROOT/$FILENAMEZIP.zip $FILENAMETGZ\\*.*\n";
+    		#$ret=`cd $BUILDROOT & 7z a -r -tzip -mx $BUILDROOT/$FILENAMEZIP.zip $FILENAMETGZ\\*.*`;
+    		print "7z a -r -tzip -mx $BUILDROOT/$FILENAMEZIP.zip $FILENAMETGZ/*\n";
+    		$ret=`7z a -r -tzip -mx $BUILDROOT/$FILENAMEZIP.zip $FILENAMETGZ/*`;
     		print "Move $FILENAMEZIP.zip to $DESTI\n";
     		rename("$BUILDROOT/$FILENAMEZIP.zip","$DESTI/$FILENAMEZIP.zip");
     		next;
