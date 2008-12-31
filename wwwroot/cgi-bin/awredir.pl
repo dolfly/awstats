@@ -14,7 +14,7 @@ use Digest::MD5 qw(md5 md5_hex md5_base64);
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.10 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.11 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw / $DIR $PROG $Extension $DEBUG $DEBUGFILE $REPLOG $DEBUGRESET $SITE $REPCONF /;
@@ -100,6 +100,10 @@ if (! $ENV{'GATEWAY_INTERFACE'}) {	# Run from command line
 	print "\n";
 	sleep 2;
 	exit 0;
+}
+
+if ($KEYFORMD5 eq 'YOURKEYFORMD5') {
+        error("Error: You must change value of constant KEYFORMD5");
 }
 
 # Extract tag
