@@ -14,7 +14,7 @@ use Digest::MD5 qw(md5 md5_hex md5_base64);
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.8 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.9 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw / $DIR $PROG $Extension $DEBUG $DEBUGFILE $REPLOG $DEBUGRESET $SITE $REPCONF /;
@@ -29,7 +29,7 @@ $TXTDIR="$DIR/../../../logs";	# Directory where to write tracking file (if TRACE
 $TXTFILE="awredir.trc";			# Tracking file (if TRACEFILE=1)
 $EXCLUDEIP="127.0.0.1";
 
-$MD5KEY='YOURKEYFORMD5';
+$KEYFORMD5='YOURKEYFORMD5';
 
 #-------------------------------------------------------
 # Functions
@@ -121,6 +121,9 @@ if (! $Url) {
 $Url=DecodeEncodedString($Url);
 if ($DEBUG) { print LOGFILE "Url=$Url\n"; }
 
+if ($KEYFORMD5 eq 'YOURKEYFORMD5') {
+        error("Error: You must change value of constant KEYFORMD5");
+}
 if ($Key ne md5($KEYFORMD5.$Url)) {
         error("Error: Bad value for key= parameter");
 }
