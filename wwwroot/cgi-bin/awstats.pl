@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.925 $ - $Author: eldy $ - $Date: 2008-11-30 15:42:46 $
+# $Revision: 1.926 $ - $Author: eldy $ - $Date: 2009-01-03 10:49:06 $
 require 5.005;
 
 #$|=1;
@@ -22,7 +22,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.925 $';
+$REVISION = '$Revision: 1.926 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.9 (build $REVISION)";
@@ -7512,17 +7512,18 @@ sub EncodeString {
 }
 
 #------------------------------------------------------------------------------
-# Function:     Decode an only text string into a binary string
+# Function:     Decode an url encoded text string into a binary string
 # Parameters:   stringtodecode
 # Input:        None
 # Output:       None
-# Return:		decodedstring
+# Return:       decodedstring
 #------------------------------------------------------------------------------
 sub DecodeEncodedString {
 	my $stringtodecode = shift;
 	$stringtodecode =~ tr/\+/ /s;
-	$stringtodecode =~ s/%22//g;
 	$stringtodecode =~ s/%([A-F0-9][A-F0-9])/pack("C", hex($1))/ieg;
+	$stringtodecode =~ s/["']//g;
+
 	return $stringtodecode;
 }
 
