@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.926 $ - $Author: eldy $ - $Date: 2009-01-03 10:49:06 $
+# $Revision: 1.927 $ - $Author: eldy $ - $Date: 2009-02-11 00:44:15 $
 require 5.005;
 
 #$|=1;
@@ -22,7 +22,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.926 $';
+$REVISION = '$Revision: 1.927 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.9 (build $REVISION)";
@@ -11460,7 +11460,7 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 # Replace default page name with / only ('if' is to increase speed when only 1 value in @DefaultFile)
 				if ( @DefaultFile > 1 ) {
 					foreach my $elem (@DefaultFile) {
-						if ( $field[$pos_url] =~ s/\/$elem$/\//o ) { last; }
+						if ( $field[$pos_url] =~ s/\/$elem$/\// ) { last; }
 					}
 				}
 				else { $field[$pos_url] =~ s/$regdefault/\//o; }
