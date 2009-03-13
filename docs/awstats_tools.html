@@ -7,7 +7,7 @@
 <meta name="title" content="AWStats Documentation - Other tools">
 <title>AWStats Documentation - Other tools</title>
 <link rel="stylesheet" href="styles.css" type="text/css">
-<!-- $Revision: 1.45 $ - $Author: eldy $ - $Date: 2008-09-29 19:28:22 $ -->
+<!-- $Revision: 1.46 $ - $Author: eldy $ - $Date: 2009-03-13 14:17:05 $ -->
 </head>
 
 <body topmargin=10 leftmargin=5>
@@ -214,7 +214,8 @@ All those tools are available in <b>tools</b> directory of AWStats distribution.
 
 <br>
 <br><a name="urlaliasbuilder"><H2 style="font: 18px arial,helvetica,sans-serif color: #606060"><u>urlaliasbuilder.pl</u></H2></a>
-<br>Urlaliasbuilder generates an 'urlalias' file from an input file.
+<br>Urlaliasbuilder generates an 'urlalias' file from an input file (an urlalias file
+<br>is a file with two columns: url and clear title of url).
 <br>The input file must contain a list of URLs (It can be an AWStats history file).
 <br>For each of thoose URLs, the script get the corresponding HTML page and catch the
 <br>header information (title), then it writes an output file that contains one line
@@ -231,7 +232,7 @@ All those tools are available in <b>tools</b> directory of AWStats distribution.
 <br>	If this file is an AWStats history file then urlaliasbuilder will use the
 <br>    SIDER section of this file as its input URL's list.
 <br>  -urlaliasfile=Output urlalias file to build
-<br>  -overwrite    Overwrite output file if exists
+<br>  -overwrite    Overwrite output file if exists (by default appends to file).
 <br>  -secure       Use https protocol
 <br>
 <br>Example: urlaliasbuilder.pl -site=www.someotherhost.com
@@ -246,7 +247,7 @@ All those tools are available in <b>tools</b> directory of AWStats distribution.
 <hr>
 
 <script language=javascript>
-	var date='$Date: 2008-09-29 19:28:22 $';
+	var date='$Date: 2009-03-13 14:17:05 $';
 	document.writeln("Last revision: "+date);
 </script>
 
