@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.54 $ - $Author: eldy $ - $Date: 2009-03-28 23:14:35 $
+# $Revision: 1.55 $ - $Author: eldy $ - $Date: 2009-04-23 20:54:02 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              added dipsie (not tested with real data).
@@ -1194,8 +1194,8 @@
 'plumtreewebaccessor','PlumtreeWebAccessor',
 'poppi','Poppi',
 'portalb','PortalB Spider',
-'psbot','<a href="http://www.picsearch.com/bot.html" title="Bot home page. [new window]" target="_blank">psbot</a>',
-'python','<a href="http://www.lib.uchicago.edu/keith/courses/python/class/7/" title="Bot home page. Used by many. [new window]" target="_blank">Python-urllib</a>',
+'psbot','<a href="http://www.picsearch.com/bot.html" title="Bot home page" target="_blank">psbot</a>',
+'python','<a href="http://docs.python.org/library/urllib.html" title="Tools developed using a Python library" target="_blank">Python-urllib</a>',
 'raven','Raven Search',
 'rbse','RBSE Spider',
 'resumerobot','Resume Robot',
