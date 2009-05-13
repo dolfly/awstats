@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.927 $ - $Author: eldy $ - $Date: 2009-02-11 00:44:15 $
+# $Revision: 1.928 $ - $Author: eldy $ - $Date: 2009-05-13 21:45:42 $
 require 5.005;
 
 #$|=1;
@@ -22,7 +22,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.927 $';
+$REVISION = '$Revision: 1.928 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.9 (build $REVISION)";
@@ -5984,13 +5984,15 @@ sub Save_History {
 		if ($xml) { print HISTORYTMP "</lib><comment>\n"; }
 		print HISTORYTMP
 "# If you remove this file, all statistics for date $breakdate will be lost/reset.\n";
+		print HISTORYTMP 
+"# Last config file used to build this data file was $FileConfig.\n";
 		if ($xml) { print HISTORYTMP "</comment></version>\n"; }
 		print HISTORYTMP "\n";
 		if ($xml) {
 			print HISTORYTMP "<section id='$sectiontosave'><comment>\n";
 		}
 		print HISTORYTMP
-"# Position (offset in bytes) in this file of beginning of each section for\n";
+"# Position (offset in bytes) in this file for beginning of each section for\n";
 		print HISTORYTMP
 "# direct I/O access. If you made changes somewhere in this file, you should\n";
 		print HISTORYTMP
