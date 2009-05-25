@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.268 $ - $Author: eldy $ - $Date: 2009-05-13 22:23:45 $
+$Revision: 1.269 $ - $Author: eldy $ - $Date: 2009-05-25 15:51:07 $
 
 
 ***** 6.95 *****
@@ -10,6 +10,10 @@ New features/improvements:
   default.
 - Enhance security of parameter sanitizing function.
 - Add name of config file used to build data files inside data files header.
+
+Fixes:
+- awstats emmits ton of warnings with new geoipfree - ID: 2794728
+
 
 
 ***** 6.9 *****
