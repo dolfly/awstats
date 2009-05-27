@@ -1,5 +1,5 @@
 ﻿# French message file (eldy@users.sourceforge.net)
-# $Revision: 1.87 $ - $Date: 2008-11-15 15:20:49 $
+# $Revision: 1.88 $ - $Date: 2009-05-27 18:32:22 $
 PageCode=utf-8
 message0=Inconnu
 message1=Inconnus (IP non résolue)
@@ -174,3 +174,8 @@ message169=Généré par
 message170=plugins
 message171=Regions
 message172=Villes
+message173=Versions Opera
+message174=Versions Safari
+message175=Versions Chrome
+message176=Versions Konqueror	
+

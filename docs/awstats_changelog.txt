@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.270 $ - $Author: eldy $ - $Date: 2009-05-25 16:12:09 $
+$Revision: 1.271 $ - $Author: eldy $ - $Date: 2009-05-27 18:32:22 $
 
 
 ***** 6.95 *****
@@ -10,7 +10,9 @@ New features/improvements:
   default.
 - Enhance security of parameter sanitizing function.
 - Add name of config file used to build data files inside data files header.
-
+- Added details of version for Chrome, Opera, Safari and Konqueror browsers.
+- Update of browsers, robots and search_engines databases.
+ 
 Fixes:
 - awstats emmits ton of warnings with new geoipfree - ID: 2794728
 - fix: can detect robots with robots.txt url even if file is not root.
