@@ -1,5 +1,5 @@
 ﻿# French message file (eldy@users.sourceforge.net)
-# $Revision: 1.88 $ - $Date: 2009-05-27 18:32:22 $
+# $Revision: 1.89 $ - $Date: 2009-06-03 19:05:30 $
 PageCode=utf-8
 message0=Inconnu
 message1=Inconnus (IP non résolue)
@@ -138,7 +138,7 @@ message133=Période d'analyse
 message134=Extra/Marketing
 message135=Résolution écran
 message136=Attaques Worm/Virus
-message137=Hits sur favicon.ico
+message137=Hits avec succès sur favicon.ico
 message138=Jours du mois
 message139=Divers
 message140=Navigateurs avec support Java actif
