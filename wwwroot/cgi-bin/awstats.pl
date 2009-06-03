@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.932 $ - $Author: eldy $ - $Date: 2009-05-27 18:32:22 $
+# $Revision: 1.933 $ - $Author: eldy $ - $Date: 2009-06-03 17:25:14 $
 require 5.005;
 
 #$|=1;
@@ -18,11 +18,12 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 use Socket;
 use Encode;
 
+
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.932 $';
+$REVISION = '$Revision: 1.933 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.95 (build $REVISION)";
@@ -8476,11 +8477,11 @@ sub DefinePerlParsingFormat {
 	if ( $LogFormat =~ /^[1-6]$/ ) {    # Pre-defined log format
 		if ( $LogFormat eq '1' || $LogFormat eq '6' )
 		{ 	# Same than "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"".
-			# %u (user) is "([^\\[]+)" instead of "[^ ]+" because can contain space (Lotus Notes). referer and ua might be "".
+			# %u (user) is "([^\\/\\[]+)" instead of "[^ ]+" because can contain space (Lotus Notes). referer and ua might be "".
 
-#			$PerlParsingFormat="([^ ]+) [^ ]+ ([^\\[]+) \\[([^ ]+) [^ ]+\\] \\\"([^ ]+) (.+) [^\\\"]+\\\" ([\\d|-]+) ([\\d|-]+) \\\"(.*?)\\\" \\\"([^\\\"]*)\\\"";
+			# $PerlParsingFormat="([^ ]+) [^ ]+ ([^\\[]+) \\[([^ ]+) [^ ]+\\] \\\"([^ ]+) (.+) [^\\\"]+\\\" ([\\d|-]+) ([\\d|-]+) \\\"(.*?)\\\" \\\"([^\\\"]*)\\\"";
 			$PerlParsingFormat =
-"([^ ]+) [^ ]+ ([^\\[]+) \\[([^ ]+) [^ ]+\\] \\\"([^ ]+) ([^ ]+)(?: [^\\\"]+|)\\\" ([\\d|-]+) ([\\d|-]+) \\\"(.*?)\\\" \\\"([^\\\"]*)\\\"";
+"([^ ]+) [^ ]+ ([^\\/\\[]+) \\[([^ ]+) [^ ]+\\] \\\"([^ ]+) ([^ ]+)(?: [^\\\"]+|)\\\" ([\\d|-]+) ([\\d|-]+) \\\"(.*?)\\\" \\\"([^\\\"]*)\\\"";
 			$pos_host    = 0;
 			$pos_logname = 1;
 			$pos_date    = 2;
@@ -8637,8 +8638,8 @@ sub DefinePerlParsingFormat {
 				$pos_logname = $i;
 				$i++;
 				push @fieldlib, 'logname';
-				# %u (user) is "([^\\[]+)" instead of "[^$LogSeparatorWithoutStar]+" because can contain space (Lotus Notes).
-				$PerlParsingFormat .= "([^\\[]+)";
+				# %u (user) is "([^\\/\\[]+)" instead of "[^$LogSeparatorWithoutStar]+" because can contain space (Lotus Notes).
+				$PerlParsingFormat .= "([^\\/\\[]+)";
 			}
 
 			# Date format
