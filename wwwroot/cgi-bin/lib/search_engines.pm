@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.46 $ - $Author: eldy $ - $Date: 2008-11-15 14:58:01 $
+# $Revision: 1.47 $ - $Author: eldy $ - $Date: 2009-06-10 22:05:31 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
@@ -173,6 +173,7 @@
 '72\.14\.2[0-9]{2}\.104',
 'msn\.',
 'live\.com',
+'bing\.',
 'voila\.',
 'mindset\.research\.yahoo',
 'yahoo\.','(66\.218\.71\.225|216\.109\.117\.135|216\.109\.125\.130|66\.218\.69\.11)',
@@ -389,6 +390,7 @@
 '72\.14\.2[0-9]{2}\.104','google_cache',
 'msn\.','msn',
 'live\.com','live',
+'bing\.','bing',
 'voila\.','voila',
 'mindset\.research\.yahoo','yahoo_mindset',
 'yahoo\.','yahoo','(66\.218\.71\.225|216\.109\.117\.135|216\.109\.125\.130|66\.218\.69\.11)','yahoo',
@@ -664,6 +666,7 @@
 'lycos','query=',
 'msn','q=',
 'live','q=',
+'bing','q=',
 'netscape','search=',
 'tiscali','key=',
 'aol','query=',
@@ -890,8 +893,9 @@
 'google_cache','<a href="http://www.google.com/help/features.html#cached" title="Search Engine Home Page [new window]" target="_blank">Google (cache)</a>',
 'google','<a href="http://www.google.com/" title="Search Engine Home Page [new window]" target="_blank">Google</a>',
 'lycos','<a href="http://www.lycos.com/" title="Search Engine Home Page [new window]" target="_blank">Lycos</a>',
-'msn','<a href="http://search.msn.com/" title="Search Engine Home Page [new window]" target="_blank">MSN Search</a>',
-'live','<a href="http://www.live.com/" title="Search Engine Home Page [new window]" target="_blank">Windows Live</a>',
+'msn','<a href="http://search.msn.com/" title="Search Engine Home Page [new window]" target="_blank">Microsoft MSN Search</a>',
+'live','<a href="http://www.live.com/" title="Search Engine Home Page [new window]" target="_blank">Microsoft Windows Live</a>',
+'bing','<a href="http://www.bing.com/" title="Search Engine Home Page [new window]" target="_blank">Microsoft Bing</a>',
 'netscape','<a href="http://www.netscape.com/" title="Search Engine Home Page [new window]" target="_blank">Netscape</a>',
 'aol','<a href="http://www.aol.com/" title="Search Engine Home Page [new window]" target="_blank">AOL</a>',
 'terra','<a href="http://www.terra.es/" title="Search Engine Home Page [new window]" target="_blank">Terra</a>',
