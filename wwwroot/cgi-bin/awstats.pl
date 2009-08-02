@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.936 $ - $Author: eldy $ - $Date: 2009-08-02 21:46:41 $
+# $Revision: 1.937 $ - $Author: eldy $ - $Date: 2009-08-02 23:25:26 $
 require 5.005;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.936 $';
+$REVISION = '$Revision: 1.937 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.95 (build $REVISION)";
@@ -11566,8 +11566,8 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 			}
 		}
 
-   # Analyze: Robot from "hit on robots.txt" file (=> countedtraffic=5 if robot)
-   # -------------------------------------------------------------------------
+		# Analyze: Robot from "hit on robots.txt" file (=> countedtraffic=5 if robot)
+		# -------------------------------------------------------------------------
 		if ( !$countedtraffic ) {
 			if ( $urlwithnoquery =~ /$regrobot/o ) {
 				if ($Debug) { debug( "  It's an unknown robot", 2 ); }
@@ -11685,8 +11685,7 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 		# Do DNS lookup
 		#--------------
 		my $Host         = $field[$pos_host];
-		my $HostResolved = ''
-		  ; # HostResolved will be defined in next paragraf if countedtraffic is true
+		my $HostResolved = '';	# HostResolved will be defined in next paragraf if countedtraffic is true
 
 		if ( !$countedtraffic ) {
 			my $ip = 0;
@@ -11711,7 +11710,7 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 					}
 					elsif ( $DNSLookup == 1 ) {
 
-		   # Check in session cache (dynamic DNS cache file + session DNS cache)
+						# Check in session cache (dynamic DNS cache file + session DNS cache)
 						$HostResolved = $TmpDNSLookup{$Host};
 						if ( !$HostResolved ) {
 							if ( @SkipDNSLookupFor && &SkipDNSLookup($Host) ) {
