@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.935 $ - $Author: eldy $ - $Date: 2009-07-22 12:20:46 $
+# $Revision: 1.936 $ - $Author: eldy $ - $Date: 2009-08-02 21:46:41 $
 require 5.005;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.935 $';
+$REVISION = '$Revision: 1.936 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.95 (build $REVISION)";
@@ -14994,7 +14994,7 @@ if ( scalar keys %HTMLOutput ) {
 			foreach my $key (@keylist) {
 				my $useragent = XMLEncode( CleanXSS($key) );
 				print "<tr><td class=\"aws\">$useragent</td>";
-				print "<td>"
+				print "<td nowrap=\"nowrap\">"
 				  . Format_Date( $_unknownreferer_l{$key}, 1 ) . "</td>";
 				print "</tr>\n";
 				$total_l += 1;
@@ -15023,7 +15023,7 @@ if ( scalar keys %HTMLOutput ) {
 				\%_unknownrefererbrowser_l );
 			foreach my $key (@keylist) {
 				my $useragent = XMLEncode( CleanXSS($key) );
-				print "<tr><td class=\"aws\">$useragent</td><td>"
+				print "<tr><td class=\"aws\">$useragent</td><td nowrap=\"nowrap\">"
 				  . Format_Date( $_unknownrefererbrowser_l{$key}, 1 )
 				  . "</td></tr>\n";
 				$total_l += 1;
