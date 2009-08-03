@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.274 $ - $Author: eldy $ - $Date: 2009-07-22 12:21:24 $
+$Revision: 1.275 $ - $Author: eldy $ - $Date: 2009-08-03 21:50:58 $
 
 
 ***** 6.95 *****
@@ -13,6 +13,7 @@ New features/improvements:
 - Added details of version for Chrome, Opera, Safari and Konqueror browsers.
 - Update of browsers, robots and search_engines databases (among them, the
   bing search engine).
+- Increase seriously bot detection.
 - Added Brezhoneg language.
 - Add a better way to detect Safari versions.
 
