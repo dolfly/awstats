@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.62 $ - $Author: eldy $ - $Date: 2009-08-02 23:25:26 $
+# $Revision: 1.63 $ - $Author: eldy $ - $Date: 2009-08-08 11:44:44 $
 
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
 # 				akregator (rss)
@@ -212,6 +212,7 @@
 'ossproxy',
 'smallproxy',
 # Other kind of browsers
+'adobeair',
 'apt',
 'analogx_proxy',
 'gnome\-vfs',
@@ -433,6 +434,7 @@
 'ossproxy','<a href="http://www.marketscore.com/FAQ.Aspx" title="OSSProxy home page [new window]" target="_blank">OSSProxy</a>',
 'smallproxy','<a href="http://www.smallproxy.ru/" title="SmallProxy home page [new window]" target="_blank">SmallProxy</a>',
 # Other kind of browsers
+'adobeair','AdobeAir',
 'apt','Debian APT',
 'analogx_proxy','AnalogX Proxy',
 'gnome\-vfs', 'Gnome FileSystem Abstraction library', 
@@ -642,6 +644,7 @@
 # Anonymous Proxy Browsers (can be used as grabbers as well...)
 'cjb\.net','cjbnet',
 # Other kind of browsers
+'adobeair','adobe',
 'apt','apt',
 'analogx_proxy','analogx',
 'microsoft\-webdav\-miniredir','frontpage',

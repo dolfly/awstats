@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2009-08-02 23:25:26 $
+# $Revision: 1.10 $ - $Author: eldy $ - $Date: 2009-08-08 11:48:45 $
 
 # Originale version by malu
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
@@ -572,6 +572,7 @@
 'cjb\.net',
 'ossproxy',
 # Other kind of browsers
+'adobeair',
 'apt',
 'analogx_proxy',
 'gnome\-vfs',
@@ -1150,6 +1151,7 @@
 'cjb\.net','<a href="http://proxy.cjb.net/" title="Browser home page [new window]" target="_blank">CJB.NET Proxy</a>',
 'ossproxy','<a href="http://www.marketscore.com/FAQ.Aspx" title="OSSProxy home page [new window]" target="_blank">OSSProxy</a>',
 # Other kind of browsers
+'adobeair','AdobeAir',
 'apt','Debian APT',
 'analogx_proxy','AnalogX Proxy',
 'gnome\-vfs', 'Gnome FileSystem Abstraction library', 
@@ -1337,6 +1339,7 @@
 # Anonymous Proxy Browsers (can be used as grabbers as well...)
 'cjb\.net','cjbnet',
 # Other kind of browsers
+'adobeair','adobe',
 'apt','apt',
 'analogx_proxy','analogx',
 'microsoft\-webdav\-miniredir','frontpage',

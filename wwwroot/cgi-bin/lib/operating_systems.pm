@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.26 $ - $Author: eldy $ - $Date: 2009-08-02 23:25:26 $
+# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2009-08-08 11:44:44 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              - added specific Linux distributions in addition to 
@@ -108,7 +108,8 @@
 'java',
 'microsoft',									# Pushed down to prevent mis-identification
 'msie[_+ ]',									# by other OS spoofers.
-'ms[_+ ]frontpage'
+'ms[_+ ]frontpage',
+'windows'
 );
 
 
@@ -196,7 +197,8 @@
 'webtv','webtv',
 'playstation', 'psp',
 'xbox', 'winxbox',
-'wii', 'wii'
+'wii', 'wii',
+'windows','winunknown'
 );
 
 # OS name list ('os unique id in lower case','os clear text')
