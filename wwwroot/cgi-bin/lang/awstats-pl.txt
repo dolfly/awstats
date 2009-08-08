@@ -1,5 +1,5 @@
 # Polish message file (review: momat@users.sourceforge.net)
-# $Revision: 1.11 $ - $Date: 2005-11-03 22:29:21 $
+# $Revision: 1.12 $ - $Date: 2009-08-08 12:01:17 $
 PageCode=iso-8859-2
 message0=Nieznane
 message1=Nieznane (brak odwzorowania IP w DNS)
@@ -68,7 +68,7 @@ message63=Kwi
 message64=Maj
 message65=Cze
 message66=Lip
-message67=¦ie
+message67=Sie
 message68=Wrz
 message69=Pa¼
 message70=Lis
