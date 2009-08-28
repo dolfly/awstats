@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.47 $ - $Author: eldy $ - $Date: 2009-06-10 22:05:31 $
+# $Revision: 1.48 $ - $Author: eldy $ - $Date: 2009-08-28 21:58:53 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
@@ -779,7 +779,7 @@
 'sogou', 'query=',
 'vnet','kw=',
 # Minor czech search engines
-'atlas','searchtext=', 'seznam','w=', 'quick','query=', 'centrum','q=', 'jyxo','s=', 'najdi','dotaz=', 'redbox','srch=',
+'atlas','(searchtext|q)=', 'seznam','(w|q)=', 'quick','query=', 'centrum','q=', 'jyxo','(s|q)=', 'najdi','dotaz=', 'redbox','srch=',
 # Minor danish search engines
 'opasia','q=', 'danielsen','q=', 'sol','q=', 'jubii','soegeord=', 'finddk','words=', 'edderkoppen','query=', 'orbis','search_field=', '1klik','query=', 'ofir','querytext=',
 # Minor dutch search engines
