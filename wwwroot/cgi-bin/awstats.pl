@@ -6,8 +6,8 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.939 $ - $Author: eldy $ - $Date: 2009-09-05 11:05:51 $
-require 5.005;
+# $Revision: 1.940 $ - $Author: eldy $ - $Date: 2009-09-05 13:32:46 $
+require 5.007;
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.939 $';
+$REVISION = '$Revision: 1.940 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.95 (build $REVISION)";
@@ -2402,7 +2402,7 @@ sub Substitute_Tags {
 		  int(
 			( $olderyday - 1 + 6 - ( $olderwday == 0 ? 6 : $olderwday - 1 ) ) /
 			  7 ) + 1;
-		if ( $olderweekofyear > 52 ) { $olderweekofyear = 1; }
+		if ( $olderweekofyear > 53 ) { $olderweekofyear = 1; }
 		my $olderdaymod = $olderday % 7;
 		$olderwday++;
 		my $olderns =
