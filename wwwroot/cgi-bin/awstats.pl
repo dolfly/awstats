@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.941 $ - $Author: eldy $ - $Date: 2009-09-05 13:42:53 $
+# $Revision: 1.942 $ - $Author: eldy $ - $Date: 2009-09-05 14:54:04 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.941 $';
+$REVISION = '$Revision: 1.942 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.95 (build $REVISION)";
@@ -9789,7 +9789,7 @@ if ( ( !$ENV{'GATEWAY_INTERFACE'} ) && ( !$SiteConfig ) ) {
 		'browsers',       'domains', 'operating_systems', 'robots',
 		'search_engines', 'worms'
 	);
-	print "----- $PROG $VERSION (c) 2000-2008 Laurent Destailleur -----\n";
+	print "----- $PROG $VERSION (c) 2000-2009 Laurent Destailleur -----\n";
 	print
 "AWStats is a free web server logfile analyzer to show you advanced web\n";
 	print "statistics.\n";
@@ -9800,10 +9800,10 @@ if ( ( !$ENV{'GATEWAY_INTERFACE'} ) && ( !$SiteConfig ) ) {
 	print "Syntax: $PROG.$Extension -config=virtualhostname [options]\n";
 	print "\n";
 	print
-"  This runs $PROG in command line to update statistics of a web site, from\n";
+"  This runs $PROG in command line to update statistics (-update option) of a\n";
 	print
-"   the log file defined in AWStats config file (with -update option), or build\n";
-	print "   a HTML report (with -output option).\n";
+"   web site, from the log file defined in AWStats config file, or build a HTML\n";
+	print "   report (-output option).\n";
 	print
 "  First, $PROG tries to read $PROG.virtualhostname.conf as the config file.\n";
 	print "  If not found, $PROG tries to read $PROG.conf\n";
@@ -9920,7 +9920,6 @@ if ( ( !$ENV{'GATEWAY_INTERFACE'} ) && ( !$SiteConfig ) ) {
 	print "  Most viewed, entry and exit pages\n";
 	print "  Files type and Web compression (mod_gzip, mod_deflate stats)\n";
 	print "  Screen size\n";
-	print "  Number of times site is 'added to favorites bookmarks'\n";
 	print "  Ratio of Browsers with support of: Java, Flash, RealG2 reader,\n";
 	print "                        Quicktime reader, WMA reader, PDF reader\n";
 	print "  Configurable personalized reports\n";
