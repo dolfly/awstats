@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.938 $ - $Author: eldy $ - $Date: 2009-08-03 20:34:40 $
+# $Revision: 1.939 $ - $Author: eldy $ - $Date: 2009-09-05 11:05:51 $
 require 5.005;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.938 $';
+$REVISION = '$Revision: 1.939 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.95 (build $REVISION)";
@@ -808,7 +808,7 @@ sub http_head {
 		my $newpagecode = $PageCode ? $PageCode : "utf-8";
 		if ( $BuildReportFormat eq 'xhtml' || $BuildReportFormat eq 'xml' ) {
 			print( $ENV{'HTTP_USER_AGENT'} =~ /MSIE|Googlebot/i
-				? "Content-type:text/html; charset=$newpagecode\n"
+				? "Content-type: text/html; charset=$newpagecode\n"
 				: "Content-type: text/xml; charset=$newpagecode\n"
 			);
 		}
