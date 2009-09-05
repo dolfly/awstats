@@ -3,7 +3,7 @@
 # If you want to add MIME types,
 # you must add an entry in MimeFamily and may be MimeHashLib
 #-------------------------------------------------------
-# $Revision: 1.24 $ - $Author: eldy $ - $Date: 2008-10-05 11:25:27 $
+# $Revision: 1.25 $ - $Author: eldy $ - $Date: 2009-09-05 11:44:25 $
 
 
 #package AWSMIME;
@@ -31,7 +31,8 @@
 'xsl',       'Extensible Stylesheet Language file',
 'runtime',   'Binary runtime',
 'library',   'Binary library',
-'swf',       'Macromedia Flash Animation',
+'swf',       'Adobe Flash Animation',
+'flv',       'Adobe Flash Video',
 'dtd',       'Document Type Definition',
 'csv',       'Comma Separated Value file',
 'jnlp',      'Java Web Start launch file',
@@ -135,6 +136,7 @@
 'mpg','video',
 'rm','real',
 'swf','flash',
+'flv','flash',
 'wmv','video',
 'mov','quicktime',
 'qt','quicktime',
@@ -243,6 +245,7 @@
 'mpg','video',
 'rm','video',
 'swf','swf',
+'flv','flv',
 'wmv','video',
 'mov','video',
 'qt','video',
