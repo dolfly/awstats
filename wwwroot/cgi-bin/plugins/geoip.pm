@@ -8,7 +8,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.25 $ - $Author: eldy $ - $Date: 2008-11-15 16:03:42 $
+# $Revision: 1.26 $ - $Author: eldy $ - $Date: 2009-09-05 14:42:49 $
 
 
 # <-----
@@ -92,6 +92,7 @@ sub Init_geoip {
 sub GetCountryCodeByAddr_geoip {
     my $param="$_[0]";
 	# <-----
+	if (! $param) { return ''; }
 	my $res=$TmpDomainLookup{$param}||'';
 	if (! $res) {
 		$res=lc($gi->country_code_by_addr($param)) || 'unknown';
@@ -112,6 +113,7 @@ sub GetCountryCodeByAddr_geoip {
 sub GetCountryCodeByName_geoip {
     my $param="$_[0]";
 	# <-----
+	if (! $param) { return ''; }
 	my $res=$TmpDomainLookup{$param}||'';
 	if (! $res) {
 		$res=lc($gi->country_code_by_name($param)) || 'unknown';
