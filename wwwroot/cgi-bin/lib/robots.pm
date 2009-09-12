@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.58 $ - $Author: eldy $ - $Date: 2009-08-02 23:25:26 $
+# $Revision: 1.59 $ - $Author: eldy $ - $Date: 2009-09-12 11:06:55 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              added dipsie (not tested with real data).
@@ -857,6 +857,7 @@
 'ping\.blo\.gs',
 'plinki',
 'pluckfeedcrawler',
+'pogodak',
 'pompos',
 'popdexter',
 'port_huron_labs',
@@ -1511,6 +1512,7 @@
 'ping\.blo\.gs','<a href="http://blo.gs/ping.php" title="Bot home page. [new window]" target="_blank">ping.blo.gs</a>',
 'plinki','<a href="http://www.plinki.com/" title="plinki home page [new window]" target="_blank">plinki</a>',
 'pluckfeedcrawler','<a href="http://www.pluck.com/" title="Bot home page. [new window]" target="_blank">PluckFeedCrawler</a>',
+'pogodak','<a href="http://www.pogodak.com" title="Pogodak home page [new window]" target="_blank">Pogodak.com</a>',
 'pompos','<a href="http://dir.com/pompos.html" title="Bot home page. [new window]" target="_blank">Pompos</a>',
 'popdexter','Popdexter',
 'port_huron_labs','<a href="http://www.psychedelix.com/cgi-bin/csv2html.pl?data=allagents.csv&amp;template=detail.html&amp;match=\bid_n_s_1133\b" title="Port Huron Labs home page [new window]" target="_blank">Port Huron Labs</a>',

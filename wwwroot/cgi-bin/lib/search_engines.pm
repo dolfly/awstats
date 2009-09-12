@@ -5,7 +5,7 @@
 # SearchEnginesHashLib.
 # An entry if known in SearchEnginesKnownUrl is also welcome.
 #------------------------------------------------------------------------------
-# $Revision: 1.49 $ - $Author: eldy $ - $Date: 2009-09-05 11:38:37 $
+# $Revision: 1.50 $ - $Author: eldy $ - $Date: 2009-09-12 11:06:54 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #            added minor italian search engines
@@ -344,7 +344,9 @@
 # Minor Portuguese search engines
 'sapo\.pt',
 # Minor swiss search engines
-'search\.ch', 'search\.bluewin\.ch'
+'search\.ch', 'search\.bluewin\.ch',
+# Minor Croatian, Serbian, Macedonian, Bosnian and Herzegovinian search engines
+'pogodak\.'
 );
 @SearchEnginesSearchIDOrder_listgen=(
 # Generic search engines
@@ -634,6 +636,8 @@
 # Minor swiss search engines
 'search\.ch','searchch',
 'search\.bluewin\.ch','bluewin',
+# Minor Croatian, Serbian, Macedonian, Bosnian and Herzegovinian search engines
+'pogodak\.','pogodak',
 # Generic search engines
 'search\..*\.\w+','search'
 );
@@ -847,7 +851,9 @@
 'passagen','q=',
 'enirose','q=',
 # Minor swiss search engines
-'searchch', 'q=', 'bluewin', 'qry='
+'searchch', 'q=', 'bluewin', 'qry=',
+# Minor Croatian, Serbian, Macedonian, Bosnian and Herzegovinian search engines
+'pogodak', 'q='
 );
 
 # SearchEnginesKnownUrlNotFound
@@ -1083,6 +1089,8 @@
 'sapo','<a href="http://www.sapo.pt/" title="Sapo search engine home page [new window]" target="_blank">Sapo</a>',
 # Minor Swiss search engines
 'searchch', 'search.ch', 'bluewin', 'search.bluewin.ch',								
+# Minor Croatian, Serbian, Macedonian, Bosnian and Herzegovinian search engines
+'pogodak','<a href="http://www.pogodak.com" title="Pogodak search engine home page [new window]" target="_blank">Pogodak.com</a>',
 # Generic search engines
 'search','Unknown search engines'
 );
