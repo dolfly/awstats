@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.942 $ - $Author: eldy $ - $Date: 2009-09-05 14:54:04 $
+# $Revision: 1.943 $ - $Author: eldy $ - $Date: 2009-10-10 12:36:38 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.942 $';
+$REVISION = '$Revision: 1.943 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.95 (build $REVISION)";
@@ -2237,13 +2237,21 @@ sub Read_Ref_Data {
 		);
 	}
 	if ( ( scalar keys %BrowsersHashIDLib )
-		&& @BrowsersSearchIDOrder != ( scalar keys %BrowsersHashIDLib ) - 4 )
+		&& @BrowsersSearchIDOrder != ( scalar keys %BrowsersHashIDLib ) - 8 )
 	{
+		#foreach (sort keys %BrowsersHashIDLib)
+		#{
+		#	print $_."\n";
+		#}
+		#foreach (sort @BrowsersSearchIDOrder)
+		#{
+		#	print $_."\n";
+		#}
 		error(  "Not same number of records of BrowsersSearchIDOrder ("
 			  . (@BrowsersSearchIDOrder)
 			  . " entries) and BrowsersHashIDLib ("
-			  . ( ( scalar keys %BrowsersHashIDLib ) - 4 )
-			  . " entries without msie,netscape,firefox,svn,opera,safari,chrome,konqueror) in Browsers database. May be you updated AWStats without updating browsers.pm file or you made changed into browsers.pm not correctly. Check your file "
+			  . ( ( scalar keys %BrowsersHashIDLib ) - 8 )
+			  . " entries without firefox,opera,chrome,safari,konqueror,svn,msie,netscape) in Browsers database. May be you updated AWStats without updating browsers.pm file or you made changed into browsers.pm not correctly. Check your file "
 			  . $FilePath{"browsers.pm"}
 			  . " is up to date." );
 	}
@@ -10581,7 +10589,7 @@ if ( $UpdateStats && $FrameName ne 'index' && $FrameName ne 'mainleft' )
 	my $regnotie          = qr/webtv|omniweb|opera/i;
 	my $regnotnetscape    = qr/gecko|compatible|opera|galeon|safari|charon/i;
 	my $regnotfirefox     = qr/flock/i;
-	my $regnotsafari      = qr/arora|chrome|shiira/i;
+	my $regnotsafari      = qr/android|arora|chrome|shiira/i;
 	my $regreferer        = qr/^(\w+):\/\/([^\/:]+)(:\d+|)/;
 	my $regreferernoquery = qr/^([^$URLQuerySeparators]+)/;
 	my $reglocal          = qr/^(www\.|)$sitewithoutwww/i;
