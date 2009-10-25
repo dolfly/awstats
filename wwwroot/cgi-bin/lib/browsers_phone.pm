@@ -3,7 +3,7 @@
 # If you want to add a Browser to extend AWStats database detection capabilities,
 # you must add an entry in BrowsersSearchIDOrder and in BrowsersHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.11 $ - $Author: eldy $ - $Date: 2009-10-10 12:36:38 $
+# $Revision: 1.12 $ - $Author: eldy $ - $Date: 2009-10-25 11:20:49 $
 
 # Originale version by malu
 # 2006-05-15 Sean Carlos http://www.antezeta.com/awstats.html 
@@ -784,7 +784,7 @@
 'shrook', 'Shrook (RSS Reader)',
 'straw', 'Straw (RSS Reader)',
 'syndirella', 'Syndirella (RSS Reader)',
-'vienna', '<a href="http://www.opencommunity.co.uk/vienna2.php" title="Vienna RSS-Reader [new window]" target="_blank">Vienna (RSS Reader)</a>',
+'vienna', '<a href="http://www.vienna-rss.org/" title="Vienna RSS-Reader [new window]" target="_blank">Vienna (RSS Reader)</a>',
 'wizz\srss\snews\sreader','Wizz RSS News Reader (RSS Reader)',
 # PDA/Phonecell browsers
 'alcatel\-be4','Alcatel BE4 (phone)',
