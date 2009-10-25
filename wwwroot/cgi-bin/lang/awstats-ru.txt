@@ -1,5 +1,5 @@
 # Russian message file
-# $Revision: 1.14 $ - $Date: 2009-05-25 16:06:42 $
+# $Revision: 1.15 $ - $Date: 2009-10-25 11:12:35 $
 PageCode=utf-8
 message0=Неизвестный
 message1=Неизвестный
