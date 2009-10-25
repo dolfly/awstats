@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.20 $
+# \version      $Revision: 1.21 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -45,7 +45,7 @@ if (-d "/usr/src/rpm") {
     $RPMDIR="/usr/src/rpm";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.20 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.21 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -222,6 +222,10 @@ if (! $copyalreadydone) {
 
 print "Nettoyage de $BUILDROOT\n";
 $ret=`rm -f $BUILDROOT/$PROJECT/ChangeLog`;
+$ret=`rm -f $BUILDROOT/$PROJECT/*/.cvsignore`;
+$ret=`rm -f $BUILDROOT/$PROJECT/*/*/.cvsignore`;
+$ret=`rm -f $BUILDROOT/$PROJECT/*/*/*/.cvsignore`;
+$ret=`rm -f $BUILDROOT/$PROJECT/*/*/*/*/.cvsignore`;
 $ret=`rm -f $BUILDROOT/$PROJECT/docs/awstats_loganalysispaper.html`;
 $ret=`rm -f $BUILDROOT/$PROJECT/tools/urlalias.txt`;
 $ret=`rm -f $BUILDROOT/$PROJECT/tools/xferlogconvert.pl`;
