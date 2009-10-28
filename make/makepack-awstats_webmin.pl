@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats_webmin.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.6 $
+# \version      $Revision: 1.7 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -36,7 +36,7 @@ if (-d "/usr/src/RPM") {
     $RPMDIR="/usr/src/RPM";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.6 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.7 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -111,7 +111,7 @@ while (! $found) {
 		printf(" %d - %3s    (%s)\n",$cpt,$target,"Need ".$REQUIREMENTTARGET{$target});
 	}
 
-	# On demande de choisir le fichier à passer
+	# On demande de choisir le fichier ï¿½ passer
 	print "Choose one package number or several separated with space: ";
 	$NUM_SCRIPT=<STDIN>; 
 	chomp($NUM_SCRIPT);
@@ -211,9 +211,9 @@ if ($nboftargetok) {
     
     	if ($target eq 'WBM') {
     		unlink $FILENAMEWBM.wbm;
-    		print "Creation archive $FILENAMEWBM.wbm de $PROJECT\n";
+    		print "Creation archive $FILENAMEWBM.wbm of $PROJECT\n";
     		$ret=`tar --directory="$BUILDROOT" -cvf $FILENAMEWBM.wbm $PROJECT`;
-    		print "Déplacement de $FILENAMEWBM.wbm dans $SOURCE/$FILENAMEWBM.wbm\n";
+    		print "Move file $FILENAMEWBM.wbm into $SOURCE/$FILENAMEWBM.wbm\n";
     		rename("$FILENAMEWBM.wbm","$SOURCE/$FILENAMEWBM.wbm");
     		$ret=`cp -pr "$SOURCE/$FILENAMEWBM.wbm" "$DESTI/$FILENAMEWBM.wbm"`;
 #    		$ret=`cp -pr "$SOURCE/$FILENAMEWBM.wbm" "$DESTI/$FILENAMEWBM.wbm"`;
