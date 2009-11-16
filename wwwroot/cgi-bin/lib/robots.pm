@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.59 $ - $Author: eldy $ - $Date: 2009-09-12 11:06:55 $
+# $Revision: 1.60 $ - $Author: eldy $ - $Date: 2009-11-16 00:24:15 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              added dipsie (not tested with real data).
@@ -709,7 +709,6 @@
 'deepindex',
 'dipsie\.bot',
 'dnsgroup',
-'docomo',
 'domainchecker',
 'domainsdb\.net',
 'dulance',
@@ -1367,7 +1366,6 @@
 'deepindex','<a href="http://www.deepindex.net/faq.php" title="Deepindex home page [new window]" target="_blank">Deepindex</a>',
 'dipsie\.bot','<a href="http://www.dipsie.com/bot/" title="Bot home page [new window]" target="_blank">Dipsie</a>',
 'dnsgroup','<a href="http://www.dnsgroup.com/" title="DNSGroup home page [new window]" target="_blank">DNSGroup</a>',
-'docomo','<a href="http://www.nttdocomo.co.jp/" title="DoCoMo home page [new window]" target="_blank">DoCoMo</a>',
 'domainchecker','<a href="http://net-promoter.com/" title="DomainChecker home page (not confirmed) [new window]" target="_blank">DomainChecker</a>',
 'domainsdb\.net','<a href="http://domainsdb.net/" title="Bot home page [new window]" target="_blank">DomainsDB.net</a>',
 'dulance','<a href="http://www.dulance.com/bot.jsp" title="Bot home page [new window]" target="_blank">Dulance</a>',
