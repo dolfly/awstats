@@ -1,6 +1,12 @@
 AWStats Changelog
 -----------------
-$Revision: 1.278 $ - $Author: eldy $ - $Date: 2009-09-05 15:15:23 $
+$Revision: 1.279 $ - $Author: eldy $ - $Date: 2009-12-09 11:07:06 $
+
+
+***** 6.96 *****
+
+New features/improvements:
+- Detect Windows 7
 
 
 ***** 6.95 *****
