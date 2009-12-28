@@ -3,7 +3,7 @@
 # Export lib data values to a text files to allow to use AWStats robots,
 # os, browsers, search_engines database with other log analyzers
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: eldy $ - $Date: 2003-12-05 23:53:37 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2009-12-28 00:50:48 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -15,7 +15,7 @@ use strict;no strict "refs";
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.4 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.5 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -203,7 +203,6 @@ my @AllowedArgs=('-lib','-exportformat','-debug');
 
 $QueryString="";
 for (0..@ARGV-1) {
-	# TODO Check if ARGV is an AllowedArg
 	if ($_ > 0) { $QueryString .= "&"; }
 	my $NewLinkParams=$ARGV[$_]; $NewLinkParams =~ s/^-+//; $NewLinkParams =~ s/\s/%20/g;
 	$QueryString .= "$NewLinkParams";

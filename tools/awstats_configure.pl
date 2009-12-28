@@ -8,7 +8,7 @@
 # - Create AWStats config file
 # See COPYING.TXT file about AWStats GNU General Public License.
 #-------------------------------------------------------
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2008-04-06 13:45:23 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2009-12-28 00:52:13 $
 require 5.005;
 
 use strict;
@@ -46,7 +46,7 @@ my $reg;
 eval('use Win32::TieRegistry ( Delimiter=>"/", TiedRef=>\$reg )');
 
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.8 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.9 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 use vars qw/
@@ -591,7 +591,6 @@ if ($bidon =~ /^y/i) {
 	#----------------------------
 	print "\n-----> Define config file name to create\n";
 	print "What is the name of your web site or profile analysis ?\n";
-	# TODO Add example that use value found in ServerName ?
 	print "Example: www.mysite.com\n";
 	print "Example: demo\n";
 	ASKCONFIG:
@@ -636,7 +635,6 @@ if ($bidon =~ /^y/i) {
 	if (-s $configfile) { print "  Config file already exists. No overwrite possible on existing config files.\n"; }
 	else {
 		%ConfToChange=();
-		# TODO Ask path of log file to change LogFile parameter
 		if ($OS eq 'linux' || $OS eq "macosx") { $ConfToChange{'DirData'}="$AWSTATS_DIRDATA_PATH"; }
 		if ($OS eq 'windows') { $ConfToChange{'DirData'}='.'; }
 		if ($UseAlias) {
