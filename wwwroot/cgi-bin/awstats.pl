@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.944 $ - $Author: eldy $ - $Date: 2009-12-09 11:07:09 $
+# $Revision: 1.945 $ - $Author: eldy $ - $Date: 2009-12-29 23:14:13 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.944 $';
+$REVISION = '$Revision: 1.945 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.96 (build $REVISION)";
@@ -15002,12 +15002,8 @@ if ( scalar keys %HTMLOutput ) {
 				}
 
 				# Call to plugins' function ShowPagesAddField
-				foreach my $pluginname (
-					keys %{ $PluginsLoaded{'ShowPagesAddField'} } )
+				foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowPagesAddField'} } )
 				{
-
-					#    				my $function="ShowPagesAddField_$pluginname('')";
-					#    				eval("$function");
 					my $function = "ShowPagesAddField_$pluginname";
 					&$function('');
 				}
@@ -16236,12 +16232,14 @@ if ( scalar keys %HTMLOutput ) {
 			# TODO
 
 			# Show bars for month
-			if ( $PluginsLoaded{'ShowGraph'}{'graphapplet'} ) {
+			my $graphdone=0;
+			foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
+			{
 				my @blocklabel = ();
 				for ( my $ix = 1 ; $ix <= 12 ; $ix++ ) {
 					my $monthix = sprintf( "%02s", $ix );
 					push @blocklabel,
-					  "$MonthNumLib{$monthix}\�$YearRequired";
+					  "$MonthNumLib{$monthix}\n$YearRequired";
 				}
 				my @vallabel = (
 					"$Message[11]", "$Message[10]",
@@ -16272,15 +16270,19 @@ if ( scalar keys %HTMLOutput ) {
 					$valdata[ $xx++ ] = $MonthBytes{ $YearRequired . $monthix }
 					  || 0;
 				}
-				ShowGraph_graphapplet(
+				
+				my $function = "ShowGraph_$pluginname";
+				&$function(
 					"$title",        "month",
 					$ShowMonthStats, \@blocklabel,
 					\@vallabel,      \@valcolor,
 					\@valmax,        \@valtotal,
 					\@valaverage,    \@valdata
 				);
+				$graphdone=1;
 			}
-			else {
+			if (! $graphdone)
+			{
 				print "<table>\n";
 				print "<tr valign=\"bottom\">";
 				print "<td>&nbsp;</td>\n";
@@ -16627,7 +16629,9 @@ if ( scalar keys %HTMLOutput ) {
 			}
 
 			# Show bars for day
-			if ( $PluginsLoaded{'ShowGraph'}{'graphapplet'} ) {
+			my $graphdone=0;
+			foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
+			{
 				my @blocklabel = ();
 				foreach
 				  my $daycursor ( $firstdaytoshowtime .. $lastdaytoshowtime )
@@ -16646,7 +16650,7 @@ if ( scalar keys %HTMLOutput ) {
 					my $weekend =
 					  ( DayOfWeek( $day, $month, $year ) =~ /[06]/ ? '!' : '' );
 					push @blocklabel,
-					  "$day�$MonthNumLib{$month}$weekend$bold";
+					  "$day\n$MonthNumLib{$month}$weekend$bold";
 				}
 				my @vallabel = (
 					"$Message[10]", "$Message[56]",
@@ -16685,15 +16689,17 @@ if ( scalar keys %HTMLOutput ) {
 					$valdata[ $xx++ ] = $DayHits{ $year . $month . $day }  || 0;
 					$valdata[ $xx++ ] = $DayBytes{ $year . $month . $day } || 0;
 				}
-				ShowGraph_graphapplet(
+				my $function = "ShowGraph_$pluginname";
+				&$function(
 					"$title",              "daysofmonth",
 					$ShowDaysOfMonthStats, \@blocklabel,
 					\@vallabel,            \@valcolor,
 					\@valmax,              \@valtotal,
 					\@valaverage,          \@valdata
 				);
+				$graphdone=1;
 			}
-			else {
+			if (! $graphdone) {
 				print "<table>\n";
 				print "<tr valign=\"bottom\">\n";
 				foreach
@@ -17055,7 +17061,9 @@ if ( scalar keys %HTMLOutput ) {
 			}
 
 			# Show bars for days of week
-			if ( $PluginsLoaded{'ShowGraph'}{'graphapplet'} ) {
+			my $graphdone=0;
+			foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
+			{
 				my @blocklabel = ();
 				for (@DOWIndex) {
 					push @blocklabel,
@@ -17098,15 +17106,18 @@ if ( scalar keys %HTMLOutput ) {
 						$avg_dayofweek_h[$_] = int( $avg_dayofweek_h[$_] );
 					}
 				}
-				ShowGraph_graphapplet(
+				my $function = "ShowGraph_$pluginname";
+				&$function(
 					"$title",             "daysofweek",
 					$ShowDaysOfWeekStats, \@blocklabel,
 					\@vallabel,           \@valcolor,
 					\@valmax,             \@valtotal,
 					\@valaverage,         \@valdata
 				);
+				$graphdone=1;
 			}
-			else {
+			if (! $graphdone) 
+			{
 				print "<table>\n";
 				print "<tr valign=\"bottom\">\n";
 				for (@DOWIndex) {
@@ -17302,7 +17313,9 @@ if ( scalar keys %HTMLOutput ) {
 			}
 
 			# Show bars for hour
-			if ( $PluginsLoaded{'ShowGraph'}{'graphapplet'} ) {
+			my $graphdone=0;
+			foreach my $pluginname ( keys %{ $PluginsLoaded{'ShowGraph'} } )
+			{
 				my @blocklabel = ( 0 .. 23 );
 				my @vallabel   =
 				  ( "$Message[56]", "$Message[57]", "$Message[75]" );
@@ -17317,15 +17330,18 @@ if ( scalar keys %HTMLOutput ) {
 					$valdata[ $xx++ ] = $_time_h[$_] || 0;
 					$valdata[ $xx++ ] = $_time_k[$_] || 0;
 				}
-				ShowGraph_graphapplet(
+				my $function = "ShowGraph_$pluginname";
+				&$function(
 					"$title",        "hours",
 					$ShowHoursStats, \@blocklabel,
 					\@vallabel,      \@valcolor,
 					\@valmax,        \@valtotal,
 					\@valaverage,    \@valdata
 				);
+				$graphdone=1;
 			}
-			else {
+			if (! $graphdone) 
+			{
 				print "<table>\n";
 				print "<tr valign=\"bottom\">\n";
 				for ( my $ix = 0 ; $ix <= 23 ; $ix++ ) {
