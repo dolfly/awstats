@@ -16,7 +16,7 @@ use strict;no strict "refs";
 
 
 # variables, etc
-my $REVISION='$Revision: 1.7 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.8 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.0 (build $REVISION)";
 
 ############### EDIT HERE ###############
@@ -242,7 +242,7 @@ if(!($ua->is_protocol_supported('https')) && $useHTTPS) {
 	exit();
 }
 
-my $fileOutput = "";
+$fileOutput = "";
 
 # Now lets build the contents to write (or append) to urlalias file
 foreach my $newAlias (@addToAliasFile) {

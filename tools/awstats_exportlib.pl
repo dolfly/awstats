@@ -3,7 +3,7 @@
 # Export lib data values to a text files to allow to use AWStats robots,
 # os, browsers, search_engines database with other log analyzers
 #-----------------------------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2009-12-28 00:50:48 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2010-01-20 17:39:20 $
 
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
 #use diagnostics;	# Must be used in test mode only. This reduce a lot of process speed
@@ -15,7 +15,7 @@ use strict;no strict "refs";
 # Defines
 #-----------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-my $REVISION='$Revision: 1.5 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.6 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="5.1 (build $REVISION)";
 
 # ---------- Init variables -------
@@ -341,7 +341,7 @@ if ($LibToExport =~ /search_engines/) {
 		}
 		if ($ExportFormat eq 'webalizer') {
 			my $urlkeywordsyntax=$SearchEnginesKnownUrl{$SearchEnginesHashID{$key}};
-			my $urlkeywordsyntax=&unregexkeywordcode($urlkeywordsyntax,1);
+			$urlkeywordsyntax=&unregexkeywordcode($urlkeywordsyntax,1);
 			if (! $urlkeywordsyntax) { next; }				# This has no keywordextractcode
 			my $newkey=&unregex($key);
 			if ($newkey =~ /[\[\]\(\)\|\?\*\+]/) { next; }	# This was a regex value that i can't clean
