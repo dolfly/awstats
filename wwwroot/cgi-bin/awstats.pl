@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.945 $ - $Author: eldy $ - $Date: 2009-12-29 23:14:13 $
+# $Revision: 1.946 $ - $Author: eldy $ - $Date: 2010-02-10 13:12:30 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.945 $';
+$REVISION = '$Revision: 1.946 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.96 (build $REVISION)";
@@ -1751,6 +1751,12 @@ sub Read_Config {
 		}
 		if ( open( CONFIG, "$searchdir$PROG.conf" ) ) {
 			$FileConfig = "$searchdir$PROG.conf";
+			$FileSuffix = '';
+			last;
+		}
+		#CL - Added to open config if full path is passed to awstats 
+		if ( open( CONFIG, "$SiteConfig" ) ) {
+			$FileConfig = "$SiteConfig";
 			$FileSuffix = '';
 			last;
 		}
@@ -9814,7 +9820,7 @@ if ( ( !$ENV{'GATEWAY_INTERFACE'} ) && ( !$SiteConfig ) ) {
 	print "   report (-output option).\n";
 	print
 "  First, $PROG tries to read $PROG.virtualhostname.conf as the config file.\n";
-	print "  If not found, $PROG tries to read $PROG.conf\n";
+	print "  If not found, $PROG tries to read $PROG.conf, and finally the full path passed to -config=\n";
 	print
 "  Note 1: Config files ($PROG.virtualhostname.conf or $PROG.conf) must be\n";
 	print
@@ -9899,15 +9905,14 @@ if ( ( !$ENV{'GATEWAY_INTERFACE'} ) && ( !$SiteConfig ) ) {
 	print "               errors404        to list 'Referers' for 404 errors\n";
 	print
 "               allextraX        to build page of all values for ExtraSection X\n";
-	print "  -staticlinks to have static links in HTML report page\n";
-	print
-"  -staticlinksext=xxx to have static links with .xxx extension instead of .html\n";
+	print "  -staticlinks           to have static links in HTML report page\n";
+	print "  -staticlinksext=xxx    to have static links with .xxx extension instead of .html\n";
 	print
 "  -lang=LL     to output a HTML report in language LL (en,de,es,fr,it,nl,...)\n";
 	print "  -month=MM    to output a HTML report for an old month MM\n";
 	print "  -year=YYYY   to output a HTML report for an old year YYYY\n";
 	print
-"  Those 'date' options doesn't allow you to process old log file. They only\n";
+"  The 'date' options doesn't allow you to process old log file. They only\n";
 	print
 "  allow you to see a past report for a chosen month/year period instead of\n";
 	print "  current month/year.\n";
