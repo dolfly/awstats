@@ -1,5 +1,5 @@
 ﻿# English message file (eldy@users.sourceforge.net)
-# $Revision: 1.88 $ - $Date: 2009-06-03 19:05:30 $
+# $Revision: 1.89 $ - $Date: 2010-03-09 21:52:06 $
 PageCode=utf-8
 message0=Unknown
 message1=Unknown (unresolved ip)
@@ -178,3 +178,4 @@ message173=Opera versions
 message174=Safari versions
 message175=Chrome versions
 message176=Konqueror versions
+message177=,
