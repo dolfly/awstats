@@ -1,12 +1,14 @@
 AWStats Changelog
 -----------------
-$Revision: 1.279 $ - $Author: eldy $ - $Date: 2009-12-09 11:07:06 $
+$Revision: 1.280 $ - $Author: eldy $ - $Date: 2010-03-09 22:05:04 $
 
 
 ***** 6.96 *****
 
 New features/improvements:
-- Detect Windows 7
+- Detect Windows 7.
+- Can format numbers according to language.
+- More mime types.
 
 
 ***** 6.95 *****
