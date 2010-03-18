@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.948 $ - $Author: eldy $ - $Date: 2010-03-09 21:52:06 $
+# $Revision: 1.949 $ - $Author: eldy $ - $Date: 2010-03-18 01:09:42 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.948 $';
+$REVISION = '$Revision: 1.949 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.96 (build $REVISION)";
@@ -1014,7 +1014,7 @@ EOF
 			print "</style>\n";
 		}
 
-# les scripts nécessaires pour trier avec Tablekit
+# les scripts nï¿½cessaires pour trier avec Tablekit
 #	print "<script type=\"text\/javascript\" src=\"/js/prototype.js\"><\/script>";
 #	print "<script type=\"text\/javascript\" src=\"/js/fabtabulous.js\"><\/script>";
 #	print "<script type=\"text\/javascript\" src=\"/js/mytablekit.js\"><\/script>";
@@ -7934,7 +7934,7 @@ sub Format_Number {
 	$number =~ s/(\d)(\d\d\d\s\d\d\d)$/$1 $2/;
 	$number =~ s/(\d)(\d\d\d\s\d\d\d\s\d\d\d)$/$1 $2/;
 	my $separator = $Message[177];
-	if ($separator == '') { $separator=' '; }	# For backward compatibility
+	if ($separator eq '') { $separator=' '; }	# For backward compatibility
 	$number =~ s/ /$separator/g;
 	return $number;
 }
