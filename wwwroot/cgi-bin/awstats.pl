@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.950 $ - $Author: eldy $ - $Date: 2010-04-10 13:27:11 $
+# $Revision: 1.951 $ - $Author: eldy $ - $Date: 2010-04-10 13:56:57 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.950 $';
+$REVISION = '$Revision: 1.951 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "6.96 (build $REVISION)";
@@ -13989,7 +13989,7 @@ sub HTMLMainCountries{
 				$cnt++;
 				if ($cnt > 99) { last; }
 			}
-			print "<tr><td colspan=\"7\">";
+			print "<tr><td colspan=\"7\" align=\"center\">";
 			my $function = "ShowGraph_$pluginname";
 			&$function(
 				"AWStatsCountryMap",              "countries_map",
