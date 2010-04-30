@@ -5,14 +5,13 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2010-04-10 13:27:11 $
-# $Revision: 1.2 $ - $Author: eldy $ - $Date: 2010-04-10 13:27:11 $
+# $Revision: 1.3 $ - $Author: manolamancha $ - $Date: 2010-04-30 14:07:46 $
 # 
 # Changelog
 #
-# 1.0 - Initial release
+# 1.0 - Initial release by george@dynapres.nl
 # 1.1 - Changed scaling: making it independent of chart series
-# 1.6 - Added pie charts, visualization hook, map and axis labels
+# 1.2 - Added pie charts, visualization hook, map and axis labels by Chris Larsen
 
 # <-----
 # ENTER HERE THE USE COMMAND FOR ALL REQUIRED PERL MODULES
