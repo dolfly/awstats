@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.60 $ - $Author: eldy $ - $Date: 2009-11-16 00:24:15 $
+# $Revision: 1.61 $ - $Author: manolamancha $ - $Date: 2010-04-30 13:19:25 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              added dipsie (not tested with real data).
@@ -925,6 +925,7 @@
 'w3c\-checklink',
 'w3c[_+ ]css[_+ ]validator[_+ ]jfouffa',
 'w3c_validator',
+'watchmouse',
 'wavefire',
 'webclipping\.com',
 'webcompass',
@@ -1580,6 +1581,7 @@
 'w3c\-checklink','<a href="http://validator.w3.org/checklink/" title="Bot home page [new window]" target="_blank">W3C Link Checker</a>',
 'w3c[_+ ]css[_+ ]validator[_+ ]jfouffa', '<a href="http://jigsaw.w3.org/css-validator/" title="Bot home page [new window]" target="_blank">W3C jigsaw CSS Validator</a>',
 'w3c_validator','<a href="http://validator.w3.org/" title="Bot home page [new window]" target="_blank">W3C Validator</a>',
+'watchmouse', '<a href="http://www.watchmouse.com/en/" title="WatcMouse">WatchMouse Website Monitor</a>',
 'wavefire','<a href="http://www.wavefire.com" title="info@wavefire.com; Bot home page [new window]" target="_blank">Wavefire</a>',
 'webclipping\.com', 'WebClipping.com',
 'webcompass', 'webcompass',
