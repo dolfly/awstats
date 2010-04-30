@@ -3,7 +3,7 @@
 # If you want to add robots to extend AWStats database detection capabilities,
 # you must add an entry in RobotsSearchIDOrder_listx and RobotsHashIDLib.
 #-------------------------------------------------------
-# $Revision: 1.61 $ - $Author: manolamancha $ - $Date: 2010-04-30 13:19:25 $
+# $Revision: 1.62 $ - $Author: manolamancha $ - $Date: 2010-04-30 14:02:44 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              added dipsie (not tested with real data).
@@ -753,6 +753,7 @@
 'gnodspider',
 'goforit\.com',
 'goforitbot',
+'gonzo',
 'grub',
 'gpu_p2p_crawler',
 'henrythemiragorobot',
@@ -1411,6 +1412,7 @@
 'gnodspider','GNOD Spider',
 'goforit\.com','<a href="http://www.goforit.com/about/" title="GoForIt.com home page [new window]" target="_blank">GoForIt.com</a>',
 'goforitbot','<a href="http://www.goforit.com/about/" title="GOFORITBOT home page [new window]" target="_blank">GOFORITBOT</a>',
+'gonzo','<a href="http://www.suchen.de/faq.html" title="Bot home page [new windows]" target="_blank">suchen.de</a>',
 'gpu_p2p_crawler','<a href="http://gpu.sourceforge.net/search_engine.php" title="Bot home page [new window]" target="_blank">GPU p2p crawler</a>',
 'grub','Grub.org',
 'henrythemiragorobot', '<a href="http://www.miragorobot.com/scripts/mrinfo.asp" title="Bot home page [new window]" target="_blank">Mirago</a>',
