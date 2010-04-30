@@ -8,7 +8,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.27 $ - $Author: eldy $ - $Date: 2010-04-10 14:30:55 $
+# $Revision: 1.28 $ - $Author: manolamancha $ - $Date: 2010-04-30 12:36:09 $
 
 
 # <-----
@@ -179,7 +179,9 @@ sub ShowInfoHost_geoip {
 		}
 		print "<td>";
 		if ($key && $ip==4) {
-			my $res = $TmpDomainLookup{$param}||'';
+			my $res;
+			if ($gi){ $res = $TmpDomainLookup{$gi->get_ip_address($param)}||''; }
+			else { $res = $TmpDomainLookup{$param}||''; }
         	if (!$res){$res=lc($gi->country_code_by_addr($param)) if $gi;}
         	if ($Debug) { debug("  Plugin $PluginName: GetCountryByIp for $param: [$res]",5); }
 		    if ($res) { print $DomainsHashIDLib{$res}?$DomainsHashIDLib{$res}:"<span style=\"color: #$color_other\">$Message[0]</span>"; }
@@ -189,7 +191,9 @@ sub ShowInfoHost_geoip {
 		    print "<span style=\"color: #$color_other\">$Message[0]</span>";
 		}
 		if (! $key) {
-        	my $res = $TmpDomainLookup{$param}||'';
+			my $res;
+			if ($gi){ $res = $TmpDomainLookup{$gi->get_ip_address($param)}||''; }
+			else { $res = $TmpDomainLookup{$param}||''; }
         	if (!$res){$res=lc($gi->country_code_by_addr($param)) if $gi;}
         	if ($Debug) { debug("  Plugin $PluginName: GetCountryByHostname for $param: [$res]",5); }
 		    if ($res) { print $DomainsHashIDLib{$res}?$DomainsHashIDLib{$res}:"<span style=\"color: #$color_other\">$Message[0]</span>"; }
