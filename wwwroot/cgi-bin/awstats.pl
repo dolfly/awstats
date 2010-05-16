@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.955 $ - $Author: manolamancha $ - $Date: 2010-05-05 13:22:31 $
+# $Revision: 1.956 $ - $Author: eldy $ - $Date: 2010-05-16 22:15:42 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.955 $';
+$REVISION = '$Revision: 1.956 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -9788,7 +9788,7 @@ sub HTMLTopBanner{
 			}
 			if ( $AllowFullYearView >= 2 ) {
 				print "<option"
-				  . ( $MonthRequired eq 'all' ? " selected=\"true\"" : "" )
+				  . ( $MonthRequired eq 'all' ? " selected=\"selected\"" : "" )
 				  . " value=\"all\">- $Message[6] -</option>\n";
 			}
 			print "</select>\n";
@@ -9798,7 +9798,7 @@ sub HTMLTopBanner{
 			$ListOfYears{$YearRequired} ||= $MonthRequired;
 			foreach ( sort keys %ListOfYears ) {
 				print "<option"
-				  . ( $YearRequired eq "$_" ? " selected=\"true\"" : "" )
+				  . ( $YearRequired eq "$_" ? " selected=\"selected\"" : "" )
 				  . " value=\"$_\">$_</option>\n";
 			}
 			print "</select>\n";
