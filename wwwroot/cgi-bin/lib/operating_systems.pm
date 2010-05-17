@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.29 $ - $Author: eldy $ - $Date: 2009-12-09 11:06:54 $
+# $Revision: 1.30 $ - $Author: manolamancha $ - $Date: 2010-05-17 12:35:58 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              - added specific Linux distributions in addition to 
@@ -13,6 +13,13 @@
 
 #package AWSOS;
 
+# Relocated from main file for easier editing
+%OSFamily = (
+	'win'   => 'Windows',
+	'mac'   => 'Macintosh',
+	'linux' => 'Linux',
+	'bsd'   => 'BSD'
+);
 
 # OSSearchIDOrder
 # This list is used to know in which order to search Operating System IDs
