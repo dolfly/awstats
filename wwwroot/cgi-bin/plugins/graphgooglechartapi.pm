@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.3 $ - $Author: manolamancha $ - $Date: 2010-04-30 14:07:46 $
+# $Revision: 1.4 $ - $Author: manolamancha $ - $Date: 2010-05-19 17:52:27 $
 # 
 # Changelog
 #
@@ -129,6 +129,14 @@ sub ShowGraph_graphgooglechartapi() {
 		print Get_Img_Tag(Graph_Pie(), $title);
 	}
 	elsif ($type eq 'browsers'){
+		$labellength=32;
+		print Get_Img_Tag(Graph_Pie(), $title);
+	}
+	elsif ($type eq 'downloads'){
+		$labellength=32;
+		print Get_Img_Tag(Graph_Pie(), $title);
+	}
+	elsif ($type eq 'pages'){
 		$labellength=32;
 		print Get_Img_Tag(Graph_Pie(), $title);
 	}
@@ -548,6 +556,7 @@ sub Get_Labels(){
 		}
 		$chxl .= "$temp|";
 	}
+	$chxl =~ s/&//;
 	return $chxl;
 }
 
