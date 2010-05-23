@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.958 $ - $Author: manolamancha $ - $Date: 2010-05-19 18:45:29 $
+# $Revision: 1.959 $ - $Author: eldy $ - $Date: 2010-05-23 23:27:01 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.958 $';
+$REVISION = '$Revision: 1.959 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -951,7 +951,7 @@ EOF
 			print "</style>\n";
 		}
 
-# les scripts n�cessaires pour trier avec Tablekit
+# les scripts necessaires pour trier avec Tablekit
 #	print "<script type=\"text\/javascript\" src=\"/js/prototype.js\"><\/script>";
 #	print "<script type=\"text\/javascript\" src=\"/js/fabtabulous.js\"><\/script>";
 #	print "<script type=\"text\/javascript\" src=\"/js/mytablekit.js\"><\/script>";
@@ -1664,17 +1664,15 @@ sub Read_Config {
 	my @PossibleConfigDir = ();
 
 	if ($configdir) {
-
-# If from CGI, overwriting of configdir is only possible if AWSTATS_ENABLE_CONFIG_DIR defined
-#if ($ENV{'GATEWAY_INTERFACE'} && ! $ENV{"AWSTATS_ENABLE_CONFIG_DIR"})
-#{
-#	error("Sorry, to allow overwriting of configdir parameter from an AWStats CGI usage, environment variable AWSTATS_ENABLE_CONFIG_DIR must be set to 1");
-#}
-#else
-#{
-		@PossibleConfigDir = ("$configdir");
-
-		#}
+		# If from CGI, overwriting of configdir is only possible if AWSTATS_ENABLE_CONFIG_DIR defined
+		if ($ENV{'GATEWAY_INTERFACE'} && ! $ENV{"AWSTATS_ENABLE_CONFIG_DIR"})
+		{
+			error("Sorry, to allow overwriting of configdir parameter from an AWStats CGI usage, environment variable AWSTATS_ENABLE_CONFIG_DIR must be set to 1");
+		}
+		else
+		{
+			@PossibleConfigDir = ("$configdir");
+		}
 	}
 	else {
 		@PossibleConfigDir = (
@@ -16234,6 +16232,8 @@ if ( $ENV{'GATEWAY_INTERFACE'} ) {    # Run from a browser as CGI
 	}
 	if ( $QueryString =~ /configdir=([^&]+)/i ) {
 		$DirConfig = &Sanitize("$1");
+		$DirConfig =~ s/\\{2,}/\\/g;	# This is to clean Remote URL
+		$DirConfig =~ s/\/{2,}/\//g;	# This is to clean Remote URL
 	}
 
 	# All filters
@@ -16319,6 +16319,8 @@ else {                             # Run from command line
 	}
 	if ( $QueryString =~ /configdir=([^&]+)/i ) {
 		$DirConfig = &Sanitize("$1");
+		$DirConfig =~ s/\\{2,}/\\/g;	# This is to clean Remote URL
+		$DirConfig =~ s/\/{2,}/\//g;	# This is to clean Remote URL
 	}
 
 	# All filters
