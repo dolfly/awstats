@@ -1,6 +1,6 @@
 AWStats Changelog
 -----------------
-$Revision: 1.284 $ - $Author: eldy $ - $Date: 2010-05-08 15:27:43 $
+$Revision: 1.285 $ - $Author: eldy $ - $Date: 2010-05-24 17:37:44 $
 
 
 ***** 7.0 *****
@@ -20,6 +20,10 @@ New features/improvements:
 - Update robots database.
 
 Thanks to Chris Larsen (author of most thoses changes).
+
+Fixes: 
+- Webmin module works with new version of webmin.
+- Security fix.
 
 
 ***** 6.95 *****
