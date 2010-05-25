@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.15 $ - $Author: manolamancha $ - $Date: 2010-05-11 18:27:13 $
+# $Revision: 1.16 $ - $Author: eldy $ - $Date: 2010-05-25 18:50:40 $
 
 
 # <-----
@@ -71,6 +71,7 @@ sub Init_geoip_org_maxmind {
 	debug(" Plugin $PluginName: InitParams=$InitParams",1);
    	my ($mode,$datafile,$override)=split(/\s+/,$InitParams,3);
    	if (! $datafile) { $datafile="GeoIPOrg.dat"; }
+   	else { $datafile =~ s/%20/ /g; }
 	if ($type eq 'geoippureperl') {
 		# With pureperl with always use GEOIP_STANDARD.
 		# GEOIP_MEMORY_CACHE seems to fail with ActiveState
@@ -80,7 +81,7 @@ sub Init_geoip_org_maxmind {
 		if ($mode eq '' || $mode eq 'GEOIP_MEMORY_CACHE')  { $mode=Geo::IP::GEOIP_MEMORY_CACHE(); }
 		else { $mode=Geo::IP::GEOIP_STANDARD(); }
 	}
-	if ($override){$OverrideFile=$override;}
+	if ($override){ $override =~ s/%20/ /g; $OverrideFile=$override; }
 	%TmpDomainLookup=();
 	debug(" Plugin $PluginName: GeoIP initialized type=$type mode=$mode",1);
 	if ($type eq 'geoippureperl') {

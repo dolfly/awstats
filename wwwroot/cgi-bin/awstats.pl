@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.960 $ - $Author: eldy $ - $Date: 2010-05-24 00:53:20 $
+# $Revision: 1.961 $ - $Author: eldy $ - $Date: 2010-05-25 18:50:41 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.960 $';
+$REVISION = '$Revision: 1.961 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -1661,25 +1661,23 @@ sub Read_Config {
 	# Other possible directories :				"/usr/local/etc/awstats", "/etc"
 	# FHS standard, Suse package : 				"/etc/opt/awstats"
 	my $configdir         = shift;
-	my @PossibleConfigDir = ();
+	my @PossibleConfigDir = (
+			"$DIR",
+			"/etc/awstats",
+			"/usr/local/etc/awstats", "/etc",
+			"/etc/opt/awstats"
+		); 
 
 	if ($configdir) {
 		# If from CGI, overwriting of configdir is only possible if AWSTATS_ENABLE_CONFIG_DIR defined
 		if ($ENV{'GATEWAY_INTERFACE'} && ! $ENV{"AWSTATS_ENABLE_CONFIG_DIR"})
 		{
-			error("Sorry, to allow overwriting of configdir parameter from an AWStats CGI usage, environment variable AWSTATS_ENABLE_CONFIG_DIR must be set to 1. For example, by adding the line 'SetEnv AWSTATS_ENABLE_CONFIG_DIR 1' in your Apache config file or into a .htaccess file.");
+			error("Sorry, to allow overwriting of configdir parameter, from an AWStats CGI page, with a non default value, environment variable AWSTATS_ENABLE_CONFIG_DIR must be set to 1. For example, by adding the line 'SetEnv AWSTATS_ENABLE_CONFIG_DIR 1' in your Apache config file or into a .htaccess file.");
 		}
 		else
 		{
 			@PossibleConfigDir = ("$configdir");
 		}
-	}
-	else {
-		@PossibleConfigDir = (
-			"$DIR",                   "/etc/awstats",
-			"/usr/local/etc/awstats", "/etc",
-			"/etc/opt/awstats"
-		);
 	}
 
 	# Open config file
