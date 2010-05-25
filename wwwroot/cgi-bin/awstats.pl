@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.961 $ - $Author: eldy $ - $Date: 2010-05-25 18:50:41 $
+# $Revision: 1.962 $ - $Author: eldy $ - $Date: 2010-05-25 19:05:34 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.961 $';
+$REVISION = '$Revision: 1.962 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -1669,15 +1669,20 @@ sub Read_Config {
 		); 
 
 	if ($configdir) {
-		# If from CGI, overwriting of configdir is only possible if AWSTATS_ENABLE_CONFIG_DIR defined
-		if ($ENV{'GATEWAY_INTERFACE'} && ! $ENV{"AWSTATS_ENABLE_CONFIG_DIR"})
+		# Check if configdir is outside default values.
+		my $outsidedefaultvalue=1;
+		foreach (@PossibleConfigDir) {
+			if ($_ eq $configdir) { $outsidedefaultvalue=0; last; }
+		}
+
+		# If from CGI, overwriting of configdir with a value that differs from a defautl value
+		# is only possible if AWSTATS_ENABLE_CONFIG_DIR defined
+		if ($ENV{'GATEWAY_INTERFACE'} && $outsidedefaultvalue && ! $ENV{"AWSTATS_ENABLE_CONFIG_DIR"})
 		{
 			error("Sorry, to allow overwriting of configdir parameter, from an AWStats CGI page, with a non default value, environment variable AWSTATS_ENABLE_CONFIG_DIR must be set to 1. For example, by adding the line 'SetEnv AWSTATS_ENABLE_CONFIG_DIR 1' in your Apache config file or into a .htaccess file.");
 		}
-		else
-		{
-			@PossibleConfigDir = ("$configdir");
-		}
+
+		@PossibleConfigDir = ("$configdir");
 	}
 
 	# Open config file
