@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------
 # \file         make/makepack-awstats.pl
 # \brief        Package builder (tgz, zip, rpm, deb, exe)
-# \version      $Revision: 1.23 $
+# \version      $Revision: 1.24 $
 # \author       (c)2004-2005 Laurent Destailleur  <eldy@users.sourceforge.net>
 #----------------------------------------------------------------------------
 
@@ -45,7 +45,7 @@ if (-d "/usr/src/rpm") {
     $RPMDIR="/usr/src/rpm";
 }
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.23 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.24 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.0 (build $REVISION)";
 
 
@@ -350,6 +350,8 @@ foreach my $target (keys %CHOOSEDTARGET) {
         print "Package $target built succeessfully in $DESTI\n";
     }
 }
+
+$btach=0;
 
 if (! $btach) {
 	print "\nPress key to finish...";
