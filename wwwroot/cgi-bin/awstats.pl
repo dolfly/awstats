@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.962 $ - $Author: eldy $ - $Date: 2010-05-25 19:05:34 $
+# $Revision: 1.963 $ - $Author: manolamancha $ - $Date: 2010-06-09 14:10:25 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.962 $';
+$REVISION = '$Revision: 1.963 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -8848,6 +8848,12 @@ sub DefinePerlParsingFormat {
 		$LogFormatString =~ s/s-object-source/%other/g;
 		$LogFormatString =~ s/s-cache-info/%other/g;
 		$LogFormatString =~ s/cluster-node/%cluster/g;
+		$LogFormatString =~ s/s-sitename/%other/g;
+ 		$LogFormatString =~ s/s-ip/%other/g;
+ 		$LogFormatString =~ s/s-port/%other/g;
+ 		$LogFormatString =~ s/cs\(Cookie\)/%other/g;
+ 		$LogFormatString =~ s/sc-substatus/%other/g;
+ 		$LogFormatString =~ s/sc-win32-status/%other/g;
 
 		# Added for MMS
 		$LogFormatString =~
