@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.4 $ - $Author: manolamancha $ - $Date: 2010-05-19 17:52:27 $
+# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2010-06-22 21:35:24 $
 # 
 # Changelog
 #
@@ -26,7 +26,7 @@ no strict "refs";
 # <-----
 # ENTER HERE THE MINIMUM AWSTATS VERSION REQUIRED BY YOUR PLUGIN
 # AND THE NAME OF ALL FUNCTIONS THE PLUGIN MANAGE.
-my $PluginNeedAWStatsVersion = "6.95";
+my $PluginNeedAWStatsVersion = "7.0";
 my $PluginHooksFunctions = "Init ShowGraph AddHTMLHeader";
 my $PluginName = "graphgooglechartapi";
 my $ChartProtocol = "http://";
