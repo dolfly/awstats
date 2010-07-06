@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.30 $ - $Author: eldy $ - $Date: 2010-05-25 18:50:40 $
+# $Revision: 1.31 $ - $Author: manolamancha $ - $Date: 2010-07-06 15:08:05 $
 # 1.4 - Chris Larsen - added file override capabilities
 
 # <-----
@@ -4577,9 +4577,6 @@ sub ShowInfoHost_geoip_city_maxmind {
 	        my $country;
 	        my $city;
 	        my @res = TmpLookup_geoip_city_maxmind($param);
-			if (!@res){
-				@res=$geoip_city_maxmind->get_city_record($param) if $geoip_city_maxmind;
-			}
 	        if (@res){
 	        	$country = $res[0];
 	        	$city = $res[4];
@@ -4619,9 +4616,6 @@ sub ShowInfoHost_geoip_city_maxmind {
 	        my $country;
 	        my $city;
 	        my @res = TmpLookup_geoip_city_maxmind($param);
-			if (!@res){
-				@res=$geoip_city_maxmind->get_city_record($param) if $geoip_city_maxmind;
-			}
 	        if (@res){
 	        	$country = $res[0];
 	        	$city = $res[4];
