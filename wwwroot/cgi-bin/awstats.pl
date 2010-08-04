@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.965 $ - $Author: eldy $ - $Date: 2010-08-04 12:56:50 $
+# $Revision: 1.966 $ - $Author: eldy $ - $Date: 2010-08-04 13:19:55 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.965 $';
+$REVISION = '$Revision: 1.966 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -17207,7 +17207,12 @@ if ($Debug) {
 "Scan for last history files into DirData='$DirData' with mask='$datemask'"
 	);
 }
-opendir( DIR, "$DirData" );
+
+my $retval = opendir( DIR, "$DirData" );
+if(! $retval) 
+{
+    error( "Failed to open directory $DirData : $!");
+}
 my $regfilesuffix = quotemeta($FileSuffix);
 foreach ( grep /^$PROG$datemask$regfilesuffix\.txt(|\.gz)$/i,
 	file_filt sort readdir DIR )
