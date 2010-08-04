@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.966 $ - $Author: eldy $ - $Date: 2010-08-04 13:19:55 $
+# $Revision: 1.967 $ - $Author: eldy $ - $Date: 2010-08-04 13:37:04 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.966 $';
+$REVISION = '$Revision: 1.967 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -3065,10 +3065,10 @@ sub Read_Plugins {
 		my ( $pluginfile, $pluginparam ) = split( /\s+/, $plugininfo, 2 );
 		$pluginparam ||=
 		  "";    # If split has only on part, pluginparam is not initialized
-		$pluginfile =~ s/\.pm$//i;
+        $pluginfile =~ s/\.pm$//i;
 		$pluginfile =~ /([^\/\\]+)$/;
-		my $pluginname = $1;    # pluginname is pluginfile without any path
-		                        # Check if plugin is not disabled
+		$pluginfile = Sanitize($1);     # pluginfile is cleaned from any path for security reasons and from .pm
+		my $pluginname = $pluginfile;
 		if ( $NoLoadPlugin{$pluginname} && $NoLoadPlugin{$pluginname} > 0 ) {
 			if ($Debug) {
 				debug(
@@ -7826,10 +7826,10 @@ sub Sanitize {
 	my $stringtoclean = shift;
 	my $full = shift || 0;
 	if ($full) {
-		$stringtoclean =~ s/[^\w]//g;
+		$stringtoclean =~ s/[^\w\d]//g;
 	}
 	else {
-		$stringtoclean =~ s/[^\w\-\\\/\.:\s]//g;
+		$stringtoclean =~ s/[^\w\d\-\\\/\.:\s]//g;
 	}
 	return $stringtoclean;
 }
