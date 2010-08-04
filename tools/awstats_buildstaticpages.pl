@@ -3,7 +3,7 @@
 # Launch awstats with -staticlinks option to build all static pages.
 # See COPYING.TXT file about AWStats GNU General Public License.
 #------------------------------------------------------------------------------
-# $Revision: 1.39 $ - $Author: eldy $ - $Date: 2010-01-20 17:39:20 $
+# $Revision: 1.40 $ - $Author: eldy $ - $Date: 2010-08-04 12:56:50 $
 
 #$|=1;
 #use warnings;		# Must be used in test mode only. This reduce a little process speed
@@ -15,7 +15,7 @@ use Time::Local;	# use Time::Local 'timelocal_nocheck' is faster but not support
 #------------------------------------------------------------------------------
 # Defines
 #------------------------------------------------------------------------------
-my $REVISION='$Revision: 1.39 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+my $REVISION='$Revision: 1.40 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 my $VERSION="1.2 (build $REVISION)";
 
 # ---------- Init variables --------
@@ -196,6 +196,7 @@ sub Parse_Config {
 				warning("Warning: Perl versions before 5.6 cannot handle nested includes");
 				next;
 			}
+            local( *CONFIG_INCLUDE );   # To avoid having parent file closed when include file is closed
 		    if ( open( CONFIG_INCLUDE, $includeFile ) ) {
 				&Parse_Config( *CONFIG_INCLUDE , $level+1, $includeFile);
 				close( CONFIG_INCLUDE );

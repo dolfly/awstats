@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.964 $ - $Author: manolamancha $ - $Date: 2010-06-09 14:46:20 $
+# $Revision: 1.965 $ - $Author: eldy $ - $Date: 2010-08-04 12:56:50 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.964 $';
+$REVISION = '$Revision: 1.965 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -1859,6 +1859,7 @@ sub Parse_Config {
 				);
 				next;
 			}
+            local( *CONFIG_INCLUDE );   # To avoid having parent file closed when include file is closed
 			if ( open( CONFIG_INCLUDE, $includeFile ) ) {
 				&Parse_Config( *CONFIG_INCLUDE, $level + 1, $includeFile );
 				close(CONFIG_INCLUDE);
