@@ -3,7 +3,7 @@
 # If you want to add an OS to extend AWStats database detection capabilities,
 # you must add an entry in OSSearchIDOrder, in OSHashID and in OSHashLib.
 #-------------------------------------------------------
-# $Revision: 1.30 $ - $Author: manolamancha $ - $Date: 2010-05-17 12:35:58 $
+# $Revision: 1.31 $ - $Author: eldy $ - $Date: 2010-08-04 10:55:08 $
 
 # 2005-08-19 Sean Carlos http://www.antezeta.com/awstats.html
 #              - added specific Linux distributions in addition to 
@@ -200,7 +200,7 @@
 'cp/m','cp/m',
 'crayos','crayos',
 'dreamcast','dreamcast',
-'iphone[_+ ]os','iphone',
+'iphone[_+ ]os','ios',
 'risc[_+ ]?os','riscos',
 'symbian','symbian',
 'webtv','webtv',
@@ -289,7 +289,7 @@
 'cp/m','<a href="http://www.digitalresearch.biz/CPM.HTM" title="CP/M home page [new window]" target="_blank">CP/M</a>',
 'crayos','<a href="http://www.cray.com/" title="CrayOS home page [new window]" target="_blank">CrayOS</a>',
 'dreamcast','<a href="http://www.sega.com/" title="Dreamcast home page [new window]" target="_blank">Dreamcast</a>',
-'iphone','<a href="http://www.apple.com/iphone/" title="iPhone home page [new window]" target="_blank">iPhone OS (iPhone/iPod)</a>',
+'ios','<a href="http://www.apple.com/" title="Apple home page [new window]" target="_blank">iOS (iPhone/iPod/iPad/...)</a>',
 'riscos','<a href="http://www.riscos.com/" title="RISC OS home page [new window]" target="_blank">RISC OS</a>',
 'symbian','<a href="http://www.symbian.com/" title="Symbian OS home page [new window]" target="_blank">Symbian OS</a>',
 'webtv','<a href="http://www.webtv.com/" title="WebTV home page [new window]" target="_blank">WebTV</a>',
