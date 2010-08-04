@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.968 $ - $Author: eldy $ - $Date: 2010-08-04 13:44:58 $
+# $Revision: 1.969 $ - $Author: eldy $ - $Date: 2010-08-04 14:34:04 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.968 $';
+$REVISION = '$Revision: 1.969 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -16981,6 +16981,15 @@ else { @DOWIndex = ( 0, 1, 2, 3, 4, 5, 6 ); }
 
 # Should we link to ourselves or to a wrapper script
 $AWScript = ( $WrapperScript ? "$WrapperScript" : "$DirCgi$PROG.$Extension" );
+if (index($AWScript,'?')>-1) 
+{
+    $AWScript .= '&amp;';   # $AWScript contains URL parameters
+}
+else 
+{
+    $AWScript .= '?';
+}
+
 
 # Print html header (Need HTMLOutput,Expires,Lang,StyleSheet,HTMLHeadSectionExpires defined by Read_Config, PageCode defined by Read_Language_Data)
 if ( !$HeaderHTMLSent ) { &html_head; }
