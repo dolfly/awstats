@@ -1,7 +1,7 @@
 #!/usr/bin/perl
 # view_all.cgi
 # Display summary of all available config files
-# $Revision: 1.8 $ - $Author: eldy $ - $Date: 2006-07-21 23:32:43 $
+# $Revision: 1.9 $ - $Author: eldy $ - $Date: 2010-08-04 13:06:49 $
 
 require './awstats-lib.pl';
 &ReadParse();
@@ -133,7 +133,7 @@ my $max_k=0;
 my $nomax_p=0;
 my $nomax_h=0;
 my $nomax_k=0;
-my %ListOfYears=($nowyear=>1);
+my %ListOfYears=(($nowyear-4)=>1,($nowyear-3)=>1,($nowyear-2)=>1,($nowyear-1)=>1,$nowyear=>1);
 # If required year not in list, we add it
 $ListOfYears{$YearRequired}||=$MonthRequired;
 
