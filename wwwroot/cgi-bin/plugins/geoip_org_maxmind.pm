@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.17 $ - $Author: eldy $ - $Date: 2010-08-04 12:38:02 $
+# $Revision: 1.18 $ - $Author: eldy $ - $Date: 2010-08-23 21:55:34 $
 
 
 # <-----
@@ -500,7 +500,7 @@ sub TmpLookup_geoip_org_maxmind(){
 	#}
     #else {$val = $TmpDomainLookup{$param};}
     #return $val || '';
-    return $TmpDomainLookup{$param};
+    return $TmpDomainLookup{$param}||'';
 }
 
 1;	# Do not remove this line

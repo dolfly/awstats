@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: Geo::IP or Geo::IP::PurePerl
 #-----------------------------------------------------------------------------
-# $Revision: 1.32 $ - $Author: eldy $ - $Date: 2010-08-04 12:38:02 $
+# $Revision: 1.33 $ - $Author: eldy $ - $Date: 2010-08-23 21:55:34 $
 # 1.4 - Chris Larsen - added file override capabilities
 
 # <-----
@@ -4920,7 +4920,8 @@ sub TmpLookup_geoip_city_maxmind(){
 #	}
 #    else {@val = @{$TmpDomainLookup{$param};}}
 #    return @val;
-    return @{$TmpDomainLookup{$param};}||'';
+    if ($TmpDomainLookup{$param}) { return @{$TmpDomainLookup{$param};} }  
+    else { return; }
 }
 
 
