@@ -1,5 +1,5 @@
 # Italian message file
-# $Revision: 1.18 $ - $Date: 2009-10-08 22:18:18 $
+# $Revision: 1.19 $ - $Date: 2010-09-20 21:08:32 $
 # PaniC! - panic@freemail.it 
 # Francesco Potorti - pot@gnu.org
 # iDave - idave@idave.it
@@ -184,3 +184,5 @@ message173=Versioni di Opera
 message174=Versioni di Safari
 message175=Versioni di Chrome
 message176=Versioni di Konqueror
+message177=.
+message178=File scaricati
