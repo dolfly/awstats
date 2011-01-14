@@ -5,7 +5,7 @@
 #-----------------------------------------------------------------------------
 # Perl Required Modules: None
 #-----------------------------------------------------------------------------
-# $Revision: 1.5 $ - $Author: eldy $ - $Date: 2010-06-22 21:35:24 $
+# $Revision: 1.6 $ - $Author: eldy $ - $Date: 2011-01-14 11:05:31 $
 # 
 # Changelog
 #
@@ -484,6 +484,9 @@ sub Chart_Map(){
 	# loop and dump
     my $i = 0;
     for ($i .. (scalar @$blocklabel - 1)) {
+		# fix case of uk
+        if (@$blocklabel[$i] eq 'Great Britain'){ @$blocklabel[$i] =
+'United Kingdom'; }
     	print "\tdata.setValue($i, 0, \"".@$blocklabel[$i]."\");\n";
     	print "\tdata.setValue($i, 1, ".@$valdata[$i].");\n";
     	$i++;
