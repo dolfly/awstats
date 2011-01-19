@@ -6,7 +6,7 @@
 # line or a browser to read report results.
 # See AWStats documentation (in docs/ directory) for all setup instructions.
 #------------------------------------------------------------------------------
-# $Revision: 1.971 $ - $Author: eldy $ - $Date: 2010-10-16 17:24:03 $
+# $Revision: 1.972 $ - $Author: eldy $ - $Date: 2011-01-19 12:52:43 $
 require 5.007;
 
 #$|=1;
@@ -23,7 +23,7 @@ use Encode;
 # Defines
 #------------------------------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION = '$Revision: 1.971 $';
+$REVISION = '$Revision: 1.972 $';
 $REVISION =~ /\s(.*)\s/;
 $REVISION = $1;
 $VERSION  = "7.0 (build $REVISION)";
@@ -8787,7 +8787,7 @@ sub HTMLShowURLInfo {
 			{    # URL seems to be extracted from a proxy log file
 				print "<a href=\""
 				  . XMLEncode("$newkey")
-				  . "\" target=\"url\">"
+				  . "\" target=\"url\" rel=\"nofollow\">"
 				  . XMLEncode($nompage) . "</a>";
 			}
 			elsif ( $newkey =~ /^\// )
@@ -8802,7 +8802,7 @@ sub HTMLShowURLInfo {
 				}
 				print "<a href=\""
 				  . XMLEncode("$urlprot://$SiteDomain$newkey")
-				  . "\" target=\"url\">"
+				  . "\" target=\"url\" rel=\"nofollow\">"
 				  . XMLEncode($nompage) . "</a>";
 			}
 			else {
