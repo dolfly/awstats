@@ -14,7 +14,7 @@ use Digest::MD5 qw(md5 md5_hex md5_base64);
 # Defines
 #-------------------------------------------------------
 use vars qw/ $REVISION $VERSION /;
-$REVISION='$Revision: 1.12 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
+$REVISION='$Revision: 1.13 $'; $REVISION =~ /\s(.*)\s/; $REVISION=$1;
 $VERSION="1.2 (build $REVISION)";
 
 use vars qw / $DIR $PROG $Extension $DEBUG $DEBUGFILE $REPLOG $DEBUGRESET $SITE $REPCONF /;
@@ -34,6 +34,9 @@ $EXCLUDEIP="127.0.0.1";
 # site you can set this to empty string, but warning this is a security hole as everybody
 # can use awredir on your site to redirect to any web site (even non legal web sites). 
 $KEYFORMD5='YOURKEYFORMD5';
+# Put here url pattern you want to allow event if parameter key is not provided.
+$AUTHORIZEDWITHOUTKEY='';
+
 
 #-------------------------------------------------------
 # Functions
@@ -106,7 +109,7 @@ if (! $ENV{'GATEWAY_INTERFACE'}) {	# Run from command line
 	exit 0;
 }
 
-if ($KEYFORMD5 eq 'YOURKEYFORMD5') {
+if ((! $AUTHORIZEDWITHOUTKEY) && ($KEYFORMD5 eq 'YOURKEYFORMD5')) {
         error("Error: You must change value of constant KEYFORMD5 in awredir.pl script.");
 }
 
@@ -131,11 +134,10 @@ if (! $UrlParam) {
 if ($Url !~ /^http/i) { $Url = "http://".$Url; }
 if ($DEBUG) { print LOGFILE "Url=$Url\n"; }
 
-if ($KEYFORMD5 && ($Key ne md5_hex($KEYFORMD5.$UrlParam))) {
+if ((! $AUTHORIZEDWITHOUTKEY || $UrlParam !~ /$AUTHORIZEDWITHOUTKEY/) && $KEYFORMD5 && ($Key ne md5_hex($KEYFORMD5.$UrlParam))) {
 #       error("Error: Bad value for parameter key=".$Key." to allow a redirect to ".$UrlParam." - ".$KEYFORMD5." - ".md5_hex($KEYFORMD5.$UrlParam) );
         error("Error: Bad value for parameter key=".$Key." to allow a redirect to ".$UrlParam.". Key must be hexadecimal md5(KEYFORMD5.".$UrlParam.") where KEYFORMD5 is value hardcoded into awredir.pl. Note: You can remove use of key by setting KEYFORMD5 to empty string in script awredir.pl");
 }
-
 
 # Get date
 ($nowsec,$nowmin,$nowhour,$nowday,$nowmonth,$nowyear,$nowwday,$nowyday,$nowisdst) = localtime(time);
